@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Border
   - DirectionChange
+  - Pivot
   layers:
   - Default
   - TransparentFX

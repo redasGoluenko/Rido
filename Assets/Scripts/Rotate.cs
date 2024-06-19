@@ -34,5 +34,4 @@ public class Rotate : MonoBehaviour
         relativePos = rotation * relativePos;
         transform.position = rotationCenter.position + relativePos;
     }
-
 }
