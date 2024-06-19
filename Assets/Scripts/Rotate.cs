@@ -6,6 +6,7 @@ public class Rotate : MonoBehaviour
 {
     public Transform rotationCenter; // Reference to the object we want to rotate around
     public float rotateSpeed = 50f; // Speed of rotation in degrees per second
+    public bool clockwise = true; // Direction of rotation
 
     // Update is called once per frame
     void Update()
@@ -25,8 +26,13 @@ public class Rotate : MonoBehaviour
     {
         // Calculate the orbit movement
         Vector3 relativePos = transform.position - rotationCenter.position;
-        Quaternion rotation = Quaternion.Euler(0, 0, rotateSpeed * Time.deltaTime);
+
+        // Determine rotation direction based on clockwise boolean
+        float direction = clockwise ? 1f : -1f;
+
+        Quaternion rotation = Quaternion.Euler(0, 0, direction * rotateSpeed * Time.deltaTime);
         relativePos = rotation * relativePos;
         transform.position = rotationCenter.position + relativePos;
     }
+
 }
