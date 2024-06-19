@@ -26,8 +26,7 @@ public class RotationCenter : MonoBehaviour
     {
         // Check for movement in each direction based on collider availability and player collision
         if (!isCooldown && IsScreenTouched())
-        {
-            rotate.MirrorPosition();
+        {        
             rotate.clockwise = !rotate.clockwise;
             if (topCollider.Available && topCollider.PlayerColliding)
             {
