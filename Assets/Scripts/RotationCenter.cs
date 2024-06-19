@@ -9,10 +9,11 @@ public class RotationCenter : MonoBehaviour
     public RightCollider rightCollider;
     public Rotate rotate;
 
-    // Define the size of a smaller grid block in Unity units  
-
     // Flags to prevent multiple movements within the cooldown period
     private bool isCooldown = false;
+
+    // Speed of movement (distance per second)
+    private float moveSpeed = 10.0f;
 
     // Start is called before the first frame update
     void Start()
@@ -26,37 +27,37 @@ public class RotationCenter : MonoBehaviour
         // Check for movement in each direction based on collider availability and player collision
         if (!isCooldown && IsScreenTouched())
         {
+            rotate.MirrorPosition();
             rotate.clockwise = !rotate.clockwise;
             if (topCollider.Available && topCollider.PlayerColliding)
             {
-                MoveInstantly(Vector3.up, 2);
+                StartCoroutine(MoveSmoothly(Vector3.up, 2));
                 StartCoroutine(StartCooldown());
             }
             else if (bottomCollider.Available && bottomCollider.PlayerColliding)
             {
-                MoveInstantly(Vector3.down, 2);
+                StartCoroutine(MoveSmoothly(Vector3.down, 2));
                 StartCoroutine(StartCooldown());
             }
             else if (leftCollider.Available && leftCollider.PlayerColliding)
             {
-                MoveInstantly(Vector3.left, 2);
+                StartCoroutine(MoveSmoothly(Vector3.left, 2));
                 StartCoroutine(StartCooldown());
             }
             else if (rightCollider.Available && rightCollider.PlayerColliding)
             {
-                MoveInstantly(Vector3.right, 2);
+                StartCoroutine(MoveSmoothly(Vector3.right, 2));
                 StartCoroutine(StartCooldown());
             }
             else
-            {
-                //destroy the player
+            {             
                 Destroy(rotate.gameObject);
             }
         }
     }
 
-    // Helper method to move the object instantly in a specified direction by a specified number of smaller grid blocks
-    void MoveInstantly(Vector3 direction, int numberOfBlocks)
+    // Coroutine to move the object smoothly in a specified direction over time
+    IEnumerator MoveSmoothly(Vector3 direction, int numberOfBlocks)
     {
         // Calculate the distance to move based on the smaller grid size
         float distance = numberOfBlocks;
@@ -64,7 +65,32 @@ public class RotationCenter : MonoBehaviour
         // Calculate the target position based on the specified direction and distance
         Vector3 targetPosition = transform.position + direction * distance;
 
-        // Move the object instantly to the target position
+        // Calculate the duration based on the move speed
+        float duration = distance / moveSpeed;
+
+        // Store the starting position for interpolation
+        Vector3 startPosition = transform.position;
+
+        // Time elapsed while moving
+        float elapsed = 0;
+
+        // Interpolate position over time
+        while (elapsed < duration)
+        {
+            // Calculate interpolation ratio
+            float t = elapsed / duration;
+
+            // Move towards the target position
+            transform.position = Vector3.Lerp(startPosition, targetPosition, t);
+
+            // Update elapsed time
+            elapsed += Time.deltaTime;
+
+            // Wait until the next frame
+            yield return null;
+        }
+
+        // Ensure final position is exactly at the target
         transform.position = targetPosition;
     }
 
@@ -94,7 +120,7 @@ public class RotationCenter : MonoBehaviour
         // Set cooldown flag to true
         isCooldown = true;
 
-        // Wait for 5 seconds before allowing another movement
+        // Wait for 0.25 seconds before allowing another movement
         yield return new WaitForSeconds(0.25f);
 
         // Reset cooldown flag to false
