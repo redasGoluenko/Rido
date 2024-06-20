@@ -9,11 +9,12 @@ TagManager:
   - Pivot
   - Collider
   - Token
+  - Obstacle
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Obstacle
   - Water
   - UI
   - 

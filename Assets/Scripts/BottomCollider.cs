@@ -68,36 +68,45 @@ public class BottomCollider : MonoBehaviour
         if (tokenPrefab != null)
         {
             // Get the position of the TopCollider object
-            Vector3 spawnPosition = transform.position;       
+            Vector3 spawnPosition = transform.position;      
 
             // Determine the spawn positions based on fixed offsets
-            // Above position (same X, higher Y)
             Vector3 downPosition = spawnPosition + Vector3.down * 1.5f;
-
-            // Left position (left of the object, lower Y)
             Vector3 leftPosition = spawnPosition + Vector3.left + Vector3.down * 0.5f;
-
-            // Right position (right of the object, lower Y)
             Vector3 rightPosition = spawnPosition + Vector3.right + Vector3.down * 0.5f;
 
-            // Randomly choose one of the positions
-            int randomIndex = Random.Range(0, 3); // 0: top, 1: left, 2: right
+            // List of potential spawn positions
+            List<Vector3> potentialPositions = new List<Vector3> { downPosition, leftPosition, rightPosition };
 
-            switch (randomIndex)
+            // Shuffle the potential positions to introduce randomness
+            for (int i = 0; i < potentialPositions.Count; i++)
             {
-                case 0:
-                    Instantiate(tokenPrefab, downPosition, Quaternion.identity);
-                    break;
-                case 1:
-                    Instantiate(tokenPrefab, rightPosition, Quaternion.identity);
-                    break;
-                case 2:
-                    Instantiate(tokenPrefab, leftPosition, Quaternion.identity);
-                    break;
-                default:
-                    Debug.LogError("Unexpected random index: " + randomIndex);
-                    break;
+                int randomIndex = Random.Range(i, potentialPositions.Count);
+                Vector3 temp = potentialPositions[i];
+                potentialPositions[i] = potentialPositions[randomIndex];
+                potentialPositions[randomIndex] = temp;
             }
+
+            // Layer mask to check for specific layers or tags (for example, "Obstacle" layer)
+            int layerMask = LayerMask.GetMask("Obstacle");
+
+            // Radius or size of the area to check for collisions
+            float checkRadius = 0.5f; // Adjust based on your token size
+
+            // Iterate through the positions to find a valid one
+            foreach (Vector3 position in potentialPositions)
+            {
+                // Check if the position is not occupied
+                if (!Physics2D.OverlapCircle(position, checkRadius, layerMask))
+                {
+                    // Spawn the token at the first valid position
+                    Instantiate(tokenPrefab, position, Quaternion.identity);
+                    return; // Exit after spawning
+                }
+            }
+
+            // If all positions are occupied, log an error or handle accordingly
+            Debug.LogError("All spawn positions are occupied.");
         }
         else
         {

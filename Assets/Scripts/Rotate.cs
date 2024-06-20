@@ -3,7 +3,7 @@ using UnityEngine;
 public class Rotate : MonoBehaviour
 {
     public Transform rotationCenter; // Reference to the object we want to rotate around
-    private float rotateSpeed = 200f; // Speed of rotation in degrees per second
+    private float rotateSpeed = 100f; // Speed of rotation in degrees per second
     public bool clockwise = true; // Direction of rotation
     public float desiredDistance = 5f; // The desired distance from the rotation center
     public float correctionSpeed = 2f; // Speed at which the distance correction happens
@@ -60,6 +60,15 @@ public class Rotate : MonoBehaviour
 
             // Move the object slightly towards the target position
             transform.position = Vector3.Lerp(transform.position, targetPosition, correctionSpeed * Time.deltaTime);
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Token"))
+        {
+            //destroy token
+            Destroy(collision.gameObject);
         }
     }
 }
