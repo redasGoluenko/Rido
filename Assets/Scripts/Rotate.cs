@@ -1,14 +1,14 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Rotate : MonoBehaviour
 {
     public Transform rotationCenter; // Reference to the object we want to rotate around
-    public float rotateSpeed = 50f; // Speed of rotation in degrees per second
+    private float rotateSpeed = 200f; // Speed of rotation in degrees per second
     public bool clockwise = true; // Direction of rotation
     public float desiredDistance = 5f; // The desired distance from the rotation center
     public float correctionSpeed = 2f; // Speed at which the distance correction happens
+
+    public float speedIncreaseRate = 5f; // Rate at which rotateSpeed increases per second
 
     // Update is called once per frame
     void Update()
@@ -19,6 +19,9 @@ public class Rotate : MonoBehaviour
             Debug.LogWarning("Rotation center not assigned!");
             return;
         }
+
+        // Increase rotateSpeed over time
+        rotateSpeed += speedIncreaseRate * Time.deltaTime;
 
         // Orbit around the rotationCenter
         OrbitAround();
