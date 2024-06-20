@@ -2941,6 +2941,8 @@ MonoBehaviour:
   rotationCenter: {fileID: 1457599816}
   rotateSpeed: 200
   clockwise: 1
+  desiredDistance: 1
+  correctionSpeed: 2
 --- !u!50 &1792451201
 Rigidbody2D:
   serializedVersion: 4
