@@ -24,7 +24,7 @@ public class BottomCollider : MonoBehaviour
             if (pivotContactCount == 1) // Only set Available to true if it's the first contact
             {
                 Available = true;
-                //Debug.Log("bot Available");
+                //Debug.Log("Bottom Available");
             }
         }
         if (collision.gameObject.CompareTag("Player"))
@@ -47,7 +47,7 @@ public class BottomCollider : MonoBehaviour
             if (pivotContactCount <= 0) // Only set Available to false if no "Pivot" is colliding
             {
                 Available = false;
-                //Debug.Log("bot Not Available");
+                //Debug.Log("Bottom Not Available");
                 pivotContactCount = 0; // Ensure counter doesn't go negative
             }
         }
