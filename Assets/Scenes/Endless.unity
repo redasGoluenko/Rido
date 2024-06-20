@@ -1016,11 +1016,11 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 8.22, y: 3.25, z: -9.950509}
+  m_LocalPosition: {x: 1.4921174, y: 1.5073303, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1254428848}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &550319346
 GameObject:
@@ -1739,6 +1739,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Available: 0
   PlayerColliding: 0
+  tokenPrefab: {fileID: 4420393680069102459, guid: 5e8613d3c80c61445a68779ca32a6e93, type: 3}
 --- !u!1 &863797904
 GameObject:
   m_ObjectHideFlags: 0
@@ -2212,38 +2213,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1500039465}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1254428847
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1254428848}
-  m_Layer: 0
-  m_Name: Play Box
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1254428848
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1254428847}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.727883, y: -1.7426697, z: -0.049491215}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 519420032}
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1283119101
 GameObject:
   m_ObjectHideFlags: 0
@@ -2420,6 +2389,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Available: 0
   PlayerColliding: 0
+  tokenPrefab: {fileID: 4420393680069102459, guid: 5e8613d3c80c61445a68779ca32a6e93, type: 3}
 --- !u!1 &1344371641
 GameObject:
   m_ObjectHideFlags: 0
@@ -3018,6 +2988,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Available: 0
   PlayerColliding: 0
+  tokenPrefab: {fileID: 4420393680069102459, guid: 5e8613d3c80c61445a68779ca32a6e93, type: 3}
 --- !u!1 &1587351304
 GameObject:
   m_ObjectHideFlags: 0
@@ -3449,10 +3420,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationCenter: {fileID: 1457599816}
-  rotateSpeed: 200
   clockwise: 1
   desiredDistance: 1
   correctionSpeed: 2
+  speedIncreaseRate: 5
 --- !u!50 &1792451201
 Rigidbody2D:
   serializedVersion: 4
@@ -4339,6 +4310,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Available: 0
   PlayerColliding: 0
+  tokenPrefab: {fileID: 4420393680069102459, guid: 5e8613d3c80c61445a68779ca32a6e93, type: 3}
 --- !u!1 &2056313678
 GameObject:
   m_ObjectHideFlags: 0
@@ -4504,8 +4476,8 @@ Transform:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
-  - {fileID: 1254428848}
   - {fileID: 550319349}
   - {fileID: 1500039465}
   - {fileID: 1792451199}
   - {fileID: 1457599816}
+  - {fileID: 519420032}

@@ -33,21 +33,25 @@ public class RotationCenter : MonoBehaviour
             rotate.clockwise = !rotate.clockwise;
             if (topCollider.Available && topCollider.PlayerColliding)
             {
+                topCollider.SpawnToken();
                 StartCoroutine(MoveSmoothly(Vector3.up, 2));
                 StartCoroutine(StartCooldown());
             }
             else if (bottomCollider.Available && bottomCollider.PlayerColliding)
             {
+                bottomCollider.SpawnToken();
                 StartCoroutine(MoveSmoothly(Vector3.down, 2));
                 StartCoroutine(StartCooldown());
             }
             else if (leftCollider.Available && leftCollider.PlayerColliding)
             {
+                leftCollider.SpawnToken();
                 StartCoroutine(MoveSmoothly(Vector3.left, 2));
                 StartCoroutine(StartCooldown());
             }
             else if (rightCollider.Available && rightCollider.PlayerColliding)
             {
+                rightCollider.SpawnToken();
                 StartCoroutine(MoveSmoothly(Vector3.right, 2));
                 StartCoroutine(StartCooldown());
             }
