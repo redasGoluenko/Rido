@@ -7,6 +7,8 @@ public class Rotate : MonoBehaviour
     public bool clockwise = true; // Direction of rotation
     public float desiredDistance = 5f; // The desired distance from the rotation center
     public float correctionSpeed = 2f; // Speed at which the distance correction happens
+    public bool isCollidingWithToken = false; // Flag to track collision with objects tagged as "Token"
+    private GameObject currentToken; // Reference to the currently collided token
 
     public float speedIncreaseRate = 5f; // Rate at which rotateSpeed increases per second
 
@@ -28,6 +30,16 @@ public class Rotate : MonoBehaviour
 
         // Adjust the distance to the desired distance
         CorrectDistance();
+
+        // Check for touch input and destroy token if colliding with it
+        if (isCollidingWithToken && Input.touchCount > 0)
+        {
+            // Destroy the token
+            Destroy(currentToken);
+            // Reset the flag and reference after destroying the token
+            isCollidingWithToken = false;
+            currentToken = null;
+        }
     }
 
     void OrbitAround()
@@ -64,11 +76,27 @@ public class Rotate : MonoBehaviour
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
+    {    
+        if (collision.gameObject.CompareTag("Token"))
+        {          
+            isCollidingWithToken = true; // Flag to track collision state
+            currentToken = collision.gameObject; // Store the reference to the collided token
+        }
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Token"))
-        {
-            //destroy token
-            Destroy(collision.gameObject);
+        {         
+            // Check if there was no touch input when the collision with the token ended
+            if (Input.touchCount == 0)
+            {                       
+                // For example, you can deactivate the player GameObject
+                gameObject.SetActive(false);
+            }
+            // Reset the collision flag and reference
+            isCollidingWithToken = false;
+            currentToken = null;
         }
     }
 }
