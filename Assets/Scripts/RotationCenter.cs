@@ -13,7 +13,7 @@ public class RotationCenter : MonoBehaviour
     private bool isCooldown = false;
 
     // Speed of movement (distance per second)
-    private float moveSpeed = 10.0f;
+    private float moveSpeed = 500.0f;
 
     // Start is called before the first frame update
     void Start()
