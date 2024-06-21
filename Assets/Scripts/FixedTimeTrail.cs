@@ -3,7 +3,7 @@ using UnityEngine;
 public class FixedTimeTrail : MonoBehaviour
 {
     public TrailRenderer trailRenderer;
-    private float decreaseAmount = 0.015f; // Amount to decrease time per press
+    private float decreaseAmount = 0.005f; // Amount to decrease time per press
 
     void Start()
     {
