@@ -28,7 +28,7 @@ public class Rotate : MonoBehaviour
         //increase rotate speed on screen press
         if (Input.touchCount > 0)
         {
-            rotateSpeed += 0.125f;
+            rotateSpeed += 1f;
         }     
 
         // Ensure rotationCenter is assigned

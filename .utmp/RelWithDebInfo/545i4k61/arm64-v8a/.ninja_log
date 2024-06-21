@@ -1,0 +1,21 @@
+# ninja log v5
+77	429	7406763513461773	FramePacing/CMakeFiles/swappywrapper.dir/UnitySwappyWrapper.cpp.o	12858bc726cca5a9
+13	1640	7406763525539199	GameActivity/CMakeFiles/game.dir/UGAApplication.cpp.o	ccd9d718ca4c154d
+22	1381	7406763522951295	GameActivity/CMakeFiles/game.dir/UGADebug.cpp.o	9574d93a96388f77
+54	1239	7406763521566622	GameActivity/CMakeFiles/game.dir/UGAInputMotionEvent.cpp.o	167c1d276083c08c
+431	701	7406763515440298	C:/Users/redas/Desktop/Games/Rido/Rido/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/545i4k61/obj/arm64-v8a/libswappywrapper.so	184128994f59d3c0
+43	1212	7406763521262628	GameActivity/CMakeFiles/game.dir/UGAInputKeyEvent.cpp.o	794bd2582e3fa9ee
+1	1232	7406763521485283	GameActivity/CMakeFiles/game.dir/UGAEntry.cpp.o	bee5b835d34e005f
+65	1347	7406763522622436	GameActivity/CMakeFiles/game.dir/UGASoftKeyboard.cpp.o	32f508c7fedc7300
+32	1541	7406763524585018	GameActivity/CMakeFiles/game.dir/UGAInput.cpp.o	7c26586c2d4f9ac1
+1641	1851	7406763527096726	C:/Users/redas/Desktop/Games/Rido/Rido/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/545i4k61/obj/arm64-v8a/libgame.so	de69b72660968957
+42	208	7406773045107898	FramePacing/CMakeFiles/swappywrapper.dir/UnitySwappyWrapper.cpp.o	12858bc726cca5a9
+209	374	7406773046381146	C:/Users/redas/Desktop/Games/Rido/Rido/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/545i4k61/obj/arm64-v8a/libswappywrapper.so	184128994f59d3c0
+30	1149	7406773054460586	GameActivity/CMakeFiles/game.dir/UGAInputKeyEvent.cpp.o	794bd2582e3fa9ee
+36	1175	7406773054737815	GameActivity/CMakeFiles/game.dir/UGAInputMotionEvent.cpp.o	167c1d276083c08c
+19	1190	7406773054888307	GameActivity/CMakeFiles/game.dir/UGAEntry.cpp.o	bee5b835d34e005f
+25	1225	7406773055205296	GameActivity/CMakeFiles/game.dir/UGASoftKeyboard.cpp.o	32f508c7fedc7300
+14	1268	7406773055647762	GameActivity/CMakeFiles/game.dir/UGADebug.cpp.o	9574d93a96388f77
+9	1374	7406773056712105	GameActivity/CMakeFiles/game.dir/UGAInput.cpp.o	7c26586c2d4f9ac1
+3	1436	7406773057320083	GameActivity/CMakeFiles/game.dir/UGAApplication.cpp.o	ccd9d718ca4c154d
+1436	1565	7406773058257633	C:/Users/redas/Desktop/Games/Rido/Rido/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/545i4k61/obj/arm64-v8a/libgame.so	de69b72660968957

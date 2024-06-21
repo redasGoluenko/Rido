@@ -12,15 +12,15 @@ public class RotationCenter : MonoBehaviour
     // Flags to prevent multiple movements within the cooldown period
     private bool isCooldown = false;
 
-    // Speed of movement (distance per second)
-    private float moveSpeed = 1000.0f;
+    // Distance to move per step (number of blocks)
+    private float moveDistance = 2.0f;
 
     // Start is called before the first frame update
     void Start()
-    {      
-        topCollider.GetComponent<SpriteRenderer>().enabled = false;   
-        bottomCollider.GetComponent<SpriteRenderer>().enabled = false;    
-        leftCollider.GetComponent<SpriteRenderer>().enabled = false;       
+    {
+        topCollider.GetComponent<SpriteRenderer>().enabled = false;
+        bottomCollider.GetComponent<SpriteRenderer>().enabled = false;
+        leftCollider.GetComponent<SpriteRenderer>().enabled = false;
         rightCollider.GetComponent<SpriteRenderer>().enabled = false;
     }
 
@@ -29,30 +29,30 @@ public class RotationCenter : MonoBehaviour
     {
         // Check for movement in each direction based on collider availability and player collision
         if (!isCooldown && IsScreenTouched())
-        {        
+        {
             rotate.clockwise = !rotate.clockwise;
             if (topCollider.Available && topCollider.PlayerColliding)
             {
                 topCollider.SpawnToken();
-                StartCoroutine(MoveSmoothly(Vector3.up, 2));
+                Teleport(Vector3.up, moveDistance);
                 StartCoroutine(StartCooldown());
             }
             else if (bottomCollider.Available && bottomCollider.PlayerColliding)
             {
                 bottomCollider.SpawnToken();
-                StartCoroutine(MoveSmoothly(Vector3.down, 2));
+                Teleport(Vector3.down, moveDistance);
                 StartCoroutine(StartCooldown());
             }
             else if (leftCollider.Available && leftCollider.PlayerColliding)
             {
                 leftCollider.SpawnToken();
-                StartCoroutine(MoveSmoothly(Vector3.left, 2));
+                Teleport(Vector3.left, moveDistance);
                 StartCoroutine(StartCooldown());
             }
             else if (rightCollider.Available && rightCollider.PlayerColliding)
             {
                 rightCollider.SpawnToken();
-                StartCoroutine(MoveSmoothly(Vector3.right, 2));
+                Teleport(Vector3.right, moveDistance);
                 StartCoroutine(StartCooldown());
             }
             else
@@ -62,41 +62,13 @@ public class RotationCenter : MonoBehaviour
         }
     }
 
-    // Coroutine to move the object smoothly in a specified direction over time
-    IEnumerator MoveSmoothly(Vector3 direction, int numberOfBlocks)
+    // Method to instantly teleport the object to a new position based on direction and distance
+    void Teleport(Vector3 direction, float distance)
     {
-        // Calculate the distance to move based on the smaller grid size
-        float distance = numberOfBlocks;
-
         // Calculate the target position based on the specified direction and distance
         Vector3 targetPosition = transform.position + direction * distance;
 
-        // Calculate the duration based on the move speed
-        float duration = distance / moveSpeed;
-
-        // Store the starting position for interpolation
-        Vector3 startPosition = transform.position;
-
-        // Time elapsed while moving
-        float elapsed = 0;
-
-        // Interpolate position over time
-        while (elapsed < duration)
-        {
-            // Calculate interpolation ratio
-            float t = elapsed / duration;
-
-            // Move towards the target position
-            transform.position = Vector3.Lerp(startPosition, targetPosition, t);
-
-            // Update elapsed time
-            elapsed += Time.deltaTime;
-
-            // Wait until the next frame
-            yield return null;
-        }
-
-        // Ensure final position is exactly at the target
+        // Set the position instantly to the target position
         transform.position = targetPosition;
     }
 
