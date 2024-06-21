@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class Rotate : MonoBehaviour
@@ -13,9 +14,15 @@ public class Rotate : MonoBehaviour
     public float gracePeriod = 0.5f; // Grace period in seconds to ignore brief multiple token situations
     public int tokenCount = 0; // Number of tokens picked up by the player
     public Ease ease; // Reference to the Ease script
+    public Camera cam;
 
     private void Start()
-    {
+    {      
+        if (cam != null)
+        {          
+            cam.backgroundColor = Color.grey;
+        }
+
         if (rotationCenter == null)
         {
             Debug.LogWarning("Rotation center not assigned!");
@@ -47,6 +54,7 @@ public class Rotate : MonoBehaviour
         {
             // Destroy the token
             Destroy(currentToken);
+            StartCoroutine(FlashBackground());
             tokenCount++;
             // Record the time of token destruction
             lastTokenDestructionTime = Time.time;
@@ -120,6 +128,29 @@ public class Rotate : MonoBehaviour
             currentToken = null;
         }
     }
+    IEnumerator FlashBackground()
+    {
+        if (cam == null) yield break;
+
+        Color flashColor = new Color(0.8f, 0.8f, 0.8f, 1f);     
+        float flashDuration = 0.2f; // The duration of the flash effect
+        float elapsedTime = 0f;
+
+        // Change background to flash color
+        cam.backgroundColor = flashColor;
+
+        // Smoothly interpolate back to the original color
+        while (elapsedTime < flashDuration)
+        {
+            cam.backgroundColor = Color.Lerp(flashColor, Color.grey, elapsedTime / flashDuration);
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+
+        // Ensure the background color is exactly the original at the end
+        cam.backgroundColor = Color.grey;
+    }
+
 
     // Method to count the number of active tokens in the scene
     int CountTokens()
@@ -129,7 +160,6 @@ public class Rotate : MonoBehaviour
         // Return the count of these objects
         return tokens.Length;
     }
-
     public void Die()
     {       
         gameObject.SetActive(false);       

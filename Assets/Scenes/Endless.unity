@@ -4968,6 +4968,7 @@ MonoBehaviour:
   gracePeriod: 0.5
   tokenCount: 0
   ease: {fileID: 331692780}
+  cam: {fileID: 519420031}
 --- !u!50 &1792451201
 Rigidbody2D:
   serializedVersion: 4
