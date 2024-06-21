@@ -68,7 +68,7 @@ public class BottomCollider : MonoBehaviour
         if (tokenPrefab != null)
         {
             // Get the position of the TopCollider object
-            Vector3 spawnPosition = transform.position;      
+            Vector3 spawnPosition = transform.position;
 
             // Determine the spawn positions based on fixed offsets
             Vector3 downPosition = spawnPosition + Vector3.down * 1.5f;

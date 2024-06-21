@@ -12,13 +12,23 @@ public class Rotate : MonoBehaviour
 
     public float speedIncreaseRate = 5f; // Rate at which rotateSpeed increases per second
 
-    // Update is called once per frame
-    void Update()
+    private float lastTokenDestructionTime = -1f; // Time when the last token was destroyed
+    public float gracePeriod = 0.5f; // Grace period in seconds to ignore brief multiple token situations
+
+    private void Start()
     {
-        // Ensure rotationCenter is assigned in the Inspector or find it in Start() if it's not assigned.
         if (rotationCenter == null)
         {
             Debug.LogWarning("Rotation center not assigned!");
+        }
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        // Ensure rotationCenter is assigned
+        if (rotationCenter == null)
+        {
             return;
         }
 
@@ -36,9 +46,19 @@ public class Rotate : MonoBehaviour
         {
             // Destroy the token
             Destroy(currentToken);
+            // Record the time of token destruction
+            lastTokenDestructionTime = Time.time;
             // Reset the flag and reference after destroying the token
             isCollidingWithToken = false;
             currentToken = null;
+        }
+
+        // Check if there are multiple tokens in the scene after the grace period
+        if (Time.time - lastTokenDestructionTime > gracePeriod && CountTokens() > 1)
+        {
+            // Handle player death (e.g., deactivate player or trigger a game-over event)
+            Debug.Log("Player dies due to multiple tokens in the scene.");
+            gameObject.SetActive(false); // Example action: deactivate the player
         }
     }
 
@@ -76,9 +96,9 @@ public class Rotate : MonoBehaviour
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
-    {    
+    {
         if (collision.gameObject.CompareTag("Token"))
-        {          
+        {
             isCollidingWithToken = true; // Flag to track collision state
             currentToken = collision.gameObject; // Store the reference to the collided token
         }
@@ -87,10 +107,10 @@ public class Rotate : MonoBehaviour
     private void OnCollisionExit2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Token"))
-        {         
+        {
             // Check if there was no touch input when the collision with the token ended
             if (Input.touchCount == 0)
-            {                       
+            {
                 // For example, you can deactivate the player GameObject
                 gameObject.SetActive(false);
             }
@@ -98,5 +118,14 @@ public class Rotate : MonoBehaviour
             isCollidingWithToken = false;
             currentToken = null;
         }
+    }
+
+    // Method to count the number of active tokens in the scene
+    int CountTokens()
+    {
+        // Find all GameObjects tagged as "Token"
+        GameObject[] tokens = GameObject.FindGameObjectsWithTag("Token");
+        // Return the count of these objects
+        return tokens.Length;
     }
 }
