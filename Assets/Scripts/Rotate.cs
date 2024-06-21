@@ -12,6 +12,7 @@ public class Rotate : MonoBehaviour
     private float lastTokenDestructionTime = -1f; // Time when the last token was destroyed
     public float gracePeriod = 0.5f; // Grace period in seconds to ignore brief multiple token situations
     public int tokenCount = 0; // Number of tokens picked up by the player
+    public Ease ease; // Reference to the Ease script
 
     private void Start()
     {
@@ -132,5 +133,6 @@ public class Rotate : MonoBehaviour
     public void Die()
     {       
         gameObject.SetActive(false);
+        ease.FadeIn();
     }
 }
