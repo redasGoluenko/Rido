@@ -9,9 +9,6 @@ public class Rotate : MonoBehaviour
     public float correctionSpeed = 2f; // Speed at which the distance correction happens
     public bool isCollidingWithToken = false; // Flag to track collision with objects tagged as "Token"
     private GameObject currentToken; // Reference to the currently collided token
-
-    public float speedIncreaseRate = 5f; // Rate at which rotateSpeed increases per second
-
     private float lastTokenDestructionTime = -1f; // Time when the last token was destroyed
     public float gracePeriod = 0.5f; // Grace period in seconds to ignore brief multiple token situations
     public int tokenCount = 0; // Number of tokens picked up by the player
@@ -27,15 +24,17 @@ public class Rotate : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //increase rotate speed on screen press
+        if (Input.touchCount > 0)
+        {
+            rotateSpeed += 0.125f;
+        }     
+
         // Ensure rotationCenter is assigned
         if (rotationCenter == null)
         {
             return;
         }
-
-        // Increase rotateSpeed over time
-        rotateSpeed += speedIncreaseRate * Time.deltaTime;
-
         // Orbit around the rotationCenter
         OrbitAround();
 
