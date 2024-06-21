@@ -95,7 +95,7 @@ public class AvailabilityIndicator : MonoBehaviour
     void UpdatePivotColor()
     {
         // Reset the color of all pivot objects
-        SpriteRenderer[] pivotRenderers = FindObjectsOfType<SpriteRenderer>();
+        SpriteRenderer[] pivotRenderers = FindObjectsByType<SpriteRenderer>(FindObjectsSortMode.None);
         foreach (SpriteRenderer renderer in pivotRenderers)
         {
             if (renderer.gameObject.CompareTag("Pivot"))

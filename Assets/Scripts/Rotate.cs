@@ -14,6 +14,7 @@ public class Rotate : MonoBehaviour
 
     private float lastTokenDestructionTime = -1f; // Time when the last token was destroyed
     public float gracePeriod = 0.5f; // Grace period in seconds to ignore brief multiple token situations
+    public int tokenCount = 0; // Number of tokens picked up by the player
 
     private void Start()
     {
@@ -46,6 +47,7 @@ public class Rotate : MonoBehaviour
         {
             // Destroy the token
             Destroy(currentToken);
+            tokenCount++;
             // Record the time of token destruction
             lastTokenDestructionTime = Time.time;
             // Reset the flag and reference after destroying the token
@@ -58,7 +60,7 @@ public class Rotate : MonoBehaviour
         {
             // Handle player death (e.g., deactivate player or trigger a game-over event)
             Debug.Log("Player dies due to multiple tokens in the scene.");
-            gameObject.SetActive(false); // Example action: deactivate the player
+            Die();
         }
     }
 
@@ -110,9 +112,8 @@ public class Rotate : MonoBehaviour
         {
             // Check if there was no touch input when the collision with the token ended
             if (Input.touchCount == 0)
-            {
-                // For example, you can deactivate the player GameObject
-                gameObject.SetActive(false);
+            {             
+                Die();
             }
             // Reset the collision flag and reference
             isCollidingWithToken = false;
@@ -127,5 +128,10 @@ public class Rotate : MonoBehaviour
         GameObject[] tokens = GameObject.FindGameObjectsWithTag("Token");
         // Return the count of these objects
         return tokens.Length;
+    }
+
+    public void Die()
+    {       
+        gameObject.SetActive(false);
     }
 }

@@ -56,8 +56,8 @@ public class RotationCenter : MonoBehaviour
                 StartCoroutine(StartCooldown());
             }
             else
-            {             
-                Destroy(rotate.gameObject);
+            {
+                rotate.Die();
             }
         }
     }
