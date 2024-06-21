@@ -132,7 +132,7 @@ public class Rotate : MonoBehaviour
 
     public void Die()
     {       
-        gameObject.SetActive(false);
-        ease.FadeIn();
+        gameObject.SetActive(false);       
+            ease.FadeIn();             
     }
 }

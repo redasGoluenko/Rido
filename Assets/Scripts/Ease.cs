@@ -7,13 +7,10 @@ public class Ease : MonoBehaviour
 {
     private float duration = 1.0f;  // Duration of the fade
     private Renderer objectRenderer;
-    public TextMeshProUGUI textMeshPro;
-    private bool gameOver = false;
-    private bool isFadedIn = false;
+    private bool canFade = true; // Flag to check if the object can fade
 
     void Start()
-    {
-        textMeshPro.text = "";
+    {       
         // Get the Renderer component from the GameObject
         objectRenderer = GetComponent<Renderer>();
 
@@ -22,13 +19,7 @@ public class Ease : MonoBehaviour
     }  
     //update is called once per frame
     void Update()
-    {
-        if (gameOver && Input.touchCount > 0 && isFadedIn)
-        {                
-            gameOver = false;
-            // Restart the game
-            UnityEngine.SceneManagement.SceneManager.LoadScene(0);
-        }
+    {       
     }
     IEnumerator FadeOut(float duration)
     {
@@ -77,14 +68,16 @@ public class Ease : MonoBehaviour
         }
 
         // Ensure the final alpha is set to 1
-        objectRenderer.material.color = new Color(startColor.r, startColor.g, startColor.b, 1);
-        isFadedIn = true;
+        objectRenderer.material.color = new Color(startColor.r, startColor.g, startColor.b, 1);        
     }
 
     public void FadeIn()
     {
-        StartCoroutine(FadeIn(duration));
-        textMeshPro.text = "TRY AGAIN";
-        gameOver = true;
+        if (canFade)
+        {
+            canFade = false;
+            StartCoroutine(FadeIn(duration));
+        }
+                     
     }
 }
