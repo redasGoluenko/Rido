@@ -15,6 +15,7 @@ public class Rotate : MonoBehaviour
     public int tokenCount = 0; // Number of tokens picked up by the player
     public Ease ease; // Reference to the Ease script
     public Camera cam;
+    public TokenCounter tokenCounter;
     public bool isCollidingWithRedirectToken = false; // Flag to track collision with objects tagged as "RedirectToken"
     public bool pastThirty = false; // Flag to track if the player has picked up more than 50 tokens
 
@@ -112,11 +113,13 @@ public class Rotate : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Token"))
         {
+            tokenCounter.ColorYellow();
             isCollidingWithToken = true; // Flag to track collision state
             currentToken = collision.gameObject; // Store the reference to the collided token
         }
         if(collision.gameObject.CompareTag("RedirectToken"))
-        {          
+        {
+            tokenCounter.ColorBlue();
             isCollidingWithRedirectToken = true; // Flag to track collision state
             currentToken = collision.gameObject; // Store the reference to the collided token
         }      
@@ -126,6 +129,7 @@ public class Rotate : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Token"))
         {
+            tokenCounter.ColorWhite();
             // Check if there was no touch input when the collision with the token ended
             if (Input.touchCount == 0)
             {             
@@ -137,6 +141,7 @@ public class Rotate : MonoBehaviour
         }
         if (collision.gameObject.CompareTag("RedirectToken"))
         {
+            tokenCounter.ColorWhite();
             if (Input.touchCount == 0)
             {
                 Die();

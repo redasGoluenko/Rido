@@ -116,7 +116,7 @@ public class TopCollider : MonoBehaviour
             }
 
             // If all positions are occupied, log an error or handle accordingly
-            Debug.LogError("All spawn positions are occupied.");
+            Debug.LogError("All spawn positions are occupied (Top Collider).");
         }
         else
         {
@@ -137,7 +137,7 @@ public class TopCollider : MonoBehaviour
             Vector3 rightPosition = spawnPosition + Vector3.right + Vector3.down * 1.5f;
 
             // List of potential spawn positions
-            List<Vector3> potentialPositions = new List<Vector3> { rightPosition, rightPosition, rightPosition };
+            List<Vector3> potentialPositions = new List<Vector3> { downPosition, leftPosition, rightPosition };
 
             // Shuffle the potential positions to introduce randomness
             for (int i = 0; i < potentialPositions.Count; i++)

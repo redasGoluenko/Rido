@@ -163,7 +163,7 @@ public class LeftCollider : MonoBehaviour
             }
 
             // If all positions are occupied, log an error or handle accordingly
-            Debug.LogError("All spawn positions are occupied.");
+            Debug.LogError("All spawn positions are occupied (Left Collider).");
         }
         else
         {

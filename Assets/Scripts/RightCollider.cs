@@ -96,7 +96,7 @@ public class RightCollider : MonoBehaviour
             int layerMask = LayerMask.GetMask("Obstacle");
 
             // Radius or size of the area to check for collisions
-            float checkRadius = 0.5f; // Adjust based on your token size
+            float checkRadius = 0.1f; // Adjust based on your token size
 
             // Iterate through the positions to find a valid one
             foreach (Vector3 position in potentialPositions)
@@ -107,11 +107,11 @@ public class RightCollider : MonoBehaviour
                     // Spawn the token at the first valid position
                     Instantiate(currentToken, position, Quaternion.identity);
                     return; // Exit after spawning
-                }
+                }                  
             }
 
             // If all positions are occupied, log an error or handle accordingly
-            Debug.LogError("All spawn positions are occupied.");
+            Debug.LogError("All spawn positions are occupied(Right Collider).");
         }
         else
         {

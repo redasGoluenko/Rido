@@ -31673,8 +31673,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278255597
-  m_fontColor: {r: 0.92830896, g: 1, b: 0, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -37148,8 +37148,9 @@ MonoBehaviour:
   tokenCount: 0
   ease: {fileID: 331692780}
   cam: {fileID: 519420031}
+  tokenCounter: {fileID: 1517976890}
   isCollidingWithRedirectToken: 0
-  pastFifty: 0
+  pastThirty: 0
 --- !u!50 &1792451201
 Rigidbody2D:
   serializedVersion: 4
