@@ -16,6 +16,7 @@ public class Rotate : MonoBehaviour
     public Ease ease; // Reference to the Ease script
     public Camera cam;
     public bool isCollidingWithRedirectToken = false; // Flag to track collision with objects tagged as "RedirectToken"
+    public bool pastThirty = false; // Flag to track if the player has picked up more than 50 tokens
 
     private void Start()
     {      
@@ -33,6 +34,7 @@ public class Rotate : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        pastThirty = tokenCount > 30 ? true : false; // Check if the player has picked up more than 50 tokens
         //increase rotate speed on screen press
         if (Input.touchCount > 0)
         {
@@ -166,15 +168,14 @@ public class Rotate : MonoBehaviour
         // Ensure the background color is exactly the original at the end
         cam.backgroundColor = Color.grey;
     }
-
-
     // Method to count the number of active tokens in the scene
     int CountTokens()
     {
         // Find all GameObjects tagged as "Token"
         GameObject[] tokens = GameObject.FindGameObjectsWithTag("Token");
+        GameObject[] redirectTokens = GameObject.FindGameObjectsWithTag("RedirectToken");
         // Return the count of these objects
-        return tokens.Length;
+        return tokens.Length + redirectTokens.Length;
     }
     public void Die()
     {

@@ -10,6 +10,7 @@ public class TopCollider : MonoBehaviour
     private int pivotContactCount = 0; // Counter for "Pivot" collisions
     private int playerContactCount = 0; // Counter for "Player" collisions
 
+    public Rotate rotate;
     public GameObject tokenPrefab;
     public GameObject redirectTokenPrefab;
 
@@ -176,6 +177,6 @@ public class TopCollider : MonoBehaviour
     public GameObject RandomToken()
     {
         GameObject[] tokens = { tokenPrefab, redirectTokenPrefab };
-        return tokens[Random.Range(0, tokens.Length)];
+        return rotate.pastThirty ? tokens[Random.Range(0, tokens.Length)] : tokenPrefab;
     }
 }

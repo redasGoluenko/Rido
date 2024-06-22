@@ -13,5 +13,11 @@ public class TokenCounter : MonoBehaviour
     {
         // Update the text to display the current token count
         textMeshPro.text = rotate.tokenCount.ToString();
+        if(rotate.tokenCount == 30)
+        {
+            //gradually change color from yellow to blue
+            textMeshPro.color = Color.Lerp(Color.blue, Color.yellow, Mathf.PingPong(Time.time, 1));
+        }
     }
+    
 }

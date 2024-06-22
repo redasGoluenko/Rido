@@ -18,10 +18,10 @@ public class RotationCenter : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //topCollider.GetComponent<SpriteRenderer>().enabled = false;
-        //bottomCollider.GetComponent<SpriteRenderer>().enabled = false;
-        //leftCollider.GetComponent<SpriteRenderer>().enabled = false;
-        //rightCollider.GetComponent<SpriteRenderer>().enabled = false;
+        topCollider.GetComponent<SpriteRenderer>().enabled = false;
+        bottomCollider.GetComponent<SpriteRenderer>().enabled = false;
+        leftCollider.GetComponent<SpriteRenderer>().enabled = false;
+        rightCollider.GetComponent<SpriteRenderer>().enabled = false;
     }
 
     // Update is called once per frame
