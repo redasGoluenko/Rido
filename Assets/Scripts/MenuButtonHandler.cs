@@ -27,7 +27,7 @@ public class MenuButtonHandler : MonoBehaviour
         {
             Debug.Log("Rotate object is inactive");
             // Move the button to the left by moveDistance units
-            MoveButtonLeft();
+            MoveButtonRight();
             hasMoved = true; // Set the flag to true to indicate movement
         }
     }
@@ -39,7 +39,7 @@ public class MenuButtonHandler : MonoBehaviour
     }
 
     // Method to move the button to the left
-    private void MoveButtonLeft()
+    private void MoveButtonRight()
     {
         Vector3 newPosition = buttonRectTransform.anchoredPosition;
         newPosition.x += moveDistance;

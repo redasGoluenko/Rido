@@ -5025,7 +5025,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 917, y: 596}
+  m_AnchoredPosition: {x: 917, y: -737}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &247997365
@@ -31757,6 +31757,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rotate: {fileID: 1792451200}
   textMeshPro: {fileID: 1517976888}
+  tokenCounterRectTransform: {fileID: 1517976887}
 --- !u!1 &1521961631
 GameObject:
   m_ObjectHideFlags: 0
@@ -43991,7 +43992,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -906, y: -804}
+  m_AnchoredPosition: {x: -906, y: 761}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2112174789
