@@ -4,7 +4,7 @@ using UnityEngine;
 public class Rotate : MonoBehaviour
 {
     public Transform rotationCenter; // Reference to the object we want to rotate around
-    private float rotateSpeed = 100f; // Speed of rotation in degrees per second
+    private float rotateSpeed = 150f; // Speed of rotation in degrees per second
     public bool clockwise = true; // Direction of rotation
     public float desiredDistance = 5f; // The desired distance from the rotation center
     public float correctionSpeed = 2f; // Speed at which the distance correction happens
@@ -19,7 +19,7 @@ public class Rotate : MonoBehaviour
     private void Start()
     {      
         if (cam != null)
-        {          
+        {
             cam.backgroundColor = Color.grey;
         }
 
@@ -35,7 +35,7 @@ public class Rotate : MonoBehaviour
         //increase rotate speed on screen press
         if (Input.touchCount > 0)
         {
-            rotateSpeed += 70f * Time.deltaTime; // Adjust the multiplier as needed
+            rotateSpeed += 15f * Time.deltaTime; // Adjust the multiplier as needed
         }
 
         // Ensure rotationCenter is assigned
