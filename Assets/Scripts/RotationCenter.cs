@@ -18,10 +18,10 @@ public class RotationCenter : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        topCollider.GetComponent<SpriteRenderer>().enabled = false;
-        bottomCollider.GetComponent<SpriteRenderer>().enabled = false;
-        leftCollider.GetComponent<SpriteRenderer>().enabled = false;
-        rightCollider.GetComponent<SpriteRenderer>().enabled = false;
+        //topCollider.GetComponent<SpriteRenderer>().enabled = false;
+        //bottomCollider.GetComponent<SpriteRenderer>().enabled = false;
+        //leftCollider.GetComponent<SpriteRenderer>().enabled = false;
+        //rightCollider.GetComponent<SpriteRenderer>().enabled = false;
     }
 
     // Update is called once per frame
@@ -32,28 +32,56 @@ public class RotationCenter : MonoBehaviour
         {
             rotate.clockwise = !rotate.clockwise;
             if (topCollider.Available && topCollider.PlayerColliding)
-            {
-                topCollider.SpawnToken();
-                Teleport(Vector3.up, moveDistance);
-                StartCoroutine(StartCooldown());
+            {                      
+                if(!rotate.isCollidingWithRedirectToken)
+                {
+                   topCollider.SpawnToken();
+                   Teleport(Vector3.up, moveDistance);
+                }
+                else
+                {
+                    topCollider.SpawnTokenRedirect();
+                }
+                StartCoroutine(StartCooldown());              
             }
             else if (bottomCollider.Available && bottomCollider.PlayerColliding)
-            {
-                bottomCollider.SpawnToken();
-                Teleport(Vector3.down, moveDistance);
-                StartCoroutine(StartCooldown());
+            {               
+                if(!rotate.isCollidingWithRedirectToken)
+                {
+                    bottomCollider.SpawnToken();
+                    Teleport(Vector3.down, moveDistance);
+                }
+                else
+                {
+                    bottomCollider.SpawnTokenRedirect();
+                }
+                StartCoroutine(StartCooldown());            
             }
             else if (leftCollider.Available && leftCollider.PlayerColliding)
             {
-                leftCollider.SpawnToken();
-                Teleport(Vector3.left, moveDistance);
-                StartCoroutine(StartCooldown());
+                if (!rotate.isCollidingWithRedirectToken)
+                {
+                    leftCollider.SpawnToken();
+                    Teleport(Vector3.left, moveDistance);
+                }
+                else
+                {
+                    leftCollider.SpawnTokenRedirect();
+                }                                                                        
+                StartCoroutine(StartCooldown());            
             }
             else if (rightCollider.Available && rightCollider.PlayerColliding)
-            {
-                rightCollider.SpawnToken();
-                Teleport(Vector3.right, moveDistance);
-                StartCoroutine(StartCooldown());
+            {          
+                if(!rotate.isCollidingWithRedirectToken)
+                {
+                    rightCollider.SpawnToken();
+                    Teleport(Vector3.right, moveDistance);
+                }
+                else
+                {
+                    rightCollider.SpawnTokenRedirect();
+                }
+                StartCoroutine(StartCooldown());   
             }
             else
             {

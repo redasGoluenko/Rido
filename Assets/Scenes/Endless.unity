@@ -18519,6 +18519,7 @@ MonoBehaviour:
   Available: 0
   PlayerColliding: 0
   tokenPrefab: {fileID: 4420393680069102459, guid: 5e8613d3c80c61445a68779ca32a6e93, type: 3}
+  redirectTokenPrefab: {fileID: 6220269439369630558, guid: 80ef11dc53a71504499629fb5a0236f3, type: 3}
 --- !u!1 &863797904
 GameObject:
   m_ObjectHideFlags: 0
@@ -26364,6 +26365,7 @@ MonoBehaviour:
   Available: 0
   PlayerColliding: 0
   tokenPrefab: {fileID: 4420393680069102459, guid: 5e8613d3c80c61445a68779ca32a6e93, type: 3}
+  redirectTokenPrefab: {fileID: 6220269439369630558, guid: 80ef11dc53a71504499629fb5a0236f3, type: 3}
 --- !u!1 &1293797826
 GameObject:
   m_ObjectHideFlags: 0
@@ -32403,6 +32405,7 @@ MonoBehaviour:
   Available: 0
   PlayerColliding: 0
   tokenPrefab: {fileID: 4420393680069102459, guid: 5e8613d3c80c61445a68779ca32a6e93, type: 3}
+  redirectTokenPrefab: {fileID: 6220269439369630558, guid: 80ef11dc53a71504499629fb5a0236f3, type: 3}
 --- !u!1 &1578899122
 GameObject:
   m_ObjectHideFlags: 0
@@ -37142,6 +37145,7 @@ MonoBehaviour:
   tokenCount: 0
   ease: {fileID: 331692780}
   cam: {fileID: 519420031}
+  isCollidingWithRedirectToken: 0
 --- !u!50 &1792451201
 Rigidbody2D:
   serializedVersion: 4
@@ -40572,6 +40576,7 @@ MonoBehaviour:
   Available: 0
   PlayerColliding: 0
   tokenPrefab: {fileID: 4420393680069102459, guid: 5e8613d3c80c61445a68779ca32a6e93, type: 3}
+  redirectTokenPrefab: {fileID: 6220269439369630558, guid: 80ef11dc53a71504499629fb5a0236f3, type: 3}
 --- !u!1 &1943569832
 GameObject:
   m_ObjectHideFlags: 0

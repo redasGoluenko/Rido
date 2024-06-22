@@ -15,6 +15,7 @@ public class Rotate : MonoBehaviour
     public int tokenCount = 0; // Number of tokens picked up by the player
     public Ease ease; // Reference to the Ease script
     public Camera cam;
+    public bool isCollidingWithRedirectToken = false; // Flag to track collision with objects tagged as "RedirectToken"
 
     private void Start()
     {      
@@ -50,7 +51,7 @@ public class Rotate : MonoBehaviour
         CorrectDistance();
 
         // Check for touch input and destroy token if colliding with it
-        if (isCollidingWithToken && Input.touchCount > 0)
+        if ((isCollidingWithToken || isCollidingWithRedirectToken) && Input.touchCount > 0)
         {
             // Destroy the token
             Destroy(currentToken);
@@ -112,6 +113,11 @@ public class Rotate : MonoBehaviour
             isCollidingWithToken = true; // Flag to track collision state
             currentToken = collision.gameObject; // Store the reference to the collided token
         }
+        if(collision.gameObject.CompareTag("RedirectToken"))
+        {          
+            isCollidingWithRedirectToken = true; // Flag to track collision state
+            currentToken = collision.gameObject; // Store the reference to the collided token
+        }      
     }
 
     private void OnCollisionExit2D(Collision2D collision)
@@ -126,6 +132,16 @@ public class Rotate : MonoBehaviour
             // Reset the collision flag and reference
             isCollidingWithToken = false;
             currentToken = null;
+        }
+        if (collision.gameObject.CompareTag("RedirectToken"))
+        {
+            if (Input.touchCount == 0)
+            {
+                Die();
+            }
+
+            isCollidingWithRedirectToken = false; // Reset the collision flag
+            currentToken = null; // Reset the reference to the collided token
         }
     }
     IEnumerator FlashBackground()
@@ -173,5 +189,5 @@ public class Rotate : MonoBehaviour
 
         // Optionally, you could trigger any other death-related logic here, like fading out
         ease.FadeIn();
-    }
+    }  
 }
