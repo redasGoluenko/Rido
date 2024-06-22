@@ -161,8 +161,17 @@ public class Rotate : MonoBehaviour
         return tokens.Length;
     }
     public void Die()
-    {       
-        gameObject.SetActive(false);       
-            ease.FadeIn();             
+    {
+        if (cam != null)
+        {
+            // Detach the camera from the player
+            cam.transform.SetParent(null);
+        }
+
+        // Deactivate the player and its children
+        gameObject.SetActive(false);
+
+        // Optionally, you could trigger any other death-related logic here, like fading out
+        ease.FadeIn();
     }
 }
