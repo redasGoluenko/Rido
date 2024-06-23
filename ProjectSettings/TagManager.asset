@@ -12,6 +12,7 @@ TagManager:
   - Obstacle
   - RedirectToken
   - HoldToken
+  - HoldCollisionTracker
   layers:
   - Default
   - TransparentFX

@@ -13,6 +13,7 @@ public class TopCollider : MonoBehaviour
     public Rotate rotate;
     public GameObject tokenPrefab;
     public GameObject redirectTokenPrefab;
+    public GameObject holdTokenPrefab;  
 
     private GameObject currentToken;
 
@@ -111,6 +112,7 @@ public class TopCollider : MonoBehaviour
                 {
                     // Spawn the token at the first valid position
                     Instantiate(currentToken, position, Quaternion.identity);
+              
                     return; // Exit after spawning
                 }
             }
@@ -161,7 +163,7 @@ public class TopCollider : MonoBehaviour
                 if (!Physics2D.OverlapCircle(position, checkRadius, layerMask))
                 {
                     // Spawn the token at the first valid position
-                    Instantiate(currentToken, position, Quaternion.identity);
+                    Instantiate(currentToken, position, Quaternion.identity);                                
                     return; // Exit after spawning
                 }
             }
@@ -176,7 +178,18 @@ public class TopCollider : MonoBehaviour
     }
     public GameObject RandomToken()
     {
-        GameObject[] tokens = { tokenPrefab, redirectTokenPrefab };
-        return rotate.pastThirty ? tokens[Random.Range(0, tokens.Length)] : tokenPrefab;
+        GameObject[] tokens = { tokenPrefab, redirectTokenPrefab, holdTokenPrefab };
+        if (rotate.pastSixty)
+        {         
+            return tokens[Random.Range(0, tokens.Length)];
+        }
+        else if (rotate.pastThirty)
+        {          
+            return tokens[Random.Range(0, tokens.Length - 1)];
+        }
+        else
+        {         
+            return tokenPrefab;
+        }
     }
 }

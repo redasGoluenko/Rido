@@ -17,10 +17,16 @@ public class Rotate : MonoBehaviour
     public Camera cam;
     public TokenCounter tokenCounter;
     public bool isCollidingWithRedirectToken = false; // Flag to track collision with objects tagged as "RedirectToken"
+    public bool isCollidingWithHoldToken = false; // Flag to track collision with objects tagged as "HoldToken"
+    public bool leftHoldToken = false; // Flag to track if the player is holding a token
     public bool pastThirty = false; // Flag to track if the player has picked up more than 50 tokens
+    public bool pastSixty = false; // Flag to track if the player has picked up more than 60 tokens
+    private bool touchTriggered = false;    
 
     private void Start()
-    {      
+    {
+        pastThirty = true;  
+        pastSixty = true;
         if (cam != null)
         {
             cam.backgroundColor = Color.grey;
@@ -35,11 +41,17 @@ public class Rotate : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        pastThirty = tokenCount > 30 ? true : false; // Check if the player has picked up more than 50 tokens
+        //pastThirty = tokenCount > 30 ? true : false; // Check if the player has picked up more than 50 tokens
+        //pastSixty = tokenCount > 60 ? true : false; // Check if the player has picked up more than 60 tokens
         //increase rotate speed on screen press
-        if (Input.touchCount > 0)
+        if (Input.touchCount > 0 && !touchTriggered)
         {
             rotateSpeed += 15f * Time.deltaTime; // Adjust the multiplier as needed
+            touchTriggered = true;
+        }
+        else if (Input.touchCount == 0)
+        {
+            touchTriggered = false;
         }
 
         // Ensure rotationCenter is assigned
@@ -64,6 +76,7 @@ public class Rotate : MonoBehaviour
             lastTokenDestructionTime = Time.time;
             // Reset the flag and reference after destroying the token
             isCollidingWithToken = false;
+            isCollidingWithRedirectToken = false;       
             currentToken = null;
         }
 
@@ -122,7 +135,13 @@ public class Rotate : MonoBehaviour
             tokenCounter.ColorBlue();
             isCollidingWithRedirectToken = true; // Flag to track collision state
             currentToken = collision.gameObject; // Store the reference to the collided token
-        }      
+        }    
+        if (collision.gameObject.CompareTag("HoldToken"))
+        {
+            tokenCounter.ColorPurple();        
+            isCollidingWithHoldToken = true; // Flag to track collision state
+            tokenCount++; // Increment the token count
+        }
     }
 
     private void OnCollisionExit2D(Collision2D collision)
@@ -149,6 +168,12 @@ public class Rotate : MonoBehaviour
 
             isCollidingWithRedirectToken = false; // Reset the collision flag
             currentToken = null; // Reset the reference to the collided token
+        }
+        if (collision.gameObject.CompareTag("HoldToken"))
+        {
+            tokenCounter.ColorWhite();
+            isCollidingWithHoldToken = false; // Reset the collision flag
+            leftHoldToken = true; // Set the leftHoldToken flag to true         
         }
     }
     IEnumerator FlashBackground()
@@ -207,17 +232,17 @@ public class Rotate : MonoBehaviour
         return tokens.Length + redirectTokens.Length;
     }
     public void Die()
-    {
-        if (cam != null)
-        {
-            // Detach the camera from the player
-            cam.transform.SetParent(null);
-        }
+    {       
+            if (cam != null)
+            {
+                // Detach the camera from the player
+                cam.transform.SetParent(null);
+            }
 
-        // Deactivate the player and its children
-        gameObject.SetActive(false);
+            // Deactivate the player and its children
+            gameObject.SetActive(false);
 
-        // Optionally, you could trigger any other death-related logic here, like fading out
-        ease.FadeIn();
+            // Optionally, you could trigger any other death-related logic here, like fading out
+            ease.FadeIn();         
     }  
 }

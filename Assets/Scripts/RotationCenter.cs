@@ -7,7 +7,7 @@ public class RotationCenter : MonoBehaviour
     public BottomCollider bottomCollider;
     public LeftCollider leftCollider;
     public RightCollider rightCollider;
-    public Rotate rotate;
+    public Rotate rotate;   
 
     // Flags to prevent multiple movements within the cooldown period
     private bool isCooldown = false;
@@ -27,14 +27,44 @@ public class RotationCenter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (rotate.leftHoldToken)
+        {
+            rotate.leftHoldToken = false;
+            
+            if (leftCollider.Available && leftCollider.PlayerColliding)
+            {
+                rotate.clockwise = !rotate.clockwise;
+                leftCollider.SpawnToken();
+                Teleport(Vector3.left, moveDistance);
+            }     
+            else if (rightCollider.Available && rightCollider.PlayerColliding)
+            {
+                rotate.clockwise = !rotate.clockwise;
+                rightCollider.SpawnToken();
+                Teleport(Vector3.right, moveDistance);
+            }
+            else if(topCollider.Available && topCollider.PlayerColliding)
+            {
+                rotate.clockwise = !rotate.clockwise;
+                topCollider.SpawnToken();
+                Teleport(Vector3.up, moveDistance);
+            }
+            else if(bottomCollider.Available && bottomCollider.PlayerColliding)
+            {
+                rotate.clockwise = !rotate.clockwise;
+                bottomCollider.SpawnToken();
+                Teleport(Vector3.down, moveDistance);
+            }                    
+        }
         // Check for movement in each direction based on collider availability and player collision
-        if (!isCooldown && IsScreenTouched())
+        if (!isCooldown && IsScreenTouched() && !rotate.isCollidingWithHoldToken)
         {
             rotate.clockwise = !rotate.clockwise;
+                       
             if (topCollider.Available && topCollider.PlayerColliding)
             {                      
                 if(!rotate.isCollidingWithRedirectToken)
-                {
+                {                              
                    topCollider.SpawnToken();
                    Teleport(Vector3.up, moveDistance);
                 }
@@ -47,8 +77,8 @@ public class RotationCenter : MonoBehaviour
             else if (bottomCollider.Available && bottomCollider.PlayerColliding)
             {               
                 if(!rotate.isCollidingWithRedirectToken)
-                {
-                    bottomCollider.SpawnToken();
+                {                 
+                    bottomCollider.SpawnToken();                  
                     Teleport(Vector3.down, moveDistance);
                 }
                 else
@@ -60,8 +90,8 @@ public class RotationCenter : MonoBehaviour
             else if (leftCollider.Available && leftCollider.PlayerColliding)
             {
                 if (!rotate.isCollidingWithRedirectToken)
-                {
-                    leftCollider.SpawnToken();
+                {              
+                    leftCollider.SpawnToken();                   
                     Teleport(Vector3.left, moveDistance);
                 }
                 else
@@ -73,8 +103,8 @@ public class RotationCenter : MonoBehaviour
             else if (rightCollider.Available && rightCollider.PlayerColliding)
             {          
                 if(!rotate.isCollidingWithRedirectToken)
-                {
-                    rightCollider.SpawnToken();
+                {                
+                    rightCollider.SpawnToken();                
                     Teleport(Vector3.right, moveDistance);
                 }
                 else
@@ -119,7 +149,6 @@ public class RotationCenter : MonoBehaviour
         // Return false if no touches are detected or no relevant touch phases are detected
         return false;
     }
-
     // Coroutine to start the cooldown period after a movement
     IEnumerator StartCooldown()
     {

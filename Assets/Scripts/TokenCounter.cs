@@ -69,4 +69,8 @@ public class TokenCounter : MonoBehaviour
     {
         textMeshPro.color = Color.white;
     }
+    public void ColorPurple()
+    {
+       textMeshPro.color = new Color(0.5f, 0, 0.5f);
+    }
 }
