@@ -5,6 +5,7 @@ public class Rotate : MonoBehaviour
 {
     public Transform rotationCenter; // Reference to the object we want to rotate around
     private float rotateSpeed = 150f; // Speed of rotation in degrees per second
+    private float initialRotateSpeed = 150f;
     public bool clockwise = true; // Direction of rotation
     public float desiredDistance = 5f; // The desired distance from the rotation center
     public float correctionSpeed = 2f; // Speed at which the distance correction happens
@@ -13,6 +14,7 @@ public class Rotate : MonoBehaviour
     private float lastTokenDestructionTime = -1f; // Time when the last token was destroyed
     public float gracePeriod = 0.5f; // Grace period in seconds to ignore brief multiple token situations
     public int tokenCount = 0; // Number of tokens picked up by the player
+    private int previousTokenCount = 0;
     public Ease ease; // Reference to the Ease script
     public Camera cam;
     public TokenCounter tokenCounter;
@@ -20,13 +22,14 @@ public class Rotate : MonoBehaviour
     public bool isCollidingWithHoldToken = false; // Flag to track collision with objects tagged as "HoldToken"
     public bool leftHoldToken = false; // Flag to track if the player is holding a token
     public bool pastThirty = false; // Flag to track if the player has picked up more than 50 tokens
-    public bool pastSixty = false; // Flag to track if the player has picked up more than 60 tokens
-    private bool touchTriggered = false;    
+    public bool pastSixty = false; // Flag to track if the player has picked up more than 60 tokens                                 // 
 
     private void Start()
     {
-        pastThirty = true;  
-        pastSixty = true;
+        pastThirty = false;  
+        pastSixty = false;
+
+        previousTokenCount = tokenCount;
         if (cam != null)
         {
             cam.backgroundColor = Color.grey;
@@ -41,17 +44,17 @@ public class Rotate : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //pastThirty = tokenCount > 30 ? true : false; // Check if the player has picked up more than 50 tokens
-        //pastSixty = tokenCount > 60 ? true : false; // Check if the player has picked up more than 60 tokens
-        //increase rotate speed on screen press
-        if (Input.touchCount > 0 && !touchTriggered)
+        pastThirty = tokenCount > 30 ? true : false; // Check if the player has picked up more than 50 tokens
+        pastSixty = tokenCount > 60 ? true : false; // Check if the player has picked up more than 60 tokens
+
+        if (tokenCount != previousTokenCount)
         {
-            rotateSpeed += 15f * Time.deltaTime; // Adjust the multiplier as needed
-            touchTriggered = true;
-        }
-        else if (Input.touchCount == 0)
-        {
-            touchTriggered = false;
+            Debug.Log(rotateSpeed);
+            // Update rotateSpeed based on tokenCount
+            rotateSpeed = initialRotateSpeed + (tokenCount / 2);
+
+            // Update previousTokenCount to current tokenCount
+            previousTokenCount = tokenCount;
         }
 
         // Ensure rotationCenter is assigned
@@ -182,7 +185,7 @@ public class Rotate : MonoBehaviour
 
         Color flashColor = new Color(0.8f, 0.8f, 0.8f, 1f);
         float flashDuration = 0.2f; // The duration of the flash effect
-        float zoomDuration = 0.05f; // The duration of the zoom effect
+        float zoomDuration = 0.07f; // The duration of the zoom effect
         float zoomFactor = 0.95f; // Amount by which to zoom in, e.g., half the current size
         float elapsedTime = 0f;
 
