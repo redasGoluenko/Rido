@@ -155,24 +155,48 @@ public class Rotate : MonoBehaviour
     {
         if (cam == null) yield break;
 
-        Color flashColor = new Color(0.8f, 0.8f, 0.8f, 1f);     
+        Color flashColor = new Color(0.8f, 0.8f, 0.8f, 1f);
         float flashDuration = 0.2f; // The duration of the flash effect
+        float zoomDuration = 0.05f; // The duration of the zoom effect
+        float zoomFactor = 0.95f; // Amount by which to zoom in, e.g., half the current size
         float elapsedTime = 0f;
+
+        // Store the original background color and camera size
+        Color originalColor = cam.backgroundColor;
+        float originalSize = cam.orthographicSize;
+
+        // Calculate the target camera size for zooming in
+        float targetSize = originalSize * zoomFactor;
 
         // Change background to flash color
         cam.backgroundColor = flashColor;
 
-        // Smoothly interpolate back to the original color
+        // Interpolate to the target zoom size and back to the original color
         while (elapsedTime < flashDuration)
         {
-            cam.backgroundColor = Color.Lerp(flashColor, Color.grey, elapsedTime / flashDuration);
+            cam.backgroundColor = Color.Lerp(flashColor, originalColor, elapsedTime / flashDuration);
+            cam.orthographicSize = Mathf.Lerp(originalSize, targetSize, elapsedTime / zoomDuration);
             elapsedTime += Time.deltaTime;
             yield return null;
         }
 
-        // Ensure the background color is exactly the original at the end
-        cam.backgroundColor = Color.grey;
+        // Reset elapsed time for zoom out effect
+        elapsedTime = 0f;
+
+        // Ensure the background color is exactly the original and zoom out the camera smoothly
+        cam.backgroundColor = originalColor;
+
+        while (elapsedTime < zoomDuration)
+        {
+            cam.orthographicSize = Mathf.Lerp(targetSize, originalSize, elapsedTime / zoomDuration);
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+
+        // Ensure the camera size is exactly the original at the end
+        cam.orthographicSize = originalSize;
     }
+
     // Method to count the number of active tokens in the scene
     int CountTokens()
     {
