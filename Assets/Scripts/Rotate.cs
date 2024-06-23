@@ -183,10 +183,10 @@ public class Rotate : MonoBehaviour
     {
         if (cam == null) yield break;
 
-        Color flashColor = new Color(0.8f, 0.8f, 0.8f, 1f);
-        float flashDuration = 0.2f; // The duration of the flash effect
-        float zoomDuration = 0.07f; // The duration of the zoom effect
-        float zoomFactor = 0.95f; // Amount by which to zoom in, e.g., half the current size
+        Color flashColor = new Color(0.65f, 0.65f, 0.65f, 1f);
+        float flashDuration = 0.15f; // The duration of the flash effect
+        float zoomDuration = 0.1f; // The duration of the zoom effect
+        float zoomFactor = 0.98f; // Amount by which to zoom in, e.g., half the current size
         float elapsedTime = 0f;
 
         // Store the original background color and camera size

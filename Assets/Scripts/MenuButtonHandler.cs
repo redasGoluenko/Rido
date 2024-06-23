@@ -25,7 +25,7 @@ public class MenuButtonHandler : MonoBehaviour
         // Check if rotate object is inactive and the button hasn't moved yet
         if (!rotate.gameObject.activeSelf && !hasMoved)
         {
-            Debug.Log("Rotate object is inactive");
+            //Debug.Log("Rotate object is inactive");
             // Move the button to the left by moveDistance units
             MoveButtonRight();
             hasMoved = true; // Set the flag to true to indicate movement
