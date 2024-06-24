@@ -272,7 +272,13 @@ public class Rotate : MonoBehaviour
         if (collision.gameObject.CompareTag("RedToken"))
         {
             tokenCounter.ColorWhite();
+            if (Input.touchCount == 0)
+            {
+                Die();
+            }
+
             isCollidingWithRedToken = false;
+            currentToken = null;
             RotateCamera();
         }
     }
