@@ -323,12 +323,6 @@ public class Rotate : MonoBehaviour
     }
     public void Die()
     {
-        if (cam != null)
-        {
-            // Detach the camera from the player
-            cam.transform.SetParent(null);
-        }
-
         // Deactivate the player and its children
         gameObject.SetActive(false);
 
