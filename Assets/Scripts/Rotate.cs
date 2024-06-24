@@ -25,18 +25,15 @@ public class Rotate : MonoBehaviour
     public bool pastSixty = false; // Flag to track if the player has picked up more than 60 tokens
     private Coroutine zoomCoroutine;
     public TrailRenderer trailRenderer; // Reference to the TrailRenderer component
+    private Color flashColor; // Color for the flash effect
 
     private void Start()
-    {            
+    {
         pastThirty = false;
         pastSixty = false;
 
         previousTokenCount = tokenCount;
-        if (cam != null)
-        {
-            cam.backgroundColor = Color.grey;
-        }
-
+        
         if (rotationCenter == null)
         {
             Debug.LogWarning("Rotation center not assigned!");
@@ -48,6 +45,42 @@ public class Rotate : MonoBehaviour
     {
         pastThirty = tokenCount > 30 ? true : false; // Check if the player has picked up more than 50 tokens
         pastSixty = tokenCount > 60 ? true : false; // Check if the player has picked up more than 60 tokens
+
+        Color lightBlue = new Color(0.7f, 0.85f, 1f); // Adjust RGB values for a light blue
+        Color lightPurple = new Color(0.85f, 0.7f, 1f); // Adjust RGB values for a light purple
+
+        // Smooth color transition speed
+        float colorTransitionSpeed = 2f; // Adjust speed as needed
+
+        // Change background color based on token count conditions
+        if (pastThirty && !pastSixty)
+        {
+            if (cam != null)
+            {
+                flashColor = new Color(0.5f, 0.7f, 1f, 1f);
+                // Smoothly transition to lightBlue
+                cam.backgroundColor = Color.Lerp(cam.backgroundColor, lightBlue, Time.deltaTime * colorTransitionSpeed);
+            }
+        }
+        else if (pastSixty)
+        {
+            if (cam != null)
+            {
+                flashColor = new Color(0.8f, 0.7f, 0.9f, 1f);
+                // Smoothly transition to lightPurple
+                cam.backgroundColor = Color.Lerp(cam.backgroundColor, lightPurple, Time.deltaTime * colorTransitionSpeed);
+            }
+        }
+        else
+        {
+            // Reset to default color (grey) if neither condition is true
+            if (cam != null)
+            {
+                flashColor = new Color(1f, 1f, 0.8f, 1f);
+                // Smoothly transition back to yellow
+                cam.backgroundColor = Color.Lerp(cam.backgroundColor, new Color(1f, 0.96f, 0.7f), Time.deltaTime * colorTransitionSpeed);
+            }
+        }
 
         if (isCollidingWithHoldToken && zoomCoroutine == null && Input.touchCount > 0)
         {
@@ -87,13 +120,13 @@ public class Rotate : MonoBehaviour
         {
             // Destroy the token
             Destroy(currentToken);
-            StartCoroutine(FlashBackground());
+            StartCoroutine(FlashBackground(flashColor));
             tokenCount++;
             // Record the time of token destruction
             lastTokenDestructionTime = Time.time;
             // Reset the flag and reference after destroying the token
             isCollidingWithToken = false;
-            isCollidingWithRedirectToken = false;       
+            isCollidingWithRedirectToken = false;
             currentToken = null;
         }
 
@@ -147,15 +180,15 @@ public class Rotate : MonoBehaviour
             isCollidingWithToken = true; // Flag to track collision state
             currentToken = collision.gameObject; // Store the reference to the collided token
         }
-        if(collision.gameObject.CompareTag("RedirectToken"))
+        if (collision.gameObject.CompareTag("RedirectToken"))
         {
             tokenCounter.ColorBlue();
             isCollidingWithRedirectToken = true; // Flag to track collision state
             currentToken = collision.gameObject; // Store the reference to the collided token
-        }    
+        }
         if (collision.gameObject.CompareTag("HoldToken"))
         {
-            tokenCounter.ColorPurple();        
+            tokenCounter.ColorPurple();
             isCollidingWithHoldToken = true; // Flag to track collision state
             tokenCount++; // Increment the token count                             
         }
@@ -168,7 +201,7 @@ public class Rotate : MonoBehaviour
             tokenCounter.ColorWhite();
             // Check if there was no touch input when the collision with the token ended
             if (Input.touchCount == 0)
-            {             
+            {
                 Die();
             }
             // Reset the collision flag and reference
@@ -193,11 +226,10 @@ public class Rotate : MonoBehaviour
             leftHoldToken = true; // Set the leftHoldToken flag to true                               
         }
     }
-    IEnumerator FlashBackground()
+    IEnumerator FlashBackground(Color flashColor)
     {
         if (cam == null) yield break;
-
-        Color flashColor = new Color(0.65f, 0.65f, 0.65f, 1f);
+      
         float flashDuration = 0.15f; // The duration of the flash effect
         float zoomDuration = 0.1f; // The duration of the zoom effect
         float zoomFactor = 0.98f; // Amount by which to zoom in, e.g., half the current size
@@ -290,17 +322,17 @@ public class Rotate : MonoBehaviour
         return tokens.Length + redirectTokens.Length;
     }
     public void Die()
-    {       
-            if (cam != null)
-            {
-                // Detach the camera from the player
-                cam.transform.SetParent(null);
-            }
+    {
+        if (cam != null)
+        {
+            // Detach the camera from the player
+            cam.transform.SetParent(null);
+        }
 
-            // Deactivate the player and its children
-            gameObject.SetActive(false);
+        // Deactivate the player and its children
+        gameObject.SetActive(false);
 
-            // Optionally, you could trigger any other death-related logic here, like fading out
-            ease.FadeIn();         
-    }  
+        // Optionally, you could trigger any other death-related logic here, like fading out
+        ease.FadeIn();
+    }
 }
