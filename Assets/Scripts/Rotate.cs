@@ -27,8 +27,8 @@ public class Rotate : MonoBehaviour
 
     private void Start()
     {
-        pastThirty = false;  
-        pastSixty = false;
+        pastThirty = true;  
+        pastSixty = true;
 
         previousTokenCount = tokenCount;
         if (cam != null)
@@ -45,8 +45,8 @@ public class Rotate : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        pastThirty = tokenCount > 30 ? true : false; // Check if the player has picked up more than 50 tokens
-        pastSixty = tokenCount > 60 ? true : false; // Check if the player has picked up more than 60 tokens
+        //pastThirty = tokenCount > 30 ? true : false; // Check if the player has picked up more than 50 tokens
+        //pastSixty = tokenCount > 60 ? true : false; // Check if the player has picked up more than 60 tokens
 
         if (isCollidingWithHoldToken && zoomCoroutine == null && Input.touchCount > 0)
         {
@@ -189,7 +189,7 @@ public class Rotate : MonoBehaviour
         {
             tokenCounter.ColorWhite();
             isCollidingWithHoldToken = false; // Reset the collision flag
-            leftHoldToken = true; // Set the leftHoldToken flag to true         
+            leftHoldToken = true; // Set the leftHoldToken flag to true          
         }
     }
     IEnumerator FlashBackground()

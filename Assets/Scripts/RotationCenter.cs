@@ -7,7 +7,8 @@ public class RotationCenter : MonoBehaviour
     public BottomCollider bottomCollider;
     public LeftCollider leftCollider;
     public RightCollider rightCollider;
-    public Rotate rotate;   
+    public Rotate rotate;
+    private bool flag = true;
 
     // Flags to prevent multiple movements within the cooldown period
     private bool isCooldown = false;
@@ -27,8 +28,43 @@ public class RotationCenter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (rotate.isCollidingWithHoldToken && Input.touchCount > 0 && flag)
+        {
+            flag = false;
+
+            if (leftCollider.Available && leftCollider.PlayerColliding)
+            {
+                rotate.clockwise = !rotate.clockwise;
+                //leftCollider.SpawnToken();
+                Teleport(Vector3.left, moveDistance);
+                StartCoroutine(StartCooldown());
+            }
+            else if (rightCollider.Available && rightCollider.PlayerColliding)
+            {
+                rotate.clockwise = !rotate.clockwise;
+                //rightCollider.SpawnToken();
+                Teleport(Vector3.right, moveDistance);
+                StartCoroutine(StartCooldown());
+            }
+            else if (topCollider.Available && topCollider.PlayerColliding)
+            {
+                rotate.clockwise = !rotate.clockwise;
+                //topCollider.SpawnToken();
+                Teleport(Vector3.up, moveDistance);
+                StartCoroutine(StartCooldown());
+            }
+            else if (bottomCollider.Available && bottomCollider.PlayerColliding)
+            {
+                rotate.clockwise = !rotate.clockwise;
+                //bottomCollider.SpawnToken();
+                Teleport(Vector3.down, moveDistance);
+                StartCoroutine(StartCooldown());
+            }
+        }
+
         if (rotate.leftHoldToken)
         {
+            flag = true;
             rotate.leftHoldToken = false;
             
             if (leftCollider.Available && leftCollider.PlayerColliding)
