@@ -10,6 +10,7 @@ public class RightCollider : MonoBehaviour
     public GameObject tokenPrefab;
     public GameObject redirectTokenPrefab;
     public GameObject holdTokenPrefab;
+    public GameObject redTokenPrefab;
 
     public bool Available = false;
     public bool PlayerColliding = false;
@@ -168,17 +169,21 @@ public class RightCollider : MonoBehaviour
     }
     public GameObject RandomToken()
     {
-        GameObject[] tokens = { tokenPrefab, redirectTokenPrefab, holdTokenPrefab };
-        if (rotate.pastSixty)
-        {        
-            return tokens[Random.Range(0, tokens.Length)];
+        GameObject[] tokens = { tokenPrefab, redirectTokenPrefab, holdTokenPrefab, redTokenPrefab };
+        if (rotate.pastNinety)
+        {
+            return tokens[Random.Range(1, tokens.Length)];
         }
-        else if (rotate.pastThirty)
-        {        
+        else if (rotate.pastSixty)
+        {
             return tokens[Random.Range(0, tokens.Length - 1)];
         }
+        else if (rotate.pastThirty)
+        {
+            return tokens[Random.Range(0, tokens.Length - 2)];
+        }
         else
-        {         
+        {
             return tokenPrefab;
         }
     }

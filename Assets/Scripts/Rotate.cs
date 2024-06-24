@@ -22,9 +22,11 @@ public class Rotate : MonoBehaviour
     public bool isCollidingWithToken = false; // Flag to track collision with objects tagged as "Token"
     public bool isCollidingWithRedirectToken = false; // Flag to track collision with objects tagged as "RedirectToken"
     public bool isCollidingWithHoldToken = false; // Flag to track collision with objects tagged as "HoldToken"
+    public bool isCollidingWithRedToken = false;
     public bool leftHoldToken = false; // Flag to track if the player is holding a token
-    public bool pastThirty = false; // Flag to track if the player has picked up more than 30 tokens
-    public bool pastSixty = false; // Flag to track if the player has picked up more than 60 tokens
+    public bool pastThirty; // Flag to track if the player has picked up more than 30 tokens
+    public bool pastSixty; // Flag to track if the player has picked up more than 60 tokens
+    public bool pastNinety;
 
     public float desiredDistance = 5f; // The desired distance from the rotation center
     public float correctionSpeed = 2f; // Speed at which the distance correction happens   
@@ -35,6 +37,7 @@ public class Rotate : MonoBehaviour
     {
         pastThirty = false;
         pastSixty = false;
+        pastNinety = false;
 
         previousTokenCount = tokenCount;
         
@@ -67,13 +70,14 @@ public class Rotate : MonoBehaviour
     {
         pastThirty = tokenCount > 30 ? true : false;
         pastSixty = tokenCount > 60 ? true : false;
+        pastNinety = tokenCount > 90 ? true : false;
 
         Color lightBlue = new Color(0.7f, 0.85f, 1f);
         Color lightPurple = new Color(0.85f, 0.7f, 1f);
 
         float colorTransitionSpeed = 2f;
 
-        if (pastThirty && !pastSixty)
+        if (pastThirty && !pastSixty && !pastNinety)
         {
             if (cam != null)
             {
@@ -82,13 +86,22 @@ public class Rotate : MonoBehaviour
                 cam.backgroundColor = Color.Lerp(cam.backgroundColor, lightBlue, Time.deltaTime * colorTransitionSpeed);
             }
         }
-        else if (pastSixty)
+        else if (pastSixty && !pastNinety)
         {
             if (cam != null)
             {
                 flashColor = new Color(0.8f, 0.7f, 0.9f, 1f);
                 // Smoothly transition to lightPurple
                 cam.backgroundColor = Color.Lerp(cam.backgroundColor, lightPurple, Time.deltaTime * colorTransitionSpeed);
+            }
+        }
+        else if(pastNinety)
+        {
+            if(cam != null)
+            {           
+                flashColor = new Color(1f, 0.75f, 0.75f, 1f);
+                // Smoothly transition to lightPurple
+                cam.backgroundColor = Color.Lerp(cam.backgroundColor, new Color(1f, 0.6f, 0.6f, 1f), Time.deltaTime * colorTransitionSpeed);
             }
         }
         else
@@ -122,7 +135,7 @@ public class Rotate : MonoBehaviour
     {
         if (tokenCount != previousTokenCount)
         {
-            Debug.Log(rotateSpeed);
+            //Debug.Log(rotateSpeed);
             // Update rotateSpeed based on tokenCount
             rotateSpeed = initialRotateSpeed + tokenCount;
 
@@ -134,7 +147,7 @@ public class Rotate : MonoBehaviour
     // Method to handle token collision
     void HandleTokenCollision()
     {
-        if ((isCollidingWithToken || isCollidingWithRedirectToken) && Input.touchCount > 0)
+        if ((isCollidingWithToken || isCollidingWithRedirectToken || isCollidingWithRedToken) && Input.touchCount > 0)
         {
             // Destroy the token
             Destroy(currentToken);
@@ -216,6 +229,12 @@ public class Rotate : MonoBehaviour
             isCollidingWithHoldToken = true; // Flag to track collision state
             tokenCount++; // Increment the token count                             
         }
+        if(collision.gameObject.CompareTag("RedToken"))
+        {
+            tokenCounter.ColorRed();
+            isCollidingWithRedToken = true;
+            currentToken = collision.gameObject;
+        }
     }
 
     // Method to handle collision exit with tokens
@@ -235,20 +254,26 @@ public class Rotate : MonoBehaviour
         }
         if (collision.gameObject.CompareTag("RedirectToken"))
         {
-            tokenCounter.ColorWhite();
+            tokenCounter.ColorWhite(); // Reset the color of the token counter
             if (Input.touchCount == 0)
             {
                 Die();
             }
 
             isCollidingWithRedirectToken = false; // Reset the collision flag
-            currentToken = null; // Reset the reference to the collided token
+            currentToken = null; // Reset the reference to the collided token                   
         }
         if (collision.gameObject.CompareTag("HoldToken"))
         {
-            tokenCounter.ColorWhite();
+            tokenCounter.ColorWhite(); // Reset the color of the token counter 
             isCollidingWithHoldToken = false; // Reset the collision flag
-            leftHoldToken = true; // Set the leftHoldToken flag to true                               
+            leftHoldToken = true; // Set the leftHoldToken flag to true
+        }
+        if (collision.gameObject.CompareTag("RedToken"))
+        {
+            tokenCounter.ColorWhite();
+            isCollidingWithRedToken = false;
+            RotateCamera();
         }
     }
 
@@ -349,6 +374,46 @@ public class Rotate : MonoBehaviour
         // Return the count of these objects
         return tokens.Length + redirectTokens.Length;
     }
+    
+    // Method to rotate the camera 45 degrees slowly
+    void RotateCamera()
+    {
+        if (cam == null) return;
+
+        float rotationSpeed = 100f; // Speed of rotation in degrees per second
+        float targetAngle = cam.transform.eulerAngles.z + 45f;
+        // Rotate the camera towards the target angle
+        StartCoroutine(RotateCameraCoroutine(targetAngle, rotationSpeed));
+    }
+
+    // Coroutine to rotate the camera towards the target angle
+    IEnumerator RotateCameraCoroutine(float targetAngle, float rotationSpeed)
+    {
+        if (cam == null) yield break;
+
+        float currentAngle = cam.transform.eulerAngles.z; // Current angle of the camera
+        float elapsedTime = 0f; // Elapsed time since the start of the coroutine
+
+        // Rotate the camera towards the target angle
+        while (currentAngle < targetAngle)
+        {
+            // Calculate the new angle based on the rotation speed
+            currentAngle += rotationSpeed * Time.deltaTime;
+
+            // Apply the new angle to the camera rotation
+            cam.transform.eulerAngles = new Vector3(0, 0, currentAngle);
+
+            // Update the elapsed time
+            elapsedTime += Time.deltaTime;
+
+            // Wait for the next frame
+            yield return null;
+        }
+
+        // Ensure the camera rotation is set to the exact target angle
+        cam.transform.eulerAngles = new Vector3(0, 0, targetAngle);
+    }
+   
 
     // Method to handle player death
     public void Die()

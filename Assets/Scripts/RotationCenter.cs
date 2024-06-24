@@ -39,53 +39,101 @@ public class RotationCenter : MonoBehaviour
 
             if (topCollider.Available && topCollider.PlayerColliding)
             {
-                if (!rotate.isCollidingWithRedirectToken)
+                if (rotate.isCollidingWithRedirectToken)
                 {
-                    topCollider.SpawnToken();
-                    Teleport(Vector3.up, moveDistance);
+                    topCollider.SpawnTokenRedirect();  
+                }
+                else if (rotate.isCollidingWithRedToken)
+                {
+                    if (Random.Range(1, 3) == 1)
+                    {                      
+                        topCollider.SpawnToken();
+                        Teleport(Vector3.up, moveDistance);
+                    }
+                    else
+                    {                       
+                        topCollider.SpawnTokenRedirect();
+                    }
                 }
                 else
                 {
-                    topCollider.SpawnTokenRedirect();
+                    topCollider.SpawnToken();
+                    Teleport(Vector3.up, moveDistance);
                 }
                 StartCoroutine(StartCooldown());
             }
             else if (bottomCollider.Available && bottomCollider.PlayerColliding)
             {
-                if (!rotate.isCollidingWithRedirectToken)
+                if (rotate.isCollidingWithRedirectToken)
                 {
-                    bottomCollider.SpawnToken();
-                    Teleport(Vector3.down, moveDistance);
+                    bottomCollider.SpawnTokenRedirect(); 
+                }
+                else if (rotate.isCollidingWithRedToken)
+                {
+                    if (Random.Range(1, 3) == 1)
+                    {                        
+                        bottomCollider.SpawnToken();
+                        Teleport(Vector3.down, moveDistance);
+                    }
+                    else
+                    {
+                        bottomCollider.SpawnTokenRedirect();
+                    }
                 }
                 else
                 {
-                    bottomCollider.SpawnTokenRedirect();
+                    bottomCollider.SpawnToken();
+                    Teleport(Vector3.down, moveDistance);
                 }
                 StartCoroutine(StartCooldown());
             }
             else if (leftCollider.Available && leftCollider.PlayerColliding)
             {
-                if (!rotate.isCollidingWithRedirectToken)
+                if (rotate.isCollidingWithRedirectToken)
                 {
-                    leftCollider.SpawnToken();
-                    Teleport(Vector3.left, moveDistance);
+                    leftCollider.SpawnTokenRedirect();     
+                }
+                else if (rotate.isCollidingWithRedToken)
+                {                   
+                    if(Random.Range(1, 3) == 1)
+                    {                       
+                        leftCollider.SpawnToken();
+                        Teleport(Vector3.left, moveDistance);
+                    } 
+                    else
+                    {                    
+                        leftCollider.SpawnTokenRedirect();
+                    }                  
                 }
                 else
                 {
-                    leftCollider.SpawnTokenRedirect();
+                    leftCollider.SpawnToken();
+                    Teleport(Vector3.left, moveDistance);
                 }
                 StartCoroutine(StartCooldown());
             }
             else if (rightCollider.Available && rightCollider.PlayerColliding)
             {
-                if (!rotate.isCollidingWithRedirectToken)
+                if (rotate.isCollidingWithRedirectToken)
                 {
-                    rightCollider.SpawnToken();
-                    Teleport(Vector3.right, moveDistance);
+                    rightCollider.SpawnTokenRedirect();
+                }
+                else if (rotate.isCollidingWithRedToken)
+                {
+                    if (Random.Range(1, 3) == 1)
+                    {                        
+                        rightCollider.SpawnToken();
+                        Teleport(Vector3.right, moveDistance);
+                    }
+                    else
+                    {                      
+                        rightCollider.SpawnTokenRedirect();
+                    }
                 }
                 else
                 {
-                    rightCollider.SpawnTokenRedirect();
+                    rightCollider.SpawnToken();
+                    Teleport(Vector3.right, moveDistance);
                 }
                 StartCoroutine(StartCooldown());
             }
@@ -105,29 +153,25 @@ public class RotationCenter : MonoBehaviour
 
             if (leftCollider.Available && leftCollider.PlayerColliding)
             {
-                rotate.clockwise = !rotate.clockwise;
-                //leftCollider.SpawnToken();
+                rotate.clockwise = !rotate.clockwise;               
                 Teleport(Vector3.left, moveDistance);
                 StartCoroutine(StartCooldown());
             }
             else if (rightCollider.Available && rightCollider.PlayerColliding)
             {
-                rotate.clockwise = !rotate.clockwise;
-                //rightCollider.SpawnToken();
+                rotate.clockwise = !rotate.clockwise;               
                 Teleport(Vector3.right, moveDistance);
                 StartCoroutine(StartCooldown());
             }
             else if (topCollider.Available && topCollider.PlayerColliding)
             {
-                rotate.clockwise = !rotate.clockwise;
-                //topCollider.SpawnToken();
+                rotate.clockwise = !rotate.clockwise;              
                 Teleport(Vector3.up, moveDistance);
                 StartCoroutine(StartCooldown());
             }
             else if (bottomCollider.Available && bottomCollider.PlayerColliding)
             {
-                rotate.clockwise = !rotate.clockwise;
-                //bottomCollider.SpawnToken();
+                rotate.clockwise = !rotate.clockwise;          
                 Teleport(Vector3.down, moveDistance);
                 StartCoroutine(StartCooldown());
             }

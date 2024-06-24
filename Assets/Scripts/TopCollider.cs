@@ -10,6 +10,7 @@ public class TopCollider : MonoBehaviour
     public GameObject tokenPrefab;
     public GameObject redirectTokenPrefab;
     public GameObject holdTokenPrefab;
+    public GameObject redTokenPrefab;
 
     public bool Available = false;
     public bool PlayerColliding = false;
@@ -111,7 +112,6 @@ public class TopCollider : MonoBehaviour
                     return; // Exit after spawning
                 }
             }
-
             // If all positions are occupied, log an error or handle accordingly
             Debug.LogError("All spawn positions are occupied (Top Collider).");
         }
@@ -173,15 +173,19 @@ public class TopCollider : MonoBehaviour
     }
     public GameObject RandomToken()
     {
-        GameObject[] tokens = { tokenPrefab, redirectTokenPrefab, holdTokenPrefab };
-        if (rotate.pastSixty)
+        GameObject[] tokens = { tokenPrefab, redirectTokenPrefab, holdTokenPrefab, redTokenPrefab };
+        if(rotate.pastNinety)
+        {
+            return tokens[Random.Range(1, tokens.Length)];
+        }
+        else if (rotate.pastSixty)
         {         
-            return tokens[Random.Range(0, tokens.Length)];
+            return tokens[Random.Range(0, tokens.Length - 1)];
         }
         else if (rotate.pastThirty)
         {          
-            return tokens[Random.Range(0, tokens.Length - 1)];
-        }
+            return tokens[Random.Range(0, tokens.Length - 2)];
+        }       
         else
         {         
             return tokenPrefab;

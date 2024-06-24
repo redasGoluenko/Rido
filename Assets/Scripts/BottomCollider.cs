@@ -6,10 +6,11 @@ public class BottomCollider : MonoBehaviour
 {
     private GameObject currentToken; // Reference to the current token to spawn
 
-    public Rotate rotate; // Add a reference to the "Rotate" script
-    public GameObject tokenPrefab; // Add a reference to the "Token" prefab
-    public GameObject redirectTokenPrefab; // Add a reference to the "Redirect" token prefab
-    public GameObject holdTokenPrefab; // Add a reference to the "Hold" token prefab
+    public Rotate rotate;
+    public GameObject tokenPrefab;
+    public GameObject redirectTokenPrefab;
+    public GameObject holdTokenPrefab;
+    public GameObject redTokenPrefab;
 
     public bool Available = false; // Flag to check if the bottom collider is available for spawning
     public bool PlayerColliding = false; // Flag to check if the player is colliding with the bottom collider
@@ -176,18 +177,22 @@ public class BottomCollider : MonoBehaviour
     // Picks a random token to spawn based on the current rotation state
     public GameObject RandomToken()
     {
-       GameObject[] tokens = { tokenPrefab, redirectTokenPrefab, holdTokenPrefab };
-        if (rotate.pastSixty)
-        {      
-            return tokens[Random.Range(0, tokens.Length)];
+        GameObject[] tokens = { tokenPrefab, redirectTokenPrefab, holdTokenPrefab, redTokenPrefab };
+        if (rotate.pastNinety)
+        {
+            return tokens[Random.Range(1, tokens.Length)];
+        }
+        else if (rotate.pastSixty)
+        {
+            return tokens[Random.Range(0, tokens.Length - 1)];
         }
         else if (rotate.pastThirty)
-        {     
-           return tokens[Random.Range(0, tokens.Length - 1)];
+        {
+            return tokens[Random.Range(0, tokens.Length - 2)];
         }
         else
         {
             return tokenPrefab;
-        }      
+        }
     }
 }

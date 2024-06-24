@@ -22,7 +22,7 @@ public class TokenCounter : MonoBehaviour
     {
         if (!rotate.gameObject.activeSelf && !hasMoved)
         {
-            Debug.Log("Rotate object is inactive");
+            //Debug.Log("Rotate object is inactive");
             // Move the button to the left by moveDistance units
             MoveCounter();
             hasMoved = true; // Set the flag to true to indicate movement
@@ -78,5 +78,10 @@ public class TokenCounter : MonoBehaviour
     public void ColorPurple()
     {
        textMeshPro.color = new Color(0.5f, 0, 0.5f);
+    }
+    // Method to change the color of the text
+    public void ColorRed()
+    {
+       textMeshPro.color = Color.red;
     }
 }

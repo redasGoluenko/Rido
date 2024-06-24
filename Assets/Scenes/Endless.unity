@@ -133,7 +133,7 @@ GameObject:
   - component: {fileID: 624285}
   - component: {fileID: 624289}
   m_Layer: 3
-  m_Name: Square (3)
+  m_Name: Left Border
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7467,7 +7467,7 @@ GameObject:
   - component: {fileID: 235305739}
   - component: {fileID: 235305743}
   m_Layer: 3
-  m_Name: Square
+  m_Name: Top Border
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7774,8 +7774,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotate: {fileID: 1792451200}
-  buttonText: {fileID: 749199710}
   buttonRectTransform: {fileID: 247997364}
+  buttonText: {fileID: 749199710}
 --- !u!1 &258485224
 GameObject:
   m_ObjectHideFlags: 0
@@ -22513,7 +22513,7 @@ GameObject:
   - component: {fileID: 728631673}
   - component: {fileID: 728631677}
   m_Layer: 3
-  m_Name: Square (1)
+  m_Name: Bottom Border
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -26813,12 +26813,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f98dfacbc81194c4e8e9b78ecad0280a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Available: 0
-  PlayerColliding: 0
   rotate: {fileID: 1792451200}
   tokenPrefab: {fileID: 4420393680069102459, guid: 5e8613d3c80c61445a68779ca32a6e93, type: 3}
   redirectTokenPrefab: {fileID: 6220269439369630558, guid: 80ef11dc53a71504499629fb5a0236f3, type: 3}
   holdTokenPrefab: {fileID: 8491920361270131609, guid: 1dad39448da3e3946b6b43239627cb8a, type: 3}
+  Available: 0
+  PlayerColliding: 0
 --- !u!1 &863797904
 GameObject:
   m_ObjectHideFlags: 0
@@ -39347,12 +39347,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c618da5570990a4ea7d8bb686606793, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Available: 0
-  PlayerColliding: 0
   rotate: {fileID: 1792451200}
   tokenPrefab: {fileID: 4420393680069102459, guid: 5e8613d3c80c61445a68779ca32a6e93, type: 3}
   redirectTokenPrefab: {fileID: 6220269439369630558, guid: 80ef11dc53a71504499629fb5a0236f3, type: 3}
   holdTokenPrefab: {fileID: 8491920361270131609, guid: 1dad39448da3e3946b6b43239627cb8a, type: 3}
+  Available: 0
+  PlayerColliding: 0
 --- !u!1 &1289517026
 GameObject:
   m_ObjectHideFlags: 0
@@ -41982,7 +41982,7 @@ GameObject:
   - component: {fileID: 1367045403}
   - component: {fileID: 1367045407}
   m_Layer: 3
-  m_Name: Square (2)
+  m_Name: Right Border
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -48604,12 +48604,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d97d5a4f2cff7c14c9edc815fa1d2bc0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Available: 0
-  PlayerColliding: 0
   rotate: {fileID: 1792451200}
   tokenPrefab: {fileID: 4420393680069102459, guid: 5e8613d3c80c61445a68779ca32a6e93, type: 3}
   redirectTokenPrefab: {fileID: 6220269439369630558, guid: 80ef11dc53a71504499629fb5a0236f3, type: 3}
   holdTokenPrefab: {fileID: 8491920361270131609, guid: 1dad39448da3e3946b6b43239627cb8a, type: 3}
+  Available: 0
+  PlayerColliding: 0
 --- !u!1 &1577988884
 GameObject:
   m_ObjectHideFlags: 0
@@ -56182,22 +56182,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7927eaa86b6397d4680e02914d291e64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationCenter: {fileID: 1457599816}
-  clockwise: 1
-  desiredDistance: 1
-  correctionSpeed: 2
-  isCollidingWithToken: 0
-  gracePeriod: 0.5
-  tokenCount: 0
   ease: {fileID: 331692780}
   cam: {fileID: 519420031}
+  rotationCenter: {fileID: 1457599816}
   tokenCounter: {fileID: 1517976890}
+  trailRenderer: {fileID: 1792451203}
+  clockwise: 1
+  isCollidingWithToken: 0
   isCollidingWithRedirectToken: 0
   isCollidingWithHoldToken: 0
   leftHoldToken: 0
   pastThirty: 0
   pastSixty: 0
-  trailRenderer: {fileID: 1792451203}
+  desiredDistance: 1
+  correctionSpeed: 2
+  gracePeriod: 0.5
+  tokenCount: 0
 --- !u!50 &1792451201
 Rigidbody2D:
   serializedVersion: 4
@@ -60752,12 +60752,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24bd15616d39c3e46a40238ecfa2cad2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Available: 0
-  PlayerColliding: 0
   rotate: {fileID: 1792451200}
   tokenPrefab: {fileID: 4420393680069102459, guid: 5e8613d3c80c61445a68779ca32a6e93, type: 3}
   redirectTokenPrefab: {fileID: 6220269439369630558, guid: 80ef11dc53a71504499629fb5a0236f3, type: 3}
   holdTokenPrefab: {fileID: 8491920361270131609, guid: 1dad39448da3e3946b6b43239627cb8a, type: 3}
+  Available: 0
+  PlayerColliding: 0
 --- !u!1 &1943569832
 GameObject:
   m_ObjectHideFlags: 0

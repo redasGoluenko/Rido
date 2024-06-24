@@ -118,7 +118,7 @@ public class FollowOnTouch : MonoBehaviour
     // Handle cleanup when the object is destroyed
     private void OnDestroy()
     {
-        Debug.Log($"Distance moved {totalDistanceMoved}");
+        //Debug.Log($"Distance moved {totalDistanceMoved}");
         var playerScript = playerTransform.GetComponent<Rotate>();
         if (totalDistanceMoved < 0.7f || totalDistanceMoved > 7.5f)
         {
