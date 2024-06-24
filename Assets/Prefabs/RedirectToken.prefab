@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7745247584804428086}
   - component: {fileID: 1012100321690388212}
   - component: {fileID: 6428281782313634753}
+  - component: {fileID: -8405589674758904430}
   m_Layer: 0
   m_Name: RedirectToken
   m_TagString: RedirectToken
@@ -151,3 +152,16 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_Radius: 0.5
+--- !u!114 &-8405589674758904430
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6220269439369630558}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5711f4d0b8d6c3489105387d69b89a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fadeDuration: 0.0001

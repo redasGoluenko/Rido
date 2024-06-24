@@ -28,8 +28,8 @@ public class Rotate : MonoBehaviour
 
     private void Start()
     {            
-        pastThirty = true;
-        pastSixty = true;
+        pastThirty = false;
+        pastSixty = false;
 
         previousTokenCount = tokenCount;
         if (cam != null)
@@ -46,8 +46,8 @@ public class Rotate : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //pastThirty = tokenCount > 30 ? true : false; // Check if the player has picked up more than 50 tokens
-        //pastSixty = tokenCount > 60 ? true : false; // Check if the player has picked up more than 60 tokens
+        pastThirty = tokenCount > 30 ? true : false; // Check if the player has picked up more than 50 tokens
+        pastSixty = tokenCount > 60 ? true : false; // Check if the player has picked up more than 60 tokens
 
         if (isCollidingWithHoldToken && zoomCoroutine == null && Input.touchCount > 0)
         {
@@ -65,7 +65,7 @@ public class Rotate : MonoBehaviour
         {
             Debug.Log(rotateSpeed);
             // Update rotateSpeed based on tokenCount
-            rotateSpeed = initialRotateSpeed + (tokenCount / 2);
+            rotateSpeed = initialRotateSpeed + tokenCount;
 
             // Update previousTokenCount to current tokenCount
             previousTokenCount = tokenCount;
