@@ -24,10 +24,11 @@ public class Rotate : MonoBehaviour
     public bool pastThirty = false; // Flag to track if the player has picked up more than 50 tokens
     public bool pastSixty = false; // Flag to track if the player has picked up more than 60 tokens
     private Coroutine zoomCoroutine;
+    public TrailRenderer trailRenderer; // Reference to the TrailRenderer component
 
     private void Start()
-    {
-        pastThirty = true;  
+    {            
+        pastThirty = true;
         pastSixty = true;
 
         previousTokenCount = tokenCount;
@@ -156,7 +157,7 @@ public class Rotate : MonoBehaviour
         {
             tokenCounter.ColorPurple();        
             isCollidingWithHoldToken = true; // Flag to track collision state
-            tokenCount++; // Increment the token count
+            tokenCount++; // Increment the token count                             
         }
     }
 
@@ -189,7 +190,7 @@ public class Rotate : MonoBehaviour
         {
             tokenCounter.ColorWhite();
             isCollidingWithHoldToken = false; // Reset the collision flag
-            leftHoldToken = true; // Set the leftHoldToken flag to true          
+            leftHoldToken = true; // Set the leftHoldToken flag to true                               
         }
     }
     IEnumerator FlashBackground()

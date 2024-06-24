@@ -51752,6 +51752,7 @@ MonoBehaviour:
   leftHoldToken: 0
   pastThirty: 0
   pastSixty: 0
+  trailRenderer: {fileID: 1792451203}
 --- !u!50 &1792451201
 Rigidbody2D:
   serializedVersion: 4
@@ -51858,7 +51859,7 @@ TrailRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Time: 0.3
   m_PreviewTimeScale: 1
   m_Parameters:
