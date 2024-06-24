@@ -13,6 +13,9 @@ TagManager:
   - RedirectToken
   - HoldToken
   - HoldCollisionTracker
+  - RotationCenter
+  - Detector
+  - Sight
   layers:
   - Default
   - TransparentFX

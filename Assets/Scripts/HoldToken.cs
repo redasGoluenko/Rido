@@ -107,7 +107,7 @@ public class FollowOnTouch : MonoBehaviour
     {
         Debug.Log($"Distance moved {totalDistanceMoved}");
         var playerScript = playerTransform.GetComponent<Rotate>();
-        if (totalDistanceMoved < 0.5f || totalDistanceMoved > 7.5f)
+        if (totalDistanceMoved < 0.7f || totalDistanceMoved > 7.5f)
         {
             playerScript.Die();       
         }
