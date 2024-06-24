@@ -4,23 +4,18 @@ using UnityEngine;
 
 public class RightCollider : MonoBehaviour
 {
-    public bool Available = false;
-    public bool PlayerColliding = false;
-
-    private int pivotContactCount = 0; // Counter for "Pivot" collisions
-    private int playerContactCount = 0; // Counter for "Player" collisions
+    private GameObject currentToken;
 
     public Rotate rotate;
     public GameObject tokenPrefab;
     public GameObject redirectTokenPrefab;
     public GameObject holdTokenPrefab;
 
+    public bool Available = false;
+    public bool PlayerColliding = false;
 
-    private GameObject currentToken;
-    void Start()
-    {
-        // Optional: Initialize debug states or any required setup
-    }
+    private int pivotContactCount = 0; // Counter for "Pivot" collisions
+    private int playerContactCount = 0; // Counter for "Player" collisions
 
     // Called when this collider/rigidbody has begun touching another rigidbody/collider.
     void OnCollisionEnter2D(Collision2D collision)

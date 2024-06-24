@@ -4,24 +4,19 @@ using UnityEngine;
 
 public class LeftCollider : MonoBehaviour
 {
+    private GameObject currentToken;
+
+    public Rotate rotate;
+    public GameObject tokenPrefab;
+    public GameObject redirectTokenPrefab;
+    public GameObject holdTokenPrefab;
+
     public bool Available = false;
     public bool PlayerColliding = false;
 
     private int pivotContactCount = 0; // Counter for "Pivot" collisions
     private int playerContactCount = 0; // Counter for "Player" collisions
-
-    public Rotate rotate;
-    public GameObject tokenPrefab;
-    public GameObject redirectTokenPrefab;
-    public GameObject holdTokenPrefab;  
-
-    private GameObject currentToken;
-
-    void Start()
-    {
-        // Optional: Initialize debug states or any required setup
-    }
-
+    
     // Called when this collider/rigidbody has begun touching another rigidbody/collider.
     void OnCollisionEnter2D(Collision2D collision)
     {
@@ -69,6 +64,8 @@ public class LeftCollider : MonoBehaviour
             }
         }
     }
+
+
     public void SpawnToken()
     {
         currentToken = RandomToken();
@@ -119,7 +116,7 @@ public class LeftCollider : MonoBehaviour
         {
             Debug.LogError("Token prefab not assigned in TopCollider script.");
         }
-    }
+    }  
     public void SpawnTokenRedirect()
     {
         currentToken = RandomToken();
@@ -171,6 +168,7 @@ public class LeftCollider : MonoBehaviour
             Debug.LogError("Token prefab not assigned in TopCollider script.");
         }
     }
+  
     public GameObject RandomToken()
     {
         GameObject[] tokens = { tokenPrefab, redirectTokenPrefab, holdTokenPrefab };

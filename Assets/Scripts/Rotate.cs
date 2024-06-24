@@ -3,29 +3,33 @@ using UnityEngine;
 
 public class Rotate : MonoBehaviour
 {
-    public Transform rotationCenter; // Reference to the object we want to rotate around
-    private float rotateSpeed = 150f; // Speed of rotation in degrees per second
-    private float initialRotateSpeed = 150f;
-    public bool clockwise = true; // Direction of rotation
-    public float desiredDistance = 5f; // The desired distance from the rotation center
-    public float correctionSpeed = 2f; // Speed at which the distance correction happens
-    public bool isCollidingWithToken = false; // Flag to track collision with objects tagged as "Token"
+    private Coroutine zoomCoroutine; // Reference to the zooming coroutine
     private GameObject currentToken; // Reference to the currently collided token
-    private float lastTokenDestructionTime = -1f; // Time when the last token was destroyed
-    public float gracePeriod = 0.5f; // Grace period in seconds to ignore brief multiple token situations
-    public int tokenCount = 0; // Number of tokens picked up by the player
-    private int previousTokenCount = 0;
+    
     public Ease ease; // Reference to the Ease script
-    public Camera cam;
-    public TokenCounter tokenCounter;
+    public Camera cam; // Reference to the Camera component
+    public Transform rotationCenter; // Reference to the object we want to rotate around
+    public TokenCounter tokenCounter; // Reference to the TokenCounter script  
+    public TrailRenderer trailRenderer; // Reference to the TrailRenderer component
+
+    private Color flashColor; // Color for the flash effect
+    private float rotateSpeed = 150f; // Speed of rotation in degrees per second   
+    private float initialRotateSpeed = 150f; // Initial speed of rotation in degrees per second
+    private float lastTokenDestructionTime = -1f; // Time when the last token was destroyed
+    private int previousTokenCount = 0; // Number of tokens picked up by the player in the previous frame
+
+    public bool clockwise = true; // Direction of rotation
+    public bool isCollidingWithToken = false; // Flag to track collision with objects tagged as "Token"
     public bool isCollidingWithRedirectToken = false; // Flag to track collision with objects tagged as "RedirectToken"
     public bool isCollidingWithHoldToken = false; // Flag to track collision with objects tagged as "HoldToken"
     public bool leftHoldToken = false; // Flag to track if the player is holding a token
-    public bool pastThirty = false; // Flag to track if the player has picked up more than 50 tokens
+    public bool pastThirty = false; // Flag to track if the player has picked up more than 30 tokens
     public bool pastSixty = false; // Flag to track if the player has picked up more than 60 tokens
-    private Coroutine zoomCoroutine;
-    public TrailRenderer trailRenderer; // Reference to the TrailRenderer component
-    private Color flashColor; // Color for the flash effect
+
+    public float desiredDistance = 5f; // The desired distance from the rotation center
+    public float correctionSpeed = 2f; // Speed at which the distance correction happens   
+    public float gracePeriod = 0.5f; // Grace period in seconds to ignore brief multiple token situations
+    public int tokenCount = 0; // Number of tokens picked up by the player   
 
     private void Start()
     {
@@ -43,16 +47,32 @@ public class Rotate : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        pastThirty = tokenCount > 30 ? true : false; // Check if the player has picked up more than 50 tokens
-        pastSixty = tokenCount > 60 ? true : false; // Check if the player has picked up more than 60 tokens
+        UpdateBackgroundColor(); // Update the background color based on the token count
+        ManageZoomCoroutine(); // Manage the zooming coroutine
+        UpdateTokenCount(); // Update the token count and adjust the rotate speed
+        OrbitAround(); // Orbit around the rotation center
+        CorrectDistance(); // Adjust the distance to the desired distance
+        HandleTokenCollision(); // Handle token collision
+        CheckGameOver(); // Check if the player has multiple tokens in the scene
 
-        Color lightBlue = new Color(0.7f, 0.85f, 1f); // Adjust RGB values for a light blue
-        Color lightPurple = new Color(0.85f, 0.7f, 1f); // Adjust RGB values for a light purple
+        // Ensure rotationCenter is assigned
+        if (rotationCenter == null)
+        {
+            return;
+        }                  
+    }
 
-        // Smooth color transition speed
-        float colorTransitionSpeed = 2f; // Adjust speed as needed
+    // Method to update the background color based on the token count
+    void UpdateBackgroundColor()
+    {
+        pastThirty = tokenCount > 30 ? true : false;
+        pastSixty = tokenCount > 60 ? true : false;
 
-        // Change background color based on token count conditions
+        Color lightBlue = new Color(0.7f, 0.85f, 1f);
+        Color lightPurple = new Color(0.85f, 0.7f, 1f);
+
+        float colorTransitionSpeed = 2f;
+
         if (pastThirty && !pastSixty)
         {
             if (cam != null)
@@ -73,7 +93,6 @@ public class Rotate : MonoBehaviour
         }
         else
         {
-            // Reset to default color (grey) if neither condition is true
             if (cam != null)
             {
                 flashColor = new Color(1f, 1f, 0.8f, 1f);
@@ -81,7 +100,11 @@ public class Rotate : MonoBehaviour
                 cam.backgroundColor = Color.Lerp(cam.backgroundColor, new Color(1f, 0.96f, 0.7f), Time.deltaTime * colorTransitionSpeed);
             }
         }
+    }
 
+    // Method to manage the zooming coroutine
+    void ManageZoomCoroutine()
+    {
         if (isCollidingWithHoldToken && zoomCoroutine == null && Input.touchCount > 0)
         {
             // Start the zooming coroutine if it's not already running
@@ -92,8 +115,11 @@ public class Rotate : MonoBehaviour
             // Don't stop the coroutine immediately; it will handle zooming out by itself
             zoomCoroutine = null;
         }
+    }
 
-
+    // Method to update the token count and adjust the rotate speed
+    void UpdateTokenCount()
+    {
         if (tokenCount != previousTokenCount)
         {
             Debug.Log(rotateSpeed);
@@ -103,19 +129,11 @@ public class Rotate : MonoBehaviour
             // Update previousTokenCount to current tokenCount
             previousTokenCount = tokenCount;
         }
+    }
 
-        // Ensure rotationCenter is assigned
-        if (rotationCenter == null)
-        {
-            return;
-        }
-        // Orbit around the rotationCenter
-        OrbitAround();
-
-        // Adjust the distance to the desired distance
-        CorrectDistance();
-
-        // Check for touch input and destroy token if colliding with it
+    // Method to handle token collision
+    void HandleTokenCollision()
+    {
         if ((isCollidingWithToken || isCollidingWithRedirectToken) && Input.touchCount > 0)
         {
             // Destroy the token
@@ -129,8 +147,11 @@ public class Rotate : MonoBehaviour
             isCollidingWithRedirectToken = false;
             currentToken = null;
         }
+    }
 
-        // Check if there are multiple tokens in the scene after the grace period
+    // Method to check if the player has multiple tokens in the scene
+    void CheckGameOver()
+    {
         if (Time.time - lastTokenDestructionTime > gracePeriod && CountTokens() > 1)
         {
             // Handle player death (e.g., deactivate player or trigger a game-over event)
@@ -139,6 +160,7 @@ public class Rotate : MonoBehaviour
         }
     }
 
+    // Method to orbit around the rotation center
     void OrbitAround()
     {
         // Calculate the orbit movement
@@ -152,6 +174,7 @@ public class Rotate : MonoBehaviour
         transform.position = rotationCenter.position + relativePos;
     }
 
+    // Method to adjust the distance to the desired distance
     void CorrectDistance()
     {
         // Calculate the current distance from the rotation center
@@ -172,6 +195,7 @@ public class Rotate : MonoBehaviour
         }
     }
 
+    // Method to handle collision with tokens
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Token"))
@@ -194,6 +218,7 @@ public class Rotate : MonoBehaviour
         }
     }
 
+    // Method to handle collision exit with tokens
     private void OnCollisionExit2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Token"))
@@ -226,6 +251,8 @@ public class Rotate : MonoBehaviour
             leftHoldToken = true; // Set the leftHoldToken flag to true                               
         }
     }
+
+    // Flash the background color and zoom in and out when a token is destroyed
     IEnumerator FlashBackground(Color flashColor)
     {
         if (cam == null) yield break;
@@ -271,6 +298,7 @@ public class Rotate : MonoBehaviour
         cam.orthographicSize = originalSize;
     }
 
+    // Coroutine to continuously zoom in and back when colliding with a hold token
     IEnumerator ContinuousZoomInAndBack()
     {
         if (cam == null) yield break;
@@ -321,6 +349,8 @@ public class Rotate : MonoBehaviour
         // Return the count of these objects
         return tokens.Length + redirectTokens.Length;
     }
+
+    // Method to handle player death
     public void Die()
     {
         // Deactivate the player and its children

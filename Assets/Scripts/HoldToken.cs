@@ -2,14 +2,17 @@ using UnityEngine;
 
 public class FollowOnTouch : MonoBehaviour
 {
-    private bool isFollowing = false; // State to track if the object should follow the player
     private Transform playerTransform; // Reference to the player's transform
+
     private Vector3 initialPosition; // To store the initial position of the object
+    private Vector3 previousPosition; // Previous frame's position of the object
+
+    private bool isFollowing = false; // State to track if the object should follow the player
+    private bool hasSkipped = false; // State to track if the object has skipped the player
+
     private float returnThreshold = 0.5f; // Distance threshold to consider the object "returned" to its initial position
     private float totalDistanceMoved = 0f; // Total distance moved by the object
-    private Vector3 previousPosition; // Previous frame's position of the object
-    private bool hasSkipped = false;
-
+    
     private void Start()
     {
         // Store the initial position when the script starts
@@ -18,6 +21,12 @@ public class FollowOnTouch : MonoBehaviour
     }
 
     private void Update()
+    {
+       HandleTouchInputAndInteraction(); // Handle touch input and interaction logic
+    }
+
+    // Handle touch input and interaction logic
+    void HandleTouchInputAndInteraction()
     {
         // Check if there is at least one touch on the screen
         if (Input.touchCount > 0)
@@ -73,6 +82,7 @@ public class FollowOnTouch : MonoBehaviour
         }
     }
 
+    // Detect collision with the player
     private void OnCollisionEnter2D(Collision2D collision)
     {
         // Check if the colliding object has the "Player" tag
@@ -89,6 +99,8 @@ public class FollowOnTouch : MonoBehaviour
             }
         }
     }
+
+    // Detect when the object stops colliding with the player
     private void OnCollisionExit2D(Collision2D collision)
     {
         // Check if the colliding object has the "Player" tag
@@ -103,6 +115,7 @@ public class FollowOnTouch : MonoBehaviour
         hasSkipped = false;
     }
 
+    // Handle cleanup when the object is destroyed
     private void OnDestroy()
     {
         Debug.Log($"Distance moved {totalDistanceMoved}");

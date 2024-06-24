@@ -2,7 +2,8 @@ using UnityEngine;
 
 public class FixedTimeTrail : MonoBehaviour
 {
-    public TrailRenderer trailRenderer;
+    public TrailRenderer trailRenderer; // Reference to the TrailRenderer component
+
     private float decreaseAmount = 0.0015f; // Amount to decrease time per press
 
     void Start()
@@ -10,7 +11,7 @@ public class FixedTimeTrail : MonoBehaviour
         // Ensure trailRenderer is assigned
         if (trailRenderer == null)
         {
-            trailRenderer = GetComponent<TrailRenderer>();
+            trailRenderer = GetComponent<TrailRenderer>(); // Get the TrailRenderer component
         }
     }
 

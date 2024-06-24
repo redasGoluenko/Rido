@@ -3,17 +3,12 @@ using TMPro;
 
 public class RetryButtonHandler : MonoBehaviour
 {
-    public Rotate rotate;
-    public TextMeshProUGUI buttonText;
+    public Rotate rotate; // Reference to the Rotate script
+    public RectTransform buttonRectTransform; // Reference to the RectTransform component of the button
+    public TextMeshProUGUI buttonText; // Reference to the TextMeshProUGUI component of the button
 
     private bool hasMoved = false; // Flag to track if the button has already moved
-
-    // Distance to move the button if rotate is inactive
-    private float moveDistance = 917f;
-
-    // Reference to the RectTransform of the button
-    public RectTransform buttonRectTransform;
-
+    private float moveDistance = 917f; // Distance to move the button
     void Start()
     {
         // Get the RectTransform component of the button

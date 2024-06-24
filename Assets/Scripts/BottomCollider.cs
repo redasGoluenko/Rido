@@ -4,23 +4,19 @@ using UnityEngine;
 
 public class BottomCollider : MonoBehaviour
 {
-    public bool Available = false;
-    public bool PlayerColliding = false;
+    private GameObject currentToken; // Reference to the current token to spawn
+
+    public Rotate rotate; // Add a reference to the "Rotate" script
+    public GameObject tokenPrefab; // Add a reference to the "Token" prefab
+    public GameObject redirectTokenPrefab; // Add a reference to the "Redirect" token prefab
+    public GameObject holdTokenPrefab; // Add a reference to the "Hold" token prefab
+
+    public bool Available = false; // Flag to check if the bottom collider is available for spawning
+    public bool PlayerColliding = false; // Flag to check if the player is colliding with the bottom collider
 
     private int pivotContactCount = 0; // Counter for "Pivot" collisions
     private int playerContactCount = 0; // Counter for "Player" collisions
-
-    public Rotate rotate;
-    public GameObject tokenPrefab;
-    public GameObject redirectTokenPrefab;
-    public GameObject holdTokenPrefab;  
-
-    private GameObject currentToken;
-    void Start()
-    {
-        // Optional: Initialize debug states or any required setup
-    }
-
+  
     // Called when this collider/rigidbody has begun touching another rigidbody/collider.
     void OnCollisionEnter2D(Collision2D collision)
     {
@@ -68,6 +64,8 @@ public class BottomCollider : MonoBehaviour
             }
         }
     }
+
+    // Spawns a token based on the current rotation state (Post-Standard)
     public void SpawnToken()
     {
         currentToken = RandomToken();
@@ -119,6 +117,8 @@ public class BottomCollider : MonoBehaviour
             Debug.LogError("Token prefab not assigned in TopCollider script.");
         }
     }
+
+    // Spawns a token based on the current rotation state (Post-Redirect)
     public void SpawnTokenRedirect()
     {
         currentToken = RandomToken();
@@ -172,6 +172,8 @@ public class BottomCollider : MonoBehaviour
         }
     }
 
+
+    // Picks a random token to spawn based on the current rotation state
     public GameObject RandomToken()
     {
        GameObject[] tokens = { tokenPrefab, redirectTokenPrefab, holdTokenPrefab };

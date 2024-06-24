@@ -5,22 +5,17 @@ using UnityEngine.UIElements;
 
 public class Ease : MonoBehaviour
 {
-    private float duration = 1.0f;  // Duration of the fade
     private Renderer objectRenderer;
+
     private bool canFade = true; // Flag to check if the object can fade
-
+    private float duration = 1.0f;  // Duration of the fade
     void Start()
-    {       
-        // Get the Renderer component from the GameObject
-        objectRenderer = GetComponent<Renderer>();
-
-        // Start fading out the object over the specified duration
-        StartCoroutine(FadeOut(duration));
-    }  
-    //update is called once per frame
-    void Update()
-    {       
-    }
+    {             
+        objectRenderer = GetComponent<Renderer>();      
+        StartCoroutine(FadeOut(duration)); // Start the fade out coroutine
+    } 
+      
+    //This method is used to fade out the object. It takes a float duration as a parameter which is the time it takes for the object to fade out.
     IEnumerator FadeOut(float duration)
     {
         // Get the current color of the material
@@ -45,7 +40,8 @@ public class Ease : MonoBehaviour
         // Ensure the final alpha is set to 0
         objectRenderer.material.color = new Color(startColor.r, startColor.g, startColor.b, 0);
     }
-    //fade in
+
+    //This method is used to fade in the object. It takes a float duration as a parameter which is the time it takes for the object to fade in.
     IEnumerator FadeIn(float duration)
     {
         // Get the current color of the material
@@ -71,6 +67,7 @@ public class Ease : MonoBehaviour
         objectRenderer.material.color = new Color(startColor.r, startColor.g, startColor.b, 1);        
     }
 
+    //This method is used to fade out the object. It takes a float duration as a parameter which is the time it takes for the object to fade out.
     public void FadeIn()
     {
         if (canFade)

@@ -6,9 +6,8 @@ public class CameraFollow : MonoBehaviour
 {
     public GameObject target; // Reference to the object we want to follow
     public float followSpeed = 0.5f; // Adjust this value to control the smoothness of the camera movement
-    public Vector3 cameraOffset = new Vector3(0, 0, -0.1f); // Offset of the camera from the target
-
-    // Update is called once per frame
+    public Vector3 cameraOffset = new Vector3(0, 0, -0.1f); // Offset of the camera from the target 
+    
     void Update()
     {
         if (target != null)

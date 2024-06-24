@@ -4,22 +4,21 @@ using UnityEngine;
 
 public class CurrentlyVisiblePivot : MonoBehaviour
 {
+    private Coroutine fadeCoroutine; // Reference to the fade coroutine
+    private SpriteRenderer spriteRenderer; // Reference to the SpriteRenderer component
+
     public float fadeDuration = 0.0001f;  // Duration of the fade in seconds
-    private SpriteRenderer spriteRenderer;
-    private Coroutine fadeCoroutine;
+    
+    
 
     void Start()
     {
-        spriteRenderer = GetComponent<SpriteRenderer>();
+        spriteRenderer = GetComponent<SpriteRenderer>(); // Get the SpriteRenderer component
         spriteRenderer.enabled = true;  // SpriteRenderer needs to be enabled to control its color
-        spriteRenderer.color = new Color(spriteRenderer.color.r, spriteRenderer.color.g, spriteRenderer.color.b, 0);
+        spriteRenderer.color = new Color(spriteRenderer.color.r, spriteRenderer.color.g, spriteRenderer.color.b, 0); // Set the alpha to 0
     }
 
-    void Update()
-    {
-        // Your regular update logic (if any) goes here
-    }
-
+    // When the object collides with the sight object
     private void OnCollisionEnter2D(Collision2D collision)
     {      
         if (collision.gameObject.CompareTag("Sight"))
@@ -32,6 +31,7 @@ public class CurrentlyVisiblePivot : MonoBehaviour
         }
     }
 
+    // When the object exits the sight object
     private void OnCollisionExit2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Sight"))
@@ -44,6 +44,7 @@ public class CurrentlyVisiblePivot : MonoBehaviour
         }
     }
 
+    // Coroutine to fade the alpha of the SpriteRenderer
     private IEnumerator FadeToAlpha(float targetAlpha)
     {
         float startAlpha = spriteRenderer.color.a;

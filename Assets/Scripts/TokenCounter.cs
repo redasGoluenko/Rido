@@ -8,6 +8,7 @@ public class TokenCounter : MonoBehaviour
     public Rotate rotate; // Reference to the Rotate script
     public TextMeshProUGUI textMeshPro; // Reference to the TextMeshProUGUI component  
     public RectTransform tokenCounterRectTransform; // Reference to the RectTransform of the token counter
+
     private bool hasMoved = false; // Flag to track if the token counter has already moved  
 
     void Start()
@@ -30,7 +31,8 @@ public class TokenCounter : MonoBehaviour
         // Update the text to display the current token count
         textMeshPro.text = rotate.tokenCount.ToString();
     }
-
+    
+    // Method to move the token counter
     private void MoveCounter()
     {
         Vector3 newPosition = tokenCounterRectTransform.anchoredPosition;
@@ -57,18 +59,22 @@ public class TokenCounter : MonoBehaviour
         tokenCounterRectTransform.anchoredPosition = newPosition;
     }
 
+    // Method to change the color of the text
     public void ColorBlue()
     {
         textMeshPro.color = Color.blue;
     }
+    // Method to change the color of the text
     public void ColorYellow()
     {
         textMeshPro.color = Color.yellow;
     }
+    // Method to change the color of the text
     public void ColorWhite()
     {
         textMeshPro.color = Color.white;
     }
+    // Method to change the color of the text
     public void ColorPurple()
     {
        textMeshPro.color = new Color(0.5f, 0, 0.5f);
