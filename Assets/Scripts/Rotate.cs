@@ -22,7 +22,8 @@ public class Rotate : MonoBehaviour
     public bool isCollidingWithHoldToken = false; // Flag to track collision with objects tagged as "HoldToken"
     public bool leftHoldToken = false; // Flag to track if the player is holding a token
     public bool pastThirty = false; // Flag to track if the player has picked up more than 50 tokens
-    public bool pastSixty = false; // Flag to track if the player has picked up more than 60 tokens                                 // 
+    public bool pastSixty = false; // Flag to track if the player has picked up more than 60 tokens
+    private Coroutine zoomCoroutine;
 
     private void Start()
     {
@@ -46,6 +47,18 @@ public class Rotate : MonoBehaviour
     {
         pastThirty = tokenCount > 30 ? true : false; // Check if the player has picked up more than 50 tokens
         pastSixty = tokenCount > 60 ? true : false; // Check if the player has picked up more than 60 tokens
+
+        if (isCollidingWithHoldToken && zoomCoroutine == null && Input.touchCount > 0)
+        {
+            // Start the zooming coroutine if it's not already running
+            zoomCoroutine = StartCoroutine(ContinuousZoomInAndBack());
+        }
+        else if (!isCollidingWithHoldToken && zoomCoroutine != null)
+        {
+            // Don't stop the coroutine immediately; it will handle zooming out by itself
+            zoomCoroutine = null;
+        }
+
 
         if (tokenCount != previousTokenCount)
         {
@@ -224,6 +237,47 @@ public class Rotate : MonoBehaviour
         // Ensure the camera size is exactly the original at the end
         cam.orthographicSize = originalSize;
     }
+
+    IEnumerator ContinuousZoomInAndBack()
+    {
+        if (cam == null) yield break;
+
+        float zoomFactor = 0.95f; // Zoom in factor per frame
+        float maxZoomFactor = 0.8f; // Maximum zoom limit (50% of original size)
+        float originalSize = cam.orthographicSize; // Store the original camera size
+        float zoomOutDuration = 0.2f; // Duration for zooming back to original size
+        float newSize;
+
+        // Zoom in while isCollidingHoldToken is true
+        while (isCollidingWithHoldToken)
+        {
+            // Calculate the new size by applying the zoom factor
+            newSize = cam.orthographicSize * zoomFactor;
+
+            // Clamp the size to not go beyond the maximum zoom factor
+            cam.orthographicSize = Mathf.Max(newSize, originalSize * maxZoomFactor);
+
+            // Wait for the next frame
+            yield return new WaitForSeconds(0.025f);
+        }
+
+        // Once isCollidingHoldToken becomes false, smoothly zoom back to the original size
+        float elapsedTime = 0f;
+        float currentSize = cam.orthographicSize;
+
+        while (elapsedTime < zoomOutDuration)
+        {
+            cam.orthographicSize = Mathf.Lerp(currentSize, originalSize, elapsedTime / zoomOutDuration);
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+
+        // Ensure the camera size is set to the exact original size
+        cam.orthographicSize = originalSize;
+    }
+
+
+
 
     // Method to count the number of active tokens in the scene
     int CountTokens()

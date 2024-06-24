@@ -8,6 +8,7 @@ public class FollowOnTouch : MonoBehaviour
     private float returnThreshold = 0.5f; // Distance threshold to consider the object "returned" to its initial position
     private float totalDistanceMoved = 0f; // Total distance moved by the object
     private Vector3 previousPosition; // Previous frame's position of the object
+    private bool hasSkipped = false;
 
     private void Start()
     {
@@ -81,8 +82,25 @@ public class FollowOnTouch : MonoBehaviour
             playerTransform = collision.transform;
 
             // Set the state to start following the player
-            isFollowing = true;
+            isFollowing = true;           
+            if(Input.touchCount == 0)
+            {
+                hasSkipped = true;
+            }
         }
+    }
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        // Check if the colliding object has the "Player" tag
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            if (hasSkipped)
+            {
+                var playerScript = playerTransform.GetComponent<Rotate>();
+                playerScript.Die();                
+            }
+        }
+        hasSkipped = false;
     }
 
     private void OnDestroy()

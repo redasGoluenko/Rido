@@ -36,24 +36,28 @@ public class RotationCenter : MonoBehaviour
                 rotate.clockwise = !rotate.clockwise;
                 leftCollider.SpawnToken();
                 Teleport(Vector3.left, moveDistance);
+                StartCoroutine(StartCooldown());
             }     
             else if (rightCollider.Available && rightCollider.PlayerColliding)
             {
                 rotate.clockwise = !rotate.clockwise;
                 rightCollider.SpawnToken();
                 Teleport(Vector3.right, moveDistance);
+                StartCoroutine(StartCooldown());
             }
             else if(topCollider.Available && topCollider.PlayerColliding)
             {
                 rotate.clockwise = !rotate.clockwise;
                 topCollider.SpawnToken();
                 Teleport(Vector3.up, moveDistance);
+                StartCoroutine(StartCooldown());
             }
             else if(bottomCollider.Available && bottomCollider.PlayerColliding)
             {
                 rotate.clockwise = !rotate.clockwise;
                 bottomCollider.SpawnToken();
                 Teleport(Vector3.down, moveDistance);
+                StartCoroutine(StartCooldown());
             }                    
         }
         // Check for movement in each direction based on collider availability and player collision
