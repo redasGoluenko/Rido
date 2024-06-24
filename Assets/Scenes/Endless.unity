@@ -26817,6 +26817,7 @@ MonoBehaviour:
   tokenPrefab: {fileID: 4420393680069102459, guid: 5e8613d3c80c61445a68779ca32a6e93, type: 3}
   redirectTokenPrefab: {fileID: 6220269439369630558, guid: 80ef11dc53a71504499629fb5a0236f3, type: 3}
   holdTokenPrefab: {fileID: 8491920361270131609, guid: 1dad39448da3e3946b6b43239627cb8a, type: 3}
+  redTokenPrefab: {fileID: 5810972224281766141, guid: 35d0d5f4c5950034cbcb2fd9c1607a61, type: 3}
   Available: 0
   PlayerColliding: 0
 --- !u!1 &863797904
@@ -39351,6 +39352,7 @@ MonoBehaviour:
   tokenPrefab: {fileID: 4420393680069102459, guid: 5e8613d3c80c61445a68779ca32a6e93, type: 3}
   redirectTokenPrefab: {fileID: 6220269439369630558, guid: 80ef11dc53a71504499629fb5a0236f3, type: 3}
   holdTokenPrefab: {fileID: 8491920361270131609, guid: 1dad39448da3e3946b6b43239627cb8a, type: 3}
+  redTokenPrefab: {fileID: 5810972224281766141, guid: 35d0d5f4c5950034cbcb2fd9c1607a61, type: 3}
   Available: 0
   PlayerColliding: 0
 --- !u!1 &1289517026
@@ -48608,6 +48610,7 @@ MonoBehaviour:
   tokenPrefab: {fileID: 4420393680069102459, guid: 5e8613d3c80c61445a68779ca32a6e93, type: 3}
   redirectTokenPrefab: {fileID: 6220269439369630558, guid: 80ef11dc53a71504499629fb5a0236f3, type: 3}
   holdTokenPrefab: {fileID: 8491920361270131609, guid: 1dad39448da3e3946b6b43239627cb8a, type: 3}
+  redTokenPrefab: {fileID: 5810972224281766141, guid: 35d0d5f4c5950034cbcb2fd9c1607a61, type: 3}
   Available: 0
   PlayerColliding: 0
 --- !u!1 &1577988884
@@ -56191,9 +56194,11 @@ MonoBehaviour:
   isCollidingWithToken: 0
   isCollidingWithRedirectToken: 0
   isCollidingWithHoldToken: 0
+  isCollidingWithRedToken: 0
   leftHoldToken: 0
   pastThirty: 0
   pastSixty: 0
+  pastNinety: 0
   desiredDistance: 1
   correctionSpeed: 2
   gracePeriod: 0.5
@@ -60756,6 +60761,7 @@ MonoBehaviour:
   tokenPrefab: {fileID: 4420393680069102459, guid: 5e8613d3c80c61445a68779ca32a6e93, type: 3}
   redirectTokenPrefab: {fileID: 6220269439369630558, guid: 80ef11dc53a71504499629fb5a0236f3, type: 3}
   holdTokenPrefab: {fileID: 8491920361270131609, guid: 1dad39448da3e3946b6b43239627cb8a, type: 3}
+  redTokenPrefab: {fileID: 5810972224281766141, guid: 35d0d5f4c5950034cbcb2fd9c1607a61, type: 3}
   Available: 0
   PlayerColliding: 0
 --- !u!1 &1943569832

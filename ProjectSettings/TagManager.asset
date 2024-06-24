@@ -16,6 +16,7 @@ TagManager:
   - RotationCenter
   - Detector
   - Sight
+  - RedToken
   layers:
   - Default
   - TransparentFX
