@@ -12,7 +12,9 @@ public class Death : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        // Initial movement in local directions
+        StartCoroutine(MoveObjectInDirection(topSlope, Vector3.up, 5.47f, 1f));
+        StartCoroutine(MoveObjectInDirection(bottomSlope, Vector3.down, 6.5f, 1f));
     }
 
     // Update is called once per frame
@@ -25,11 +27,13 @@ public class Death : MonoBehaviour
     {
         // Only start the movement if 'rotate.dead' is true and movement hasn't started
         if (rotate.dead && !isMoving)
-        {            
+        {
             rotate.dead = false; // Reset the flag to prevent multiple calls
             isMoving = true; // Set the flag to prevent starting the coroutine again
-            StartCoroutine(MoveObjectInDirection(topSlope, Vector3.down, 4.5f, 0.1f));
-            StartCoroutine(MoveObjectInDirection(bottomSlope, Vector3.up, 8.5f, 0.1f));
+
+            // Move the slopes in their local directions relative to their current rotation
+            StartCoroutine(MoveObjectInDirection(topSlope, topSlope.transform.up * -1, 5.47f, 1f));
+            StartCoroutine(MoveObjectInDirection(bottomSlope, bottomSlope.transform.up, 6.5f, 1f));
         }
     }
 
@@ -54,15 +58,5 @@ public class Death : MonoBehaviour
         obj.transform.position = destination; // Ensure we finish exactly at the destination
 
         isMoving = false; // Reset the flag if you want to allow movement again later
-    }
-
-    //on collision
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("Slope"))
-        {
-            Debug.Log("Collision with slope detected");
-            StopCoroutine(MoveObjectInDirection(topSlope, Vector3.down, 1f, 0.1f));
-        }
     }
 }
