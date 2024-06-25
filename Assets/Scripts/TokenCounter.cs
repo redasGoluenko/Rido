@@ -13,6 +13,7 @@ public class TokenCounter : MonoBehaviour
     private bool hasMoved = false; // Flag to track if the token counter has already moved     
     void Start()
     {
+        textMeshPro.color = Color.white; // Set the initial color to white
         // Get the RectTransform component of the token counter
         tokenCounterRectTransform = GetComponent<RectTransform>();
     }
@@ -88,7 +89,7 @@ public class TokenCounter : MonoBehaviour
     // Coroutine to smoothly transition to the target color and stay on it
     private IEnumerator FlashToColor(Color targetColor, float flashDuration, int flashCount)
     {
-        Color originalColor = Color.black; // Store the original color
+        Color originalColor = Color.white; // Store the original color
         float halfFlashDuration = flashDuration / (2 * flashCount); // Duration for each half of the flash (ease-in and ease-out)
 
         // Smoothly transition to the target color

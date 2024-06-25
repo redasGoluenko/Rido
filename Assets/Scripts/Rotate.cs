@@ -9,11 +9,11 @@ public class Rotate : MonoBehaviour
     public Ease ease; // Reference to the Ease script
     public Camera cam; // Reference to the Camera component
     public Transform rotationCenter; // Reference to the object we want to rotate around
-    public TokenCounter tokenCounter; // Reference to the TokenCounter script  
+    public TokenCounter tokenCounter; // Reference to the TokenCounter script
     public TrailRenderer trailRenderer; // Reference to the TrailRenderer component
 
     private Color flashColor; // Color for the flash effect
-    private float rotateSpeed = 150f; // Speed of rotation in degrees per second   
+    private float rotateSpeed = 150f; // Speed of rotation in degrees per second
     private float initialRotateSpeed = 150f; // Initial speed of rotation in degrees per second
     private float lastTokenDestructionTime = -1f; // Time when the last token was destroyed
     private int previousTokenCount = 0; // Number of tokens picked up by the player in the previous frame
@@ -67,7 +67,7 @@ public class Rotate : MonoBehaviour
         }       
         else
         {
-            tokenCounter.textMeshPro.color = Color.black;
+            tokenCounter.textMeshPro.color = Color.white;
         }
 
         // Ensure rotationCenter is assigned
