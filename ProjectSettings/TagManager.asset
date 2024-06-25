@@ -17,6 +17,7 @@ TagManager:
   - Detector
   - Sight
   - RedToken
+  - Slope
   layers:
   - Default
   - TransparentFX

@@ -15,6 +15,7 @@ public class Rotate : MonoBehaviour
     public SpinObject2D triangleTwo; // Reference to the SpinObject2D script attached to the second star
     public SpinObject2D triangleThree; // Reference to the SpinObject2D script attached to the third star
     public SpinObject2D triangleFour; // Reference to the SpinObject2D script attached to the fourth star
+    public GameObject slopes; // Reference to the Slopes GameObject   
 
     private Color flashColor; // Color for the flash effect
     private float rotateSpeed = 150f; // Speed of rotation in degrees per second
@@ -449,6 +450,7 @@ public class Rotate : MonoBehaviour
 
             // Apply the new angle to the camera rotation
             cam.transform.eulerAngles = new Vector3(0, 0, currentAngle);
+            slopes.transform.eulerAngles = new Vector3(0, 0, currentAngle);
 
             // Update the elapsed time
             elapsedTime += Time.deltaTime;
@@ -459,12 +461,12 @@ public class Rotate : MonoBehaviour
 
         // Ensure the camera rotation is set to the exact target angle
         cam.transform.eulerAngles = new Vector3(0, 0, targetAngle);
+        slopes.transform.eulerAngles = new Vector3(0, 0, targetAngle);
     }
    
-
     // Method to handle player death
     public void Die()
-    {
+    {              
         // Deactivate the player and its children
         gameObject.SetActive(false);   
         dead = true; // Set the dead flag to true
