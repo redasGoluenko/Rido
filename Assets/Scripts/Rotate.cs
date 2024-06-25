@@ -26,7 +26,8 @@ public class Rotate : MonoBehaviour
     public bool leftHoldToken = false; // Flag to track if the player is holding a token
     public bool pastThirty; // Flag to track if the player has picked up more than 30 tokens
     public bool pastSixty; // Flag to track if the player has picked up more than 60 tokens
-    public bool pastNinety;
+    public bool pastNinety; // Flag to track if the player has picked up more than 90 tokens  
+    public bool dead = false; // Flag to track if the player is dead  
 
     public float desiredDistance = 5f; // The desired distance from the rotation center
     public float correctionSpeed = 2f; // Speed at which the distance correction happens   
@@ -49,14 +50,25 @@ public class Rotate : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
+    {   
         UpdateBackgroundColor(); // Update the background color based on the token count
         ManageZoomCoroutine(); // Manage the zooming coroutine
         UpdateTokenCount(); // Update the token count and adjust the rotate speed
+        UpdateTokenCounterColor(); // Update the token counter color
         OrbitAround(); // Orbit around the rotation center
         CorrectDistance(); // Adjust the distance to the desired distance
         HandleTokenCollision(); // Handle token collision
         CheckGameOver(); // Check if the player has multiple tokens in the scene
+
+        if (isCollidingWithHoldToken)
+        {
+            tokenCounter.textMeshPro.color = new Color(0.5f, 0, 0.5f);
+            StopCoroutine(tokenCounter.flashingCoroutine);
+        }       
+        else
+        {
+            tokenCounter.textMeshPro.color = Color.black;
+        }
 
         // Ensure rotationCenter is assigned
         if (rotationCenter == null)
@@ -64,6 +76,33 @@ public class Rotate : MonoBehaviour
             return;
         }                  
     }
+
+    void UpdateTokenCounterColor()
+    {
+        bool isScreenTouched = Input.touchCount > 0;
+
+        if (isCollidingWithHoldToken)
+        {
+            Debug.Log("Colliding with hold token");
+            tokenCounter.ChangeColor(new Color(0.5f, 0, 0.5f));
+        }
+        else if (isCollidingWithRedirectToken && isScreenTouched)
+        {
+            Debug.Log("Colliding with redirect token");
+            tokenCounter.ChangeColor(Color.blue);
+        }
+        else if (isCollidingWithRedToken && isScreenTouched)
+        {
+            Debug.Log("Colliding with red token");
+            tokenCounter.ChangeColor(Color.red);
+        }
+        else if (isCollidingWithToken && isScreenTouched)
+        {
+            Debug.Log("Colliding with token");
+            tokenCounter.ChangeColor(new Color(1.0f, 0.92f, 0.3f));
+        }
+    }
+
 
     // Method to update the background color based on the token count
     void UpdateBackgroundColor()
@@ -212,26 +251,22 @@ public class Rotate : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Token"))
-        {
-            tokenCounter.ColorYellow();
+        {                    
             isCollidingWithToken = true; // Flag to track collision state
             currentToken = collision.gameObject; // Store the reference to the collided token
         }
         if (collision.gameObject.CompareTag("RedirectToken"))
-        {
-            tokenCounter.ColorBlue();
+        {           
             isCollidingWithRedirectToken = true; // Flag to track collision state
             currentToken = collision.gameObject; // Store the reference to the collided token
         }
         if (collision.gameObject.CompareTag("HoldToken"))
-        {
-            tokenCounter.ColorPurple();
+        {           
             isCollidingWithHoldToken = true; // Flag to track collision state
             tokenCount++; // Increment the token count                             
         }
         if(collision.gameObject.CompareTag("RedToken"))
-        {
-            tokenCounter.ColorRed();
+        {          
             isCollidingWithRedToken = true;
             currentToken = collision.gameObject;
         }
@@ -241,8 +276,7 @@ public class Rotate : MonoBehaviour
     private void OnCollisionExit2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Token"))
-        {
-            tokenCounter.ColorWhite();
+        {         
             // Check if there was no touch input when the collision with the token ended
             if (Input.touchCount == 0)
             {
@@ -253,8 +287,7 @@ public class Rotate : MonoBehaviour
             currentToken = null;
         }
         if (collision.gameObject.CompareTag("RedirectToken"))
-        {
-            tokenCounter.ColorWhite(); // Reset the color of the token counter
+        {           
             if (Input.touchCount == 0)
             {
                 Die();
@@ -264,14 +297,12 @@ public class Rotate : MonoBehaviour
             currentToken = null; // Reset the reference to the collided token                   
         }
         if (collision.gameObject.CompareTag("HoldToken"))
-        {
-            tokenCounter.ColorWhite(); // Reset the color of the token counter 
+        {            
             isCollidingWithHoldToken = false; // Reset the collision flag
             leftHoldToken = true; // Set the leftHoldToken flag to true
         }
         if (collision.gameObject.CompareTag("RedToken"))
-        {
-            tokenCounter.ColorWhite();
+        {          
             if (Input.touchCount == 0)
             {
                 Die();
@@ -377,8 +408,10 @@ public class Rotate : MonoBehaviour
         // Find all GameObjects tagged as "Token"
         GameObject[] tokens = GameObject.FindGameObjectsWithTag("Token");
         GameObject[] redirectTokens = GameObject.FindGameObjectsWithTag("RedirectToken");
+        GameObject[] holdTokens = GameObject.FindGameObjectsWithTag("HoldToken");
+        GameObject[] redTokens = GameObject.FindGameObjectsWithTag("RedToken");
         // Return the count of these objects
-        return tokens.Length + redirectTokens.Length;
+        return tokens.Length + redirectTokens.Length + holdTokens.Length + redTokens.Length;
     }
     
     // Method to rotate the camera 45 degrees slowly
@@ -425,9 +458,10 @@ public class Rotate : MonoBehaviour
     public void Die()
     {
         // Deactivate the player and its children
-        gameObject.SetActive(false);
+        gameObject.SetActive(false);   
+        dead = true; // Set the dead flag to true
 
         // Optionally, you could trigger any other death-related logic here, like fading out
-        ease.FadeIn();
+        ease.FadeIn();      
     }
 }

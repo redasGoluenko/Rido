@@ -26,10 +26,10 @@ public class RotationCenter : MonoBehaviour
     void Update()
     {
         HandleHoldToken(); // Handle the hold token movement
-        HandleTokens(); // Handle the standard and redirect token movement
+        HandleTokens(); // Handle the standard, redirect and red token movement
     }
 
-    // Method to handle the standard and redirect token movement
+    // Method to handle the standard,redirect and red token movement
     void HandleTokens()
     {
         // Check for movement in each direction based on collider availability and player collision
