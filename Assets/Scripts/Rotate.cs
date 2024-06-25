@@ -15,7 +15,7 @@ public class Rotate : MonoBehaviour
     public SpinObject2D triangleTwo; // Reference to the SpinObject2D script attached to the second star
     public SpinObject2D triangleThree; // Reference to the SpinObject2D script attached to the third star
     public SpinObject2D triangleFour; // Reference to the SpinObject2D script attached to the fourth star
-    public GameObject slopes; // Reference to the Slopes GameObject   
+    public GameObject slopes; // Reference to the Slopes GameObject      
 
     private Color flashColor; // Color for the flash effect
     private float rotateSpeed = 150f; // Speed of rotation in degrees per second
@@ -41,9 +41,9 @@ public class Rotate : MonoBehaviour
 
     private void Start()
     {
-        pastThirty = true;
-        pastSixty = true;
-        pastNinety = true;
+        pastThirty = false;
+        pastSixty = false;
+        pastNinety = false;
 
         previousTokenCount = tokenCount;
         
@@ -92,22 +92,22 @@ public class Rotate : MonoBehaviour
 
         if (isCollidingWithHoldToken)
         {
-            Debug.Log("Colliding with hold token");
+            //Debug.Log("Colliding with hold token");
             tokenCounter.ChangeColor(new Color(0.5f, 0, 0.5f));
         }
         else if (isCollidingWithRedirectToken && isScreenTouched)
         {
-            Debug.Log("Colliding with redirect token");
+            //Debug.Log("Colliding with redirect token");
             tokenCounter.ChangeColor(Color.blue);
         }
         else if (isCollidingWithRedToken && isScreenTouched)
         {
-            Debug.Log("Colliding with red token");
+            //Debug.Log("Colliding with red token");
             tokenCounter.ChangeColor(Color.red);
         }
         else if (isCollidingWithToken && isScreenTouched)
         {
-            Debug.Log("Colliding with token");
+            //Debug.Log("Colliding with token");
             tokenCounter.ChangeColor(new Color(1.0f, 0.92f, 0.3f));
         }
     }
@@ -116,9 +116,9 @@ public class Rotate : MonoBehaviour
     // Method to update the background color based on the token count
     void UpdateBackgroundColor()
     {
-        //pastThirty = tokenCount > 30 ? true : false;
-        //pastSixty = tokenCount > 60 ? true : false;
-        //pastNinety = tokenCount > 90 ? true : false;
+        pastThirty = tokenCount > 30 ? true : false;
+        pastSixty = tokenCount > 60 ? true : false;
+        pastNinety = tokenCount > 90 ? true : false;
 
         Color lightBlue = new Color(0.7f, 0.85f, 1f);
         Color lightPurple = new Color(0.85f, 0.7f, 1f);
@@ -463,7 +463,6 @@ public class Rotate : MonoBehaviour
         cam.transform.eulerAngles = new Vector3(0, 0, targetAngle);
         slopes.transform.eulerAngles = new Vector3(0, 0, targetAngle);
     }
-   
     // Method to handle player death
     public void Die()
     {              
@@ -473,6 +472,6 @@ public class Rotate : MonoBehaviour
 
         // Optionally, you could trigger any other death-related logic here, like fading out
         ease.FadeIn();     
-        tokenCounter.textMeshPro.color = Color.white;
+        tokenCounter.textMeshPro.color = Color.white;       
     }
 }

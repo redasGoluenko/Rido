@@ -18,6 +18,7 @@ TagManager:
   - Sight
   - RedToken
   - Slope
+  - StopCollider
   layers:
   - Default
   - TransparentFX
