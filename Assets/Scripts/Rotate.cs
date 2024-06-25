@@ -11,6 +11,10 @@ public class Rotate : MonoBehaviour
     public Transform rotationCenter; // Reference to the object we want to rotate around
     public TokenCounter tokenCounter; // Reference to the TokenCounter script
     public TrailRenderer trailRenderer; // Reference to the TrailRenderer component
+    public SpinObject2D triangleOne; // Reference to the SpinObject2D script attached to the first star
+    public SpinObject2D triangleTwo; // Reference to the SpinObject2D script attached to the second star
+    public SpinObject2D triangleThree; // Reference to the SpinObject2D script attached to the third star
+    public SpinObject2D triangleFour; // Reference to the SpinObject2D script attached to the fourth star
 
     private Color flashColor; // Color for the flash effect
     private float rotateSpeed = 150f; // Speed of rotation in degrees per second
@@ -74,7 +78,9 @@ public class Rotate : MonoBehaviour
         if (rotationCenter == null)
         {
             return;
-        }                  
+        }  
+        
+        triangleOne.clockwise = triangleTwo.clockwise = triangleThree.clockwise = triangleFour.clockwise = !clockwise;
     }
 
     void UpdateTokenCounterColor()
