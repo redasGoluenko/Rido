@@ -11,6 +11,7 @@ public class RetryButtonHandler : MonoBehaviour
     private float moveDistance = 917f; // Distance to move the button
     void Start()
     {
+        buttonText.text = ""; // Clear the text on the button
         // Get the RectTransform component of the button
         buttonRectTransform = GetComponent<RectTransform>();
     }

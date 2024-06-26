@@ -17,11 +17,10 @@ public class Death : MonoBehaviour
 
     // Start is called before the first frame update
     void Start()
-    {
-        StartCoroutine(WaitAndExecute(1f)); // Wait for a second before starting the movement
+    {       
         // Initial movement in local directions
-        StartCoroutine(MoveObjectInDirection(topSlope, Vector3.up, 6.47f, 1f));       
-        StartCoroutine(MoveObjectInDirection(bottomSlope, Vector3.down, 6.5f, 1f));       
+        StartCoroutine(MoveObjectInDirection(topSlope, Vector3.up, 6.47f, 0.25f));       
+        StartCoroutine(MoveObjectInDirection(bottomSlope, Vector3.down, 6.5f, 0.25f));       
     }
 
     // Update is called once per frame
@@ -29,11 +28,7 @@ public class Death : MonoBehaviour
     {
         HandleDeath();
         HandleLiningColors();
-    }
-
-    void PreventPassingThrough()
-    {      
-    }
+    }  
 
     void HandleLiningColors()
     {
@@ -77,8 +72,8 @@ public class Death : MonoBehaviour
             isMoving = true; // Set the flag to prevent starting the coroutine again           
 
             // Move the slopes in their local directions relative to their current rotation
-            StartCoroutine(MoveObjectInDirection(topSlope, topSlope.transform.up * -1, 5.6f, 1f));       
-            StartCoroutine(MoveObjectInDirection(bottomSlope, bottomSlope.transform.up, 6.5f, 1f));       
+            StartCoroutine(MoveObjectInDirection(topSlope, topSlope.transform.up * -1, 5.6f, 0.5f));       
+            StartCoroutine(MoveObjectInDirection(bottomSlope, bottomSlope.transform.up, 6.5f, 0.5f));       
         }
     }
 
@@ -103,8 +98,5 @@ public class Death : MonoBehaviour
         obj.transform.position = destination; // Ensure we finish exactly at the destination
 
         isMoving = false; // Reset the flag if you want to allow movement again later
-    }
-
-    IEnumerator WaitAndExecute(float duration) { yield return new WaitForSeconds(duration); }
-    
+    } 
 }

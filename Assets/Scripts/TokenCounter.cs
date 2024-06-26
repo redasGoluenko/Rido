@@ -8,9 +8,7 @@ public class TokenCounter : MonoBehaviour
     public Rotate rotate; // Reference to the Rotate script
     public TextMeshProUGUI textMeshPro; // Reference to the TextMeshProUGUI component  
     public RectTransform tokenCounterRectTransform; // Reference to the RectTransform of the token counter
-    public Coroutine flashingCoroutine; // Reference to the coroutine for flashing   
-
-    private bool hasMoved = false; // Flag to track if the token counter has already moved     
+    public Coroutine flashingCoroutine; // Reference to the coroutine for flashing        
     void Start()
     {
         textMeshPro.color = Color.white; // Set the initial color to white
@@ -34,45 +32,9 @@ public class TokenCounter : MonoBehaviour
             }
         }     
 
-        if (!rotate.gameObject.activeSelf && !hasMoved)
-        {
-            //Debug.Log("Rotate object is inactive");
-            // Move the button to the left by moveDistance units
-            MoveCounter();
-            hasMoved = true; // Set the flag to true to indicate movement
-        }
-
         // Update the text to display the current token count
         textMeshPro.text = rotate.tokenCount.ToString();
     }
-    
-    // Method to move the token counter
-    private void MoveCounter()
-    {
-        Vector3 newPosition = tokenCounterRectTransform.anchoredPosition;
-        
-        if(rotate.tokenCount > 99)
-        {
-            newPosition.x += 90f;
-            newPosition.y -= 200f;
-            textMeshPro.fontSize = 300;
-        }
-        else if(rotate.tokenCount > 9)
-        {
-            newPosition.x += 130f;
-            newPosition.y -= 200f;
-            textMeshPro.fontSize = 500;
-        }
-        else
-        {
-            newPosition.x += 185f;
-            newPosition.y -= 200f;
-            textMeshPro.fontSize = 700;
-        }
-        
-        tokenCounterRectTransform.anchoredPosition = newPosition;
-    }
-
     // Method to start the flashing color effect
     public void ChangeColor(Color targetColor, float flashDuration = 0.4f, int flashCount = 1)
     {
