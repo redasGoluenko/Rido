@@ -4,11 +4,26 @@ using UnityEngine;
 
 public class CameraFollow : MonoBehaviour
 {
-    public GameObject target; // Reference to the object we want to follow
+    public GameObject rotationCenter; // Reference to the object we want to follow
+    public GameObject player; // Reference to the player object
+    public Rotate rotate; // Reference to the Rotate script
+
     public float followSpeed = 0.5f; // Adjust this value to control the smoothness of the camera movement
-    public Vector3 cameraOffset = new Vector3(0, 0, -0.1f); // Offset of the camera from the target 
+    public Vector3 cameraOffset = new Vector3(0, 0, -0.001f); // Offset of the camera from the target 
     
     void Update()
+    {
+        if (rotate.dead)
+        {
+            FollowTarget(player);
+        }
+        else
+        {
+            FollowTarget(rotationCenter);
+        }     
+    }
+
+    void FollowTarget(GameObject target)
     {
         if (target != null)
         {

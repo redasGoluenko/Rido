@@ -9,15 +9,19 @@ public class Death : MonoBehaviour
     public GameObject bottomSlope; // Reference to the bottom slope object
     public GameObject topLining;
     public GameObject bottomLining;
+    public GameObject leftLining;
+    public GameObject rightLining;
 
+    private bool doOnce = true; // Flag to prevent multiple calls
     private bool isMoving = false; // Flag to track if the movement has started
 
     // Start is called before the first frame update
     void Start()
     {
+        StartCoroutine(WaitAndExecute(1f)); // Wait for a second before starting the movement
         // Initial movement in local directions
-        StartCoroutine(MoveObjectInDirection(topSlope, Vector3.up, 5.47f, 1f));       
-        StartCoroutine(MoveObjectInDirection(bottomSlope, Vector3.down, 6.5f, 1f));       
+        StartCoroutine(MoveObjectInDirection(topSlope, Vector3.up, 6.47f, 1f));       
+        StartCoroutine(MoveObjectInDirection(bottomSlope, Vector3.down, 5.5f, 1f));       
     }
 
     // Update is called once per frame
@@ -37,6 +41,8 @@ public class Death : MonoBehaviour
         {
             topLining.GetComponent<SpriteRenderer>().color = Color.red;
             bottomLining.GetComponent<SpriteRenderer>().color = Color.red;
+            leftLining.GetComponent<SpriteRenderer>().color = Color.red;
+            rightLining.GetComponent<SpriteRenderer>().color = Color.red;
 
             
         }
@@ -44,29 +50,35 @@ public class Death : MonoBehaviour
         {
             topLining.GetComponent<SpriteRenderer>().color = new Color(0.5f, 0, 0.5f);
             bottomLining.GetComponent<SpriteRenderer>().color = new Color(0.5f, 0, 0.5f);
+            leftLining.GetComponent<SpriteRenderer>().color = new Color(0.5f, 0, 0.5f);
+            rightLining.GetComponent<SpriteRenderer>().color = new Color(0.5f, 0, 0.5f);
         }
         else if(rotate.pastThirty)
         {
             topLining.GetComponent<SpriteRenderer>().color = Color.blue;
             bottomLining.GetComponent<SpriteRenderer>().color = Color.blue;
+            leftLining.GetComponent<SpriteRenderer>().color = Color.blue;
+            rightLining.GetComponent<SpriteRenderer>().color = Color.blue;
         }
         else
         {
             topLining.GetComponent<SpriteRenderer>().color = new Color(1.0f, 0.92f, 0.3f);
             bottomLining.GetComponent<SpriteRenderer>().color = new Color(1.0f, 0.92f, 0.3f);
+            leftLining.GetComponent<SpriteRenderer>().color = new Color(1.0f, 0.92f, 0.3f);
+            rightLining.GetComponent<SpriteRenderer>().color = new Color(1.0f, 0.92f, 0.3f);
         }
     }
     public void HandleDeath()
     {
         // Only start the movement if 'rotate.dead' is true and movement hasn't started
-        if (rotate.dead && !isMoving)
+        if (rotate.dead && !isMoving && doOnce)
         {
-            rotate.dead = false; // Reset the flag to prevent multiple calls
+            doOnce = false; // Prevent multiple calls           
             isMoving = true; // Set the flag to prevent starting the coroutine again           
 
             // Move the slopes in their local directions relative to their current rotation
-            StartCoroutine(MoveObjectInDirection(topSlope, topSlope.transform.up * -1, 4.6f, 1f));           
-            StartCoroutine(MoveObjectInDirection(bottomSlope, bottomSlope.transform.up, 6.5f, 1f));          
+            StartCoroutine(MoveObjectInDirection(topSlope, topSlope.transform.up * -1, 5.6f, 1f));       
+            StartCoroutine(MoveObjectInDirection(bottomSlope, bottomSlope.transform.up, 5.5f, 1f));       
         }
     }
 
@@ -92,4 +104,7 @@ public class Death : MonoBehaviour
 
         isMoving = false; // Reset the flag if you want to allow movement again later
     }
+
+    IEnumerator WaitAndExecute(float duration) { yield return new WaitForSeconds(duration); }
+    
 }

@@ -41,9 +41,9 @@ public class Rotate : MonoBehaviour
 
     private void Start()
     {
-        pastThirty = false;
-        pastSixty = false;
-        pastNinety = false;
+        pastThirty = true;
+        pastSixty = true;
+        pastNinety = true;
 
         previousTokenCount = tokenCount;
         
@@ -116,9 +116,9 @@ public class Rotate : MonoBehaviour
     // Method to update the background color based on the token count
     void UpdateBackgroundColor()
     {
-        pastThirty = tokenCount > 30 ? true : false;
-        pastSixty = tokenCount > 60 ? true : false;
-        pastNinety = tokenCount > 90 ? true : false;
+        //pastThirty = tokenCount > 30 ? true : false;
+        //pastSixty = tokenCount > 60 ? true : false;
+        //pastNinety = tokenCount > 90 ? true : false;
 
         Color lightBlue = new Color(0.7f, 0.85f, 1f);
         Color lightPurple = new Color(0.85f, 0.7f, 1f);
@@ -468,7 +468,7 @@ public class Rotate : MonoBehaviour
     {              
         // Deactivate the player and its children
         gameObject.SetActive(false);   
-        dead = true; // Set the dead flag to true
+        dead = true; // Set the dead flag to true       
 
         // Optionally, you could trigger any other death-related logic here, like fading out
         ease.FadeIn();     
