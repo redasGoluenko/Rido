@@ -25,10 +25,54 @@ public class RotationCenter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        HandleHoldToken(); // Handle the hold token movement
-        HandleTokens(); // Handle the standard, redirect and red token movement
+        if (!rotate.isMenu)
+        {
+            HandleHoldToken(); // Handle the hold token movement
+            HandleTokens(); // Handle the standard, redirect and red token movement
+        }
+        
+    }
+    public void SimulatePressWithDelay()
+    {
+        StartCoroutine(DelayedSimulatePress(0.125f)); // 1f is the delay in seconds
     }
 
+    private IEnumerator DelayedSimulatePress(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        SimulatePress();
+        rotate.DestroyCurrentToken();
+        rotate.tokenCount++;
+    }
+
+    public void SimulatePress()
+    {
+        rotate.clockwise = !rotate.clockwise;
+        if (topCollider.Available && topCollider.PlayerColliding)
+        {
+            topCollider.SpawnToken();
+            Teleport(Vector3.up, moveDistance);
+            StartCoroutine(StartCooldown());
+        }
+        else if (bottomCollider.Available && bottomCollider.PlayerColliding)
+        {
+            bottomCollider.SpawnToken();
+            Teleport(Vector3.down, moveDistance);
+            StartCoroutine(StartCooldown());
+        }
+        else if (leftCollider.Available && leftCollider.PlayerColliding)
+        {
+            leftCollider.SpawnToken();
+            Teleport(Vector3.left, moveDistance);
+            StartCoroutine(StartCooldown());
+        }
+        else if (rightCollider.Available && rightCollider.PlayerColliding)
+        {
+            rightCollider.SpawnToken();
+            Teleport(Vector3.right, moveDistance);
+            StartCoroutine(StartCooldown());
+        }       
+    }
     // Method to handle the standard,redirect and red token movement
     void HandleTokens()
     {

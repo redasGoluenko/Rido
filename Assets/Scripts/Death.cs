@@ -19,19 +19,23 @@ public class Death : MonoBehaviour
     private bool isMoving = false; // Flag to track if the movement has started
     public float fadeDuration = 0.5f; // Duration of fading in and out
     private float alpha = 0f; // Initial alpha value for the text
+    public float topSlopeUp = 6.47f; // Top slope up position
+    public float topSlopeDown = 5.6f; // Top slope down position
+    public float bottomSlopeUp = 6.5f; // Bottom slope up position
+    public float bottomSlopeDown = 6.5f; // Bottom slope down position
 
     // Start is called before the first frame update
     void Start()
     {           
-        StartCoroutine(MoveObjectInDirection(topSlope, Vector3.up, 6.47f, 0.25f));
-        StartCoroutine(MoveObjectInDirection(bottomSlope, Vector3.down, 6.5f, 0.25f));
+        StartCoroutine(MoveObjectInDirection(topSlope, Vector3.up, topSlopeUp, 0.25f));
+        StartCoroutine(MoveObjectInDirection(bottomSlope, Vector3.down, bottomSlopeUp, 0.25f));
     }
 
     // Update is called once per frame
     void Update()
     {
-        HandleDeath();
-        HandleLiningColors();
+        if (!rotate.isMenu) { HandleDeath(); }
+        if (!rotate.isMenu) { HandleLiningColors(); }
     }  
 
     void HandleLiningColors()
@@ -83,8 +87,8 @@ public class Death : MonoBehaviour
             isMoving = true; // Set the flag to prevent starting the coroutine again           
 
             // Move the slopes in their local directions relative to their current rotation
-            StartCoroutine(MoveObjectInDirection(topSlope, topSlope.transform.up * -1, 5.6f, 0.5f));       
-            StartCoroutine(MoveObjectInDirection(bottomSlope, bottomSlope.transform.up, 6.5f, 0.5f));
+            StartCoroutine(MoveObjectInDirection(topSlope, topSlope.transform.up * -1, topSlopeDown, 0.5f));       
+            StartCoroutine(MoveObjectInDirection(bottomSlope, bottomSlope.transform.up, bottomSlopeDown, 0.5f));
             StartCoroutine(ChangeAlphaOverTime(1.0f, fadeDuration)); // Fade out the text
 
         }

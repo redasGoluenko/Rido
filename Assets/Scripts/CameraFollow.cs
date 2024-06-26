@@ -13,14 +13,17 @@ public class CameraFollow : MonoBehaviour
     
     void Update()
     {
-        if (rotate.dead)
+        if (!rotate.isMenu)
         {
-            FollowTarget(player);
-        }
-        else
-        {
-            FollowTarget(rotationCenter);
-        }     
+            if (rotate.dead)
+            {
+                FollowTarget(player);
+            }
+            else
+            {
+                FollowTarget(rotationCenter);
+            }
+        }      
     }
 
     void FollowTarget(GameObject target)

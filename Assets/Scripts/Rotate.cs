@@ -9,6 +9,7 @@ public class Rotate : MonoBehaviour
     public Ease ease; // Reference to the Ease script
     public Camera cam; // Reference to the Camera component
     public Transform rotationCenter; // Reference to the object we want to rotate around
+    public RotationCenter rotationCenterScript; // Reference to the RotationCenter script
     public TokenCounter tokenCounter; // Reference to the TokenCounter script
     public TrailRenderer trailRenderer; // Reference to the TrailRenderer component
     public SpinObject2D triangleOne; // Reference to the SpinObject2D script attached to the first star
@@ -33,6 +34,7 @@ public class Rotate : MonoBehaviour
     public bool pastSixty; // Flag to track if the player has picked up more than 60 tokens
     public bool pastNinety; // Flag to track if the player has picked up more than 90 tokens  
     public bool dead = false; // Flag to track if the player is dead  
+    public bool isMenu = false; // Flag to track if the camera is moving
 
     public float desiredDistance = 5f; // The desired distance from the rotation center
     public float correctionSpeed = 2f; // Speed at which the distance correction happens   
@@ -48,7 +50,7 @@ public class Rotate : MonoBehaviour
         previousTokenCount = tokenCount;
         
         if (rotationCenter == null)
-        {
+        {           
             Debug.LogWarning("Rotation center not assigned!");
         }
     }
@@ -57,31 +59,34 @@ public class Rotate : MonoBehaviour
     void Update()
     {   
         UpdateBackgroundColor(); // Update the background color based on the token count
-        ManageZoomCoroutine(); // Manage the zooming coroutine
-        UpdateTokenCount(); // Update the token count and adjust the rotate speed
-        UpdateTokenCounterColor(); // Update the token counter color
+        if (!isMenu) { ManageZoomCoroutine(); } // Manage the zooming coroutine
+        UpdateTokenCount();
+        if (!isMenu) { UpdateTokenCounterColor(); } // Update the token counter color
         OrbitAround(); // Orbit around the rotation center
         CorrectDistance(); // Adjust the distance to the desired distance
         HandleTokenCollision(); // Handle token collision
         CheckGameOver(); // Check if the player has multiple tokens in the scene
 
-        if (isCollidingWithHoldToken)
+        if (!isMenu)
         {
-            tokenCounter.textMeshPro.fontSize = 100;
-            tokenCounter.textMeshPro.color = new Color(0.5f, 0, 0.5f);
-            StopCoroutine(tokenCounter.flashingCoroutine);
-        }       
-        else
-        {
-            tokenCounter.textMeshPro.fontSize = 200;
-            tokenCounter.textMeshPro.color = Color.white;
-        }
+            if (isCollidingWithHoldToken)
+            {
+                tokenCounter.textMeshPro.fontSize = 100;
+                tokenCounter.textMeshPro.color = new Color(0.5f, 0, 0.5f);
+                StopCoroutine(tokenCounter.flashingCoroutine);
+            }
+            else
+            {
+                tokenCounter.textMeshPro.fontSize = 200;
+                tokenCounter.textMeshPro.color = Color.white;
+            }
 
-        // Ensure rotationCenter is assigned
-        if (rotationCenter == null)
-        {
-            return;
-        }  
+            // Ensure rotationCenter is assigned
+            if (rotationCenter == null)
+            {
+                return;
+            }
+        }        
         
         triangleOne.clockwise = triangleTwo.clockwise = triangleThree.clockwise = triangleFour.clockwise = clockwise;
     }
@@ -116,9 +121,13 @@ public class Rotate : MonoBehaviour
     // Method to update the background color based on the token count
     void UpdateBackgroundColor()
     {
-        pastThirty = tokenCount > 30 ? true : false;
-        pastSixty = tokenCount > 60 ? true : false;
-        pastNinety = tokenCount > 90 ? true : false;
+        if (!isMenu)
+        {
+            pastThirty = tokenCount > 30 ? true : false;
+            pastSixty = tokenCount > 60 ? true : false;
+            pastNinety = tokenCount > 90 ? true : false;
+        }
+        
 
         Color lightBlue = new Color(0.7f, 0.85f, 1f);
         Color lightPurple = new Color(0.85f, 0.7f, 1f);
@@ -181,11 +190,10 @@ public class Rotate : MonoBehaviour
     // Method to update the token count and adjust the rotate speed
     void UpdateTokenCount()
     {
-        if (tokenCount != previousTokenCount)
-        {
-            //Debug.Log(rotateSpeed);
-            // Update rotateSpeed based on tokenCount
+        if (tokenCount != previousTokenCount && rotateSpeed < 350)
+        {           
             rotateSpeed = initialRotateSpeed + tokenCount;
+            Debug.Log($"Current Speed: {rotateSpeed}");
 
             // Update previousTokenCount to current tokenCount
             previousTokenCount = tokenCount;
@@ -213,7 +221,7 @@ public class Rotate : MonoBehaviour
     // Method to check if the player has multiple tokens in the scene
     void CheckGameOver()
     {
-        if (Time.time - lastTokenDestructionTime > gracePeriod && CountTokens() > 1)
+        if (Time.time - lastTokenDestructionTime > gracePeriod && CountTokens() > 1 && !isMenu)
         {
             // Handle player death (e.g., deactivate player or trigger a game-over event)
             Debug.Log("Player dies due to multiple tokens in the scene.");
@@ -260,7 +268,8 @@ public class Rotate : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Token"))
-        {                    
+        {
+            if (isMenu) { rotationCenterScript.SimulatePressWithDelay(); } // Simulate the press on the rotation center
             isCollidingWithToken = true; // Flag to track collision state
             currentToken = collision.gameObject; // Store the reference to the collided token
         }
@@ -285,9 +294,9 @@ public class Rotate : MonoBehaviour
     private void OnCollisionExit2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Token"))
-        {         
+        {           
             // Check if there was no touch input when the collision with the token ended
-            if (Input.touchCount == 0)
+            if (Input.touchCount == 0 && !isMenu)
             {
                 Die();
             }
@@ -319,7 +328,7 @@ public class Rotate : MonoBehaviour
 
             isCollidingWithRedToken = false;
             currentToken = null;
-            RotateCamera();
+            if (!isMenu) { RotateCamera(); }
         }
     }
 
@@ -344,7 +353,7 @@ public class Rotate : MonoBehaviour
         cam.backgroundColor = flashColor;
 
         // Interpolate to the target zoom size and back to the original color
-        while (elapsedTime < flashDuration)
+        while (elapsedTime < flashDuration && !isMenu)
         {
             cam.backgroundColor = Color.Lerp(flashColor, originalColor, elapsedTime / flashDuration);
             cam.orthographicSize = Mathf.Lerp(originalSize, targetSize, elapsedTime / zoomDuration);
@@ -358,7 +367,7 @@ public class Rotate : MonoBehaviour
         // Ensure the background color is exactly the original and zoom out the camera smoothly
         cam.backgroundColor = originalColor;
 
-        while (elapsedTime < zoomDuration)
+        while (elapsedTime < zoomDuration && !isMenu)
         {
             cam.orthographicSize = Mathf.Lerp(targetSize, originalSize, elapsedTime / zoomDuration);
             elapsedTime += Time.deltaTime;
@@ -366,7 +375,7 @@ public class Rotate : MonoBehaviour
         }
 
         // Ensure the camera size is exactly the original at the end
-        cam.orthographicSize = originalSize;
+        if (!isMenu) { cam.orthographicSize = originalSize; }
     }
 
     // Coroutine to continuously zoom in and back when colliding with a hold token
@@ -471,7 +480,12 @@ public class Rotate : MonoBehaviour
         dead = true; // Set the dead flag to true       
 
         // Optionally, you could trigger any other death-related logic here, like fading out
-        ease.FadeIn();     
-        tokenCounter.textMeshPro.color = Color.white;       
+        ease.FadeIn();
+        if (!isMenu) { tokenCounter.textMeshPro.color = Color.white; }       
     }
+
+    public void DestroyCurrentToken()
+    {
+       Destroy(currentToken);
+    } 
 }
