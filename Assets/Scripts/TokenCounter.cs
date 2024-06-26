@@ -21,8 +21,23 @@ public class TokenCounter : MonoBehaviour
     {
         if (rotate.dead)
         {
-            // If rotate.dead is true, set the color to white
-            textMeshPro.color = Color.white;
+            textMeshPro.fontSize = 200; // Increase the font size
+            if (rotate.pastNinety)
+            {
+                textMeshPro.color = Color.red;
+            }
+            else if (rotate.pastSixty)
+            {
+                textMeshPro.color = new Color(0.5f, 0, 0.5f);
+            }
+            else if (rotate.pastThirty)
+            {
+                textMeshPro.color = Color.blue;
+            }
+            else
+            {
+                textMeshPro.color = Color.yellow;
+            }
 
             // Stop any existing flashing coroutine
             if (flashingCoroutine != null)
