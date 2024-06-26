@@ -83,7 +83,7 @@ public class Rotate : MonoBehaviour
             return;
         }  
         
-        triangleOne.clockwise = triangleTwo.clockwise = triangleThree.clockwise = triangleFour.clockwise = !clockwise;
+        triangleOne.clockwise = triangleTwo.clockwise = triangleThree.clockwise = triangleFour.clockwise = clockwise;
     }
 
     void UpdateTokenCounterColor()
