@@ -21,7 +21,7 @@ public class Death : MonoBehaviour
         StartCoroutine(WaitAndExecute(1f)); // Wait for a second before starting the movement
         // Initial movement in local directions
         StartCoroutine(MoveObjectInDirection(topSlope, Vector3.up, 6.47f, 1f));       
-        StartCoroutine(MoveObjectInDirection(bottomSlope, Vector3.down, 5.5f, 1f));       
+        StartCoroutine(MoveObjectInDirection(bottomSlope, Vector3.down, 6.5f, 1f));       
     }
 
     // Update is called once per frame
@@ -78,7 +78,7 @@ public class Death : MonoBehaviour
 
             // Move the slopes in their local directions relative to their current rotation
             StartCoroutine(MoveObjectInDirection(topSlope, topSlope.transform.up * -1, 5.6f, 1f));       
-            StartCoroutine(MoveObjectInDirection(bottomSlope, bottomSlope.transform.up, 5.5f, 1f));       
+            StartCoroutine(MoveObjectInDirection(bottomSlope, bottomSlope.transform.up, 6.5f, 1f));       
         }
     }
 

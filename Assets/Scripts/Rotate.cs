@@ -41,9 +41,9 @@ public class Rotate : MonoBehaviour
 
     private void Start()
     {
-        pastThirty = true;
-        pastSixty = true;
-        pastNinety = true;
+        pastThirty = false;
+        pastSixty = false;
+        pastNinety = false;
 
         previousTokenCount = tokenCount;
         
@@ -116,9 +116,9 @@ public class Rotate : MonoBehaviour
     // Method to update the background color based on the token count
     void UpdateBackgroundColor()
     {
-        //pastThirty = tokenCount > 30 ? true : false;
-        //pastSixty = tokenCount > 60 ? true : false;
-        //pastNinety = tokenCount > 90 ? true : false;
+        pastThirty = tokenCount > 30 ? true : false;
+        pastSixty = tokenCount > 60 ? true : false;
+        pastNinety = tokenCount > 90 ? true : false;
 
         Color lightBlue = new Color(0.7f, 0.85f, 1f);
         Color lightPurple = new Color(0.85f, 0.7f, 1f);
@@ -375,7 +375,7 @@ public class Rotate : MonoBehaviour
         if (cam == null) yield break;
 
         float zoomFactor = 0.95f; // Zoom in factor per frame
-        float maxZoomFactor = 0.8f; // Maximum zoom limit (50% of original size)
+        float maxZoomFactor = 0.9f; // Maximum zoom limit (50% of original size)
         float originalSize = cam.orthographicSize; // Store the original camera size
         float zoomOutDuration = 0.2f; // Duration for zooming back to original size
         float newSize;
