@@ -193,7 +193,7 @@ public class Rotate : MonoBehaviour
         if (tokenCount != previousTokenCount && rotateSpeed < 350)
         {           
             rotateSpeed = initialRotateSpeed + tokenCount;
-            Debug.Log($"Current Speed: {rotateSpeed}");
+            //Debug.Log($"Current Speed: {rotateSpeed}");
 
             // Update previousTokenCount to current tokenCount
             previousTokenCount = tokenCount;
