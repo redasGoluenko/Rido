@@ -37,9 +37,9 @@ public class Rotate : MonoBehaviour
     public bool isMenu = false; // Flag to track if the camera is moving
 
     public float desiredDistance = 5f; // The desired distance from the rotation center
-    public float correctionSpeed = 2f; // Speed at which the distance correction happens   
+    public float correctionSpeed = 2f; // Speed at which the distance correction happens
     public float gracePeriod = 0.5f; // Grace period in seconds to ignore brief multiple token situations
-    public int tokenCount = 0; // Number of tokens picked up by the player   
+    public int tokenCount = 0; // Number of tokens picked up by the player
 
     private void Start()
     {
@@ -57,8 +57,8 @@ public class Rotate : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {   
-        UpdateBackgroundColor(); // Update the background color based on the token count
+    {
+        if (!isMenu) { UpdateBackgroundColor(); } // Update the background color based on the token count
         if (!isMenu) { ManageZoomCoroutine(); } // Manage the zooming coroutine
         UpdateTokenCount();
         if (!isMenu) { UpdateTokenCounterColor(); } // Update the token counter color

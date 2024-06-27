@@ -31,7 +31,7 @@ public class MenuButtonHandler : MonoBehaviour
     // This method will be called when the button is clicked
     public void OnButtonClick()
     {
-        UnityEngine.SceneManagement.SceneManager.LoadScene("Main Menu");
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Menu");
     }
 
     // Method to move the button to the left
