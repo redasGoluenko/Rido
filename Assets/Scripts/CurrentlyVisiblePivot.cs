@@ -30,11 +30,11 @@ public class CurrentlyVisiblePivot : MonoBehaviour
     {
         // Initialize colors
         colors = new List<Color>()
-        {
-            new Color(1f * factor, 0.96f * factor, 0.7f * factor, spriteRenderer.color.a), // Pastel Yellow
+        {           
             new Color(1f * factor, 0.6f * factor, 0.6f * factor, spriteRenderer.color.a), // Pastel Red
             new Color(0.7f * factor, 0.85f * factor, 1f * factor, spriteRenderer.color.a), // Pastel Blue
-            new Color(0.85f * factor, 0.7f * factor, 1f * factor, spriteRenderer.color.a)  // Pastel Purple
+            new Color(0.85f * factor, 0.7f * factor, 1f * factor, spriteRenderer.color.a),  // Pastel Purple
+            new Color(1f * factor, 0.96f * factor, 0.7f * factor, spriteRenderer.color.a) // Pastel Yellow
         };
 
         // Start with alpha 0

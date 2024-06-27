@@ -2655,7 +2655,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 22.23}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -6, y: 382}
+  m_AnchoredPosition: {x: -815, y: 69}
   m_SizeDelta: {x: 800, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &198003475
@@ -2782,10 +2782,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a9bdee78e978584f95404a255187130, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 2
   distance: 10
   delay: 0
   moveVertically: 0
+  initialRightDistance: 850
 --- !u!1 &210073861
 GameObject:
   m_ObjectHideFlags: 0
@@ -6191,7 +6192,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 22.23}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.000034332275, y: -104}
+  m_AnchoredPosition: {x: -809, y: -416.99997}
   m_SizeDelta: {x: 800, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &480663759
@@ -6318,10 +6319,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a9bdee78e978584f95404a255187130, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 0.5
   distance: 30
   delay: 0
   moveVertically: 0
+  initialRightDistance: 850
 --- !u!1 &488839720
 GameObject:
   m_ObjectHideFlags: 0
@@ -10004,8 +10006,8 @@ MonoBehaviour:
   fadeDuration: 1
   topSlopeUp: 8.47
   topSlopeDown: 7.6
-  bottomSlopeUp: 8.5
-  bottomSlopeDown: 8.5
+  bottomSlopeUp: 8
+  bottomSlopeDown: 8
 --- !u!1 &816077153
 GameObject:
   m_ObjectHideFlags: 0
@@ -11753,7 +11755,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 22.23}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 10.000036, y: 143}
+  m_AnchoredPosition: {x: -799, y: -169.99997}
   m_SizeDelta: {x: 800, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &903370789
@@ -11880,10 +11882,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a9bdee78e978584f95404a255187130, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 1
   distance: 20
   delay: 0
   moveVertically: 0
+  initialRightDistance: 850
 --- !u!1 &923129217
 GameObject:
   m_ObjectHideFlags: 0
@@ -13957,6 +13960,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 623882b392f019344ae968735495f5d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  endless: {fileID: 198003478}
+  levels: {fileID: 903370792}
+  store: {fileID: 480663762}
+  exit: {fileID: 1097340577}
 --- !u!1 &1036615338
 GameObject:
   m_ObjectHideFlags: 0
@@ -14615,7 +14622,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 22.23}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.99996567, y: -347}
+  m_AnchoredPosition: {x: -810, y: -660}
   m_SizeDelta: {x: 800, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1097340574
@@ -14742,10 +14749,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a9bdee78e978584f95404a255187130, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 0.25
   distance: 40
   delay: 0
   moveVertically: 0
+  initialRightDistance: 850
 --- !u!1 &1108951510
 GameObject:
   m_ObjectHideFlags: 0
@@ -15787,10 +15795,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a9bdee78e978584f95404a255187130, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
+  speed: 0.5
   distance: 0.5
   delay: 0.3
   moveVertically: 1
+  initialRightDistance: 200
 --- !u!1 &1163158781
 GameObject:
   m_ObjectHideFlags: 0
@@ -24198,10 +24207,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a9bdee78e978584f95404a255187130, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
+  speed: 0.5
   distance: 0.5
   delay: 0.3
   moveVertically: 1
+  initialRightDistance: 200
 --- !u!1 &1894041929
 GameObject:
   m_ObjectHideFlags: 0

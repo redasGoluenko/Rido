@@ -29,11 +29,11 @@ public class CycleLiningColors : MonoBehaviour
 
         // Define the list of colors
         colors = new List<Color>()
-        {
-            new Color(1.0f * factor, 0.92f * factor, 0.3f * factor),
+        {           
             new Color(1.0f * factor, 0.0f * factor, 0.0f * factor),
             new Color(0.0f * factor, 0.0f * factor, 1.0f * factor),
-            new Color(0.5f * factor, 0.0f * factor, 0.5f * factor)
+            new Color(0.5f * factor, 0.0f * factor, 0.5f * factor),
+            new Color(1.0f * factor, 0.92f * factor, 0.3f * factor)
         };
 
         // Start with the first color and maintain alpha if any component is present

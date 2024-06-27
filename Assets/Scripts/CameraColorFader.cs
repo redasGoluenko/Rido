@@ -22,7 +22,7 @@ public class CameraColorFader : MonoBehaviour
     void Start()
     {
         // Initialize the colors array
-        colors = new Color[] { pastelYellow, pastelRed, pastelBlue, pastelPurple };
+        colors = new Color[] { pastelRed, pastelBlue, pastelPurple,pastelYellow };
 
         // Get the Camera component
         mainCamera = GetComponent<Camera>();
