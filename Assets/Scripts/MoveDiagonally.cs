@@ -10,9 +10,12 @@ public class MoveDiagonally : MonoBehaviour
     public float distance = 100.0f;
 
     public float delay = 1.0f; // Adjust delay time in seconds
+    public bool moveVertically = false; // Set to true to move vertically instead of diagonally
 
     private RectTransform rectTransform;
+    private Transform objectTransform;
     private Vector2 startPos;
+    private Vector3 startPosition;
 
     void Start()
     {
@@ -23,11 +26,26 @@ public class MoveDiagonally : MonoBehaviour
     {
         yield return new WaitForSeconds(delay);
 
+        // Check if the object has a RectTransform or a regular Transform
         rectTransform = GetComponent<RectTransform>();
-        startPos = rectTransform.anchoredPosition;
+        objectTransform = GetComponent<Transform>();
 
-        // Start moving after the delay
-        StartCoroutine(MoveDiagonallyCoroutine());
+        if (rectTransform != null)
+        {
+            startPos = rectTransform.anchoredPosition;
+        }
+        else if (objectTransform != null)
+        {
+            startPosition = objectTransform.position;
+        }
+        if (moveVertically)
+        {
+            StartCoroutine(MoveVerticallyCoroutine());
+        }
+        else
+        {
+            StartCoroutine(MoveDiagonallyCoroutine());
+        }      
     }
 
     IEnumerator MoveDiagonallyCoroutine()
@@ -38,10 +56,42 @@ public class MoveDiagonally : MonoBehaviour
             float xOffset = Mathf.Cos(Mathf.Deg2Rad * 22.23f) * Mathf.Sin(Time.time * speed) * distance;
             float yOffset = Mathf.Sin(Mathf.Deg2Rad * 22.23f) * Mathf.Sin(Time.time * speed) * distance;
 
-            // Apply the offsets to the anchored position
-            rectTransform.anchoredPosition = startPos + new Vector2(xOffset, yOffset);
+            if (rectTransform != null)
+            {
+                // Apply the offsets to the anchored position for UI elements
+                rectTransform.anchoredPosition = startPos + new Vector2(xOffset, yOffset);
+            }
+            else if (objectTransform != null)
+            {
+                // Apply the offsets to the position for regular game objects
+                objectTransform.position = startPosition + new Vector3(xOffset, yOffset, 0);
+            }
 
             yield return null; // Wait until the next frame
         }
     }
+
+    //move vertically coroutine
+    IEnumerator MoveVerticallyCoroutine()
+    {
+        while (true)
+        {
+            // Calculate vertical offset based on time
+            float yOffset = Mathf.Sin(Time.time * speed) * distance;
+
+            if (rectTransform != null)
+            {
+                // Apply the offset to the anchored position for UI elements
+                rectTransform.anchoredPosition = startPos + new Vector2(0, yOffset);
+            }
+            else if (objectTransform != null)
+            {
+                // Apply the offset to the position for regular game objects
+                objectTransform.position = startPosition + new Vector3(0, yOffset, 0);
+            }
+
+            yield return null; // Wait until the next frame
+        }
+    }
+
 }

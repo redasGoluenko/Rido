@@ -2785,6 +2785,7 @@ MonoBehaviour:
   speed: 5
   distance: 10
   delay: 0
+  moveVertically: 0
 --- !u!1 &210073861
 GameObject:
   m_ObjectHideFlags: 0
@@ -6320,6 +6321,7 @@ MonoBehaviour:
   speed: 5
   distance: 30
   delay: 0
+  moveVertically: 0
 --- !u!1 &488839720
 GameObject:
   m_ObjectHideFlags: 0
@@ -11881,6 +11883,7 @@ MonoBehaviour:
   speed: 5
   distance: 20
   delay: 0
+  moveVertically: 0
 --- !u!1 &923129217
 GameObject:
   m_ObjectHideFlags: 0
@@ -14742,6 +14745,7 @@ MonoBehaviour:
   speed: 5
   distance: 40
   delay: 0
+  moveVertically: 0
 --- !u!1 &1108951510
 GameObject:
   m_ObjectHideFlags: 0
@@ -15620,6 +15624,7 @@ GameObject:
   - component: {fileID: 1154566176}
   - component: {fileID: 1154566178}
   - component: {fileID: 1154566177}
+  - component: {fileID: 1154566179}
   m_Layer: 0
   m_Name: Bottom Slope
   m_TagString: Slope
@@ -15770,6 +15775,22 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 7
+--- !u!114 &1154566179
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1154566174}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a9bdee78e978584f95404a255187130, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 2
+  distance: 0.5
+  delay: 0.3
+  moveVertically: 1
 --- !u!1 &1163158781
 GameObject:
   m_ObjectHideFlags: 0
@@ -24014,6 +24035,7 @@ GameObject:
   - component: {fileID: 1882831653}
   - component: {fileID: 1882831655}
   - component: {fileID: 1882831654}
+  - component: {fileID: 1882831656}
   m_Layer: 0
   m_Name: Top Slope
   m_TagString: Slope
@@ -24164,6 +24186,22 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 7
+--- !u!114 &1882831656
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1882831651}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a9bdee78e978584f95404a255187130, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 2
+  distance: 0.5
+  delay: 0.3
+  moveVertically: 1
 --- !u!1 &1894041929
 GameObject:
   m_ObjectHideFlags: 0
