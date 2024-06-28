@@ -14,6 +14,8 @@ public class Death : MonoBehaviour
     public GameObject rightLining; // Reference to the right lining object
     public GameObject menuText; // Reference to the menu text object
     public GameObject retryText; // Reference to the retry text object
+    public MoveDiagonally topSlopeScript; // Reference to the MoveDiagonally script
+    public MoveDiagonally bottomSlopeScript; // Reference to the MoveDiagonally script
 
     private bool doOnce = true; // Flag to prevent multiple calls
     private bool isMoving = false; // Flag to track if the movement has started
@@ -37,6 +39,7 @@ public class Death : MonoBehaviour
         if (!rotate.isMenu) { HandleDeath(); }
         if (!rotate.isMenu) { HandleLiningColors(); }
     }  
+
 
     void HandleLiningColors()
     {
@@ -92,6 +95,19 @@ public class Death : MonoBehaviour
             StartCoroutine(ChangeAlphaOverTime(1.0f, fadeDuration)); // Fade out the text
 
         }
+    }  
+    public void CloseMenu()
+    {
+        Debug.Log("Menu Closed");
+        topSlopeScript.slopeMovement = false;
+        bottomSlopeScript.slopeMovement = false;
+        StartCoroutine(WaitAndClose(0.5f));
+    }
+    IEnumerator WaitAndClose(float duration)
+    {
+        yield return new WaitForSeconds(duration);
+        StartCoroutine(MoveObjectInDirection(topSlope, topSlope.transform.up * -1, topSlopeDown, 0.5f));
+        StartCoroutine(MoveObjectInDirection(bottomSlope, bottomSlope.transform.up, bottomSlopeDown, 0.5f));
     }
 
     IEnumerator MoveObjectInDirection(GameObject obj, Vector3 direction, float distance, float duration)

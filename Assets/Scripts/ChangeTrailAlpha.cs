@@ -24,20 +24,30 @@ public class ChangeTrailAlpha : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // Change the alpha of the trail renderer
+        // Change the alpha of the trail renderer material
         ChangeAlpha();
     }
 
     void ChangeAlpha()
     {
-        // Get the current color of the trail renderer
-        Color currentColor = trailRenderer.startColor;
+        // Get the current material used by the TrailRenderer
+        Material trailMaterial = trailRenderer.material;
 
-        // Set the alpha value to the target alpha
-        Color newColor = new Color(currentColor.r, currentColor.g, currentColor.b, targetAlpha);
+        // Ensure that the material has the property for alpha (assuming it uses Standard shader)
+        if (trailMaterial.HasProperty("_Color"))
+        {
+            // Get the current color
+            Color currentColor = trailMaterial.GetColor("_Color");
 
-        // Apply the new color to the trail renderer
-        trailRenderer.startColor = newColor;
-        trailRenderer.endColor = newColor;
+            // Set the alpha value to the target alpha
+            Color newColor = new Color(currentColor.r, currentColor.g, currentColor.b, targetAlpha);
+
+            // Apply the new color to the material
+            trailMaterial.SetColor("_Color", newColor);
+        }
+        else
+        {
+            Debug.LogWarning("TrailRenderer material does not have _Color property.");
+        }
     }
 }

@@ -12,6 +12,7 @@ public class MoveDiagonally : MonoBehaviour
     public float delay = 1.0f; // Adjust delay time in seconds
     public bool moveVertically = false; // Set to true to move vertically instead of diagonally
     public float initialRightDistance = 200.0f; // Distance to move diagonally initially
+    public bool slopeMovement = true;
 
     private RectTransform rectTransform;
     private Transform objectTransform;
@@ -182,9 +183,9 @@ public class MoveDiagonally : MonoBehaviour
         }
     }
 
-    IEnumerator MoveVerticallyCoroutine()
+    public IEnumerator MoveVerticallyCoroutine()
     {
-        while (true)
+        while (slopeMovement)
         {
             // Calculate vertical offset based on time
             float yOffset = Mathf.Sin(Time.time * speed) * distance;
