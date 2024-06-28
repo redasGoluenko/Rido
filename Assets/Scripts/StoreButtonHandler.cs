@@ -1,8 +1,9 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class LevelsButtonHandler : MonoBehaviour
+public class StoreButtonHandler : MonoBehaviour
 {
     public Image backgroundOne;
     public Image backgroundTwo;
