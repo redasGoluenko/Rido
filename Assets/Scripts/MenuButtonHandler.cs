@@ -1,5 +1,6 @@
 using UnityEngine;
 using TMPro;
+using System.Collections;
 
 public class MenuButtonHandler : MonoBehaviour
 {
@@ -23,7 +24,7 @@ public class MenuButtonHandler : MonoBehaviour
         {
             //Debug.Log("Rotate object is inactive");
             // Move the button to the left by moveDistance units
-            MoveButtonRight();
+            StartCoroutine(WaitAndMoveRight(0.5f));
             hasMoved = true; // Set the flag to true to indicate movement
         }
     }
@@ -40,5 +41,11 @@ public class MenuButtonHandler : MonoBehaviour
         Vector3 newPosition = buttonRectTransform.anchoredPosition;
         newPosition.x += moveDistance;
         buttonRectTransform.anchoredPosition = newPosition;
+    }
+
+    IEnumerator WaitAndMoveRight(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        MoveButtonRight();
     }
 }

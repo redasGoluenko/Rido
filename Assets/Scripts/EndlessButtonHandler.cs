@@ -11,7 +11,7 @@ public class ButtonHandler : MonoBehaviour
     public Death death; // Reference to the Death script
     public void OnButtonClick()
     {
-        Debug.Log("Going to Endless!");
+        //Debug.Log("Going to Endless!");
 
         // Start the coroutine to move exit diagonally left
         StartCoroutine(exit.MoveLeftDiagonallyInitiallyCoroutine());
@@ -19,7 +19,7 @@ public class ButtonHandler : MonoBehaviour
         StartCoroutine(WaitAndMove(0.2f, levels)); // Wait 2 seconds, then move levels diagonally left
         StartCoroutine(WaitAndMove(0.3f, endless)); // Wait 3 seconds, then move endless diagonally left
         death.CloseMenu(); // Close the menu       
-        StartCoroutine(LoadScene(0.989f)); // Wait 4 seconds, then load the scene "Endless"
+        StartCoroutine(LoadScene(1f)); // Wait 4 seconds, then load the scene "Endless"
     }
 
     // Coroutine to wait for a specified time and then move the object diagonally left

@@ -1,5 +1,6 @@
 using UnityEngine;
 using TMPro;
+using System.Collections;
 
 public class RetryButtonHandler : MonoBehaviour
 {
@@ -20,10 +21,9 @@ public class RetryButtonHandler : MonoBehaviour
     {
         // Check if rotate object is inactive and the button hasn't moved yet
         if (!rotate.gameObject.activeSelf && !hasMoved)
-        {
-            //Debug.Log("Rotate object is inactive");
-            // Move the button to the left by moveDistance units
-            MoveButtonLeft();
+        {           
+            Debug.Log("Rotate object is inactive");
+            StartCoroutine(WaitAndMoveLeft(0.5f));
             hasMoved = true; // Set the flag to true to indicate movement
         }
     }
@@ -38,8 +38,16 @@ public class RetryButtonHandler : MonoBehaviour
     // Method to move the button to the left
     private void MoveButtonLeft()
     {
+        Debug.Log("Moving button left");
         Vector3 newPosition = buttonRectTransform.anchoredPosition;
         newPosition.x -= moveDistance;
         buttonRectTransform.anchoredPosition = newPosition;
+    }
+
+    IEnumerator WaitAndMoveLeft(float delay)
+    {
+        Debug.Log("Waiting and moving left");
+        yield return new WaitForSeconds(delay);
+        MoveButtonLeft();
     }
 }
