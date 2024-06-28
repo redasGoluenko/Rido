@@ -2945,7 +2945,7 @@ MonoBehaviour:
   distance: 10
   delay: 0
   moveVertically: 0
-  initialRightDistance: 870
+  initialRightDistance: 880
   slopeMovement: 1
 --- !u!1 &210073861
 GameObject:
@@ -6585,8 +6585,8 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 539421710}
   - {fileID: 538899335}
+  - {fileID: 539421710}
   m_Father: {fileID: 1414711172}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 22.23}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -6722,7 +6722,7 @@ MonoBehaviour:
   distance: 30
   delay: 0
   moveVertically: 0
-  initialRightDistance: 870
+  initialRightDistance: 880
   slopeMovement: 1
 --- !u!1 &488839720
 GameObject:
@@ -12729,7 +12729,7 @@ MonoBehaviour:
   distance: 20
   delay: 0
   moveVertically: 0
-  initialRightDistance: 870
+  initialRightDistance: 880
   slopeMovement: 1
 --- !u!1 &923129217
 GameObject:
@@ -15620,8 +15620,8 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1096939047}
   - {fileID: 297697148}
+  - {fileID: 1096939047}
   m_Father: {fileID: 1414711172}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 22.23}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -15757,7 +15757,7 @@ MonoBehaviour:
   distance: 40
   delay: 0
   moveVertically: 0
-  initialRightDistance: 870
+  initialRightDistance: 880
   slopeMovement: 1
 --- !u!1 &1108951510
 GameObject:
@@ -24845,7 +24845,7 @@ TrailRenderer:
       key5: {r: 0, g: 0, b: 0, a: 0}
       key6: {r: 0, g: 0, b: 0, a: 0}
       key7: {r: 0, g: 0, b: 0, a: 0}
-      ctime0: 64995
+      ctime0: 65458
       ctime1: 65535
       ctime2: 0
       ctime3: 0
