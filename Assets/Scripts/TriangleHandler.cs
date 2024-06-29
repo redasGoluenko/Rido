@@ -21,7 +21,7 @@ public class TriangleHandler : MonoBehaviour
             if (collider.CompareTag("RotationCenter"))
             {
                 isCollidingWithRotationCenter = true;
-                targetScale = originalScale + new Vector3(scaleFactor + 0.2f, scaleFactor + 1f, 0);
+                targetScale = originalScale + new Vector3(scaleFactor + 0.4f, scaleFactor + 0.3f, 0);
                 break;
             }
         }
@@ -40,7 +40,7 @@ public class TriangleHandler : MonoBehaviour
             // Increase the target scale only if not colliding with RotationCenter
             if (!isCollidingWithRotationCenter)
             {
-                targetScale = originalScale + new Vector3(scaleFactor, scaleFactor, 0);
+                targetScale = originalScale + new Vector3(scaleFactor + 0.2f, scaleFactor, 0);
             }
         }
     }
@@ -50,7 +50,7 @@ public class TriangleHandler : MonoBehaviour
         if (collision.gameObject.CompareTag("RotationCenter"))
         {
             isCollidingWithRotationCenter = true;
-            targetScale = originalScale + new Vector3(scaleFactor + 0.2f, scaleFactor + 1f, 0);
+            targetScale = originalScale + new Vector3(scaleFactor + 0.4f, scaleFactor + 0.3f, 0);
         }
     }
 

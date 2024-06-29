@@ -51,6 +51,11 @@ public class CurrentlyVisiblePivot : MonoBehaviour
         scaleCoroutine = StartCoroutine(Pulsate());
     }
 
+    IEnumerator enumerator()
+    {
+        yield return new WaitForSeconds(1);
+    }
+
     void Update()
     {
         // Always face the player if the player reference is set
