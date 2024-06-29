@@ -472,10 +472,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &3333455
 GameObject:
   m_ObjectHideFlags: 0
@@ -655,10 +656,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &16604202
 GameObject:
   m_ObjectHideFlags: 0
@@ -838,10 +840,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &33526355
 GameObject:
   m_ObjectHideFlags: 0
@@ -1021,10 +1024,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &34497081
 GameObject:
   m_ObjectHideFlags: 0
@@ -1204,10 +1208,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &34560103
 GameObject:
   m_ObjectHideFlags: 0
@@ -1387,10 +1392,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &51321246
 GameObject:
   m_ObjectHideFlags: 0
@@ -1744,10 +1750,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &57296398
 GameObject:
   m_ObjectHideFlags: 0
@@ -1927,10 +1934,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &64434670
 GameObject:
   m_ObjectHideFlags: 0
@@ -2110,10 +2118,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &67575843
 GameObject:
   m_ObjectHideFlags: 0
@@ -2293,10 +2302,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &73459611
 GameObject:
   m_ObjectHideFlags: 0
@@ -2466,10 +2476,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &73765566
 GameObject:
   m_ObjectHideFlags: 0
@@ -2649,10 +2660,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &75093942
 GameObject:
   m_ObjectHideFlags: 0
@@ -2832,10 +2844,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &76631640
 GameObject:
   m_ObjectHideFlags: 0
@@ -3015,10 +3028,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &78248589
 GameObject:
   m_ObjectHideFlags: 0
@@ -3198,10 +3212,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &85706838
 GameObject:
   m_ObjectHideFlags: 0
@@ -3381,10 +3396,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &92876980
 GameObject:
   m_ObjectHideFlags: 0
@@ -3564,10 +3580,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &95145674
 GameObject:
   m_ObjectHideFlags: 0
@@ -3747,10 +3764,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &99299647
 GameObject:
   m_ObjectHideFlags: 0
@@ -3930,10 +3948,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &106280767
 GameObject:
   m_ObjectHideFlags: 0
@@ -4113,10 +4132,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &109960684
 GameObject:
   m_ObjectHideFlags: 0
@@ -4296,10 +4316,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &110167161
 GameObject:
   m_ObjectHideFlags: 0
@@ -4479,10 +4500,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &114833729
 GameObject:
   m_ObjectHideFlags: 0
@@ -4662,10 +4684,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &115429133
 GameObject:
   m_ObjectHideFlags: 0
@@ -4845,10 +4868,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &123005879
 GameObject:
   m_ObjectHideFlags: 0
@@ -5028,10 +5052,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &124701058
 GameObject:
   m_ObjectHideFlags: 0
@@ -5211,10 +5236,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &130081070
 GameObject:
   m_ObjectHideFlags: 0
@@ -5394,10 +5420,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &136151334
 GameObject:
   m_ObjectHideFlags: 0
@@ -5577,10 +5604,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &139153961
 GameObject:
   m_ObjectHideFlags: 0
@@ -5795,10 +5823,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &141594902
 GameObject:
   m_ObjectHideFlags: 0
@@ -5978,10 +6007,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &162142007
 GameObject:
   m_ObjectHideFlags: 0
@@ -6297,10 +6327,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &166574871
 GameObject:
   m_ObjectHideFlags: 0
@@ -6480,10 +6511,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &170127714
 GameObject:
   m_ObjectHideFlags: 0
@@ -6663,10 +6695,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &176311190
 GameObject:
   m_ObjectHideFlags: 0
@@ -6846,10 +6879,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &178106314
 GameObject:
   m_ObjectHideFlags: 0
@@ -7029,10 +7063,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &206963258
 GameObject:
   m_ObjectHideFlags: 0
@@ -7212,10 +7247,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &208094035
 GameObject:
   m_ObjectHideFlags: 0
@@ -7395,10 +7431,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &210073861
 GameObject:
   m_ObjectHideFlags: 0
@@ -7578,10 +7615,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &211003654
 GameObject:
   m_ObjectHideFlags: 0
@@ -7761,10 +7799,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &235305738
 GameObject:
   m_ObjectHideFlags: 0
@@ -8366,10 +8405,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &260971820
 GameObject:
   m_ObjectHideFlags: 0
@@ -8549,10 +8589,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &262053578
 GameObject:
   m_ObjectHideFlags: 0
@@ -8732,10 +8773,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &269823833
 GameObject:
   m_ObjectHideFlags: 0
@@ -8915,10 +8957,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &272026522
 GameObject:
   m_ObjectHideFlags: 0
@@ -9098,10 +9141,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &273317994
 GameObject:
   m_ObjectHideFlags: 0
@@ -9281,10 +9325,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &275004618
 GameObject:
   m_ObjectHideFlags: 0
@@ -9464,10 +9509,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &276824067
 GameObject:
   m_ObjectHideFlags: 0
@@ -9637,10 +9683,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &280492970
 GameObject:
   m_ObjectHideFlags: 0
@@ -9820,10 +9867,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &284772355
 GameObject:
   m_ObjectHideFlags: 0
@@ -10003,10 +10051,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &284817668
 GameObject:
   m_ObjectHideFlags: 0
@@ -10186,10 +10235,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &286065047
 GameObject:
   m_ObjectHideFlags: 0
@@ -10369,10 +10419,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &317590112
 GameObject:
   m_ObjectHideFlags: 0
@@ -10552,10 +10603,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &317677492
 GameObject:
   m_ObjectHideFlags: 0
@@ -10909,10 +10961,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &325450217
 GameObject:
   m_ObjectHideFlags: 0
@@ -11092,10 +11145,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &327794452
 GameObject:
   m_ObjectHideFlags: 0
@@ -11275,10 +11329,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &331692778
 GameObject:
   m_ObjectHideFlags: 0
@@ -11561,10 +11616,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &345985571
 GameObject:
   m_ObjectHideFlags: 0
@@ -11734,10 +11790,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &352248797
 GameObject:
   m_ObjectHideFlags: 0
@@ -11917,10 +11974,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &353480744
 GameObject:
   m_ObjectHideFlags: 0
@@ -12100,10 +12158,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &354592781
 GameObject:
   m_ObjectHideFlags: 0
@@ -12283,10 +12342,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &359118792
 GameObject:
   m_ObjectHideFlags: 0
@@ -12466,10 +12526,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &370885602
 GameObject:
   m_ObjectHideFlags: 0
@@ -12649,10 +12710,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &371659330
 GameObject:
   m_ObjectHideFlags: 0
@@ -12832,10 +12894,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &375507066
 GameObject:
   m_ObjectHideFlags: 0
@@ -13015,10 +13078,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &376226930
 GameObject:
   m_ObjectHideFlags: 0
@@ -13198,10 +13262,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &377342203
 GameObject:
   m_ObjectHideFlags: 0
@@ -13381,10 +13446,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &377480757
 GameObject:
   m_ObjectHideFlags: 0
@@ -13564,10 +13630,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &377881794
 GameObject:
   m_ObjectHideFlags: 0
@@ -13747,10 +13814,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &378343242
 GameObject:
   m_ObjectHideFlags: 0
@@ -13930,10 +13998,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &392623242
 GameObject:
   m_ObjectHideFlags: 0
@@ -14113,10 +14182,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &394627968
 GameObject:
   m_ObjectHideFlags: 0
@@ -14296,10 +14366,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &402029823
 GameObject:
   m_ObjectHideFlags: 0
@@ -14479,10 +14550,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &406948528
 GameObject:
   m_ObjectHideFlags: 0
@@ -14652,10 +14724,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &417842159
 GameObject:
   m_ObjectHideFlags: 0
@@ -14835,10 +14908,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &424019342
 GameObject:
   m_ObjectHideFlags: 0
@@ -15018,10 +15092,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &444456502
 GameObject:
   m_ObjectHideFlags: 0
@@ -15201,10 +15276,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &449146786
 GameObject:
   m_ObjectHideFlags: 0
@@ -15384,10 +15460,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &463304893
 GameObject:
   m_ObjectHideFlags: 0
@@ -15557,10 +15634,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &480542412
 GameObject:
   m_ObjectHideFlags: 0
@@ -15740,10 +15818,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &488839720
 GameObject:
   m_ObjectHideFlags: 0
@@ -15913,10 +15992,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &493129667
 GameObject:
   m_ObjectHideFlags: 0
@@ -16096,10 +16176,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &500257383
 GameObject:
   m_ObjectHideFlags: 0
@@ -16279,10 +16360,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &501009102
 GameObject:
   m_ObjectHideFlags: 0
@@ -16452,10 +16534,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &501794600
 GameObject:
   m_ObjectHideFlags: 0
@@ -16635,10 +16718,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &503605687
 GameObject:
   m_ObjectHideFlags: 0
@@ -16818,10 +16902,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &512233835
 GameObject:
   m_ObjectHideFlags: 0
@@ -17001,10 +17086,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -17296,10 +17382,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &532219558
 GameObject:
   m_ObjectHideFlags: 0
@@ -17479,10 +17566,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &544936167
 GameObject:
   m_ObjectHideFlags: 0
@@ -17662,10 +17750,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &547318707
 GameObject:
   m_ObjectHideFlags: 0
@@ -17845,10 +17934,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &547601780
 GameObject:
   m_ObjectHideFlags: 0
@@ -18028,10 +18118,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &550319346
 GameObject:
   m_ObjectHideFlags: 0
@@ -18279,10 +18370,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &556006451
 GameObject:
   m_ObjectHideFlags: 0
@@ -18462,10 +18554,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &559484528
 GameObject:
   m_ObjectHideFlags: 0
@@ -18635,10 +18728,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &562789084
 GameObject:
   m_ObjectHideFlags: 0
@@ -18818,10 +18912,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &562850943
 GameObject:
   m_ObjectHideFlags: 0
@@ -19001,10 +19096,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &579322534
 GameObject:
   m_ObjectHideFlags: 0
@@ -19184,10 +19280,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &583177092
 GameObject:
   m_ObjectHideFlags: 0
@@ -19367,10 +19464,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &594781337
 GameObject:
   m_ObjectHideFlags: 0
@@ -19550,10 +19648,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &598571689
 GameObject:
   m_ObjectHideFlags: 0
@@ -19733,10 +19832,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &603701372
 GameObject:
   m_ObjectHideFlags: 0
@@ -19916,10 +20016,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &604323665
 GameObject:
   m_ObjectHideFlags: 0
@@ -20099,10 +20200,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &612533541
 GameObject:
   m_ObjectHideFlags: 0
@@ -20282,10 +20384,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &618675340
 GameObject:
   m_ObjectHideFlags: 0
@@ -20465,10 +20568,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &623795050
 GameObject:
   m_ObjectHideFlags: 0
@@ -20648,10 +20752,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &628854738
 GameObject:
   m_ObjectHideFlags: 0
@@ -20831,10 +20936,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &629313694
 GameObject:
   m_ObjectHideFlags: 0
@@ -21014,10 +21120,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &633869385
 GameObject:
   m_ObjectHideFlags: 0
@@ -21333,10 +21440,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &653289676
 GameObject:
   m_ObjectHideFlags: 0
@@ -21516,10 +21624,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &653295311
 GameObject:
   m_ObjectHideFlags: 0
@@ -21699,10 +21808,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &660279279
 GameObject:
   m_ObjectHideFlags: 0
@@ -21882,10 +21992,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &668373890
 GameObject:
   m_ObjectHideFlags: 0
@@ -22065,10 +22176,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &686554990
 GameObject:
   m_ObjectHideFlags: 0
@@ -22248,10 +22360,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &690574685
 GameObject:
   m_ObjectHideFlags: 0
@@ -22431,10 +22544,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &695815382
 GameObject:
   m_ObjectHideFlags: 0
@@ -22614,10 +22728,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 1
 --- !u!1 &700026570
 GameObject:
   m_ObjectHideFlags: 0
@@ -22797,10 +22912,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &701531894
 GameObject:
   m_ObjectHideFlags: 0
@@ -22970,10 +23086,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &708456316
 GameObject:
   m_ObjectHideFlags: 0
@@ -23153,10 +23270,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &716980397
 GameObject:
   m_ObjectHideFlags: 0
@@ -23336,10 +23454,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &719479217
 GameObject:
   m_ObjectHideFlags: 0
@@ -23519,10 +23638,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &720218037
 GameObject:
   m_ObjectHideFlags: 0
@@ -23702,10 +23822,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &728631672
 GameObject:
   m_ObjectHideFlags: 0
@@ -24059,10 +24180,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &734610925
 GameObject:
   m_ObjectHideFlags: 0
@@ -24615,10 +24737,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &756813113
 GameObject:
   m_ObjectHideFlags: 0
@@ -24798,10 +24921,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &762840612
 GameObject:
   m_ObjectHideFlags: 0
@@ -24981,10 +25105,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &767724651
 GameObject:
   m_ObjectHideFlags: 0
@@ -25164,10 +25289,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &770320043
 GameObject:
   m_ObjectHideFlags: 0
@@ -25347,10 +25473,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &773063176
 GameObject:
   m_ObjectHideFlags: 0
@@ -25530,10 +25657,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &776670702
 GameObject:
   m_ObjectHideFlags: 0
@@ -25713,10 +25841,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &776957903
 GameObject:
   m_ObjectHideFlags: 0
@@ -25896,10 +26025,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &782938622
 GameObject:
   m_ObjectHideFlags: 0
@@ -26079,10 +26209,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &785727211
 GameObject:
   m_ObjectHideFlags: 0
@@ -26252,10 +26383,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 1
 --- !u!1 &789984901
 GameObject:
   m_ObjectHideFlags: 0
@@ -26425,10 +26557,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &791258418
 GameObject:
   m_ObjectHideFlags: 0
@@ -26608,10 +26741,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &812144721
 GameObject:
   m_ObjectHideFlags: 0
@@ -26868,10 +27002,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &818347444
 GameObject:
   m_ObjectHideFlags: 0
@@ -27051,10 +27186,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &821224006
 GameObject:
   m_ObjectHideFlags: 0
@@ -27234,10 +27370,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &823542153
 GameObject:
   m_ObjectHideFlags: 0
@@ -27417,10 +27554,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 1
 --- !u!1 &829726169
 GameObject:
   m_ObjectHideFlags: 0
@@ -27600,10 +27738,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &849693374
 GameObject:
   m_ObjectHideFlags: 0
@@ -27783,10 +27922,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &850288130
 GameObject:
   m_ObjectHideFlags: 0
@@ -27966,10 +28106,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &851515183
 GameObject:
   m_ObjectHideFlags: 0
@@ -28149,10 +28290,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &851991013
 GameObject:
   m_ObjectHideFlags: 0
@@ -28332,10 +28474,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &863640398
 GameObject:
   m_ObjectHideFlags: 0
@@ -28686,10 +28829,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 1
 --- !u!1 &869071629
 GameObject:
   m_ObjectHideFlags: 0
@@ -28869,10 +29013,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &873824988
 GameObject:
   m_ObjectHideFlags: 0
@@ -29052,10 +29197,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &875328173
 GameObject:
   m_ObjectHideFlags: 0
@@ -29235,10 +29381,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &876931175
 GameObject:
   m_ObjectHideFlags: 0
@@ -29418,10 +29565,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &884657827
 GameObject:
   m_ObjectHideFlags: 0
@@ -29601,10 +29749,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &895507264
 GameObject:
   m_ObjectHideFlags: 0
@@ -29784,10 +29933,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &896068985
 GameObject:
   m_ObjectHideFlags: 0
@@ -29967,10 +30117,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &904045488
 GameObject:
   m_ObjectHideFlags: 0
@@ -30150,10 +30301,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &905717043
 GameObject:
   m_ObjectHideFlags: 0
@@ -30333,10 +30485,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &923129217
 GameObject:
   m_ObjectHideFlags: 0
@@ -30516,10 +30669,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &923423764
 GameObject:
   m_ObjectHideFlags: 0
@@ -30689,10 +30843,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &928196895
 GameObject:
   m_ObjectHideFlags: 0
@@ -30872,10 +31027,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &928643385
 GameObject:
   m_ObjectHideFlags: 0
@@ -31055,10 +31211,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &939248313
 GameObject:
   m_ObjectHideFlags: 0
@@ -31238,10 +31395,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &943438162
 GameObject:
   m_ObjectHideFlags: 0
@@ -31421,10 +31579,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &943459346
 GameObject:
   m_ObjectHideFlags: 0
@@ -31604,10 +31763,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &954856282
 GameObject:
   m_ObjectHideFlags: 0
@@ -31787,10 +31947,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &955984245
 GameObject:
   m_ObjectHideFlags: 0
@@ -31970,10 +32131,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &959175809
 GameObject:
   m_ObjectHideFlags: 0
@@ -32153,10 +32315,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &962878239
 GameObject:
   m_ObjectHideFlags: 0
@@ -32336,10 +32499,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &963067630
 GameObject:
   m_ObjectHideFlags: 0
@@ -32509,10 +32673,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &985664504
 GameObject:
   m_ObjectHideFlags: 0
@@ -32692,10 +32857,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &987846801
 GameObject:
   m_ObjectHideFlags: 0
@@ -32875,10 +33041,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &992679623
 GameObject:
   m_ObjectHideFlags: 0
@@ -33048,10 +33215,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &1003228045
 GameObject:
   m_ObjectHideFlags: 0
@@ -33231,10 +33399,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &1005734539
 GameObject:
   m_ObjectHideFlags: 0
@@ -33414,10 +33583,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &1006339737
 GameObject:
   m_ObjectHideFlags: 0
@@ -33597,10 +33767,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &1012513075
 GameObject:
   m_ObjectHideFlags: 0
@@ -33780,10 +33951,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &1012987039
 GameObject:
   m_ObjectHideFlags: 0
@@ -33963,10 +34135,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &1026496165
 GameObject:
   m_ObjectHideFlags: 0
@@ -34146,10 +34319,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &1026634408
 GameObject:
   m_ObjectHideFlags: 0
@@ -34329,10 +34503,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &1027160412
 GameObject:
   m_ObjectHideFlags: 0
@@ -34512,10 +34687,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &1036615338
 GameObject:
   m_ObjectHideFlags: 0
@@ -34695,10 +34871,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &1040433962
 GameObject:
   m_ObjectHideFlags: 0
@@ -34878,10 +35055,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &1054923102
 GameObject:
   m_ObjectHideFlags: 0
@@ -35061,10 +35239,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &1079551986
 GameObject:
   m_ObjectHideFlags: 0
@@ -35244,10 +35423,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &1090294599
 GameObject:
   m_ObjectHideFlags: 0
@@ -35427,10 +35607,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &1094013113
 GameObject:
   m_ObjectHideFlags: 0
@@ -35610,10 +35791,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &1095038283
 GameObject:
   m_ObjectHideFlags: 0
@@ -35793,10 +35975,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &1108951510
 GameObject:
   m_ObjectHideFlags: 0
@@ -35976,10 +36159,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &1112679520
 GameObject:
   m_ObjectHideFlags: 0
@@ -36159,10 +36343,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &1112742570
 GameObject:
   m_ObjectHideFlags: 0
@@ -36342,10 +36527,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &1112943074
 GameObject:
   m_ObjectHideFlags: 0
@@ -36525,10 +36711,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &1114822726
 GameObject:
   m_ObjectHideFlags: 0
@@ -36911,10 +37098,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &1117712960
 GameObject:
   m_ObjectHideFlags: 0
@@ -37094,10 +37282,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &1122120309
 GameObject:
   m_ObjectHideFlags: 0
@@ -37277,10 +37466,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &1125687081
 GameObject:
   m_ObjectHideFlags: 0
@@ -37460,10 +37650,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &1127149717
 GameObject:
   m_ObjectHideFlags: 0
@@ -37643,10 +37834,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &1134254245
 GameObject:
   m_ObjectHideFlags: 0
@@ -37826,10 +38018,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &1145149141
 GameObject:
   m_ObjectHideFlags: 0
@@ -38009,10 +38202,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &1145572217
 GameObject:
   m_ObjectHideFlags: 0
@@ -38192,10 +38386,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &1146653492
 GameObject:
   m_ObjectHideFlags: 0
@@ -38375,10 +38570,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &1148481806
 GameObject:
   m_ObjectHideFlags: 0
@@ -38548,10 +38744,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &1150132975
 GameObject:
   m_ObjectHideFlags: 0
@@ -38731,10 +38928,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &1154566174
 GameObject:
   m_ObjectHideFlags: 0
@@ -39077,10 +39275,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &1163158781
 GameObject:
   m_ObjectHideFlags: 0
@@ -39425,10 +39624,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &1166638713
 GameObject:
   m_ObjectHideFlags: 0
@@ -39608,10 +39808,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &1175804267
 GameObject:
   m_ObjectHideFlags: 0
@@ -39791,10 +39992,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &1180336465
 GameObject:
   m_ObjectHideFlags: 0
@@ -39974,10 +40176,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &1200146109
 GameObject:
   m_ObjectHideFlags: 0
@@ -40157,10 +40360,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &1202880723
 GameObject:
   m_ObjectHideFlags: 0
@@ -40340,10 +40544,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &1206924539
 GameObject:
   m_ObjectHideFlags: 0
@@ -40523,10 +40728,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &1207023147
 GameObject:
   m_ObjectHideFlags: 0
@@ -40706,10 +40912,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &1214468551
 GameObject:
   m_ObjectHideFlags: 0
@@ -40889,10 +41096,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &1242185688
 GameObject:
   m_ObjectHideFlags: 0
@@ -41072,10 +41280,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &1253547678
 GameObject:
   m_ObjectHideFlags: 0
@@ -41255,10 +41464,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &1264804439
 GameObject:
   m_ObjectHideFlags: 0
@@ -41428,10 +41638,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &1274222546
 GameObject:
   m_ObjectHideFlags: 0
@@ -41611,10 +41822,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &1281756824
 GameObject:
   m_ObjectHideFlags: 0
@@ -41794,10 +42006,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &1283119101
 GameObject:
   m_ObjectHideFlags: 0
@@ -42158,10 +42371,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &1293797826
 GameObject:
   m_ObjectHideFlags: 0
@@ -42341,10 +42555,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &1297303544
 GameObject:
   m_ObjectHideFlags: 0
@@ -42524,10 +42739,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &1300749254
 GameObject:
   m_ObjectHideFlags: 0
@@ -42707,10 +42923,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &1307770454
 GameObject:
   m_ObjectHideFlags: 0
@@ -42890,10 +43107,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &1309956661
 GameObject:
   m_ObjectHideFlags: 0
@@ -43073,10 +43291,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &1324222098
 GameObject:
   m_ObjectHideFlags: 0
@@ -43256,10 +43475,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &1330856560
 GameObject:
   m_ObjectHideFlags: 0
@@ -43429,10 +43649,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &1334466413
 GameObject:
   m_ObjectHideFlags: 0
@@ -43612,10 +43833,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &1334737875
 GameObject:
   m_ObjectHideFlags: 0
@@ -43896,10 +44118,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &1340124218
 GameObject:
   m_ObjectHideFlags: 0
@@ -44079,10 +44302,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &1340674406
 GameObject:
   m_ObjectHideFlags: 0
@@ -44262,10 +44486,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &1344371641
 GameObject:
   m_ObjectHideFlags: 0
@@ -44445,10 +44670,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &1363790495
 GameObject:
   m_ObjectHideFlags: 0
@@ -44628,10 +44854,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &1366776212
 GameObject:
   m_ObjectHideFlags: 0
@@ -44811,10 +45038,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &1367045402
 GameObject:
   m_ObjectHideFlags: 0
@@ -45168,10 +45396,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &1392845124
 GameObject:
   m_ObjectHideFlags: 0
@@ -45351,10 +45580,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &1405795818
 GameObject:
   m_ObjectHideFlags: 0
@@ -45534,10 +45764,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &1409077088
 GameObject:
   m_ObjectHideFlags: 0
@@ -45717,10 +45948,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &1414711168
 GameObject:
   m_ObjectHideFlags: 0
@@ -45995,10 +46227,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &1422074967
 GameObject:
   m_ObjectHideFlags: 0
@@ -46178,10 +46411,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &1425337735
 GameObject:
   m_ObjectHideFlags: 0
@@ -46361,10 +46595,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &1429980825
 GameObject:
   m_ObjectHideFlags: 0
@@ -46534,10 +46769,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &1431287706
 GameObject:
   m_ObjectHideFlags: 0
@@ -46717,10 +46953,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &1432745594
 GameObject:
   m_ObjectHideFlags: 0
@@ -46900,10 +47137,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &1433175022
 GameObject:
   m_ObjectHideFlags: 0
@@ -47073,10 +47311,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &1434704262
 GameObject:
   m_ObjectHideFlags: 0
@@ -47357,10 +47596,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &1437587772
 GameObject:
   m_ObjectHideFlags: 0
@@ -47540,10 +47780,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &1452248476
 GameObject:
   m_ObjectHideFlags: 0
@@ -47723,10 +47964,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &1457599815
 GameObject:
   m_ObjectHideFlags: 0
@@ -47996,10 +48238,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &1465336620
 GameObject:
   m_ObjectHideFlags: 0
@@ -48265,10 +48508,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &1474340380
 GameObject:
   m_ObjectHideFlags: 0
@@ -48448,10 +48692,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &1474968516
 GameObject:
   m_ObjectHideFlags: 0
@@ -48631,10 +48876,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &1475745453
 GameObject:
   m_ObjectHideFlags: 0
@@ -48814,10 +49060,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &1475803245
 GameObject:
   m_ObjectHideFlags: 0
@@ -48997,10 +49244,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &1481519578
 GameObject:
   m_ObjectHideFlags: 0
@@ -49180,10 +49428,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &1491523090
 GameObject:
   m_ObjectHideFlags: 0
@@ -49353,10 +49602,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &1496180420
 GameObject:
   m_ObjectHideFlags: 0
@@ -49536,10 +49786,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &1496485941
 GameObject:
   m_ObjectHideFlags: 0
@@ -49719,10 +49970,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &1498511620
 GameObject:
   m_ObjectHideFlags: 0
@@ -49902,10 +50154,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &1500039464
 GameObject:
   m_ObjectHideFlags: 0
@@ -50476,10 +50729,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &1512686718
 GameObject:
   m_ObjectHideFlags: 0
@@ -50659,10 +50913,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &1517976886
 GameObject:
   m_ObjectHideFlags: 0
@@ -50994,10 +51249,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &1535368147
 GameObject:
   m_ObjectHideFlags: 0
@@ -51177,10 +51433,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &1544192240
 GameObject:
   m_ObjectHideFlags: 0
@@ -51360,10 +51617,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &1549164582
 GameObject:
   m_ObjectHideFlags: 0
@@ -51543,10 +51801,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &1557025013
 GameObject:
   m_ObjectHideFlags: 0
@@ -51716,10 +51975,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &1564888753
 GameObject:
   m_ObjectHideFlags: 0
@@ -52080,10 +52340,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &1578899122
 GameObject:
   m_ObjectHideFlags: 0
@@ -52263,10 +52524,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &1580104192
 GameObject:
   m_ObjectHideFlags: 0
@@ -52446,10 +52708,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &1585609734
 GameObject:
   m_ObjectHideFlags: 0
@@ -52629,10 +52892,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &1586042547
 GameObject:
   m_ObjectHideFlags: 0
@@ -52812,10 +53076,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &1587351304
 GameObject:
   m_ObjectHideFlags: 0
@@ -52995,10 +53260,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 1
 --- !u!1 &1601482056
 GameObject:
   m_ObjectHideFlags: 0
@@ -53178,10 +53444,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &1603340042
 GameObject:
   m_ObjectHideFlags: 0
@@ -53361,10 +53628,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &1603576475
 GameObject:
   m_ObjectHideFlags: 0
@@ -53544,10 +53812,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &1608697401
 GameObject:
   m_ObjectHideFlags: 0
@@ -53717,10 +53986,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &1619988622
 GameObject:
   m_ObjectHideFlags: 0
@@ -53900,10 +54170,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &1628652862
 GameObject:
   m_ObjectHideFlags: 0
@@ -54083,10 +54354,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &1645545172
 GameObject:
   m_ObjectHideFlags: 0
@@ -54266,10 +54538,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &1647257768
 GameObject:
   m_ObjectHideFlags: 0
@@ -54535,10 +54808,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &1648177377
 GameObject:
   m_ObjectHideFlags: 0
@@ -54718,10 +54992,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &1649800098
 GameObject:
   m_ObjectHideFlags: 0
@@ -54901,10 +55176,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &1651094711
 GameObject:
   m_ObjectHideFlags: 0
@@ -55084,10 +55360,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &1664279017
 GameObject:
   m_ObjectHideFlags: 0
@@ -55267,10 +55544,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &1665135832
 GameObject:
   m_ObjectHideFlags: 0
@@ -55450,10 +55728,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &1675686313
 GameObject:
   m_ObjectHideFlags: 0
@@ -55719,10 +55998,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &1686470268
 GameObject:
   m_ObjectHideFlags: 0
@@ -55892,10 +56172,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &1688902557
 GameObject:
   m_ObjectHideFlags: 0
@@ -56249,10 +56530,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &1694115586
 GameObject:
   m_ObjectHideFlags: 0
@@ -56432,10 +56714,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &1697225890
 GameObject:
   m_ObjectHideFlags: 0
@@ -56615,10 +56898,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &1697774953
 GameObject:
   m_ObjectHideFlags: 0
@@ -56788,10 +57072,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &1698855793
 GameObject:
   m_ObjectHideFlags: 0
@@ -56971,10 +57256,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &1702917533
 GameObject:
   m_ObjectHideFlags: 0
@@ -57154,10 +57440,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &1709584387
 GameObject:
   m_ObjectHideFlags: 0
@@ -57337,10 +57624,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &1725856940
 GameObject:
   m_ObjectHideFlags: 0
@@ -57520,10 +57808,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &1735926872
 GameObject:
   m_ObjectHideFlags: 0
@@ -57703,10 +57992,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &1742370763
 GameObject:
   m_ObjectHideFlags: 0
@@ -57886,10 +58176,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &1745321451
 GameObject:
   m_ObjectHideFlags: 0
@@ -58059,10 +58350,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &1753422563
 GameObject:
   m_ObjectHideFlags: 0
@@ -58242,10 +58534,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &1757657239
 GameObject:
   m_ObjectHideFlags: 0
@@ -58415,10 +58708,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &1758640046
 GameObject:
   m_ObjectHideFlags: 0
@@ -58598,10 +58892,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &1760287561
 GameObject:
   m_ObjectHideFlags: 0
@@ -58781,10 +59076,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &1766285971
 GameObject:
   m_ObjectHideFlags: 0
@@ -58964,10 +59260,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &1771540918
 GameObject:
   m_ObjectHideFlags: 0
@@ -59147,10 +59444,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &1774835089
 GameObject:
   m_ObjectHideFlags: 0
@@ -59330,10 +59628,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &1777299462
 GameObject:
   m_ObjectHideFlags: 0
@@ -59538,10 +59837,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &1781594542
 GameObject:
   m_ObjectHideFlags: 0
@@ -59721,10 +60021,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &1788020322
 GameObject:
   m_ObjectHideFlags: 0
@@ -59904,10 +60205,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &1792451197
 GameObject:
   m_ObjectHideFlags: 0
@@ -60412,10 +60714,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &1814963426
 GameObject:
   m_ObjectHideFlags: 0
@@ -60595,10 +60898,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &1818188332
 GameObject:
   m_ObjectHideFlags: 0
@@ -60778,10 +61082,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &1826030890
 GameObject:
   m_ObjectHideFlags: 0
@@ -61063,10 +61368,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &1832326433
 GameObject:
   m_ObjectHideFlags: 0
@@ -61246,10 +61552,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &1839354226
 GameObject:
   m_ObjectHideFlags: 0
@@ -61429,10 +61736,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &1844942889
 GameObject:
   m_ObjectHideFlags: 0
@@ -61612,10 +61920,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &1850431741
 GameObject:
   m_ObjectHideFlags: 0
@@ -61795,10 +62104,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &1855986187
 GameObject:
   m_ObjectHideFlags: 0
@@ -61978,10 +62288,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &1856709454
 GameObject:
   m_ObjectHideFlags: 0
@@ -62161,10 +62472,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &1858908843
 GameObject:
   m_ObjectHideFlags: 0
@@ -62344,10 +62656,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &1859426038
 GameObject:
   m_ObjectHideFlags: 0
@@ -62527,10 +62840,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &1860980077
 GameObject:
   m_ObjectHideFlags: 0
@@ -62710,10 +63024,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &1867423798
 GameObject:
   m_ObjectHideFlags: 0
@@ -62893,10 +63208,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &1871177081
 GameObject:
   m_ObjectHideFlags: 0
@@ -63076,10 +63392,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &1874820446
 GameObject:
   m_ObjectHideFlags: 0
@@ -63259,10 +63576,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &1882831651
 GameObject:
   m_ObjectHideFlags: 0
@@ -63605,10 +63923,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &1893134653
 GameObject:
   m_ObjectHideFlags: 0
@@ -63788,10 +64107,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &1894041929
 GameObject:
   m_ObjectHideFlags: 0
@@ -63971,10 +64291,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &1894365828
 GameObject:
   m_ObjectHideFlags: 0
@@ -64328,10 +64649,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &1920861020
 GameObject:
   m_ObjectHideFlags: 0
@@ -64511,10 +64833,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &1927157491
 GameObject:
   m_ObjectHideFlags: 0
@@ -64694,10 +65017,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &1930087892
 GameObject:
   m_ObjectHideFlags: 0
@@ -64867,10 +65191,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &1935518006
 GameObject:
   m_ObjectHideFlags: 0
@@ -65231,10 +65556,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &1949685012
 GameObject:
   m_ObjectHideFlags: 0
@@ -65414,10 +65740,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &1960472178
 GameObject:
   m_ObjectHideFlags: 0
@@ -65597,10 +65924,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &1963122021
 GameObject:
   m_ObjectHideFlags: 0
@@ -65780,10 +66108,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &1965053159
 GameObject:
   m_ObjectHideFlags: 0
@@ -65963,10 +66292,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &1973282984
 GameObject:
   m_ObjectHideFlags: 0
@@ -66146,10 +66476,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &1979401172
 GameObject:
   m_ObjectHideFlags: 0
@@ -66329,10 +66660,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &1991502620
 GameObject:
   m_ObjectHideFlags: 0
@@ -66512,10 +66844,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &1998962629
 GameObject:
   m_ObjectHideFlags: 0
@@ -66695,10 +67028,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &2001543686
 GameObject:
   m_ObjectHideFlags: 0
@@ -66878,10 +67212,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &2003478621
 GameObject:
   m_ObjectHideFlags: 0
@@ -67061,10 +67396,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &2003691842
 GameObject:
   m_ObjectHideFlags: 0
@@ -67244,10 +67580,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &2007815109
 GameObject:
   m_ObjectHideFlags: 0
@@ -67427,10 +67764,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &2019330268
 GameObject:
   m_ObjectHideFlags: 0
@@ -67610,10 +67948,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &2027972298
 GameObject:
   m_ObjectHideFlags: 0
@@ -67793,10 +68132,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &2028221337
 GameObject:
   m_ObjectHideFlags: 0
@@ -67976,10 +68316,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &2032268362
 GameObject:
   m_ObjectHideFlags: 0
@@ -68159,10 +68500,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &2043136978
 GameObject:
   m_ObjectHideFlags: 0
@@ -68342,10 +68684,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &2053899617
 GameObject:
   m_ObjectHideFlags: 0
@@ -68525,10 +68868,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &2056313678
 GameObject:
   m_ObjectHideFlags: 0
@@ -68708,10 +69052,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &2062339773
 GameObject:
   m_ObjectHideFlags: 0
@@ -68891,10 +69236,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &2067330661
 GameObject:
   m_ObjectHideFlags: 0
@@ -69074,10 +69420,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &2073503650
 GameObject:
   m_ObjectHideFlags: 0
@@ -69257,10 +69604,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &2094196792
 GameObject:
   m_ObjectHideFlags: 0
@@ -69430,10 +69778,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &2096257861
 GameObject:
   m_ObjectHideFlags: 0
@@ -69613,10 +69962,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &2097900017
 GameObject:
   m_ObjectHideFlags: 0
@@ -69796,10 +70146,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &2098487488
 GameObject:
   m_ObjectHideFlags: 0
@@ -69979,10 +70330,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &2098538536
 GameObject:
   m_ObjectHideFlags: 0
@@ -70162,10 +70514,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &2099154020
 GameObject:
   m_ObjectHideFlags: 0
@@ -70345,10 +70698,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &2104909821
 GameObject:
   m_ObjectHideFlags: 0
@@ -70753,10 +71107,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &2117823133
 GameObject:
   m_ObjectHideFlags: 0
@@ -70936,10 +71291,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &2121645423
 GameObject:
   m_ObjectHideFlags: 0
@@ -71119,10 +71475,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &2129058270
 GameObject:
   m_ObjectHideFlags: 0
@@ -71302,10 +71659,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &2141372016
 GameObject:
   m_ObjectHideFlags: 0
@@ -71485,10 +71843,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1 &2141570056
 GameObject:
   m_ObjectHideFlags: 0
@@ -71668,10 +72027,11 @@ MonoBehaviour:
   fadeDuration: 1
   colorChangeInterval: 2
   pulsateDuration: 1
-  extensionOffset: 0.1
+  extensionOffset: 0.2
   minScale: {x: 0.45, y: 0.45, z: 0.45}
   maxScale: {x: 0.5, y: 0.5, z: 0.5}
   isMenu: 0
+  isFirstPivot: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

@@ -9,10 +9,15 @@ public class TriangleHandler : MonoBehaviour
     private Vector3 targetScale;
     private bool isCollidingWithRotationCenter = false;
 
+    private Renderer triangleRenderer;
+
     void Start()
     {
         originalScale = transform.localScale;
         targetScale = originalScale;
+
+        // Get the Renderer component
+        triangleRenderer = GetComponent<Renderer>();
 
         // Check initial collision status with RotationCenter
         Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, 0.1f);
@@ -21,16 +26,22 @@ public class TriangleHandler : MonoBehaviour
             if (collider.CompareTag("RotationCenter"))
             {
                 isCollidingWithRotationCenter = true;
-                targetScale = originalScale + new Vector3(scaleFactor + 0.4f, scaleFactor + 0.3f, 0);
+                targetScale = originalScale + new Vector3(scaleFactor + 0.36f, scaleFactor + 0.3f, 0);
                 break;
             }
         }
+
+        // Set initial visibility
+        UpdateVisibility();
     }
 
     void Update()
     {
         // Smoothly interpolate towards the target scale
         transform.localScale = Vector3.Lerp(transform.localScale, targetScale, scaleSpeed * Time.deltaTime);
+
+        // Update the visibility based on the current scale
+        UpdateVisibility();
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -40,7 +51,7 @@ public class TriangleHandler : MonoBehaviour
             // Increase the target scale only if not colliding with RotationCenter
             if (!isCollidingWithRotationCenter)
             {
-                targetScale = originalScale + new Vector3(scaleFactor + 0.2f, scaleFactor, 0);
+                targetScale = originalScale + new Vector3(scaleFactor + 0.3f, scaleFactor, 0);
             }
         }
     }
@@ -50,7 +61,7 @@ public class TriangleHandler : MonoBehaviour
         if (collision.gameObject.CompareTag("RotationCenter"))
         {
             isCollidingWithRotationCenter = true;
-            targetScale = originalScale + new Vector3(scaleFactor + 0.4f, scaleFactor + 0.3f, 0);
+            targetScale = originalScale + new Vector3(scaleFactor + 0.36f, scaleFactor + 0.3f, 0);
         }
     }
 
@@ -69,5 +80,14 @@ public class TriangleHandler : MonoBehaviour
             isCollidingWithRotationCenter = false;
             targetScale = originalScale;
         }
+    }
+
+    private void UpdateVisibility()
+    {
+        // Check if the triangle is extended beyond its original scale
+        bool isExtended = transform.localScale != originalScale;
+
+        // Set the Renderer visibility based on whether the triangle is extended
+        triangleRenderer.enabled = isExtended;
     }
 }

@@ -21,6 +21,7 @@ public class CurrentlyVisiblePivot : MonoBehaviour
     public Vector3 minScale = new Vector3(0.9f, 0.9f, 0.9f); // Minimum scale for the pulsation
     public Vector3 maxScale = new Vector3(1.1f, 1.1f, 1.1f); // Maximum scale for the pulsation    
     public bool isMenu = false;
+    public bool isFirstPivot = false;
     
 
     private List<Color> colors; // List to hold the pastel colors
@@ -39,11 +40,23 @@ public class CurrentlyVisiblePivot : MonoBehaviour
         }
         else
         {
-            // Start with fully transparent color
-            spriteRenderer.color = new Color(spriteRenderer.color.r, spriteRenderer.color.g, spriteRenderer.color.b, 0);
-            if (triangleSpriteRenderer != null)
+            if (isFirstPivot)
             {
-                triangleSpriteRenderer.color = new Color(triangleSpriteRenderer.color.r, triangleSpriteRenderer.color.g, triangleSpriteRenderer.color.b, 0);
+                // Start with fully opaque color for the first pivot
+                spriteRenderer.color = new Color(spriteRenderer.color.r, spriteRenderer.color.g, spriteRenderer.color.b, 1);
+                if (triangleSpriteRenderer != null)
+                {
+                    triangleSpriteRenderer.color = new Color(triangleSpriteRenderer.color.r, triangleSpriteRenderer.color.g, triangleSpriteRenderer.color.b, 1);
+                }
+            }
+            else
+            {
+                // Start with fully transparent color for other pivots
+                spriteRenderer.color = new Color(spriteRenderer.color.r, spriteRenderer.color.g, spriteRenderer.color.b, 0);
+                if (triangleSpriteRenderer != null)
+                {
+                    triangleSpriteRenderer.color = new Color(triangleSpriteRenderer.color.r, triangleSpriteRenderer.color.g, triangleSpriteRenderer.color.b, 0);
+                }
             }
         }
 
@@ -51,10 +64,6 @@ public class CurrentlyVisiblePivot : MonoBehaviour
         scaleCoroutine = StartCoroutine(Pulsate());
     }
 
-    IEnumerator enumerator()
-    {
-        yield return new WaitForSeconds(1);
-    }
 
     void Update()
     {
