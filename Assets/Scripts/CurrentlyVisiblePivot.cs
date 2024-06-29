@@ -95,7 +95,7 @@ public class CurrentlyVisiblePivot : MonoBehaviour
         }
         if(collision.gameObject.CompareTag("RotationCenter"))
         {
-            ChangeTriangleAlphaToOne();
+            //ChangeTriangleAlphaToOne();
         }
         
     }
@@ -113,7 +113,7 @@ public class CurrentlyVisiblePivot : MonoBehaviour
         }
         if (collision.gameObject.CompareTag("RotationCenter"))
         {
-            ChangeTriangleAlphaToZero();
+            //ChangeTriangleAlphaToZero();
         }
         
     }
@@ -131,7 +131,7 @@ public class CurrentlyVisiblePivot : MonoBehaviour
             spriteRenderer.color = new Color(spriteRenderer.color.r, spriteRenderer.color.g, spriteRenderer.color.b, alpha);
             if (triangleSpriteRenderer != null)
             {
-                //triangleSpriteRenderer.color = new Color(triangleSpriteRenderer.color.r, triangleSpriteRenderer.color.g, triangleSpriteRenderer.color.b, alpha);
+                triangleSpriteRenderer.color = new Color(triangleSpriteRenderer.color.r, triangleSpriteRenderer.color.g, triangleSpriteRenderer.color.b, alpha);
             }
             yield return null;
         }
@@ -140,7 +140,7 @@ public class CurrentlyVisiblePivot : MonoBehaviour
         spriteRenderer.color = new Color(spriteRenderer.color.r, spriteRenderer.color.g, spriteRenderer.color.b, targetAlpha);
         if (triangleSpriteRenderer != null)
         {
-            //triangleSpriteRenderer.color = new Color(triangleSpriteRenderer.color.r, triangleSpriteRenderer.color.g, triangleSpriteRenderer.color.b, targetAlpha);
+            triangleSpriteRenderer.color = new Color(triangleSpriteRenderer.color.r, triangleSpriteRenderer.color.g, triangleSpriteRenderer.color.b, targetAlpha);
         }
     }
 
