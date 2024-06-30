@@ -217,16 +217,18 @@ public class Rotate : MonoBehaviour
             {
                 goldTokenCount++;
                 PlayerManager.instance.AddGoldTokens(1);
+                PlayerManager.instance.AddXP(1);
             }
             if(isCollidingWithRedirectToken)
             {
                 blueTokenCount++;
                 PlayerManager.instance.AddBlueTokens(1);
+                PlayerManager.instance.AddXP(5);
             }   
             if(isCollidingWithRedToken)
             {
                 redTokenCount++;
-                PlayerManager.instance.AddRedTokens(1);
+                PlayerManager.instance.AddXP(25);
             }
             // Destroy the token
             Destroy(currentToken);
@@ -310,6 +312,7 @@ public class Rotate : MonoBehaviour
             tokenCount++; // Increment the token count
             purpleTokenCount++;
             PlayerManager.instance.AddPurpleTokens(1);
+            PlayerManager.instance.AddXP(10);
         }
         if(collision.gameObject.CompareTag("RedToken"))
         {          

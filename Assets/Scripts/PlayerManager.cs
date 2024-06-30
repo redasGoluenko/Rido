@@ -8,10 +8,16 @@ public class PlayerManager : MonoBehaviour
     public int currentBlueTokens = 0;
     public int currentPurpleTokens = 0;
     public int currentRedTokens = 0;
+    public int currentXP = 0;
+
+    public bool reset = false;
 
     private void Start()
     {
-        //ResetScore();
+        if (reset)
+        {
+            ResetScore();
+        }       
     }
     public void ResetScore()
     {
@@ -19,6 +25,7 @@ public class PlayerManager : MonoBehaviour
         currentBlueTokens = 0;
         currentPurpleTokens = 0;
         currentRedTokens = 0;
+        currentXP = 0;
         PlayerPrefs.DeleteAll();  // Remove all saved data
         PlayerPrefs.Save();  // Ensure the changes are written to disk
 
@@ -29,12 +36,14 @@ public class PlayerManager : MonoBehaviour
         BlueTokenTotal blueTokenTotal = FindObjectOfType<BlueTokenTotal>();
         PurpleTokenTotal purpleTokenTotal = FindObjectOfType<PurpleTokenTotal>();
         RedTokenTotal redTokenTotal = FindObjectOfType<RedTokenTotal>();
+        XPTotal xpTotal = FindAnyObjectByType<XPTotal>();
         if (goldTokenTotal != null)
         {
             goldTokenTotal.UpdateScore();
             blueTokenTotal.UpdateScore();
             purpleTokenTotal.UpdateScore();
             redTokenTotal.UpdateScore();
+            xpTotal.UpdateScore();
         }
     }
 
@@ -74,12 +83,20 @@ public class PlayerManager : MonoBehaviour
         SaveScore();
     }
 
+    public void AddXP(int points)
+    {
+        currentXP += points;
+        SaveScore();
+    }
+
+
     public void SaveScore()
     {
         PlayerPrefs.SetInt("GoldTokens", currentGoldTokens);
         PlayerPrefs.SetInt("BlueTokens", currentBlueTokens);
         PlayerPrefs.SetInt("PurpleTokens", currentPurpleTokens);
         PlayerPrefs.SetInt("RedTokens", currentRedTokens);
+        PlayerPrefs.SetInt("XP", currentXP);
         PlayerPrefs.Save();
     }
 
@@ -100,6 +117,10 @@ public class PlayerManager : MonoBehaviour
         if (PlayerPrefs.HasKey("RedTokens"))
         {
             currentRedTokens = PlayerPrefs.GetInt("RedTokens");
+        }
+        if (PlayerPrefs.HasKey("XP"))
+        {
+            currentXP = PlayerPrefs.GetInt("XP");
         }
     }
 
