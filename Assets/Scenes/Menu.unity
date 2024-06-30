@@ -11817,7 +11817,7 @@ MonoBehaviour:
   bottomSlopeScript: {fileID: 1154566179}
   fadeDuration: 1
   topSlopeUp: 8.47
-  topSlopeDown: 7.6
+  topSlopeDown: 7.3
   bottomSlopeUp: 8
   bottomSlopeDown: 8
 --- !u!1 &816077153

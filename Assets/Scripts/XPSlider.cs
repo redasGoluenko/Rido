@@ -15,28 +15,27 @@ public class XPSlider : MonoBehaviour
 
     void Start()
     {
-        // Initialize current XP from the PlayerManager
-        currentXP = PlayerManager.instance.currentXP;
+        // Load XP and level from persistent storage
+        LoadPlayerData();
 
-        // Calculate the XP required to reach the next level for the initial level
+        // Calculate the XP required for the next level based on the loaded level
         nextLevelXP = CalculateNextLevelXP(level);
 
         // Set the slider's max value to the XP needed for the next level
         slider.maxValue = nextLevelXP;
 
-        // Set the slider's current value to the player's current XP
-        slider.value = currentXP;
+        // Set the slider's current value to the player's current XP within the level
+        slider.value = currentXP % nextLevelXP;
 
         // Update the displayed level text
         UpdateLevelText();
 
-        Debug.Log("Current XP: " + currentXP);
+        Debug.Log("Loaded Data - Current XP: " + currentXP + ", Level: " + level);
     }
 
     void Update()
     {
         // Continuously update the player's XP from PlayerManager
-        // This assumes PlayerManager.instance.currentXP is kept up-to-date
         UpdateXP(PlayerManager.instance.currentXP);
     }
 
@@ -47,37 +46,45 @@ public class XPSlider : MonoBehaviour
         return 100 * level;
     }
 
+    // Method to calculate the player's current level based on their total XP
+    int CalculateCurrentLevel(int totalXP)
+    {
+        int level = 1;
+        int xpForNextLevel = CalculateNextLevelXP(level);
+
+        while (totalXP >= xpForNextLevel)
+        {
+            totalXP -= xpForNextLevel;
+            level++;
+            xpForNextLevel = CalculateNextLevelXP(level);
+        }
+
+        return level;
+    }
+
     // Method to update the XP and level dynamically
     void UpdateXP(int xp)
     {
-        // Update the current XP with the new value from the player manager
         currentXP = xp;
 
         // Handle leveling up: if current XP exceeds or meets the XP needed for the next level
         while (currentXP >= nextLevelXP)
         {
-            // Subtract the XP required for the current level and proceed to the next level
             currentXP -= nextLevelXP;
 
             // Update the PlayerManager's XP to the remaining current XP
             PlayerManager.instance.currentXP = currentXP;
 
-            // Increment the level
             level++;
-
-            // Recalculate the XP required for the next level
             nextLevelXP = CalculateNextLevelXP(level);
-
-            // Log level up event
-            Debug.Log("Leveled up to Level " + level + "! Current XP carried over: " + currentXP);
         }
 
         // Update the PlayerManager's XP to the latest value
         PlayerManager.instance.currentXP = currentXP;
 
-        // Update the slider to reflect the current XP relative to the current level's requirement
+        // Update the slider to reflect the XP within the current level range
         slider.maxValue = nextLevelXP;
-        slider.value = currentXP;
+        slider.value = currentXP % nextLevelXP;
 
         // Update the level text to reflect the new level
         UpdateLevelText();
@@ -86,7 +93,38 @@ public class XPSlider : MonoBehaviour
     // Method to handle the visual update of the level text
     void UpdateLevelText()
     {
-        // Display the current level in the UI text component
         levelText.text = "Level " + level;
+    }
+
+    // Method to save player data (XP and level) to persistent storage
+    void SavePlayerData()
+    {
+        PlayerPrefs.SetInt("PlayerXP", currentXP);
+        PlayerPrefs.SetInt("PlayerLevel", level);
+        PlayerPrefs.Save(); // Ensure data is written to persistent storage
+        Debug.Log("Saved Data - Current XP: " + currentXP + ", Level: " + level);
+    }
+
+    // Method to load player data (XP and level) from persistent storage
+    void LoadPlayerData()
+    {
+        // Retrieve saved XP and level, or default to 0 XP and level 1 if not set
+        currentXP = PlayerPrefs.GetInt("PlayerXP", 0);
+        level = PlayerPrefs.GetInt("PlayerLevel", 1);
+    }
+
+    // Save data when the application is quitting
+    void OnApplicationQuit()
+    {
+        SavePlayerData();
+    }
+
+    // Save data when the application is paused (for example, when it goes to the background on mobile)
+    void OnApplicationPause(bool pauseStatus)
+    {
+        if (pauseStatus)
+        {
+            SavePlayerData();
+        }
     }
 }
