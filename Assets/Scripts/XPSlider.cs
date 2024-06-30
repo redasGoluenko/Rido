@@ -36,7 +36,15 @@ public class XPSlider : MonoBehaviour
     void Update()
     {
         // Continuously update the player's XP from PlayerManager
-        UpdateXP(PlayerManager.instance.currentXP);
+        if (PlayerManager.instance.currentXP != currentXP)
+        {
+            UpdateXP(PlayerManager.instance.currentXP);
+            SavePlayerData();
+        }
+        if(level > 1)
+        {
+            slider.minValue = 100 * (level - 1);
+        }       
     }
 
     // Method to calculate the XP required for the next level
@@ -66,28 +74,40 @@ public class XPSlider : MonoBehaviour
     void UpdateXP(int xp)
     {
         currentXP = xp;
+        bool levelChanged = false;
 
-        // Handle leveling up: if current XP exceeds or meets the XP needed for the next level
+        // Continuously check if the current XP exceeds the XP required for the next level
         while (currentXP >= nextLevelXP)
         {
+            // Subtract the XP needed to reach the next level from currentXP
             currentXP -= nextLevelXP;
 
-            // Update the PlayerManager's XP to the remaining current XP
-            PlayerManager.instance.currentXP = currentXP;
-
+            // Increase the player's level
             level++;
+
+            // Calculate the XP required for the next level based on the new level
             nextLevelXP = CalculateNextLevelXP(level);
+
+            // Set a flag indicating that the level has changed
+            levelChanged = true;
+
+            Debug.Log("Level Up! New Level: " + level + ", XP Reset to 0 for new level.");
         }
 
-        // Update the PlayerManager's XP to the latest value
-        PlayerManager.instance.currentXP = currentXP;
-
-        // Update the slider to reflect the XP within the current level range
+        // Update the slider's maximum value to the XP required for the new level
         slider.maxValue = nextLevelXP;
-        slider.value = currentXP % nextLevelXP;
+
+        // Set the slider's current value to the remaining XP for the current level
+        slider.value = currentXP;
 
         // Update the level text to reflect the new level
         UpdateLevelText();
+
+        // If the level has changed, save the new XP and level data
+        if (levelChanged)
+        {
+            SavePlayerData();
+        }
     }
 
     // Method to handle the visual update of the level text
@@ -116,12 +136,14 @@ public class XPSlider : MonoBehaviour
     // Save data when the application is quitting
     void OnApplicationQuit()
     {
+        Debug.Log("Application Quitting, Saving Data.");
         SavePlayerData();
     }
 
     // Save data when the application is paused (for example, when it goes to the background on mobile)
     void OnApplicationPause(bool pauseStatus)
     {
+        Debug.Log("Application Pausing, Pause Status: " + pauseStatus);
         if (pauseStatus)
         {
             SavePlayerData();
