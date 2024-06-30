@@ -16,7 +16,11 @@ public class Rotate : MonoBehaviour
     public SpinObject2D triangleTwo; // Reference to the SpinObject2D script attached to the second star
     public SpinObject2D triangleThree; // Reference to the SpinObject2D script attached to the third star
     public SpinObject2D triangleFour; // Reference to the SpinObject2D script attached to the fourth star
-    public GameObject slopes; // Reference to the Slopes GameObject      
+    public GameObject slopes; // Reference to the Slopes GameObject
+    public GoldTokenCurrent goldTokenCurrent; // Reference to the GoldTokenCurrent script
+    public BlueTokenCurrent blueTokenCurrent; // Reference to the BlueTokenCurrent script
+    public RedTokenCurrent redTokenCurrent; // Reference to the RedTokenCurrent script
+    public PurpleTokenCurrent purpleTokenCurrent; // Reference to the PurpleTokenCurrent script
 
     private Color flashColor; // Color for the flash effect
     private float rotateSpeed = 150f; // Speed of rotation in degrees per second
@@ -35,6 +39,10 @@ public class Rotate : MonoBehaviour
     public bool pastNinety; // Flag to track if the player has picked up more than 90 tokens  
     public bool dead = false; // Flag to track if the player is dead  
     public bool isMenu = false; // Flag to track if the camera is moving
+    public int goldTokenCount = 0; // Number of gold tokens picked up by the player
+    public int blueTokenCount = 0; // Number of blue tokens picked up by the player
+    public int redTokenCount = 0; // Number of red tokens picked up by the player
+    public int purpleTokenCount = 0; // Number of purple tokens picked up by the player
 
     public float desiredDistance = 5f; // The desired distance from the rotation center
     public float correctionSpeed = 2f; // Speed at which the distance correction happens
@@ -207,14 +215,17 @@ public class Rotate : MonoBehaviour
         {
             if (isCollidingWithToken)
             {
+                goldTokenCount++;
                 PlayerManager.instance.AddGoldTokens(1);
             }
             if(isCollidingWithRedirectToken)
             {
+                blueTokenCount++;
                 PlayerManager.instance.AddBlueTokens(1);
             }   
             if(isCollidingWithRedToken)
             {
+                redTokenCount++;
                 PlayerManager.instance.AddRedTokens(1);
             }
             // Destroy the token
@@ -297,6 +308,7 @@ public class Rotate : MonoBehaviour
         {           
             isCollidingWithHoldToken = true; // Flag to track collision state
             tokenCount++; // Increment the token count
+            purpleTokenCount++;
             PlayerManager.instance.AddPurpleTokens(1);
         }
         if(collision.gameObject.CompareTag("RedToken"))
@@ -490,7 +502,11 @@ public class Rotate : MonoBehaviour
     }
     // Method to handle player death
     public void Die()
-    {              
+    {             
+        goldTokenCurrent.UpdateCurrentGoldToken(goldTokenCount);
+        blueTokenCurrent.UpdateCurrentBlueToken(blueTokenCount);
+        redTokenCurrent.UpdateCurrentRedToken(redTokenCount);
+        purpleTokenCurrent.UpdateCurrentPurpleToken(purpleTokenCount);
         // Deactivate the player and its children
         gameObject.SetActive(false);   
         dead = true; // Set the dead flag to true       
