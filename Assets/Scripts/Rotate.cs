@@ -190,7 +190,7 @@ public class Rotate : MonoBehaviour
     // Method to update the token count and adjust the rotate speed
     void UpdateTokenCount()
     {
-        if (tokenCount != previousTokenCount && rotateSpeed < 350)
+        if (tokenCount != previousTokenCount && rotateSpeed < 350 && !isMenu)
         {           
             rotateSpeed = initialRotateSpeed + tokenCount;
             //Debug.Log($"Current Speed: {rotateSpeed}");
@@ -205,10 +205,25 @@ public class Rotate : MonoBehaviour
     {
         if ((isCollidingWithToken || isCollidingWithRedirectToken || isCollidingWithRedToken) && Input.touchCount > 0)
         {
+            if (isCollidingWithToken)
+            {
+                PlayerManager.instance.AddGoldTokens(1);
+            }
+            if(isCollidingWithRedirectToken)
+            {
+                PlayerManager.instance.AddBlueTokens(1);
+            }   
+            if(isCollidingWithRedToken)
+            {
+                PlayerManager.instance.AddRedTokens(1);
+            }
             // Destroy the token
             Destroy(currentToken);
             StartCoroutine(FlashBackground(flashColor));
-            tokenCount++;
+            tokenCount++;            
+            
+            
+            
             // Record the time of token destruction
             lastTokenDestructionTime = Time.time;
             // Reset the flag and reference after destroying the token
@@ -281,7 +296,8 @@ public class Rotate : MonoBehaviour
         if (collision.gameObject.CompareTag("HoldToken"))
         {           
             isCollidingWithHoldToken = true; // Flag to track collision state
-            tokenCount++; // Increment the token count                             
+            tokenCount++; // Increment the token count
+            PlayerManager.instance.AddPurpleTokens(1);
         }
         if(collision.gameObject.CompareTag("RedToken"))
         {          
