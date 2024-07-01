@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
 
-public class ButtonHandler : MonoBehaviour
+public class EndlessButtonHandler : MonoBehaviour
 {
     public Image backgroundOne;
     public Image backgroundTwo;
@@ -19,6 +19,7 @@ public class ButtonHandler : MonoBehaviour
     public MoveDiagonally levels; // Reference to the MoveDiagonally script
     public MoveDiagonally store; // Reference to the MoveDiagonally script
     public MoveDiagonally exit; // Reference to the MoveDiagonally script
+    public MoveByX moveByX; // Reference to the MoveByX script
     public Death death; // Reference to the Death script
 
     public void OnButtonClick()
@@ -33,6 +34,7 @@ public class ButtonHandler : MonoBehaviour
         StartCoroutine(WaitAndMove(0.1f, store)); // Wait 1 second, then move store diagonally left
         StartCoroutine(WaitAndMove(0.2f, levels)); // Wait 2 seconds, then move levels diagonally left
         StartCoroutine(WaitAndMove(0.3f, endless)); // Wait 3 seconds, then move endless diagonally left
+        moveByX.MoveDown(5f);
         death.CloseMenu(); // Close the menu       
         StartCoroutine(LoadScene(1f)); // Wait 4 seconds, then load the scene "Endless"
     }
