@@ -9,7 +9,6 @@ public class BlueTokenCurrent : MonoBehaviour
     public RedTokenCurrent redTokenCurrent;
     public GoldTokenCurrent goldTokenCurrent;
     public GameObject blueToken;
-    public XPEarned XPEarned;
 
     public float animationDuration = 1.0f; // Duration of the animation in seconds
     private Coroutine animateCoroutine;
@@ -40,7 +39,11 @@ public class BlueTokenCurrent : MonoBehaviour
         if(targetCount > 0)
         {
             StartCoroutine(UpdateCurrentBlueTokenCoroutine(targetCount));
-        }     
+        }
+        else
+        {
+            isDone = true;
+        }
     }
 
     private IEnumerator UpdateCurrentBlueTokenCoroutine(int targetCount)
@@ -63,7 +66,7 @@ public class BlueTokenCurrent : MonoBehaviour
     private IEnumerator AnimateScore(int targetCount)
     {
         float timer = 0f;
-        float fadeInDuration = 1.0f; // Duration of the fade-in effect (adjust as needed)
+        float fadeInDuration = 0.5f; // Duration of the fade-in effect (adjust as needed)
         float increment = targetCount / animationDuration;
 
         // Gradually increase visibility of text and blueToken

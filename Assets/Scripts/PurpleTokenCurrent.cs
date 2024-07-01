@@ -9,7 +9,6 @@ public class PurpleTokenCurrent : MonoBehaviour
     public RedTokenCurrent redTokenCurrent;
     public BlueTokenCurrent blueTokenCurrent;
     public GameObject purpleToken;
-    public XPEarned XPEarned;
 
     public float animationDuration = 1.0f; // Duration of the animation in seconds
     private Coroutine animateCoroutine;
@@ -40,6 +39,10 @@ public class PurpleTokenCurrent : MonoBehaviour
         if (targetCount > 0)
         {
             StartCoroutine(UpdateCurrentPurpleTokenCoroutine(targetCount));
+        }
+        else
+        {
+            isDone = true;
         }
     }
 

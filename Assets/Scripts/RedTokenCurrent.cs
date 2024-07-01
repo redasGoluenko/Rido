@@ -9,10 +9,10 @@ public class RedTokenCurrent : MonoBehaviour
     public BlueTokenCurrent blueTokenCurrent;
     public GoldTokenCurrent goldTokenCurrent;
     public GameObject redToken;
-    public XPEarned XPEarned;
 
     public float animationDuration = 1.0f; // Duration of the animation in seconds
     private Coroutine animateCoroutine;
+    public bool isDone = false;
 
     private CanvasRenderer redTokenRenderer; // Reference to the CanvasRenderer component of redToken
 
@@ -39,7 +39,11 @@ public class RedTokenCurrent : MonoBehaviour
         if(targetCount > 0)
         {
             StartCoroutine(UpdateCurrentRedTokenCoroutine(targetCount));
-        }      
+        }
+        else
+        {
+            isDone = true;
+        }
     }
 
     private IEnumerator UpdateCurrentRedTokenCoroutine(int targetCount)
@@ -99,6 +103,7 @@ public class RedTokenCurrent : MonoBehaviour
         }
 
         // Ensure the final value is set after the loop ends
-        scoreText.text = targetCount.ToString();       
+        scoreText.text = targetCount.ToString();    
+        isDone = true;
     }
 }
