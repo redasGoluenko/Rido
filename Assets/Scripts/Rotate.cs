@@ -234,7 +234,7 @@ public class Rotate : MonoBehaviour
     // Method to handle token collision
     void HandleTokenCollision()
     {
-        if ((isCollidingWithToken || isCollidingWithRedirectToken || isCollidingWithRedToken) && Input.touchCount > 0)
+        if ((isCollidingWithToken || isCollidingWithRedirectToken || isCollidingWithRedToken) && Input.touchCount > 0 && !isMenu)
         {
             if (isCollidingWithToken)
             {
