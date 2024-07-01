@@ -27,6 +27,8 @@ public class Rotate : MonoBehaviour
     private float initialRotateSpeed = 150f; // Initial speed of rotation in degrees per second
     private float lastTokenDestructionTime = -1f; // Time when the last token was destroyed
     private int previousTokenCount = 0; // Number of tokens picked up by the player in the previous frame
+    private float UnitXPValue;
+    private int currentLevel;
 
     public bool clockwise = true; // Direction of rotation
     public bool isCollidingWithToken = false; // Flag to track collision with objects tagged as "Token"
@@ -51,6 +53,10 @@ public class Rotate : MonoBehaviour
 
     private void Start()
     {
+        currentLevel = PlayerPrefs.GetInt("PlayerLevel", 1);
+        UnitXPValue = CalculateUnitXPValue(currentLevel);
+        Debug.Log($"Unit XP Value: {UnitXPValue}");
+
         pastThirty = false;
         pastSixty = false;
         pastNinety = false;
@@ -61,6 +67,18 @@ public class Rotate : MonoBehaviour
         {           
             Debug.LogWarning("Rotation center not assigned!");
         }
+    }
+
+    float CalculateUnitXPValue(int level)
+    {
+        float initialXPValue = 1f;
+        float reductionFactor = 0.85f;
+
+        // Calculate the UnitXPValue using the exponential formula
+        float xpValue = initialXPValue * Mathf.Pow(reductionFactor, level - 1);
+
+        // Return the calculated XP value
+        return xpValue;
     }
 
     // Update is called once per frame
@@ -217,18 +235,18 @@ public class Rotate : MonoBehaviour
             {
                 goldTokenCount++;
                 PlayerManager.instance.AddGoldTokens(1);
-                PlayerManager.instance.AddXP(1);
+                PlayerManager.instance.AddXP(UnitXPValue);
             }
             if(isCollidingWithRedirectToken)
             {
                 blueTokenCount++;
                 PlayerManager.instance.AddBlueTokens(1);
-                PlayerManager.instance.AddXP(5);
+                PlayerManager.instance.AddXP(UnitXPValue * 5);
             }   
             if(isCollidingWithRedToken)
             {
                 redTokenCount++;
-                PlayerManager.instance.AddXP(25);
+                PlayerManager.instance.AddXP(UnitXPValue * 25);
             }
             // Destroy the token
             Destroy(currentToken);
@@ -312,7 +330,7 @@ public class Rotate : MonoBehaviour
             tokenCount++; // Increment the token count
             purpleTokenCount++;
             PlayerManager.instance.AddPurpleTokens(1);
-            PlayerManager.instance.AddXP(10);
+            PlayerManager.instance.AddXP(UnitXPValue * 10);
         }
         if(collision.gameObject.CompareTag("RedToken"))
         {          

@@ -10,8 +10,8 @@ public class XPSlider : MonoBehaviour
     public TextMeshProUGUI levelText; // The UI text component to display the current level
 
     private int level = 1; // Initial player level
-    private int currentXP; // Current accumulated XP of the player
-    private int nextLevelXP; // XP required to reach the next level
+    private float currentXP; // Current accumulated XP of the player
+    private float nextLevelXP; // XP required to reach the next level
 
     void Start()
     {
@@ -71,7 +71,7 @@ public class XPSlider : MonoBehaviour
     }
 
     // Method to update the XP and level dynamically
-    void UpdateXP(int xp)
+    void UpdateXP(float xp)
     {
         currentXP = xp;
         bool levelChanged = false;
@@ -119,7 +119,7 @@ public class XPSlider : MonoBehaviour
     // Method to save player data (XP and level) to persistent storage
     void SavePlayerData()
     {
-        PlayerPrefs.SetInt("PlayerXP", currentXP);
+        PlayerPrefs.SetFloat("PlayerXP", currentXP);
         PlayerPrefs.SetInt("PlayerLevel", level);
         PlayerPrefs.Save(); // Ensure data is written to persistent storage
         Debug.Log("Saved Data - Current XP: " + currentXP + ", Level: " + level);
@@ -129,7 +129,7 @@ public class XPSlider : MonoBehaviour
     void LoadPlayerData()
     {
         // Retrieve saved XP and level, or default to 0 XP and level 1 if not set
-        currentXP = PlayerPrefs.GetInt("PlayerXP", 0);
+        currentXP = PlayerPrefs.GetFloat("PlayerXP", 0);
         level = PlayerPrefs.GetInt("PlayerLevel", 1);
     }
 

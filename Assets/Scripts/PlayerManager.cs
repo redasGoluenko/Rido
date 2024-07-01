@@ -8,7 +8,7 @@ public class PlayerManager : MonoBehaviour
     public int currentBlueTokens = 0;
     public int currentPurpleTokens = 0;
     public int currentRedTokens = 0;
-    public int currentXP = 0;
+    public float currentXP = 0;
 
     public bool reset = false;
 
@@ -83,7 +83,7 @@ public class PlayerManager : MonoBehaviour
         SaveScore();
     }
 
-    public void AddXP(int points)
+    public void AddXP(float points)
     {
         currentXP += points;
         SaveScore();
@@ -96,7 +96,7 @@ public class PlayerManager : MonoBehaviour
         PlayerPrefs.SetInt("BlueTokens", currentBlueTokens);
         PlayerPrefs.SetInt("PurpleTokens", currentPurpleTokens);
         PlayerPrefs.SetInt("RedTokens", currentRedTokens);
-        PlayerPrefs.SetInt("XP", currentXP);
+        PlayerPrefs.SetFloat("XP", currentXP);
         PlayerPrefs.Save();
     }
 
@@ -120,7 +120,7 @@ public class PlayerManager : MonoBehaviour
         }
         if (PlayerPrefs.HasKey("XP"))
         {
-            currentXP = PlayerPrefs.GetInt("XP");
+            currentXP = PlayerPrefs.GetFloat("XP");
         }
     }
 
