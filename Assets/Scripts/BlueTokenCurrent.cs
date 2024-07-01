@@ -9,6 +9,7 @@ public class BlueTokenCurrent : MonoBehaviour
     public RedTokenCurrent redTokenCurrent;
     public GoldTokenCurrent goldTokenCurrent;
     public GameObject blueToken;
+    public XPEarned XPEarned;
 
     public float animationDuration = 1.0f; // Duration of the animation in seconds
     private Coroutine animateCoroutine;
