@@ -21,6 +21,7 @@ public class Rotate : MonoBehaviour
     public BlueTokenCurrent blueTokenCurrent; // Reference to the BlueTokenCurrent script
     public RedTokenCurrent redTokenCurrent; // Reference to the RedTokenCurrent script
     public PurpleTokenCurrent purpleTokenCurrent; // Reference to the PurpleTokenCurrent script
+    public XPValue XPValue; // Reference to the XPValue script
 
     private Color flashColor; // Color for the flash effect
     private float rotateSpeed = 150f; // Speed of rotation in degrees per second
@@ -55,6 +56,10 @@ public class Rotate : MonoBehaviour
     {
         currentLevel = PlayerPrefs.GetInt("PlayerLevel", 1);
         UnitXPValue = CalculateUnitXPValue(currentLevel);
+        if(XPValue != null)
+        {
+            XPValue.SetSliderValue(UnitXPValue);
+        }     
         Debug.Log($"Unit XP Value: {UnitXPValue}");
 
         pastThirty = false;
@@ -72,7 +77,7 @@ public class Rotate : MonoBehaviour
     float CalculateUnitXPValue(int level)
     {
         float initialXPValue = 1f;
-        float reductionFactor = 0.85f;
+        float reductionFactor = 0.95f;
 
         // Calculate the UnitXPValue using the exponential formula
         float xpValue = initialXPValue * Mathf.Pow(reductionFactor, level - 1);

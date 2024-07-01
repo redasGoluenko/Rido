@@ -12,7 +12,6 @@ public class RedTokenCurrent : MonoBehaviour
 
     public float animationDuration = 1.0f; // Duration of the animation in seconds
     private Coroutine animateCoroutine;
-    private bool isDone = false;
 
     private CanvasRenderer redTokenRenderer; // Reference to the CanvasRenderer component of redToken
 
@@ -99,7 +98,6 @@ public class RedTokenCurrent : MonoBehaviour
         }
 
         // Ensure the final value is set after the loop ends
-        scoreText.text = targetCount.ToString();
-        isDone = true;
+        scoreText.text = targetCount.ToString();       
     }
 }

@@ -122,14 +122,16 @@ public class CurrentlyVisiblePivot : MonoBehaviour
             if (fadeCoroutine != null)
             {
                 StopCoroutine(fadeCoroutine);
-            }
-            fadeCoroutine = StartCoroutine(FadeToAlpha(0.0f));
+            } 
+            if(spriteRenderer != null && spriteRenderer.gameObject.activeInHierarchy)
+            {
+                fadeCoroutine = StartCoroutine(FadeToAlpha(0.0f));
+            }         
         }
         if (collision.gameObject.CompareTag("RotationCenter"))
         {
             //ChangeTriangleAlphaToZero();
-        }
-        
+        }       
     }
 
     // Coroutine to fade the alpha of the SpriteRenderer
