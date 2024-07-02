@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class GoldTokenCurrent : MonoBehaviour
 {
+    public int currentCount = 0;
+
     public TMPro.TextMeshProUGUI scoreText;
     public PurpleTokenCurrent purpleTokenCurrent;
     public RedTokenCurrent redTokenCurrent;
@@ -72,8 +74,7 @@ public class GoldTokenCurrent : MonoBehaviour
         scoreText.color = new Color(scoreText.color.r, scoreText.color.g, scoreText.color.b, 1f);
         goldTokenRenderer.SetAlpha(1f);
 
-        // Number animation with pulsating effect
-        int currentCount = 0;
+        // Number animation with pulsating effect       
         timer = 0f;
         Vector3 initialScale = scoreText.transform.localScale;
 

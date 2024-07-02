@@ -14,6 +14,7 @@ public class Death : MonoBehaviour
     public GameObject rightLining; // Reference to the right lining object
     public GameObject menuText; // Reference to the menu text object
     public GameObject retryText; // Reference to the retry text object
+    public GameObject xpText; // Reference to the xp text object
     public MoveDiagonally topSlopeScript; // Reference to the MoveDiagonally script
     public MoveDiagonally bottomSlopeScript; // Reference to the MoveDiagonally script
 
@@ -51,6 +52,7 @@ public class Death : MonoBehaviour
             rightLining.GetComponent<SpriteRenderer>().color = Color.red;
             menuText.GetComponent<TextMeshProUGUI>().color = new Color(1.0f, 0.0f, 0.0f, alpha);
             retryText.GetComponent<TextMeshProUGUI>().color = new Color(1.0f, 0.0f, 0.0f, alpha);
+            xpText.GetComponent<TextMeshProUGUI>().color = new Color(1.0f, 0.0f, 0.0f, alpha);
             
         }
         else if(rotate.pastSixty)
@@ -61,6 +63,7 @@ public class Death : MonoBehaviour
             rightLining.GetComponent<SpriteRenderer>().color = new Color(0.5f, 0, 0.5f);
             menuText.GetComponent<TextMeshProUGUI>().color = new Color(0.5f, 0, 0.5f, alpha);
             retryText.GetComponent<TextMeshProUGUI>().color = new Color(0.5f, 0, 0.5f, alpha);
+            xpText.GetComponent<TextMeshProUGUI>().color = new Color(0.5f, 0, 0.5f, alpha);
         }
         else if(rotate.pastThirty)
         {
@@ -70,6 +73,7 @@ public class Death : MonoBehaviour
             rightLining.GetComponent<SpriteRenderer>().color = Color.blue;
             menuText.GetComponent<TextMeshProUGUI>().color = new Color(0.0f, 0.0f, 1.0f, alpha);
             retryText.GetComponent<TextMeshProUGUI>().color = new Color(0.0f, 0.0f, 1.0f, alpha);
+            xpText.GetComponent<TextMeshProUGUI>().color = new Color(0.0f, 0.0f, 1.0f, alpha);
         }
         else
         {
@@ -79,6 +83,7 @@ public class Death : MonoBehaviour
             rightLining.GetComponent<SpriteRenderer>().color = new Color(1.0f, 0.92f, 0.3f);
             menuText.GetComponent<TextMeshProUGUI>().color = new Color(1.0f, 0.92f, 0.3f, alpha);
             retryText.GetComponent<TextMeshProUGUI>().color = new Color(1.0f, 0.92f, 0.3f, alpha);
+            xpText.GetComponent<TextMeshProUGUI>().color = new Color(1.0f, 0.92f, 0.3f, alpha);
         }
     }
     public void HandleDeath()

@@ -1,9 +1,12 @@
 using System.Collections;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Jobs;
 
 public class PurpleTokenCurrent : MonoBehaviour
 {
+    public int currentCount = 0;
+
     public TextMeshProUGUI scoreText;
     public GoldTokenCurrent goldTokenCurrent;
     public RedTokenCurrent redTokenCurrent;
@@ -88,8 +91,7 @@ public class PurpleTokenCurrent : MonoBehaviour
         scoreText.color = new Color(scoreText.color.r, scoreText.color.g, scoreText.color.b, 1f);
         purpleTokenRenderer.SetAlpha(1f);
 
-        // Number animation with pulsating effect
-        int currentCount = 0;
+        // Number animation with pulsating effect       
         timer = 0f;
         Vector3 initialScale = scoreText.transform.localScale;
 

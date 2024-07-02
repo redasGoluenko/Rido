@@ -28,8 +28,8 @@ public class Rotate : MonoBehaviour
     private float initialRotateSpeed = 150f; // Initial speed of rotation in degrees per second
     private float lastTokenDestructionTime = -1f; // Time when the last token was destroyed
     private int previousTokenCount = 0; // Number of tokens picked up by the player in the previous frame
-    private float UnitXPValue;
-    private int currentLevel;
+    public float UnitXPValue;
+    public int currentLevel;
 
     public bool clockwise = true; // Direction of rotation
     public bool isCollidingWithToken = false; // Flag to track collision with objects tagged as "Token"
