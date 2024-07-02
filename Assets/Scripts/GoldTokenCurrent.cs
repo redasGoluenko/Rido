@@ -15,6 +15,9 @@ public class GoldTokenCurrent : MonoBehaviour
 
     private CanvasRenderer goldTokenRenderer; // Reference to the CanvasRenderer component of goldToken
 
+    public float pulseSpeed = 2.0f; // Speed of the pulsating effect
+    public float pulseMagnitude = 0.1f; // Magnitude of the pulsating effect
+
     // Start is called before the first frame update
     void Start()
     {
@@ -37,10 +40,10 @@ public class GoldTokenCurrent : MonoBehaviour
 
     public void UpdateCurrentGoldToken(int targetCount)
     {
-        if(targetCount > 0)
+        if (targetCount > 0)
         {
             StartCoroutine(AnimateScore(targetCount));
-        }    
+        }
         else
         {
             isDone = true;
@@ -50,7 +53,7 @@ public class GoldTokenCurrent : MonoBehaviour
     private IEnumerator AnimateScore(int targetCount)
     {
         float timer = 0f;
-        float fadeInDuration = 0.5f; // Duration of the fade-in effect (adjust as needed)
+        float fadeInDuration = 0.125f; // Duration of the fade-in effect (adjust as needed)
         float increment = targetCount / animationDuration;
 
         // Gradually increase visibility of text and goldToken
@@ -69,15 +72,21 @@ public class GoldTokenCurrent : MonoBehaviour
         scoreText.color = new Color(scoreText.color.r, scoreText.color.g, scoreText.color.b, 1f);
         goldTokenRenderer.SetAlpha(1f);
 
-        // Number animation
+        // Number animation with pulsating effect
         int currentCount = 0;
         timer = 0f;
+        Vector3 initialScale = scoreText.transform.localScale;
+
         while (currentCount < targetCount)
         {
             currentCount = Mathf.RoundToInt(timer * increment);
 
             // Update the score text
             scoreText.text = currentCount.ToString();
+
+            // Pulsating effect: Calculate the scale factor
+            float scale = 1 + Mathf.Sin(timer * pulseSpeed) * pulseMagnitude;
+            scoreText.transform.localScale = initialScale * scale;
 
             // Increment timer based on elapsed time
             timer += Time.deltaTime;
@@ -88,6 +97,27 @@ public class GoldTokenCurrent : MonoBehaviour
 
         // Ensure the final value is set after the loop ends
         scoreText.text = targetCount.ToString();
+        scoreText.transform.localScale = initialScale; // Reset to initial scale
         isDone = true;
+
+        StartCoroutine(ContinuePulsating(initialScale));
+    }
+    private IEnumerator ContinuePulsating(Vector3 initialScale)
+    {
+        float timer = 0f;
+        float halfPulseSpeed = pulseSpeed / 2f; // Halve the pulsation speed
+
+        while (true)
+        {
+            // Pulsating effect at half speed
+            float scale = 1 + Mathf.Sin(timer * halfPulseSpeed) * pulseMagnitude / 3;
+            scoreText.transform.localScale = initialScale * scale;
+
+            // Increment timer based on elapsed time
+            timer += Time.deltaTime;
+
+            // Wait for the next frame
+            yield return null;
+        }
     }
 }

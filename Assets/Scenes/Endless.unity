@@ -17512,6 +17512,8 @@ MonoBehaviour:
   blueToken: {fileID: 1672054385}
   animationDuration: 1.5
   isDone: 0
+  pulseSpeed: 20
+  pulseMagnitude: 0.025
 --- !u!1 &530964647
 GameObject:
   m_ObjectHideFlags: 0
@@ -28211,6 +28213,8 @@ MonoBehaviour:
   redToken: {fileID: 200601382}
   animationDuration: 1.5
   isDone: 0
+  pulseSpeed: 20
+  pulseMagnitude: 0.025
 --- !u!1 &849693374
 GameObject:
   m_ObjectHideFlags: 0
@@ -34767,6 +34771,8 @@ MonoBehaviour:
   goldToken: {fileID: 1750478323}
   animationDuration: 1.5
   isDone: 0
+  pulseSpeed: 20
+  pulseMagnitude: 0.025
 --- !u!1 &1026496165
 GameObject:
   m_ObjectHideFlags: 0
@@ -61484,6 +61490,8 @@ MonoBehaviour:
   purpleToken: {fileID: 393747524}
   animationDuration: 1.5
   isDone: 0
+  pulseSpeed: 20
+  pulseMagnitude: 0.025
 --- !u!1 &1813870751
 GameObject:
   m_ObjectHideFlags: 0
