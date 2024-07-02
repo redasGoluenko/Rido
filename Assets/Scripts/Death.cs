@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Death : MonoBehaviour
 {
@@ -15,6 +16,9 @@ public class Death : MonoBehaviour
     public GameObject menuText; // Reference to the menu text object
     public GameObject retryText; // Reference to the retry text object
     public GameObject xpText; // Reference to the xp text object
+    public GameObject sliderBackground; // Reference to the slider background object
+    public GameObject sliderFill; // Reference to the slider fill object
+
     public MoveDiagonally topSlopeScript; // Reference to the MoveDiagonally script
     public MoveDiagonally bottomSlopeScript; // Reference to the MoveDiagonally script
 
@@ -52,7 +56,9 @@ public class Death : MonoBehaviour
             rightLining.GetComponent<SpriteRenderer>().color = Color.red;
             menuText.GetComponent<TextMeshProUGUI>().color = new Color(1.0f, 0.0f, 0.0f, alpha);
             retryText.GetComponent<TextMeshProUGUI>().color = new Color(1.0f, 0.0f, 0.0f, alpha);
-            xpText.GetComponent<TextMeshProUGUI>().color = new Color(1.0f, 0.0f, 0.0f, alpha);
+            xpText.GetComponent<TextMeshProUGUI>().color = new Color(1.0f, 0.0f, 0.0f, alpha);           
+            sliderBackground.GetComponent<Image>().color = new Color(0.1f, 0.1f, 0.1f, alpha);
+            sliderFill.GetComponent<Image>().color = new Color(1.0f, 0.0f, 0.0f, alpha);
             
         }
         else if(rotate.pastSixty)
@@ -64,6 +70,8 @@ public class Death : MonoBehaviour
             menuText.GetComponent<TextMeshProUGUI>().color = new Color(0.5f, 0, 0.5f, alpha);
             retryText.GetComponent<TextMeshProUGUI>().color = new Color(0.5f, 0, 0.5f, alpha);
             xpText.GetComponent<TextMeshProUGUI>().color = new Color(0.5f, 0, 0.5f, alpha);
+            sliderBackground.GetComponent<Image>().color = new Color(0.05f, 0.05f, 0.05f, alpha);
+            sliderFill.GetComponent<Image>().color = new Color(0.5f, 0, 0.5f, alpha);
         }
         else if(rotate.pastThirty)
         {
@@ -74,6 +82,8 @@ public class Death : MonoBehaviour
             menuText.GetComponent<TextMeshProUGUI>().color = new Color(0.0f, 0.0f, 1.0f, alpha);
             retryText.GetComponent<TextMeshProUGUI>().color = new Color(0.0f, 0.0f, 1.0f, alpha);
             xpText.GetComponent<TextMeshProUGUI>().color = new Color(0.0f, 0.0f, 1.0f, alpha);
+            sliderBackground.GetComponent<Image>().color = new Color(0.05f, 0.05f, 0.05f, alpha);
+            sliderFill.GetComponent<Image>().color = new Color(0.0f, 0.0f, 1.0f, alpha);
         }
         else
         {
@@ -84,6 +94,8 @@ public class Death : MonoBehaviour
             menuText.GetComponent<TextMeshProUGUI>().color = new Color(1.0f, 0.92f, 0.3f, alpha);
             retryText.GetComponent<TextMeshProUGUI>().color = new Color(1.0f, 0.92f, 0.3f, alpha);
             xpText.GetComponent<TextMeshProUGUI>().color = new Color(1.0f, 0.92f, 0.3f, alpha);
+            sliderBackground.GetComponent<Image>().color = new Color(0.05f, 0.05f, 0.05f, alpha);
+            sliderFill.GetComponent<Image>().color = new Color(1.0f, 0.92f, 0.3f, alpha);
         }
     }
     public void HandleDeath()
