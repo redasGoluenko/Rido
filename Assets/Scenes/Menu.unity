@@ -12167,6 +12167,8 @@ MonoBehaviour:
   menuText: {fileID: 0}
   retryText: {fileID: 0}
   xpText: {fileID: 0}
+  sliderBackground: {fileID: 0}
+  sliderFill: {fileID: 0}
   topSlopeScript: {fileID: 1882831656}
   bottomSlopeScript: {fileID: 1154566179}
   fadeDuration: 1
