@@ -85,15 +85,18 @@ public class Rotate : MonoBehaviour
         {
             if (Glow != null)
             {
+                Vector3 spawnOffset = new Vector3(0.45f, 0.225f, 0); // Replace 'offset' with the desired distance
+
                 glowInstance = Instantiate(Glow, transform.position, Quaternion.identity, transform);
-                glowInstance.transform.localPosition = Vector3.zero; // Ensure it is centered relative to the player
-                glowInstance.transform.localPosition = new Vector3(0.45f, 0.2f, 0); // Adjust these values to position correctly
+
+                //glowInstance.transform.localPosition = Vector3.zero; // Ensure it is centered relative to the player
+                //glowInstance.transform.localPosition = new Vector3(0.45f, 0.2f, 0); // Adjust these values to position correctly
             }
             else
             {
                 Debug.LogWarning("GlowPrefab not assigned!");
             }
-        }        
+        }
         else
         {
             if (glowInstance != null) // If the glowNumber is not 1 and there's an existing glowInstance
