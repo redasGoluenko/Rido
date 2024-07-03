@@ -5,7 +5,8 @@ public class Rotate : MonoBehaviour
 {
     private Coroutine zoomCoroutine; // Reference to the zooming coroutine
     private GameObject currentToken; // Reference to the currently collided token
-    
+    private GameObject glowInstance; // Reference to the current token prefab
+
     public Ease ease; // Reference to the Ease script
     public Camera cam; // Reference to the Camera component
     public Transform rotationCenter; // Reference to the object we want to rotate around
@@ -22,15 +23,17 @@ public class Rotate : MonoBehaviour
     public RedTokenCurrent redTokenCurrent; // Reference to the RedTokenCurrent script
     public PurpleTokenCurrent purpleTokenCurrent; // Reference to the PurpleTokenCurrent script
     public XPValue XPValue; // Reference to the XPValue script
+    public GameObject Glow; // Reference to the Glow GameObject 
 
     private Color flashColor; // Color for the flash effect
     private float rotateSpeed = 150f; // Speed of rotation in degrees per second
     private float initialRotateSpeed = 150f; // Initial speed of rotation in degrees per second
     private float lastTokenDestructionTime = -1f; // Time when the last token was destroyed
     private int previousTokenCount = 0; // Number of tokens picked up by the player in the previous frame
+    private int currentGlow; // Current glow number
+    
     public float UnitXPValue;
     public int currentLevel;
-
     public bool clockwise = true; // Direction of rotation
     public bool isCollidingWithToken = false; // Flag to track collision with objects tagged as "Token"
     public bool isCollidingWithRedirectToken = false; // Flag to track collision with objects tagged as "RedirectToken"
@@ -46,7 +49,6 @@ public class Rotate : MonoBehaviour
     public int blueTokenCount = 0; // Number of blue tokens picked up by the player
     public int redTokenCount = 0; // Number of red tokens picked up by the player
     public int purpleTokenCount = 0; // Number of purple tokens picked up by the player
-
     public float desiredDistance = 5f; // The desired distance from the rotation center
     public float correctionSpeed = 2f; // Speed at which the distance correction happens
     public float gracePeriod = 0.5f; // Grace period in seconds to ignore brief multiple token situations
@@ -54,6 +56,9 @@ public class Rotate : MonoBehaviour
 
     private void Start()
     {
+        currentGlow = PlayerPrefs.GetInt("glowNumber", 0);
+        HandleGlow();
+
         currentLevel = PlayerPrefs.GetInt("PlayerLevel", 1);
         UnitXPValue = CalculateUnitXPValue(currentLevel);
         if(XPValue != null)
@@ -74,6 +79,30 @@ public class Rotate : MonoBehaviour
         }
     }
 
+    void HandleGlow()
+    {
+        if(PlayerPrefs.GetInt("glowNumber", 0) == 1)
+        {
+            if (Glow != null)
+            {
+                glowInstance = Instantiate(Glow, transform.position, Quaternion.identity, transform);
+                glowInstance.transform.localPosition = Vector3.zero; // Ensure it is centered relative to the player
+                glowInstance.transform.localPosition = new Vector3(0.45f, 0.2f, 0); // Adjust these values to position correctly
+            }
+            else
+            {
+                Debug.LogWarning("GlowPrefab not assigned!");
+            }
+        }        
+        else
+        {
+            if (glowInstance != null) // If the glowNumber is not 1 and there's an existing glowInstance
+            {
+                Destroy(glowInstance); // Destroy the existing glow instance
+                glowInstance = null; // Clear the reference to the destroyed instance
+            }
+        }
+    }
     float CalculateUnitXPValue(int level)
     {
         float initialXPValue = 1f;
@@ -89,6 +118,11 @@ public class Rotate : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(currentGlow != PlayerPrefs.GetInt("glowNumber", 0))
+        {
+            currentGlow = PlayerPrefs.GetInt("glowNumber", 0);
+            HandleGlow();
+        }
         if (!isMenu) { UpdateBackgroundColor(); } // Update the background color based on the token count
         if (!isMenu) { ManageZoomCoroutine(); } // Manage the zooming coroutine
         UpdateTokenCount();

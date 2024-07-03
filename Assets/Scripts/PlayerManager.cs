@@ -25,7 +25,7 @@ public class PlayerManager : MonoBehaviour
         currentBlueTokens = 0;
         currentPurpleTokens = 0;
         currentRedTokens = 0;
-        currentXP = 0;
+        currentXP = 0;   
         PlayerPrefs.DeleteAll();  // Remove all saved data
         PlayerPrefs.Save();  // Ensure the changes are written to disk
 
@@ -87,8 +87,7 @@ public class PlayerManager : MonoBehaviour
     {
         currentXP += points;
         SaveScore();
-    }
-
+    } 
 
     public void SaveScore()
     {
@@ -96,7 +95,7 @@ public class PlayerManager : MonoBehaviour
         PlayerPrefs.SetInt("BlueTokens", currentBlueTokens);
         PlayerPrefs.SetInt("PurpleTokens", currentPurpleTokens);
         PlayerPrefs.SetInt("RedTokens", currentRedTokens);
-        PlayerPrefs.SetFloat("XP", currentXP);
+        PlayerPrefs.SetFloat("XP", currentXP);      
         PlayerPrefs.Save();
     }
 
@@ -121,7 +120,7 @@ public class PlayerManager : MonoBehaviour
         if (PlayerPrefs.HasKey("XP"))
         {
             currentXP = PlayerPrefs.GetFloat("XP");
-        }
+        }     
     }
 
     private void OnApplicationQuit()

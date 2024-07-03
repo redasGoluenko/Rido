@@ -61488,6 +61488,7 @@ MonoBehaviour:
   redTokenCurrent: {fileID: 839819132}
   purpleTokenCurrent: {fileID: 1803556588}
   XPValue: {fileID: 0}
+  Glow: {fileID: 1696471786568947928, guid: ea951e8aed533804aa200e8eaabf5dba, type: 3}
   UnitXPValue: 0
   currentLevel: 0
   clockwise: 1
