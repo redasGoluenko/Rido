@@ -768,6 +768,7 @@ GameObject:
   - component: {fileID: 132744396}
   - component: {fileID: 132744395}
   - component: {fileID: 132744394}
+  - component: {fileID: 132744397}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -840,8 +841,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: ButtonHandler, Assembly-CSharp
+      - m_Target: {fileID: 132744397}
+        m_TargetAssemblyTypeName: GlowButtonHandler, Assembly-CSharp
         m_MethodName: OnButtonClick
         m_Mode: 1
         m_Arguments:
@@ -890,6 +891,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 132744392}
   m_CullTransparentMesh: 1
+--- !u!114 &132744397
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 132744392}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6baa01ea0134d7d4a8e0e0c74b152ea2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttonImage: {fileID: 1448032023}
+  DEFAULT: 0
+  SLOT2: 0
 --- !u!1 &139153961
 GameObject:
   m_ObjectHideFlags: 0
@@ -2074,7 +2090,7 @@ GameObject:
   m_Component:
   - component: {fileID: 413690446}
   m_Layer: 5
-  m_Name: Endless Lining
+  m_Name: Linings
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2211,7 +2227,7 @@ GameObject:
   m_Component:
   - component: {fileID: 444244367}
   m_Layer: 5
-  m_Name: Endless Lining
+  m_Name: Linings
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2441,7 +2457,7 @@ GameObject:
   - component: {fileID: 480663761}
   - component: {fileID: 480663762}
   m_Layer: 5
-  m_Name: STORE
+  m_Name: SLOT3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2459,8 +2475,8 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1678942700}
   - {fileID: 132744393}
+  - {fileID: 1678942700}
   - {fileID: 1992378407}
   - {fileID: 510277821}
   m_Father: {fileID: 1414711172}
@@ -3213,6 +3229,7 @@ GameObject:
   - component: {fileID: 612748958}
   - component: {fileID: 612748957}
   - component: {fileID: 612748956}
+  - component: {fileID: 612748959}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -3285,8 +3302,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: ButtonHandler, Assembly-CSharp
+      - m_Target: {fileID: 612748959}
+        m_TargetAssemblyTypeName: GlowButtonHandler, Assembly-CSharp
         m_MethodName: OnButtonClick
         m_Mode: 1
         m_Arguments:
@@ -3335,6 +3352,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 612748954}
   m_CullTransparentMesh: 1
+--- !u!114 &612748959
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 612748954}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6baa01ea0134d7d4a8e0e0c74b152ea2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttonImage: {fileID: 781674815}
+  DEFAULT: 0
+  SLOT2: 1
 --- !u!1 &674364607
 GameObject:
   m_ObjectHideFlags: 0
@@ -3922,7 +3954,7 @@ GameObject:
   - component: {fileID: 781674816}
   - component: {fileID: 781674815}
   m_Layer: 5
-  m_Name: Endless1
+  m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4933,7 +4965,7 @@ GameObject:
   - component: {fileID: 903370791}
   - component: {fileID: 903370792}
   m_Layer: 5
-  m_Name: SPIKEY
+  m_Name: SLOT2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5583,6 +5615,7 @@ GameObject:
   - component: {fileID: 1033961101}
   - component: {fileID: 1033961100}
   - component: {fileID: 1033961099}
+  - component: {fileID: 1033961102}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -5655,8 +5688,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: ButtonHandler, Assembly-CSharp
+      - m_Target: {fileID: 1033961102}
+        m_TargetAssemblyTypeName: GlowButtonHandler, Assembly-CSharp
         m_MethodName: OnButtonClick
         m_Mode: 1
         m_Arguments:
@@ -5705,6 +5738,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1033961096}
   m_CullTransparentMesh: 1
+--- !u!114 &1033961102
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1033961096}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6baa01ea0134d7d4a8e0e0c74b152ea2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttonImage: {fileID: 1503992294}
+  DEFAULT: 1
+  SLOT2: 0
 --- !u!1 &1068315094
 GameObject:
   m_ObjectHideFlags: 0
@@ -5933,7 +5981,7 @@ GameObject:
   - component: {fileID: 1097340576}
   - component: {fileID: 1097340577}
   m_Layer: 5
-  m_Name: EXIT
+  m_Name: SLOT4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5951,8 +5999,8 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 413690446}
   - {fileID: 1825494804}
+  - {fileID: 413690446}
   - {fileID: 1091534175}
   - {fileID: 882503485}
   m_Father: {fileID: 1414711172}
@@ -8265,7 +8313,7 @@ GameObject:
   - component: {fileID: 1448032024}
   - component: {fileID: 1448032023}
   m_Layer: 5
-  m_Name: Endless1
+  m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8458,7 +8506,7 @@ GameObject:
   - component: {fileID: 1503992295}
   - component: {fileID: 1503992294}
   m_Layer: 5
-  m_Name: Endless1
+  m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8772,7 +8820,7 @@ GameObject:
   - component: {fileID: 1554096012}
   - component: {fileID: 1554096011}
   m_Layer: 5
-  m_Name: Endless1
+  m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9084,7 +9132,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1678942700}
   m_Layer: 5
-  m_Name: Endless Lining
+  m_Name: Linings
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10133,6 +10181,7 @@ GameObject:
   - component: {fileID: 1825494807}
   - component: {fileID: 1825494806}
   - component: {fileID: 1825494805}
+  - component: {fileID: 1825494808}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -10205,8 +10254,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: ButtonHandler, Assembly-CSharp
+      - m_Target: {fileID: 1825494808}
+        m_TargetAssemblyTypeName: GlowButtonHandler, Assembly-CSharp
         m_MethodName: OnButtonClick
         m_Mode: 1
         m_Arguments:
@@ -10255,6 +10304,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1825494803}
   m_CullTransparentMesh: 1
+--- !u!114 &1825494808
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1825494803}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6baa01ea0134d7d4a8e0e0c74b152ea2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttonImage: {fileID: 1554096011}
+  DEFAULT: 0
+  SLOT2: 0
 --- !u!1 &1845357237
 GameObject:
   m_ObjectHideFlags: 0
