@@ -54,4 +54,13 @@ public class GlowButtonHandler : MonoBehaviour
         }
         
     }
+    public void OnCollisionEnter2D(Collision2D collision)
+    {       
+        Debug.Log("Collision Detected");
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        Debug.Log("Trigger detected with " + other.gameObject.name);
+    }
 }
