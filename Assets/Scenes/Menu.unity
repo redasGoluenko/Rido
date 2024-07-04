@@ -8647,6 +8647,13 @@ MonoBehaviour:
   backgroundFive: {fileID: 410729766}
   backgroundSix: {fileID: 12512060}
   backgroundSeven: {fileID: 514371041}
+  newColor: {r: 0, g: 0, b: 0, a: 0}
+  endless: {fileID: 198003478}
+  levels: {fileID: 903370792}
+  store: {fileID: 480663762}
+  exit: {fileID: 1097340577}
+  moveByX: {fileID: 579081102}
+  death: {fileID: 812144724}
 --- !u!1 &539421709
 GameObject:
   m_ObjectHideFlags: 0
@@ -27961,6 +27968,7 @@ MonoBehaviour:
   purpleTokenCurrent: {fileID: 0}
   XPValue: {fileID: 1263114697}
   Glow: {fileID: 3493317885932040281, guid: 989688b8f14d6a6428f1b50e24b4b3cb, type: 3}
+  rotateSpeed: 150
   UnitXPValue: 0
   currentLevel: 0
   clockwise: 1

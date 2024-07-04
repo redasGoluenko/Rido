@@ -26,7 +26,7 @@ public class Rotate : MonoBehaviour
     public GameObject Glow; // Reference to the Glow GameObject 
 
     private Color flashColor; // Color for the flash effect
-    private float rotateSpeed = 150f; // Speed of rotation in degrees per second
+    public float rotateSpeed = 150f; // Speed of rotation in degrees per second
     private float initialRotateSpeed = 150f; // Initial speed of rotation in degrees per second
     private float lastTokenDestructionTime = -1f; // Time when the last token was destroyed
     private int previousTokenCount = 0; // Number of tokens picked up by the player in the previous frame
@@ -582,5 +582,5 @@ public class Rotate : MonoBehaviour
     public void DestroyCurrentToken()
     {
        Destroy(currentToken);
-    } 
+    }  
 }

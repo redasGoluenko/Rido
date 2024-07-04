@@ -49107,7 +49107,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1465336621
 Transform:
   m_ObjectHideFlags: 0
@@ -61489,6 +61489,7 @@ MonoBehaviour:
   purpleTokenCurrent: {fileID: 1803556588}
   XPValue: {fileID: 0}
   Glow: {fileID: 3493317885932040281, guid: 989688b8f14d6a6428f1b50e24b4b3cb, type: 3}
+  rotateSpeed: 150
   UnitXPValue: 0
   currentLevel: 0
   clockwise: 1
@@ -72047,7 +72048,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2104909822
 Transform:
   m_ObjectHideFlags: 0
