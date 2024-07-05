@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class SpinObject2D : MonoBehaviour
 {
+    public bool constant = false;
     public float spinSpeed = 200f; // Speed of rotation in degrees per second
     public bool clockwise = true; // Direction of rotation
     private Rotate rotate;
@@ -17,7 +18,7 @@ public class SpinObject2D : MonoBehaviour
     void Update()
     {
         
-        if (rotate.clockwise)
+        if (rotate.clockwise || constant)
         {
             // Rotate the object around its z-axis (usually the forward axis in 2D)
             transform.Rotate(Vector3.forward, -spinSpeed * Time.deltaTime);           

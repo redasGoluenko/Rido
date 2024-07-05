@@ -33,7 +33,7 @@ public class ReturnButtonHandler : MonoBehaviour
         //StartCoroutine(WaitAndMove(0.2f, levels)); // Wait 2 seconds, then move levels diagonally left
         //StartCoroutine(WaitAndMove(0.3f, endless)); // Wait 3 seconds, then move endless diagonally left       
         death.CloseMenu(); // Close the menu       
-        StartCoroutine(LoadScene(1f)); // Wait 4 seconds, then load the scene "Endless"
+        StartCoroutine(LoadScene(1f)); // Wait 1 second, then load the scene "Endless"
     }  
     // Coroutine to wait for a specified time and then move the object diagonally left
     IEnumerator WaitAndMove(float delay, MoveDiagonally moveDiagonally)

@@ -24,16 +24,15 @@ public class GlowButtonHandler : MonoBehaviour
         currentGlowNumber = PlayerPrefs.GetInt("glowNumber");
         if (DEFAULT && currentGlowNumber == 0)
         {
-            buttonImage.color = new Color(0f, 0f, 0f, 0.8f);
+            buttonImage.color = new Color(0f, 0f, 0f, 0.1f);
         }
         else if(SLOT2 && currentGlowNumber == 1)
         {
-            buttonImage.color = new Color(0f, 0f, 0f, 0.8f);
+            buttonImage.color = new Color(0f, 0f, 0f, 0.1f);
         }
         else
         {
-            //RBG FORMAT
-            buttonImage.color = new Color(0f, 0f, 0f, 0.5f);
+            buttonImage.color = new Color(0f, 0f, 0f, 0.8f);           
         }
     }
 
