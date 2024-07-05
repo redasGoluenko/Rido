@@ -28,10 +28,10 @@ public class ReturnButtonHandler : MonoBehaviour
     public void OnButtonClick()
     {   
         // Start the coroutine to move exit diagonally left
-        StartCoroutine(exit.MoveLeftDiagonallyInitiallyCoroutine());
-        StartCoroutine(WaitAndMove(0.1f, store)); // Wait 1 second, then move store diagonally left
-        StartCoroutine(WaitAndMove(0.2f, levels)); // Wait 2 seconds, then move levels diagonally left
-        StartCoroutine(WaitAndMove(0.3f, endless)); // Wait 3 seconds, then move endless diagonally left       
+        //StartCoroutine(exit.MoveLeftDiagonallyInitiallyCoroutine());
+        //StartCoroutine(WaitAndMove(0.1f, store)); // Wait 1 second, then move store diagonally left
+        //StartCoroutine(WaitAndMove(0.2f, levels)); // Wait 2 seconds, then move levels diagonally left
+        //StartCoroutine(WaitAndMove(0.3f, endless)); // Wait 3 seconds, then move endless diagonally left       
         death.CloseMenu(); // Close the menu       
         StartCoroutine(LoadScene(1f)); // Wait 4 seconds, then load the scene "Endless"
     }  

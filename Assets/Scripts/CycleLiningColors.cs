@@ -12,6 +12,7 @@ public class CycleLiningColors : MonoBehaviour
 
     public float colorChangeInterval = 2.0f; // Time between color changes in seconds
     private float factor = 0.3f;
+    public bool pastel = false;
 
     // Start is called before the first frame update
     void Start()
@@ -27,14 +28,28 @@ public class CycleLiningColors : MonoBehaviour
             return;
         }
 
-        // Define the list of colors
-        colors = new List<Color>()
-        {           
+        if (!pastel)
+        {
+            // Define the list of colors
+            colors = new List<Color>()
+        {
             new Color(1.0f * factor, 0.0f * factor, 0.0f * factor),
             new Color(0.0f * factor, 0.0f * factor, 1.0f * factor),
             new Color(0.5f * factor, 0.0f * factor, 0.5f * factor),
             new Color(1.0f * factor, 0.92f * factor, 0.3f * factor)
         };
+        }
+        else
+        {
+            colors = new List<Color>()
+            {
+                new Color(1f, 0.6f, 0.6f),
+                new Color(0.7f, 0.85f, 1f),
+                new Color(0.85f, 0.7f, 1f),
+                new Color(1f, 0.96f, 0.7f)
+            };
+        }
+        
 
         // Start with the first color and maintain alpha if any component is present
         if (graphicComponent != null)
