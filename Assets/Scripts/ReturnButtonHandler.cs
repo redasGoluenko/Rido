@@ -6,7 +6,6 @@ using TMPro;
 
 public class ReturnButtonHandler : MonoBehaviour
 {
-    private float fadeDuration = 1f; // Duration of the fade in seconds
 
     public TextMeshProUGUI buttonText; // Reference to the store text   
     public Death death; // Reference to the Death script

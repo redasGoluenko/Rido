@@ -32,10 +32,10 @@ public class PlayerManager : MonoBehaviour
         Debug.Log("Score has been reset.");
 
         // Optionally, find and update the ScoreTotal in the current scene
-        GoldTokenTotal goldTokenTotal = FindObjectOfType<GoldTokenTotal>();
-        BlueTokenTotal blueTokenTotal = FindObjectOfType<BlueTokenTotal>();
-        PurpleTokenTotal purpleTokenTotal = FindObjectOfType<PurpleTokenTotal>();
-        RedTokenTotal redTokenTotal = FindObjectOfType<RedTokenTotal>();
+        GoldTokenTotal goldTokenTotal = Object.FindAnyObjectByType<GoldTokenTotal>();
+        BlueTokenTotal blueTokenTotal = Object.FindAnyObjectByType<BlueTokenTotal>();
+        PurpleTokenTotal purpleTokenTotal = Object.FindAnyObjectByType<PurpleTokenTotal>();
+        RedTokenTotal redTokenTotal = Object.FindAnyObjectByType<RedTokenTotal>();
         XPTotal xpTotal = FindAnyObjectByType<XPTotal>();
         if (goldTokenTotal != null)
         {

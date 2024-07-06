@@ -23,7 +23,7 @@ public class Rotate : MonoBehaviour
     public RedTokenCurrent redTokenCurrent; // Reference to the RedTokenCurrent script
     public PurpleTokenCurrent purpleTokenCurrent; // Reference to the PurpleTokenCurrent script
     public XPValue XPValue; // Reference to the XPValue script
-    public GameObject Glow; // Reference to the Glow GameObject 
+    public GameObject SLOT1; // Reference to the Glow GameObject 
 
     private Color flashColor; // Color for the flash effect
     public float rotateSpeed = 150f; // Speed of rotation in degrees per second
@@ -83,11 +83,11 @@ public class Rotate : MonoBehaviour
     {
         if(PlayerPrefs.GetInt("glowNumber", 0) == 1)
         {
-            if (Glow != null)
+            if (SLOT1 != null)
             {
                 Vector3 spawnOffset = new Vector3(0.45f, 0.225f, 0); // Replace 'offset' with the desired distance
 
-                glowInstance = Instantiate(Glow, transform.position, Quaternion.identity, transform);
+                glowInstance = Instantiate(SLOT1, transform.position, Quaternion.identity, transform);
 
                 //glowInstance.transform.localPosition = Vector3.zero; // Ensure it is centered relative to the player
                 //glowInstance.transform.localPosition = new Vector3(0.45f, 0.2f, 0); // Adjust these values to position correctly
