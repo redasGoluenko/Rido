@@ -382,6 +382,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   colorChangeInterval: 10
+  pastel: 0
 --- !u!1 &12512058
 GameObject:
   m_ObjectHideFlags: 0
@@ -607,6 +608,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   colorChangeInterval: 10
+  pastel: 0
 --- !u!1 &40505118
 GameObject:
   m_ObjectHideFlags: 0
@@ -696,6 +698,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   colorChangeInterval: 10
+  pastel: 0
 --- !u!1 &51321246
 GameObject:
   m_ObjectHideFlags: 0
@@ -3309,6 +3312,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   colorChangeInterval: 10
+  pastel: 0
 --- !u!114 &198003478
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3600,6 +3604,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   colorChangeInterval: 10
+  pastel: 0
 --- !u!1 &235305738
 GameObject:
   m_ObjectHideFlags: 0
@@ -4974,6 +4979,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   colorChangeInterval: 10
+  pastel: 0
 --- !u!1 &325450217
 GameObject:
   m_ObjectHideFlags: 0
@@ -6957,8 +6963,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1621832247
+  m_SortingLayer: 2
   m_SortingOrder: 3
   m_Sprite: {fileID: -2135585597343286014, guid: 5aa8b770bc43046bc8d993d0d5b7f4a5, type: 3}
   m_Color: {r: 0, g: 0.076215744, b: 1, a: 0.5882353}
@@ -6984,6 +6990,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   colorChangeInterval: 10
+  pastel: 0
 --- !u!1 &465232738
 GameObject:
   m_ObjectHideFlags: 0
@@ -7073,6 +7080,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   colorChangeInterval: 10
+  pastel: 0
 --- !u!1 &480542412
 GameObject:
   m_ObjectHideFlags: 0
@@ -7410,6 +7418,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   colorChangeInterval: 10
+  pastel: 0
 --- !u!114 &480663762
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8911,8 +8920,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1621832247
+  m_SortingLayer: 2
   m_SortingOrder: 2
   m_Sprite: {fileID: -2135585597343286014, guid: 5aa8b770bc43046bc8d993d0d5b7f4a5, type: 3}
   m_Color: {r: 0, g: 0, b: 0, a: 1}
@@ -10090,6 +10099,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   colorChangeInterval: 10
+  pastel: 0
 --- !u!1 &618675340
 GameObject:
   m_ObjectHideFlags: 0
@@ -10731,6 +10741,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   colorChangeInterval: 10
+  pastel: 0
 --- !u!1 &668413916
 GameObject:
   m_ObjectHideFlags: 0
@@ -10895,6 +10906,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   colorChangeInterval: 10
+  pastel: 0
 --- !u!1 &695815382
 GameObject:
   m_ObjectHideFlags: 0
@@ -11427,6 +11439,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27d7ea9b4bde6e543ae1194632f3ff6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  constant: 0
   spinSpeed: 50
   clockwise: 0
 --- !u!1 &756898790
@@ -11502,8 +11515,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1621832247
+  m_SortingLayer: 2
   m_SortingOrder: 21
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -11529,6 +11542,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   colorChangeInterval: 10
+  pastel: 0
 --- !u!1 &778163046
 GameObject:
   m_ObjectHideFlags: 0
@@ -13144,6 +13158,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   colorChangeInterval: 10
+  pastel: 0
 --- !u!1 &851515183
 GameObject:
   m_ObjectHideFlags: 0
@@ -13926,6 +13941,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   colorChangeInterval: 10
+  pastel: 0
 --- !u!1 &869071629
 GameObject:
   m_ObjectHideFlags: 0
@@ -14263,6 +14279,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   colorChangeInterval: 10
+  pastel: 0
 --- !u!114 &903370792
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16352,7 +16369,7 @@ Canvas:
   m_VertexColorAlwaysGammaSpace: 0
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
-  m_SortingLayerID: 0
+  m_SortingLayerID: 1621832247
   m_SortingOrder: 22
   m_TargetDisplay: 0
 --- !u!1 &1025531110
@@ -17397,6 +17414,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   colorChangeInterval: 10
+  pastel: 0
 --- !u!1 &1094013113
 GameObject:
   m_ObjectHideFlags: 0
@@ -17773,6 +17791,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   colorChangeInterval: 10
+  pastel: 0
 --- !u!114 &1097340577
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18074,6 +18093,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27d7ea9b4bde6e543ae1194632f3ff6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  constant: 0
   spinSpeed: 50
   clockwise: 0
 --- !u!1 &1115741387
@@ -18913,8 +18933,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1621832247
+  m_SortingLayer: 2
   m_SortingOrder: 20
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 0, g: 0, b: 0, a: 1}
@@ -21154,7 +21174,7 @@ Canvas:
   m_VertexColorAlwaysGammaSpace: 0
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
-  m_SortingLayerID: 0
+  m_SortingLayerID: 1621832247
   m_SortingOrder: 4
   m_TargetDisplay: 0
 --- !u!1 &1334737875
@@ -21256,6 +21276,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27d7ea9b4bde6e543ae1194632f3ff6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  constant: 0
   spinSpeed: 50
   clockwise: 0
 --- !u!1 &1344371641
@@ -22270,8 +22291,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1621832247
+  m_SortingLayer: 2
   m_SortingOrder: 21
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -22297,6 +22318,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   colorChangeInterval: 10
+  pastel: 0
 --- !u!1 &1414711168
 GameObject:
   m_ObjectHideFlags: 0
@@ -23188,6 +23210,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27d7ea9b4bde6e543ae1194632f3ff6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  constant: 0
   spinSpeed: 50
   clockwise: 0
 --- !u!1 &1452248476
@@ -24779,6 +24802,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   colorChangeInterval: 10
+  pastel: 0
 --- !u!1 &1557025013
 GameObject:
   m_ObjectHideFlags: 0
@@ -25223,6 +25247,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   colorChangeInterval: 10
+  pastel: 0
 --- !u!1 &1585397765
 GameObject:
   m_ObjectHideFlags: 0
@@ -26492,7 +26517,7 @@ Canvas:
   m_VertexColorAlwaysGammaSpace: 0
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
-  m_SortingLayerID: 0
+  m_SortingLayerID: 1621832247
   m_SortingOrder: 22
   m_TargetDisplay: 0
 --- !u!1 &1688902557
@@ -26942,6 +26967,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   colorChangeInterval: 10
+  pastel: 0
 --- !u!1 &1742370763
 GameObject:
   m_ObjectHideFlags: 0
@@ -27967,7 +27993,8 @@ MonoBehaviour:
   redTokenCurrent: {fileID: 0}
   purpleTokenCurrent: {fileID: 0}
   XPValue: {fileID: 1263114697}
-  Glow: {fileID: 3493317885932040281, guid: 989688b8f14d6a6428f1b50e24b4b3cb, type: 3}
+  SLOT1: {fileID: 3493317885932040281, guid: 989688b8f14d6a6428f1b50e24b4b3cb, type: 3}
+  SLOT2: {fileID: 3161296548830855988, guid: efc58abae81014b40a700ed364bada9a, type: 3}
   rotateSpeed: 150
   UnitXPValue: 0
   currentLevel: 0
@@ -29682,8 +29709,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1621832247
+  m_SortingLayer: 2
   m_SortingOrder: 20
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 0, g: 0, b: 0, a: 1}
@@ -30234,6 +30261,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   colorChangeInterval: 10
+  pastel: 0
 --- !u!1 &1908300823
 GameObject:
   m_ObjectHideFlags: 0
@@ -31274,6 +31302,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   colorChangeInterval: 10
+  pastel: 0
 --- !u!1 &1972020703
 GameObject:
   m_ObjectHideFlags: 0
@@ -31405,6 +31434,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   colorChangeInterval: 10
+  pastel: 0
 --- !u!1 &1992113855
 GameObject:
   m_ObjectHideFlags: 0

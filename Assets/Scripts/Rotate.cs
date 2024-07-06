@@ -24,6 +24,7 @@ public class Rotate : MonoBehaviour
     public PurpleTokenCurrent purpleTokenCurrent; // Reference to the PurpleTokenCurrent script
     public XPValue XPValue; // Reference to the XPValue script
     public GameObject SLOT1; // Reference to the Glow GameObject 
+    public GameObject SLOT2;
 
     private Color flashColor; // Color for the flash effect
     public float rotateSpeed = 150f; // Speed of rotation in degrees per second
@@ -81,31 +82,58 @@ public class Rotate : MonoBehaviour
 
     void HandleGlow()
     {
-        if(PlayerPrefs.GetInt("glowNumber", 0) == 1)
+        int glowNumber = PlayerPrefs.GetInt("glowNumber", 0);
+
+        // Destroy any existing glow instance if it doesn't match the current glow number
+        if (glowInstance != null)
+        {
+            // Check if we need to destroy the existing instance
+            bool shouldDestroy = false;
+            if (glowNumber == 1 && glowInstance.name != SLOT1.name + "(Clone)")
+            {
+                shouldDestroy = true;
+            }
+            else if (glowNumber == 2 && glowInstance.name != SLOT2.name + "(Clone)")
+            {
+                shouldDestroy = true;
+            }
+            else if (glowNumber != 1 && glowNumber != 2)
+            {
+                shouldDestroy = true;
+            }
+
+            if (shouldDestroy)
+            {
+                Destroy(glowInstance);
+                glowInstance = null;
+            }
+        }
+
+        // Instantiate the new glow instance if required
+        if (glowNumber == 1 && glowInstance == null)
         {
             if (SLOT1 != null)
             {
-                Vector3 spawnOffset = new Vector3(0.45f, 0.225f, 0); // Replace 'offset' with the desired distance
-
                 glowInstance = Instantiate(SLOT1, transform.position, Quaternion.identity, transform);
-
-                //glowInstance.transform.localPosition = Vector3.zero; // Ensure it is centered relative to the player
-                //glowInstance.transform.localPosition = new Vector3(0.45f, 0.2f, 0); // Adjust these values to position correctly
             }
             else
             {
-                Debug.LogWarning("GlowPrefab not assigned!");
+                Debug.LogWarning("GlowPrefab SLOT1 not assigned!");
             }
         }
-        else
+        else if (glowNumber == 2 && glowInstance == null)
         {
-            if (glowInstance != null) // If the glowNumber is not 1 and there's an existing glowInstance
+            if (SLOT2 != null)
             {
-                Destroy(glowInstance); // Destroy the existing glow instance
-                glowInstance = null; // Clear the reference to the destroyed instance
+                glowInstance = Instantiate(SLOT2, transform.position, Quaternion.identity, transform);
+            }
+            else
+            {
+                Debug.LogWarning("GlowPrefab SLOT2 not assigned!");
             }
         }
     }
+
     float CalculateUnitXPValue(int level)
     {
         float initialXPValue = 1f;
