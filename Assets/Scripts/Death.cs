@@ -113,12 +113,12 @@ public class Death : MonoBehaviour
 
         }
     }  
-    public void CloseMenu()
+    public void CloseMenu(float duration)
     {
         Debug.Log("Menu Closed");
         topSlopeScript.slopeMovement = false;
         bottomSlopeScript.slopeMovement = false;
-        StartCoroutine(WaitAndClose(0.5f));
+        StartCoroutine(WaitAndClose(duration));
     }
     IEnumerator WaitAndClose(float duration)
     {

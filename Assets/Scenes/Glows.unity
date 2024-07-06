@@ -2639,11 +2639,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30ece29fea38ed941ba649f1daf4e065, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newColor: {r: 0, g: 0, b: 0, a: 0}
-  endless: {fileID: 0}
-  levels: {fileID: 0}
-  store: {fileID: 0}
-  exit: {fileID: 0}
+  buttonText: {fileID: 1740684603}
   death: {fileID: 812144724}
 --- !u!1 &207169442
 GameObject:

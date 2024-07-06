@@ -35,7 +35,7 @@ public class EndlessButtonHandler : MonoBehaviour
         StartCoroutine(WaitAndMove(0.2f, levels)); // Wait 2 seconds, then move levels diagonally left
         StartCoroutine(WaitAndMove(0.3f, endless)); // Wait 3 seconds, then move endless diagonally left
         moveByX.MoveDown(5f);
-        death.CloseMenu(); // Close the menu       
+        death.CloseMenu(0.5f); // Close the menu       
         StartCoroutine(LoadScene(1f)); // Wait 4 seconds, then load the scene "Endless"
     }
 
