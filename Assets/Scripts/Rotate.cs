@@ -57,6 +57,7 @@ public class Rotate : MonoBehaviour
 
     private void Start()
     {
+        ChangeTrailColorUsingGradient(Color.black, 1);
         currentGlow = PlayerPrefs.GetInt("glowNumber", 0);
         HandleGlow();
 
@@ -80,6 +81,39 @@ public class Rotate : MonoBehaviour
         }
     }
 
+    // Method to change the trail color using the color gradient
+    void ChangeTrailColorUsingGradient(Color color, float alpha)
+    {
+        if (trailRenderer != null)
+        {
+            // Create a new gradient
+            Gradient gradient = new Gradient();
+
+            // Define the gradient color keys
+            GradientColorKey[] colorKeys = new GradientColorKey[2];
+            colorKeys[0].color = color;
+            colorKeys[0].time = 0.0f;
+            colorKeys[1].color = color;
+            colorKeys[1].time = 1.0f;
+
+            // Define the gradient alpha keys
+            GradientAlphaKey[] alphaKeys = new GradientAlphaKey[2];
+            alphaKeys[0].alpha = alpha;
+            alphaKeys[0].time = 0.0f;
+            alphaKeys[1].alpha = alpha;
+            alphaKeys[1].time = 1.0f;
+
+            // Assign the color and alpha keys to the gradient
+            gradient.SetKeys(colorKeys, alphaKeys);
+
+            // Set the trail renderer's color gradient to the new gradient
+            trailRenderer.colorGradient = gradient;
+        }
+        else
+        {
+            Debug.LogWarning("TrailRenderer is not assigned.");
+        }
+    }
     void HandleGlow()
     {
         int glowNumber = PlayerPrefs.GetInt("glowNumber", 0);
@@ -104,6 +138,9 @@ public class Rotate : MonoBehaviour
 
             if (shouldDestroy)
             {
+                //give me new Color for dark yellow             
+
+                ChangeTrailColorUsingGradient(Color.black, 1);
                 Destroy(glowInstance);
                 glowInstance = null;
             }
@@ -115,6 +152,7 @@ public class Rotate : MonoBehaviour
             if (SLOT1 != null)
             {
                 glowInstance = Instantiate(SLOT1, transform.position, Quaternion.identity, transform);
+                ChangeTrailColorUsingGradient(Color.black, 1);
             }
             else
             {
@@ -126,6 +164,7 @@ public class Rotate : MonoBehaviour
             if (SLOT2 != null)
             {
                 glowInstance = Instantiate(SLOT2, transform.position, Quaternion.identity, transform);
+                ChangeTrailColorUsingGradient(new Color(1f, 1f, 0f), 0.5f);
             }
             else
             {
@@ -274,12 +313,14 @@ public class Rotate : MonoBehaviour
         if (isCollidingWithHoldToken && zoomCoroutine == null && Input.touchCount > 0)
         {
             // Start the zooming coroutine if it's not already running
-            zoomCoroutine = StartCoroutine(ContinuousZoomInAndBack());
+            zoomCoroutine = StartCoroutine(ContinuousZoomInAndBack());          
+           ChangeTrailColorUsingGradient(trailRenderer.colorGradient.colorKeys[0].color, 0);
         }
         else if (!isCollidingWithHoldToken && zoomCoroutine != null)
         {
             // Don't stop the coroutine immediately; it will handle zooming out by itself
             zoomCoroutine = null;
+            ChangeTrailColorUsingGradient(trailRenderer.colorGradient.colorKeys[0].color, 1);
         }
     }
 
