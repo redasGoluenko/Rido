@@ -19,36 +19,23 @@ public class CollisionTest : MonoBehaviour
     void Update()
     {
         if (Input.touchCount > 0)
-            {          
+        {
             if (fadeCoroutine != null)
-                {
-                    StopCoroutine(fadeCoroutine);
-                }
-                // Start the flash effect: set alpha to 1 and begin fading out            
-                SetAlpha(1f);
-                fadeCoroutine = StartCoroutine(FadeOut(0.75f)); // Adjust the duration as needed                       
+            {
+                StopCoroutine(fadeCoroutine);
+            }
+            // Start the flash effect: set alpha to 1 and begin fading out            
+            SetAlpha(1f);
+            fadeCoroutine = StartCoroutine(FadeOut(0.75f)); // Adjust the duration as needed                       
 
-                // Since the object will be destroyed on touch, we reset the collision state
-                isColliding = false;
-            }
-            else if (!isColliding)
-            {
-                // Ensure alpha is set to 0 when not colliding or flash is not active
-                SetAlpha(0f);
-            }
-
-            if (isCollidingHoldToken && Input.touchCount > 0)
-            {
-                if (fadeCoroutine != null)
-                {
-                    StopCoroutine(fadeCoroutine);
-                }
-                SetAlpha(1f);
-            }
-            else if (!isCollidingHoldToken)
-            {
-                SetAlpha(0f);
-            }     
+            // Since the object will be destroyed on touch, we reset the collision state
+            isColliding = false;
+        }
+        else
+        {
+            SetAlpha(0f);
+        }
+                        
     }
 
     public void OnCollisionEnter2D(Collision2D collision)
