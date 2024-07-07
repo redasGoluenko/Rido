@@ -714,6 +714,7 @@ MonoBehaviour:
   SLOT1: 0
   SLOT2: 1
   SLOT3: 0
+  SLOT4: 0
 --- !u!114 &41169762
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1135,6 +1136,7 @@ MonoBehaviour:
   SLOT1: 0
   SLOT2: 0
   SLOT3: 0
+  SLOT4: 0
 --- !u!114 &52293268
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5380,6 +5382,7 @@ MonoBehaviour:
   SLOT1: 0
   SLOT2: 0
   SLOT3: 1
+  SLOT4: 0
 --- !u!114 &460109436
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6224,6 +6227,7 @@ MonoBehaviour:
   SLOT1: 0
   SLOT2: 0
   SLOT3: 0
+  SLOT4: 0
 --- !u!114 &548881082
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7487,6 +7491,7 @@ MonoBehaviour:
   SLOT1: 0
   SLOT2: 0
   SLOT3: 0
+  SLOT4: 1
 --- !u!114 &704984729
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9572,6 +9577,7 @@ MonoBehaviour:
   SLOT1: 0
   SLOT2: 0
   SLOT3: 0
+  SLOT4: 0
 --- !u!114 &961943077
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9722,6 +9728,7 @@ MonoBehaviour:
   SLOT1: 0
   SLOT2: 0
   SLOT3: 0
+  SLOT4: 0
 --- !u!114 &981458180
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10607,6 +10614,7 @@ MonoBehaviour:
   SLOT1: 1
   SLOT2: 0
   SLOT3: 0
+  SLOT4: 0
 --- !u!1 &1053026971
 GameObject:
   m_ObjectHideFlags: 0
@@ -10699,6 +10707,7 @@ MonoBehaviour:
   SLOT1: 0
   SLOT2: 0
   SLOT3: 0
+  SLOT4: 0
 --- !u!114 &1054041390
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10939,6 +10948,7 @@ MonoBehaviour:
   SLOT1: 0
   SLOT2: 0
   SLOT3: 0
+  SLOT4: 0
 --- !u!114 &1078161124
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12869,6 +12879,7 @@ MonoBehaviour:
   SLOT1: 0
   SLOT2: 0
   SLOT3: 0
+  SLOT4: 0
 --- !u!114 &1247190713
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13121,6 +13132,7 @@ MonoBehaviour:
   SLOT1: 0
   SLOT2: 0
   SLOT3: 0
+  SLOT4: 0
 --- !u!114 &1255323786
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14399,6 +14411,7 @@ MonoBehaviour:
   SLOT1: 0
   SLOT2: 0
   SLOT3: 0
+  SLOT4: 0
 --- !u!114 &1363138288
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15696,6 +15709,7 @@ MonoBehaviour:
   SLOT1: 0
   SLOT2: 0
   SLOT3: 0
+  SLOT4: 0
 --- !u!114 &1511430440
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17748,6 +17762,7 @@ MonoBehaviour:
   XPValue: {fileID: 1263114697}
   SLOT1: {fileID: 3493317885932040281, guid: 989688b8f14d6a6428f1b50e24b4b3cb, type: 3}
   SLOT2: {fileID: 3161296548830855988, guid: efc58abae81014b40a700ed364bada9a, type: 3}
+  SLOT3: {fileID: 4117624417348713582, guid: b10de3bcdf1e3a84b92e48a594e6a459, type: 3}
   rotateSpeed: 120
   UnitXPValue: 0
   currentLevel: 0
@@ -20433,6 +20448,7 @@ MonoBehaviour:
   SLOT1: 0
   SLOT2: 0
   SLOT3: 0
+  SLOT4: 0
 --- !u!114 &1994647053
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20709,6 +20725,7 @@ MonoBehaviour:
   SLOT1: 0
   SLOT2: 0
   SLOT3: 0
+  SLOT4: 0
 --- !u!114 &2061396631
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -11,6 +11,7 @@ public class GlowButtonHandler : MonoBehaviour
     public bool SLOT1 = false;
     public bool SLOT2 = false;
     public bool SLOT3 = false;
+    public bool SLOT4 = false;
 
     private int currentGlowNumber;
     // Start is called before the first frame update
@@ -32,6 +33,10 @@ public class GlowButtonHandler : MonoBehaviour
             buttonImage.color = new Color(0f, 0f, 0f, 0.1f);
         }
         else if (SLOT3 && currentGlowNumber == 2)
+        {
+            buttonImage.color = new Color(0f, 0f, 0f, 0.1f);
+        }
+        else if (SLOT4 && currentGlowNumber == 3)
         {
             buttonImage.color = new Color(0f, 0f, 0f, 0.1f);
         }
@@ -61,15 +66,11 @@ public class GlowButtonHandler : MonoBehaviour
             PlayerPrefs.SetInt("glowNumber", 2);
             PlayerPrefs.Save();
         }
+        if (SLOT4)
+        {
+            PlayerPrefs.SetInt("glowNumber", 3);
+            PlayerPrefs.Save();
+        }
         
-    }
-    public void OnCollisionEnter2D(Collision2D collision)
-    {       
-        Debug.Log("Collision Detected");
-    }
-
-    void OnTriggerEnter2D(Collider2D other)
-    {
-        Debug.Log("Trigger detected with " + other.gameObject.name);
     }
 }

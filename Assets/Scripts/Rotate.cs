@@ -25,6 +25,7 @@ public class Rotate : MonoBehaviour
     public XPValue XPValue; // Reference to the XPValue script
     public GameObject SLOT1; // Reference to the Glow GameObject 
     public GameObject SLOT2;
+    public GameObject SLOT3;
 
     private Color flashColor; // Color for the flash effect
     public float rotateSpeed = 150f; // Speed of rotation in degrees per second
@@ -57,6 +58,7 @@ public class Rotate : MonoBehaviour
 
     private void Start()
     {
+        Destroy(glowInstance);
         ChangeTrailColorUsingGradient(Color.black, 1);
         currentGlow = PlayerPrefs.GetInt("glowNumber", 0);
         HandleGlow();
@@ -131,18 +133,21 @@ public class Rotate : MonoBehaviour
             {
                 shouldDestroy = true;
             }
-            else if (glowNumber != 1 && glowNumber != 2)
+            else if (glowNumber == 3 && glowInstance.name != SLOT3.name + "(Clone)")
+            {
+                shouldDestroy = true;
+            }
+            else if (glowNumber != 1 && glowNumber != 2 && glowNumber != 3)
             {
                 shouldDestroy = true;
             }
 
             if (shouldDestroy)
             {
-                //give me new Color for dark yellow             
-
-                ChangeTrailColorUsingGradient(Color.black, 1);
+                // Destroy the existing glow instance
                 Destroy(glowInstance);
                 glowInstance = null;
+                ChangeTrailColorUsingGradient(Color.black, 1);
             }
         }
 
@@ -152,6 +157,7 @@ public class Rotate : MonoBehaviour
             if (SLOT1 != null)
             {
                 glowInstance = Instantiate(SLOT1, transform.position, Quaternion.identity, transform);
+                // Example of changing trail color for SLOT1
                 ChangeTrailColorUsingGradient(Color.black, 1);
             }
             else
@@ -164,6 +170,7 @@ public class Rotate : MonoBehaviour
             if (SLOT2 != null)
             {
                 glowInstance = Instantiate(SLOT2, transform.position, Quaternion.identity, transform);
+                // Example of changing trail color for SLOT2
                 ChangeTrailColorUsingGradient(new Color(1f, 1f, 0f), 0.5f);
             }
             else
@@ -171,7 +178,21 @@ public class Rotate : MonoBehaviour
                 Debug.LogWarning("GlowPrefab SLOT2 not assigned!");
             }
         }
+        else if (glowNumber == 3 && glowInstance == null)
+        {
+            if (SLOT3 != null)
+            {
+                glowInstance = Instantiate(SLOT3, transform.position, Quaternion.identity, transform);               
+                // Change trail color for SLOT3 to blue
+                ChangeTrailColorUsingGradient(Color.blue, 0.8f); // Adjust parameters as needed
+            }
+            else
+            {
+                Debug.LogWarning("GlowPrefab SLOT3 not assigned!");
+            }
+        }
     }
+
 
     float CalculateUnitXPValue(int level)
     {

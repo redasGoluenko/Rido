@@ -18,43 +18,43 @@ public class CollisionTest : MonoBehaviour
 
     void Update()
     {
-        if (isColliding && Input.touchCount > 0)
-        {
+        if (Input.touchCount > 0)
+            {          
             if (fadeCoroutine != null)
-            {
-                StopCoroutine(fadeCoroutine);
-            }
-            // Start the flash effect: set alpha to 1 and begin fading out
-            SetAlpha(1f);
-            fadeCoroutine = StartCoroutine(FadeOut(0.75f)); // Adjust the duration as needed
+                {
+                    StopCoroutine(fadeCoroutine);
+                }
+                // Start the flash effect: set alpha to 1 and begin fading out            
+                SetAlpha(1f);
+                fadeCoroutine = StartCoroutine(FadeOut(0.75f)); // Adjust the duration as needed                       
 
-            // Since the object will be destroyed on touch, we reset the collision state
-            isColliding = false;
-        }
-        else if (!isColliding)
-        {
-            // Ensure alpha is set to 0 when not colliding or flash is not active
-            SetAlpha(0f);
-        }
-
-        if(isCollidingHoldToken && Input.touchCount > 0)
-        {
-            if (fadeCoroutine != null)
-            {
-                StopCoroutine(fadeCoroutine);
+                // Since the object will be destroyed on touch, we reset the collision state
+                isColliding = false;
             }
-            SetAlpha(1f);
-        }
-        else if (!isCollidingHoldToken)
-        {
-            SetAlpha(0f);           
-        }
+            else if (!isColliding)
+            {
+                // Ensure alpha is set to 0 when not colliding or flash is not active
+                SetAlpha(0f);
+            }
+
+            if (isCollidingHoldToken && Input.touchCount > 0)
+            {
+                if (fadeCoroutine != null)
+                {
+                    StopCoroutine(fadeCoroutine);
+                }
+                SetAlpha(1f);
+            }
+            else if (!isCollidingHoldToken)
+            {
+                SetAlpha(0f);
+            }     
     }
 
     public void OnCollisionEnter2D(Collision2D collision)
-    {
+    {       
         if (collision.gameObject.CompareTag("Token"))
-        {
+        {                    
             isColliding = true;            
             leftPupil.GetComponent<SpriteRenderer>().color = Color.yellow;
             rightPupil.GetComponent<SpriteRenderer>().color = Color.yellow;
@@ -148,7 +148,7 @@ public class CollisionTest : MonoBehaviour
     }
 
     private void SetAlpha(float alpha)
-    {
+    {        
         foreach (Transform child in transform)
         {
             SpriteRenderer sr = child.GetComponent<SpriteRenderer>();
