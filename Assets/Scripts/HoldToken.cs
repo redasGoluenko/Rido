@@ -15,6 +15,12 @@ public class FollowOnTouch : MonoBehaviour
     
     private void Start()
     {
+        if (PlayerPrefs.GetInt("glowNumber") == 4)
+        {
+            //get trail renderer
+            var trailRenderer = GetComponent<TrailRenderer>();
+            trailRenderer.enabled = false;
+        }
         // Store the initial position when the script starts
         initialPosition = transform.position;
         previousPosition = initialPosition; // Initialize previous position
@@ -84,10 +90,11 @@ public class FollowOnTouch : MonoBehaviour
 
     // Detect collision with the player
     private void OnCollisionEnter2D(Collision2D collision)
-    {
+    {       
         // Check if the colliding object has the "Player" tag
         if (collision.gameObject.CompareTag("Player"))
         {
+            Debug.Log("Collided with player");
             // Get the player's transform
             playerTransform = collision.transform;
 
@@ -102,15 +109,17 @@ public class FollowOnTouch : MonoBehaviour
 
     // Detect when the object stops colliding with the player
     private void OnCollisionExit2D(Collision2D collision)
-    {
+    {      
         // Check if the colliding object has the "Player" tag
         if (collision.gameObject.CompareTag("Player"))
         {
+            Debug.Log("Stopped colliding with player");
             if (hasSkipped)
-            {
-                var playerScript = playerTransform.GetComponent<Rotate>();
-                playerScript.Die();                
-            }
+            {              
+                var playerScript = playerTransform.GetComponent<Rotate>();               
+                playerScript.Die();
+            }           
+            
         }
         hasSkipped = false;
     }
@@ -122,7 +131,10 @@ public class FollowOnTouch : MonoBehaviour
         var playerScript = playerTransform.GetComponent<Rotate>();
         if (totalDistanceMoved < 0.7f || totalDistanceMoved > 7.5f)
         {
-            playerScript.Die();       
+            if(playerScript != null)
+            {
+                playerScript.Die();
+            }               
         }
     }
 }

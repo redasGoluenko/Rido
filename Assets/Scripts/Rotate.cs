@@ -26,6 +26,7 @@ public class Rotate : MonoBehaviour
     public GameObject SLOT1; // Reference to the Glow GameObject 
     public GameObject SLOT2;
     public GameObject SLOT3;
+    public GameObject SLOT4;
 
     private Color flashColor; // Color for the flash effect
     public float rotateSpeed = 150f; // Speed of rotation in degrees per second
@@ -57,7 +58,11 @@ public class Rotate : MonoBehaviour
     public int tokenCount = 0; // Number of tokens picked up by the player
 
     private void Start()
-    {
+    {       
+        if(PlayerPrefs.GetInt("glowNumber") == 4)
+        {
+            trailRenderer.enabled = false;
+        }
         Destroy(glowInstance);
         ChangeTrailColorUsingGradient(Color.black, 1);
         currentGlow = PlayerPrefs.GetInt("glowNumber", 0);
@@ -81,6 +86,50 @@ public class Rotate : MonoBehaviour
         {           
             Debug.LogWarning("Rotation center not assigned!");
         }
+    }
+
+    void Update()
+    {
+        if(PlayerPrefs.GetInt("glowNumber") != 4)
+        {
+            trailRenderer.enabled = true;
+        }
+        if (currentGlow != PlayerPrefs.GetInt("glowNumber", 0))
+        {
+            currentGlow = PlayerPrefs.GetInt("glowNumber", 0);
+            HandleGlow();
+        }
+        if (!isMenu) { UpdateBackgroundColor(); } // Update the background color based on the token count
+        if (!isMenu) { ManageZoomCoroutine(); } // Manage the zooming coroutine
+        UpdateTokenCount();
+        if (!isMenu) { UpdateTokenCounterColor(); } // Update the token counter color
+        OrbitAround(); // Orbit around the rotation center
+        CorrectDistance(); // Adjust the distance to the desired distance
+        HandleTokenCollision(); // Handle token collision
+        CheckGameOver(); // Check if the player has multiple tokens in the scene
+
+        if (!isMenu)
+        {
+            if (isCollidingWithHoldToken)
+            {
+                tokenCounter.textMeshPro.fontSize = 100;
+                tokenCounter.textMeshPro.color = new Color(0.5f, 0, 0.5f);
+                StopCoroutine(tokenCounter.flashingCoroutine);
+            }
+            else
+            {
+                tokenCounter.textMeshPro.fontSize = 200;
+                tokenCounter.textMeshPro.color = Color.white;
+            }
+
+            // Ensure rotationCenter is assigned
+            if (rotationCenter == null)
+            {
+                return;
+            }
+        }
+
+        triangleOne.clockwise = triangleTwo.clockwise = triangleThree.clockwise = triangleFour.clockwise = clockwise;
     }
 
     // Method to change the trail color using the color gradient
@@ -137,7 +186,11 @@ public class Rotate : MonoBehaviour
             {
                 shouldDestroy = true;
             }
-            else if (glowNumber != 1 && glowNumber != 2 && glowNumber != 3)
+            else if (glowNumber == 4 && glowInstance.name != SLOT4.name + "(Clone)")
+            {
+                shouldDestroy = true;
+            }
+            else if (glowNumber != 1 && glowNumber != 2 && glowNumber != 3 && glowNumber != 4)
             {
                 shouldDestroy = true;
             }
@@ -191,6 +244,19 @@ public class Rotate : MonoBehaviour
                 Debug.LogWarning("GlowPrefab SLOT3 not assigned!");
             }
         }
+        else if(glowNumber == 4 && glowInstance == null)
+        {
+            if(SLOT4 != null)
+            {
+                if (isMenu) { glowInstance = Instantiate(SLOT4, transform.position, Quaternion.identity, transform); }   
+                // Change trail color for SLOT3 to blue
+                ChangeTrailColorUsingGradient(Color.blue, 0.8f); // Adjust parameters as needed
+            }
+            else
+            {
+                Debug.LogWarning("GlowPrefab SLOT4 not assigned!");
+            }
+        }
     }
 
 
@@ -204,48 +270,7 @@ public class Rotate : MonoBehaviour
 
         // Return the calculated XP value
         return xpValue;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        if(currentGlow != PlayerPrefs.GetInt("glowNumber", 0))
-        {
-            currentGlow = PlayerPrefs.GetInt("glowNumber", 0);
-            HandleGlow();
-        }
-        if (!isMenu) { UpdateBackgroundColor(); } // Update the background color based on the token count
-        if (!isMenu) { ManageZoomCoroutine(); } // Manage the zooming coroutine
-        UpdateTokenCount();
-        if (!isMenu) { UpdateTokenCounterColor(); } // Update the token counter color
-        OrbitAround(); // Orbit around the rotation center
-        CorrectDistance(); // Adjust the distance to the desired distance
-        HandleTokenCollision(); // Handle token collision
-        CheckGameOver(); // Check if the player has multiple tokens in the scene
-
-        if (!isMenu)
-        {
-            if (isCollidingWithHoldToken)
-            {
-                tokenCounter.textMeshPro.fontSize = 100;
-                tokenCounter.textMeshPro.color = new Color(0.5f, 0, 0.5f);
-                StopCoroutine(tokenCounter.flashingCoroutine);
-            }
-            else
-            {
-                tokenCounter.textMeshPro.fontSize = 200;
-                tokenCounter.textMeshPro.color = Color.white;
-            }
-
-            // Ensure rotationCenter is assigned
-            if (rotationCenter == null)
-            {
-                return;
-            }
-        }        
-        
-        triangleOne.clockwise = triangleTwo.clockwise = triangleThree.clockwise = triangleFour.clockwise = clockwise;
-    }
+    }  
 
     void UpdateTokenCounterColor()
     {
@@ -621,7 +646,7 @@ public class Rotate : MonoBehaviour
         float rotationSpeed = 100f; // Speed of rotation in degrees per second
         float targetAngle = cam.transform.eulerAngles.z + 45f;
         // Rotate the camera towards the target angle
-        StartCoroutine(RotateCameraCoroutine(targetAngle, rotationSpeed));
+        StartCoroutine(RotateCameraCoroutine(targetAngle, rotationSpeed));       
     }
 
     // Coroutine to rotate the camera towards the target angle

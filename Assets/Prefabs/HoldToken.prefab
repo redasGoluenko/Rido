@@ -162,7 +162,7 @@ TrailRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8491920361270131609}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -293,9 +293,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5711f4d0b8d6c3489105387d69b89a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  trianglePrefab: {fileID: 0}
   fadeDuration: 0.0001
   colorChangeInterval: 2
-  isMenu: 0
   pulsateDuration: 1
+  extensionOffset: 0.3
   minScale: {x: 0.9, y: 0.9, z: 0.9}
   maxScale: {x: 1.1, y: 1.1, z: 1.1}
+  isMenu: 0
+  isFirstPivot: 0

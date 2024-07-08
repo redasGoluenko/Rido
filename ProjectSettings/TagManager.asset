@@ -20,6 +20,7 @@ TagManager:
   - Slope
   - StopCollider
   - GlowCollider
+  - PurpleyClone
   layers:
   - Default
   - TransparentFX
