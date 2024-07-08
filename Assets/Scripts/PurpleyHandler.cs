@@ -1,9 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public class PurpleyHandler : MonoBehaviour
 {
+    private Color purpleColor;
+    private Color goldColor;
+    private Color blueColor;
+    private Color redColor;
+
     public TrailRenderer purpleTrailRenderer;
     public TrailRenderer goldTrailRenderer;
     public TrailRenderer blueTrailRenderer;
@@ -14,9 +20,22 @@ public class PurpleyHandler : MonoBehaviour
     private bool blue = false;
     private bool red = false;
     private bool purple = false;
+    private SpriteRenderer spriteRenderer;
+    private Color originalColor;
+    private Coroutine flashCoroutine;
+
+    public float flashDuration = 0.125f; // Duration of the flash before starting to fade
+    public float fadeDuration = 0.5f; // Duration of the fade back to the original color
 
     void Start()
-    {       
+    {      
+        goldColor = goldTrailRenderer.startColor;
+        blueColor = blueTrailRenderer.startColor;
+        purpleColor = purpleTrailRenderer.startColor;
+        redColor = redTrailRenderer.startColor;
+        //GET THE SPRITE RENDERER COMPONENT NOT TRAIL RENDERER BUT SPRITE RENDERER
+        spriteRenderer = GetComponent<SpriteRenderer>();  
+        originalColor = purpleColor;
         SetTrailAlpha(purpleTrailRenderer, 0.75f);
 
         goldTrailRenderer.emitting = false;
@@ -40,13 +59,28 @@ public class PurpleyHandler : MonoBehaviour
             if (gold)
             {
                 StartCoroutine(ToggleEmissionFor(goldTrailRenderer, 0.25f));
+                if(flashCoroutine != null)
+                {
+                    StopCoroutine(flashCoroutine);
+                }
+                flashCoroutine = StartCoroutine(FlashToColor(goldColor, flashDuration, fadeDuration));
             }
             if (blue)
             {
+                if (flashCoroutine != null)
+                {
+                    StopCoroutine(flashCoroutine);
+                }
+                flashCoroutine = StartCoroutine(FlashToColor(blueColor, flashDuration, fadeDuration));
                 StartCoroutine(ToggleEmissionFor(blueTrailRenderer, 0.25f));
             }
             if (red)
             {
+                if (flashCoroutine != null)
+                {
+                    StopCoroutine(flashCoroutine);
+                }
+                flashCoroutine = StartCoroutine(FlashToColor(redColor, flashDuration, fadeDuration));
                 StartCoroutine(ToggleEmissionFor(redTrailRenderer, 0.25f));
             }                    
             AdjustTrailTime(purpleTrailRenderer);
@@ -131,4 +165,22 @@ public class PurpleyHandler : MonoBehaviour
             trailRenderer.material.color = color;
         }
     }
+    IEnumerator FlashToColor(Color targetColor, float flashDuration, float fadeDuration)
+    {
+        // Set the color to the target color
+        spriteRenderer.color = targetColor;
+
+        // Wait for the flash duration
+        yield return new WaitForSeconds(flashDuration);
+        //lerp to the original color
+        float timeElapsed = 0;
+        while (timeElapsed < fadeDuration)
+        {
+            spriteRenderer.color = Color.Lerp(targetColor, originalColor, timeElapsed / fadeDuration);
+            timeElapsed += Time.deltaTime;
+            yield return null;
+        }      
+    }
+
+
 }
