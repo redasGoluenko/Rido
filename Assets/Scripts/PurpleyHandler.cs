@@ -13,6 +13,7 @@ public class PurpleyHandler : MonoBehaviour
     private bool gold = false;
     private bool blue = false;
     private bool red = false;
+    private bool purple = false;
 
     void Start()
     {       
@@ -25,6 +26,14 @@ public class PurpleyHandler : MonoBehaviour
 
     void Update()
     {
+        if (purple && Input.touchCount > 0)
+        {
+            SetTrailAlpha(purpleTrailRenderer, 0f);
+        }
+        else
+        {
+            SetTrailAlpha(purpleTrailRenderer, 0.75f);
+        }
         // Detect touch on mobile or click on desktop
         if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
         {
@@ -39,7 +48,7 @@ public class PurpleyHandler : MonoBehaviour
             if (red)
             {
                 StartCoroutine(ToggleEmissionFor(redTrailRenderer, 0.25f));
-            }
+            }                    
             AdjustTrailTime(purpleTrailRenderer);
             AdjustTrailTime(goldTrailRenderer);          
             AdjustTrailTime(blueTrailRenderer);
@@ -76,6 +85,11 @@ public class PurpleyHandler : MonoBehaviour
         {
             red = true;
         }
+        if(collision.gameObject.CompareTag("HoldToken"))
+        {
+            purple = true;
+        }
+
     }
 
     public void OnCollisionExit2D(Collision2D collision)
@@ -91,6 +105,10 @@ public class PurpleyHandler : MonoBehaviour
         if (collision.gameObject.CompareTag("RedToken"))
         {
             red = false;
+        }
+        if (collision.gameObject.CompareTag("HoldToken"))
+        {
+            purple = false;
         }
     }
 
