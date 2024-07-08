@@ -3,9 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class CollisionTest : MonoBehaviour
-{
-    private bool isColliding = false;
-    private bool isCollidingHoldToken = false;
+{  
     private Coroutine fadeCoroutine;
 
     public GameObject leftPupil;
@@ -18,7 +16,7 @@ public class CollisionTest : MonoBehaviour
 
     void Update()
     {
-        if (Input.touchCount > 0)
+        if (Input.touchCount > 0 && PlayerPrefs.GetInt("glowNumber") == 3)
         {
             if (fadeCoroutine != null)
             {
@@ -26,10 +24,7 @@ public class CollisionTest : MonoBehaviour
             }
             // Start the flash effect: set alpha to 1 and begin fading out            
             SetAlpha(1f);
-            fadeCoroutine = StartCoroutine(FadeOut(0.75f)); // Adjust the duration as needed                       
-
-            // Since the object will be destroyed on touch, we reset the collision state
-            isColliding = false;
+            fadeCoroutine = StartCoroutine(FadeOut(0.75f)); // Adjust the duration as needed                                    
         }
         else
         {
@@ -41,37 +36,31 @@ public class CollisionTest : MonoBehaviour
     public void OnCollisionEnter2D(Collision2D collision)
     {       
         if (collision.gameObject.CompareTag("Token"))
-        {                    
-            isColliding = true;            
+        {                               
             leftPupil.GetComponent<SpriteRenderer>().color = Color.yellow;
             rightPupil.GetComponent<SpriteRenderer>().color = Color.yellow;
         }
         if (collision.gameObject.CompareTag("RedirectToken"))
         {
-            isColliding = true;
             leftPupil.GetComponent<SpriteRenderer>().color = new Color(0f / 255f, 162f / 255f, 255f / 255f);
             rightPupil.GetComponent<SpriteRenderer>().color = new Color(0f / 255f, 162f / 255f, 255f / 255f);
         }
         if (collision.gameObject.CompareTag("HoldToken"))
-        {
-            isColliding = true;
-            isCollidingHoldToken = true;
+        {    
             leftPupil.GetComponent<SpriteRenderer>().color = new Color(255f / 255f, 0f / 255f, 255f / 255f);
             rightPupil.GetComponent<SpriteRenderer>().color = new Color(255f / 255f, 0f / 255f, 255f / 255f);
         }
         if (collision.gameObject.CompareTag("RedToken"))
         {
             leftPupil.GetComponent<SpriteRenderer>().color = Color.red;
-            rightPupil.GetComponent<SpriteRenderer>().color = Color.red;
-            isColliding = true;
+            rightPupil.GetComponent<SpriteRenderer>().color = Color.red;      
         }
     }
 
     public void OnCollisionExit2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Token"))
-        {
-            isColliding = false;
+        {        
             // Ensure alpha is set to 0 when the collision ends and no fade is ongoing
             if (fadeCoroutine == null)
             {
@@ -79,8 +68,7 @@ public class CollisionTest : MonoBehaviour
             }
         }
         if (collision.gameObject.CompareTag("RedirectToken"))
-        {
-            isColliding = false;
+        {          
             // Ensure alpha is set to 0 when the collision ends and no fade is ongoing
             if (fadeCoroutine == null)
             {
@@ -88,9 +76,7 @@ public class CollisionTest : MonoBehaviour
             }
         }
         if (collision.gameObject.CompareTag("HoldToken"))
-        {
-            isColliding = false;
-            isCollidingHoldToken = false;
+        {       
             // Ensure alpha is set to 0 when the collision ends and no fade is ongoing
             if (fadeCoroutine == null)
             {
@@ -99,8 +85,7 @@ public class CollisionTest : MonoBehaviour
             SetScale(Vector3.one);
         }
         if (collision.gameObject.CompareTag("RedToken"))
-        {
-            isColliding = false;
+        {        
             // Ensure alpha is set to 0 when the collision ends and no fade is ongoing
             if (fadeCoroutine == null)
             {
