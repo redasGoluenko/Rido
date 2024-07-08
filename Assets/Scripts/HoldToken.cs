@@ -15,11 +15,14 @@ public class FollowOnTouch : MonoBehaviour
     
     private void Start()
     {
+        var trailRenderer = GetComponent<TrailRenderer>();
         if (PlayerPrefs.GetInt("glowNumber") == 4)
-        {
-            //get trail renderer
-            var trailRenderer = GetComponent<TrailRenderer>();
+        {                 
             trailRenderer.enabled = false;
+        }
+        else
+        {        
+            trailRenderer.enabled = true;
         }
         // Store the initial position when the script starts
         initialPosition = transform.position;
