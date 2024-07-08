@@ -248,7 +248,7 @@ public class Rotate : MonoBehaviour
         {
             if(SLOT4 != null)
             {
-                if (isMenu) { glowInstance = Instantiate(SLOT4, transform.position, Quaternion.identity, transform); }   
+                glowInstance = Instantiate(SLOT4, transform.position, Quaternion.identity, transform);
                 // Change trail color for SLOT3 to blue
                 ChangeTrailColorUsingGradient(Color.blue, 0.8f); // Adjust parameters as needed
             }

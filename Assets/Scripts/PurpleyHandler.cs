@@ -44,14 +44,15 @@ public class PurpleyHandler : MonoBehaviour
     }
 
     void Update()
-    {   
+    {
+        HandleColorFlashAndEmission();
         // Check for touch or mouse press
         bool screenHeld = Input.touchCount > 0 || Input.GetMouseButton(0);
 
         // Handle the start of a touch or click
         if ((Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began))
         {
-            HandleColorFlashAndEmission();
+            
             Debug.Log("Screen Touched");          
 
             // Adjust trail times only on input start to prevent continuous reduction
@@ -63,16 +64,15 @@ public class PurpleyHandler : MonoBehaviour
         }
 
         // Handle continuous holding for purple trail
-        if (screenHeld && purple)
+        if (purple)
         {
             darkPurpleTrailRenderer.emitting = true;
         }
-
-        // Handle the end of touch or mouse click
-        if (!screenHeld && darkPurpleTrailRenderer.emitting)
+        else
         {
-            darkPurpleTrailRenderer.emitting = false;
-        }
+
+           darkPurpleTrailRenderer.emitting = false;
+        }     
     }
 
     void HandleColorFlashAndEmission()
