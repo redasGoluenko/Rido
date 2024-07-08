@@ -8,6 +8,10 @@ public class PurpleyHandler : MonoBehaviour
     private Color blueColor;
     private Color redColor;
 
+    public SpriteRenderer OuterLeft;
+    public SpriteRenderer OuterRight;
+    public SpriteRenderer InnerLeft;
+    public SpriteRenderer InnerRight;
     public TrailRenderer purpleTrailRenderer;
     public TrailRenderer goldTrailRenderer;
     public TrailRenderer blueTrailRenderer;
@@ -22,12 +26,14 @@ public class PurpleyHandler : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     private Color originalColor;
     private Coroutine flashCoroutine;
+    private TrailRenderer currentTrailRenderer;
+    private Color currentColor;
 
     public float flashDuration = 0.125f; // Duration of the flash before starting to fade
     public float fadeDuration = 0.5f; // Duration of the fade back to the original color
 
     void Start()
-    {
+    {              
         goldColor = goldTrailRenderer.startColor;
         blueColor = blueTrailRenderer.startColor;
         purpleColor = purpleTrailRenderer.startColor;
@@ -41,76 +47,63 @@ public class PurpleyHandler : MonoBehaviour
         blueTrailRenderer.emitting = false;
         redTrailRenderer.emitting = false;
         darkPurpleTrailRenderer.emitting = false;
+
+        currentTrailRenderer = goldTrailRenderer;
+        currentColor = goldColor;
     }
 
     void Update()
     {
-        HandleColorFlashAndEmission();
-        // Check for touch or mouse press
-        bool screenHeld = Input.touchCount > 0 || Input.GetMouseButton(0);
-
-        // Handle the start of a touch or click
-        if ((Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began))
+        if(PlayerPrefs.GetInt("glowNumber") == 4)
         {
-            
-            Debug.Log("Screen Touched");          
+            HandleColorFlashAndEmission();
 
-            // Adjust trail times only on input start to prevent continuous reduction
-            AdjustTrailTime(purpleTrailRenderer);
-            AdjustTrailTime(goldTrailRenderer);
-            AdjustTrailTime(blueTrailRenderer);
-            AdjustTrailTime(redTrailRenderer);
-            AdjustTrailTime(darkPurpleTrailRenderer);
-        }
+            if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
+            {
+                StartCoroutine(ToggleEmissionFor(currentTrailRenderer, 0.25f));
+                if (flashCoroutine != null)
+                {
+                    StopCoroutine(flashCoroutine);
+                }
+                flashCoroutine = StartCoroutine(FlashToColor(currentColor, flashDuration, fadeDuration));
 
-        // Handle continuous holding for purple trail
-        if (purple)
-        {
-            darkPurpleTrailRenderer.emitting = true;
-        }
-        else
-        {
-
-           darkPurpleTrailRenderer.emitting = false;
-        }     
+                //if the current scene name is Endless
+                if (UnityEngine.SceneManagement.SceneManager.GetActiveScene().name == "Endless")
+                {
+                    AdjustTrailTime(purpleTrailRenderer);
+                    AdjustTrailTime(goldTrailRenderer);
+                    AdjustTrailTime(blueTrailRenderer);
+                    AdjustTrailTime(redTrailRenderer);
+                    AdjustTrailTime(darkPurpleTrailRenderer);
+                }
+            }
+        }                
     }
 
     void HandleColorFlashAndEmission()
     {
         if (gold)
         {
-            StartCoroutine(ToggleEmissionFor(goldTrailRenderer, 0.25f));
-            if (flashCoroutine != null)
-            {
-                StopCoroutine(flashCoroutine);
-            }
-            flashCoroutine = StartCoroutine(FlashToColor(goldColor, flashDuration, fadeDuration));
+            currentTrailRenderer = goldTrailRenderer;
+            currentColor = goldColor;
         }
         if (blue)
         {
-            if (flashCoroutine != null)
-            {
-                StopCoroutine(flashCoroutine);
-            }
-            flashCoroutine = StartCoroutine(FlashToColor(blueColor, flashDuration, fadeDuration));
-            StartCoroutine(ToggleEmissionFor(blueTrailRenderer, 0.25f));
+            currentTrailRenderer = blueTrailRenderer;
+            currentColor = blueColor;
         }
         if (red)
         {
-            if (flashCoroutine != null)
-            {
-                StopCoroutine(flashCoroutine);
-            }
-            flashCoroutine = StartCoroutine(FlashToColor(redColor, flashDuration, fadeDuration));
-            StartCoroutine(ToggleEmissionFor(redTrailRenderer, 0.25f));
+            currentTrailRenderer = redTrailRenderer;
+            currentColor = redColor;
         }
         if (purple)
         {
-            if (flashCoroutine != null)
-            {
-                StopCoroutine(flashCoroutine);
-            }
-            flashCoroutine = StartCoroutine(FlashToColor(purpleColor, flashDuration, fadeDuration));
+            darkPurpleTrailRenderer.emitting = true;
+        }
+        else
+        {
+            darkPurpleTrailRenderer.emitting = false;
         }
     }
 
@@ -196,6 +189,10 @@ public class PurpleyHandler : MonoBehaviour
     {
         // Set the color to the target color
         spriteRenderer.color = targetColor;
+        InnerLeft.color = targetColor;
+        InnerRight.color = targetColor;
+        OuterLeft.color = targetColor;
+        OuterRight.color = targetColor;
 
         // Wait for the flash duration
         yield return new WaitForSeconds(flashDuration);
@@ -205,11 +202,19 @@ public class PurpleyHandler : MonoBehaviour
         while (timeElapsed < fadeDuration)
         {
             spriteRenderer.color = Color.Lerp(targetColor, originalColor, timeElapsed / fadeDuration);
+            InnerLeft.color = Color.Lerp(targetColor, Color.white, timeElapsed / fadeDuration);
+            InnerRight.color = Color.Lerp(targetColor, Color.white, timeElapsed / fadeDuration);
+            OuterLeft.color = Color.Lerp(targetColor, Color.white, timeElapsed / fadeDuration);
+            OuterRight.color = Color.Lerp(targetColor, Color.white, timeElapsed / fadeDuration);
             timeElapsed += Time.deltaTime;
             yield return null;
         }
 
         // Ensure the color is set back to the original color
         spriteRenderer.color = originalColor;
+        InnerLeft.color = Color.white;
+        InnerRight.color = Color.white;
+        OuterLeft.color = Color.white;
+        OuterRight.color = Color.white;
     }
 }
