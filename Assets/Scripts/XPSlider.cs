@@ -34,7 +34,7 @@ public class XPSlider : MonoBehaviour
     }
 
     void Update()
-    {
+    {      
         // Continuously update the player's XP from PlayerManager
         if (PlayerManager.instance.currentXP != currentXP)
         {
@@ -120,7 +120,7 @@ public class XPSlider : MonoBehaviour
     void SavePlayerData()
     {
         PlayerPrefs.SetFloat("PlayerXP", currentXP);
-        PlayerPrefs.SetInt("PlayerLevel", level);
+        PlayerPrefs.SetInt("Level", level);
         PlayerPrefs.Save(); // Ensure data is written to persistent storage
         Debug.Log("Saved Data - Current XP: " + currentXP + ", Level: " + level);
     }
@@ -130,7 +130,7 @@ public class XPSlider : MonoBehaviour
     {
         // Retrieve saved XP and level, or default to 0 XP and level 1 if not set
         currentXP = PlayerPrefs.GetFloat("PlayerXP", 0);
-        level = PlayerPrefs.GetInt("PlayerLevel", 1);
+        level = PlayerPrefs.GetInt("Level", 1);
     }
 
     // Save data when the application is quitting

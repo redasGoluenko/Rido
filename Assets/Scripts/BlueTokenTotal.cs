@@ -1,3 +1,5 @@
+/* Purpose: handles logic of blue token counter which displays how many blue tokens the player has collected in total */
+
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -5,8 +7,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class BlueTokenTotal : MonoBehaviour
-{
-    // Score Text component reference
+{   
     public TextMeshProUGUI scoreText;
 
     private void Start()

@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Rotate : MonoBehaviour
 {
@@ -28,13 +29,14 @@ public class Rotate : MonoBehaviour
     public GameObject SLOT3;
     public GameObject SLOT4;
 
-    private Color flashColor; // Color for the flash effect
-    public float rotateSpeed = 150f; // Speed of rotation in degrees per second
+    private Color flashColor; // Color for the flash effect  
     private float initialRotateSpeed = 150f; // Initial speed of rotation in degrees per second
     private float lastTokenDestructionTime = -1f; // Time when the last token was destroyed
     private int previousTokenCount = 0; // Number of tokens picked up by the player in the previous frame
-    private int currentGlow; // Current glow number
-    
+    private int currentGlow; // Current glow number  
+    private bool inGlowSelection = false; // Flag to track if the player is in the glow selection menu
+
+    public float rotateSpeed = 150f; // Speed of rotation in degrees per second
     public float UnitXPValue;
     public int currentLevel;
     public bool clockwise = true; // Direction of rotation
@@ -58,18 +60,28 @@ public class Rotate : MonoBehaviour
     public int tokenCount = 0; // Number of tokens picked up by the player
 
     private void Start()
-    {       
-        if(PlayerPrefs.GetInt("glowNumber") == 4)
+    {
+        if (SceneManager.GetActiveScene().name == "Glows")
+        {
+            inGlowSelection = true;
+
+            if (currentGlow == 4)
+            {
+                trailRenderer.enabled = false;
+            }
+            HandleGlow();
+        }
+        
+        currentGlow = PlayerManager.instance.glowNumber;
+        if (currentGlow == 4)
         {
             trailRenderer.enabled = false;
         }
         Destroy(glowInstance);
-        ChangeTrailColorUsingGradient(Color.black, 1);
-        currentGlow = PlayerPrefs.GetInt("glowNumber", 0);
+        ChangeTrailColorUsingGradient(Color.black, 1);      
         HandleGlow();
-
-        currentLevel = PlayerPrefs.GetInt("PlayerLevel", 1);
-        UnitXPValue = CalculateUnitXPValue(currentLevel);
+        currentLevel = PlayerManager.instance.playerLevel;
+        UnitXPValue = CalculateUnitXPValue(PlayerPrefs.GetInt("Level"));
         if(XPValue != null)
         {
             XPValue.SetSliderValue(UnitXPValue);
@@ -90,19 +102,21 @@ public class Rotate : MonoBehaviour
 
     void Update()
     {
-        if(PlayerPrefs.GetInt("glowNumber") != 4)
+        if (inGlowSelection)
         {
-            trailRenderer.enabled = true;
-        }
-        if (currentGlow != PlayerPrefs.GetInt("glowNumber", 0))
-        {
-            currentGlow = PlayerPrefs.GetInt("glowNumber", 0);
+            currentGlow = PlayerManager.instance.glowNumber;
+            if (currentGlow == 4)
+            {
+                trailRenderer.enabled = false;
+            }
+            else
+            {
+                trailRenderer.enabled = true;
+            }
             HandleGlow();
-        }
-        if (!isMenu) { UpdateBackgroundColor(); } // Update the background color based on the token count
-        if (!isMenu) { ManageZoomCoroutine(); } // Manage the zooming coroutine
-        UpdateTokenCount();
-        if (!isMenu) { UpdateTokenCounterColor(); } // Update the token counter color
+        }        
+        
+        UpdateTokenCount();      
         OrbitAround(); // Orbit around the rotation center
         CorrectDistance(); // Adjust the distance to the desired distance
         HandleTokenCollision(); // Handle token collision
@@ -110,6 +124,10 @@ public class Rotate : MonoBehaviour
 
         if (!isMenu)
         {
+            UpdateBackgroundColor();
+            ManageZoomCoroutine();
+            UpdateTokenCounterColor();
+
             if (isCollidingWithHoldToken)
             {
                 tokenCounter.textMeshPro.fontSize = 100;
@@ -121,8 +139,7 @@ public class Rotate : MonoBehaviour
                 tokenCounter.textMeshPro.fontSize = 200;
                 tokenCounter.textMeshPro.color = Color.white;
             }
-
-            // Ensure rotationCenter is assigned
+           
             if (rotationCenter == null)
             {
                 return;
@@ -166,31 +183,30 @@ public class Rotate : MonoBehaviour
         }
     }
     void HandleGlow()
-    {
-        int glowNumber = PlayerPrefs.GetInt("glowNumber", 0);
+    {       
 
         // Destroy any existing glow instance if it doesn't match the current glow number
         if (glowInstance != null)
         {
             // Check if we need to destroy the existing instance
             bool shouldDestroy = false;
-            if (glowNumber == 1 && glowInstance.name != SLOT1.name + "(Clone)")
+            if (currentGlow == 1 && glowInstance.name != SLOT1.name + "(Clone)")
             {
                 shouldDestroy = true;
             }
-            else if (glowNumber == 2 && glowInstance.name != SLOT2.name + "(Clone)")
+            else if (currentGlow == 2 && glowInstance.name != SLOT2.name + "(Clone)")
             {
                 shouldDestroy = true;
             }
-            else if (glowNumber == 3 && glowInstance.name != SLOT3.name + "(Clone)")
+            else if (currentGlow == 3 && glowInstance.name != SLOT3.name + "(Clone)")
             {
                 shouldDestroy = true;
             }
-            else if (glowNumber == 4 && glowInstance.name != SLOT4.name + "(Clone)")
+            else if (currentGlow == 4 && glowInstance.name != SLOT4.name + "(Clone)")
             {
                 shouldDestroy = true;
             }
-            else if (glowNumber != 1 && glowNumber != 2 && glowNumber != 3 && glowNumber != 4)
+            else if (currentGlow != 1 && currentGlow != 2 && currentGlow != 3 && currentGlow != 4)
             {
                 shouldDestroy = true;
             }
@@ -205,7 +221,7 @@ public class Rotate : MonoBehaviour
         }
 
         // Instantiate the new glow instance if required
-        if (glowNumber == 1 && glowInstance == null)
+        if (currentGlow == 1 && glowInstance == null)
         {
             if (SLOT1 != null)
             {
@@ -218,7 +234,7 @@ public class Rotate : MonoBehaviour
                 Debug.LogWarning("GlowPrefab SLOT1 not assigned!");
             }
         }
-        else if (glowNumber == 2 && glowInstance == null)
+        else if (currentGlow == 2 && glowInstance == null)
         {
             if (SLOT2 != null)
             {
@@ -231,7 +247,7 @@ public class Rotate : MonoBehaviour
                 Debug.LogWarning("GlowPrefab SLOT2 not assigned!");
             }
         }
-        else if (glowNumber == 3 && glowInstance == null)
+        else if (currentGlow == 3 && glowInstance == null)
         {
             if (SLOT3 != null)
             {
@@ -244,7 +260,7 @@ public class Rotate : MonoBehaviour
                 Debug.LogWarning("GlowPrefab SLOT3 not assigned!");
             }
         }
-        else if(glowNumber == 4 && glowInstance == null)
+        else if(currentGlow == 4 && glowInstance == null)
         {
             if(SLOT4 != null)
             {

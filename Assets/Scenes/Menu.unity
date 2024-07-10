@@ -4539,6 +4539,8 @@ MonoBehaviour:
   currentPurpleTokens: 0
   currentRedTokens: 0
   currentXP: 0
+  glowNumber: 0
+  playerLevel: 0
   reset: 0
 --- !u!4 &274167994
 Transform:

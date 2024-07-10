@@ -1,5 +1,6 @@
 using JetBrains.Annotations;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class PlayerManager : MonoBehaviour
 {
@@ -9,6 +10,8 @@ public class PlayerManager : MonoBehaviour
     public int currentPurpleTokens = 0;
     public int currentRedTokens = 0;
     public float currentXP = 0;
+    public int glowNumber = 0;
+    public int playerLevel = 1;
 
     public bool reset = false;
 
@@ -26,6 +29,8 @@ public class PlayerManager : MonoBehaviour
         currentPurpleTokens = 0;
         currentRedTokens = 0;
         currentXP = 0;   
+        glowNumber = 0;
+        playerLevel = 1;
         PlayerPrefs.DeleteAll();  // Remove all saved data
         PlayerPrefs.Save();  // Ensure the changes are written to disk
 
@@ -58,7 +63,6 @@ public class PlayerManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
-
         LoadScore();
     }
 
@@ -88,6 +92,22 @@ public class PlayerManager : MonoBehaviour
         currentXP += points;
         SaveScore();
     } 
+    public void SetGlowNumber(int number)
+    {
+        glowNumber = number;
+        SaveScore();
+    }
+    public void SetLevel(int level)
+    {
+        playerLevel = level;
+        SaveScore();
+    }
+    public void SetXP(float xp)
+    {
+        currentXP = xp;
+        SaveScore();
+    }
+
 
     public void SaveScore()
     {
@@ -95,7 +115,9 @@ public class PlayerManager : MonoBehaviour
         PlayerPrefs.SetInt("BlueTokens", currentBlueTokens);
         PlayerPrefs.SetInt("PurpleTokens", currentPurpleTokens);
         PlayerPrefs.SetInt("RedTokens", currentRedTokens);
-        PlayerPrefs.SetFloat("XP", currentXP);      
+        PlayerPrefs.SetInt("glowNumber", glowNumber);
+        PlayerPrefs.SetFloat("XP", currentXP); 
+        PlayerPrefs.SetInt("PlayerLevel", playerLevel);
         PlayerPrefs.Save();
     }
 
@@ -104,23 +126,38 @@ public class PlayerManager : MonoBehaviour
         if (PlayerPrefs.HasKey("GoldTokens"))
         {
             currentGoldTokens = PlayerPrefs.GetInt("GoldTokens");
+            Debug.Log("Gold Tokens: " + currentGoldTokens);
         }
         if (PlayerPrefs.HasKey("BlueTokens"))
         {
             currentBlueTokens = PlayerPrefs.GetInt("BlueTokens");
+            Debug.Log("Blue Tokens: " + currentBlueTokens);
         }
         if (PlayerPrefs.HasKey("PurpleTokens"))
         {
             currentPurpleTokens = PlayerPrefs.GetInt("PurpleTokens");
+            Debug.Log("Purple Tokens: " + currentPurpleTokens);
         }
         if (PlayerPrefs.HasKey("RedTokens"))
         {
             currentRedTokens = PlayerPrefs.GetInt("RedTokens");
+            Debug.Log("Red Tokens: " + currentRedTokens);
         }
         if (PlayerPrefs.HasKey("XP"))
         {
             currentXP = PlayerPrefs.GetFloat("XP");
-        }     
+            Debug.Log("XP: " + currentXP);
+        }  
+        if (PlayerPrefs.HasKey("glowNumber"))
+        {
+            glowNumber = PlayerPrefs.GetInt("glowNumber");
+            Debug.Log("Glow Number: " + glowNumber);
+        }
+        if (PlayerPrefs.HasKey("PlayerLevel"))
+        {
+            playerLevel = PlayerPrefs.GetInt("PlayerLevel");
+            Debug.Log("Player Level: " + playerLevel);
+        }       
     }
 
     private void OnApplicationQuit()

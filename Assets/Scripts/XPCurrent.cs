@@ -19,15 +19,14 @@ public class XPCurrent : MonoBehaviour
 
     // Start is called before the first frame update
     void Start()
-    {
-        //slider.value = 0;
+    {      
         StartCoroutine(WaitAndSet(0.5f));       
     }
 
     IEnumerator WaitAndSet(float delay)
     {           
         yield return new WaitForSeconds(delay);
-        currentLevel = rotate.currentLevel;             
+        currentLevel = PlayerPrefs.GetInt("Level");       
     }
 
     // Update is called once per frame

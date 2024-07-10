@@ -1,10 +1,12 @@
+//Purpose: bottom collider for the rotation center responsible for spawning tokens in appropriate positions
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class BottomCollider : MonoBehaviour
 {
-    private GameObject currentToken; // Reference to the current token to spawn
+    private GameObject currentToken;
 
     public Rotate rotate;
     public GameObject tokenPrefab;
@@ -12,78 +14,67 @@ public class BottomCollider : MonoBehaviour
     public GameObject holdTokenPrefab;
     public GameObject redTokenPrefab;
 
-    public bool Available = false; // Flag to check if the bottom collider is available for spawning
-    public bool PlayerColliding = false; // Flag to check if the player is colliding with the bottom collider
+    public bool Available = false;
+    public bool PlayerColliding = false;
 
-    private int pivotContactCount = 0; // Counter for "Pivot" collisions
-    private int playerContactCount = 0; // Counter for "Player" collisions
-  
-    // Called when this collider/rigidbody has begun touching another rigidbody/collider.
+    private int pivotContactCount = 0;
+    private int playerContactCount = 0;
+   
+
     void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Pivot"))
         {
             pivotContactCount++;
-            if (pivotContactCount == 1) // Only set Available to true if it's the first contact
+            if (pivotContactCount == 1)
             {
-                Available = true;
-                //Debug.Log("Bottom Available");
+                Available = true;                
             }
         }
         if (collision.gameObject.CompareTag("Player"))
         {
             playerContactCount++;
-            if (playerContactCount == 1) // Only set PlayerColliding to true if it's the first contact
+            if (playerContactCount == 1)
             {
-                PlayerColliding = true;
-                //Debug.Log("Player Colliding");
+                PlayerColliding = true;             
             }
         }
     }
-
-    // Called when this collider/rigidbody has stopped touching another rigidbody/collider.
+  
     void OnCollisionExit2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Pivot"))
         {
             pivotContactCount--;
-            if (pivotContactCount <= 0) // Only set Available to false if no "Pivot" is colliding
+            if (pivotContactCount <= 0)
             {
-                Available = false;
-                //Debug.Log("Bottom Not Available");
-                pivotContactCount = 0; // Ensure counter doesn't go negative
+                Available = false;             
+                pivotContactCount = 0;
             }
         }
         if (collision.gameObject.CompareTag("Player"))
         {
             playerContactCount--;
-            if (playerContactCount <= 0) // Only set PlayerColliding to false if no "Player" is colliding
+            if (playerContactCount <= 0)
             {
-                PlayerColliding = false;
-                //Debug.Log("Player Not Colliding");
-                playerContactCount = 0; // Ensure counter doesn't go negative
+                PlayerColliding = false;               
+                playerContactCount = 0;
             }
         }
     }
 
-    // Spawns a token based on the current rotation state (Post-Standard)
+    // Spawns Token after a standard one is picked up
     public void SpawnToken()
     {
         currentToken = RandomToken();
         if (currentToken != null)
-        {
-            // Get the position of the TopCollider object
-            Vector3 spawnPosition = transform.position;
-
-            // Determine the spawn positions based on fixed offsets
+        {           
+            Vector3 spawnPosition = transform.position;            
             Vector3 downPosition = spawnPosition + Vector3.down * 1.5f;
             Vector3 leftPosition = spawnPosition + Vector3.left + Vector3.down * 0.5f;
-            Vector3 rightPosition = spawnPosition + Vector3.right + Vector3.down * 0.5f;
-
-            // List of potential spawn positions
+            Vector3 rightPosition = spawnPosition + Vector3.right + Vector3.down * 0.5f;       
             List<Vector3> potentialPositions = new List<Vector3> { downPosition, leftPosition, rightPosition };
-
-            // Shuffle the potential positions to introduce randomness
+          
             for (int i = 0; i < potentialPositions.Count; i++)
             {
                 int randomIndex = Random.Range(i, potentialPositions.Count);
@@ -91,26 +82,18 @@ public class BottomCollider : MonoBehaviour
                 potentialPositions[i] = potentialPositions[randomIndex];
                 potentialPositions[randomIndex] = temp;
             }
-
-            // Layer mask to check for specific layers or tags (for example, "Obstacle" layer)
+           
             int layerMask = LayerMask.GetMask("Obstacle");
-
-            // Radius or size of the area to check for collisions
-            float checkRadius = 0.5f; // Adjust based on your token size
-
-            // Iterate through the positions to find a valid one
+            float checkRadius = 0.5f;
+            
             foreach (Vector3 position in potentialPositions)
-            {
-                // Check if the position is not occupied
+            {              
                 if (!Physics2D.OverlapCircle(position, checkRadius, layerMask))
-                {
-                    // Spawn the token at the first valid position
+                {                   
                     Instantiate(currentToken, position, Quaternion.identity);                
-                    return; // Exit after spawning
+                    return;
                 }
-            }
-
-            // If all positions are occupied, log an error or handle accordingly
+            }          
             Debug.LogError("All spawn positions are occupied.");
         }
         else
@@ -119,25 +102,19 @@ public class BottomCollider : MonoBehaviour
         }
     }
 
-    // Spawns a token based on the current rotation state (Post-Redirect)
+    // Spawns Token after a redirect one is picked up
     public void SpawnTokenRedirect()
     {
         currentToken = RandomToken();
 
         if (currentToken != null)
-        {
-            // Get the position of the BottomCollider object
-            Vector3 spawnPosition = transform.position;
-
-            // Determine the spawn positions based on fixed offsets
+        {        
+            Vector3 spawnPosition = transform.position;        
             Vector3 topPosition = spawnPosition + Vector3.up * 2.5f;
             Vector3 leftPosition = spawnPosition + Vector3.left + Vector3.up * 1.5f;
-            Vector3 rightPosition = spawnPosition + Vector3.right + Vector3.up * 1.5f;
-
-            // List of potential spawn positions
+            Vector3 rightPosition = spawnPosition + Vector3.right + Vector3.up * 1.5f;       
             List<Vector3> potentialPositions = new List<Vector3> { topPosition, leftPosition, rightPosition };
-
-            // Shuffle the potential positions to introduce randomness
+          
             for (int i = 0; i < potentialPositions.Count; i++)
             {
                 int randomIndex = Random.Range(i, potentialPositions.Count);
@@ -145,26 +122,17 @@ public class BottomCollider : MonoBehaviour
                 potentialPositions[i] = potentialPositions[randomIndex];
                 potentialPositions[randomIndex] = temp;
             }
-
-            // Layer mask to check for specific layers or tags (for example, "Obstacle" layer)
-            int layerMask = LayerMask.GetMask("Obstacle");
-
-            // Radius or size of the area to check for collisions
-            float checkRadius = 0.5f; // Adjust based on your token size
-
-            // Iterate through the positions to find a valid one
+          
+            int layerMask = LayerMask.GetMask("Obstacle");         
+            float checkRadius = 0.5f;         
             foreach (Vector3 position in potentialPositions)
-            {
-                // Check if the position is not occupied
+            {              
                 if (!Physics2D.OverlapCircle(position, checkRadius, layerMask))
-                {
-                    // Spawn the token at the first valid position
+                {                    
                     Instantiate(currentToken, position, Quaternion.identity);
-                    return; // Exit after spawning
+                    return;
                 }
-            }
-
-            // If all positions are occupied, log an error or handle accordingly
+            }        
             Debug.LogError("All spawn positions are occupied (Bottom Collider).");
         }
         else
@@ -173,8 +141,7 @@ public class BottomCollider : MonoBehaviour
         }
     }
 
-
-    // Picks a random token to spawn based on the current rotation state
+    // Spawns a random token in the appropriate position
     public GameObject RandomToken()
     {
         GameObject[] tokens = { tokenPrefab, redirectTokenPrefab, holdTokenPrefab, redTokenPrefab };

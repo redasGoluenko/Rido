@@ -34,12 +34,6 @@ public class GoldTokenCurrent : MonoBehaviour
         goldTokenRenderer.SetAlpha(0f);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
     public void UpdateCurrentGoldToken(int targetCount)
     {
         if (targetCount > 0)

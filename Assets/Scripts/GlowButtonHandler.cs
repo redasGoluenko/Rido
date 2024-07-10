@@ -24,7 +24,7 @@ public class GlowButtonHandler : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        currentGlowNumber = PlayerPrefs.GetInt("glowNumber");
+        currentGlowNumber = PlayerManager.instance.glowNumber;
         if (SLOT0 && currentGlowNumber == 0)
         {
             buttonImage.color = new Color(0f, 0f, 0f, 0.1f);
@@ -53,34 +53,28 @@ public class GlowButtonHandler : MonoBehaviour
 
     //on button click, load the FAQ scene
     public void OnButtonClick()
-    {
-        
+    {      
         Debug.Log("Glow Applied.");
         if(SLOT0)
         {
-            PlayerPrefs.SetInt("glowNumber", 0);
-            PlayerPrefs.Save();
+            PlayerManager.instance.SetGlowNumber(0);          
         }
-        if (SLOT1)
+        else if (SLOT1)
         {
-            PlayerPrefs.SetInt("glowNumber", 1);
-            PlayerPrefs.Save();
+            PlayerManager.instance.SetGlowNumber(1);
         }
-        if (SLOT2)
+        else if (SLOT2)
         {
-            PlayerPrefs.SetInt("glowNumber", 2);
-            PlayerPrefs.Save();
+            PlayerManager.instance.SetGlowNumber(2);
         }
-        if (SLOT3)
+        else if (SLOT3)
         {
-            PlayerPrefs.SetInt("glowNumber", 3);
-            PlayerPrefs.Save();
+            PlayerManager.instance.SetGlowNumber(3);
         }
-        if (SLOT4)
+        else if (SLOT4)
         {
-            PlayerPrefs.SetInt("glowNumber", 4);
-            PlayerPrefs.Save();
+            PlayerManager.instance.SetGlowNumber(4);
         }
-        
+        PlayerManager.instance.SaveScore();
     }
 }
