@@ -31,8 +31,7 @@ public class RetryButtonHandler : MonoBehaviour
     // This method will be called when the button is clicked
     public void OnButtonClick()
     {
-        Debug.Log("Button clicked");
-        UnityEngine.SceneManagement.SceneManager.LoadScene("Menu");
+        Debug.Log("Button clicked");       
         UnityEngine.SceneManagement.SceneManager.LoadScene("Endless");
     }
 

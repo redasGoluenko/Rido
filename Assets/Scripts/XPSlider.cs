@@ -31,6 +31,7 @@ public class XPSlider : MonoBehaviour
         UpdateLevelText();
 
         Debug.Log("Loaded Data - Current XP: " + currentXP + ", Level: " + level);
+        LoadPlayerData();
     }
 
     void Update()
