@@ -16,7 +16,7 @@ public class XPSlider : MonoBehaviour
     void Start()
     {
         // Load XP and level from persistent storage
-        LoadPlayerData();
+        PlayerManager.instance.LoadScore();
 
         // Calculate the XP required for the next level based on the loaded level
         nextLevelXP = CalculateNextLevelXP(level);
@@ -31,7 +31,6 @@ public class XPSlider : MonoBehaviour
         UpdateLevelText();
 
         Debug.Log("Loaded Data - Current XP: " + currentXP + ", Level: " + level);
-        LoadPlayerData();
     }
 
     void Update()
@@ -120,19 +119,13 @@ public class XPSlider : MonoBehaviour
     // Method to save player data (XP and level) to persistent storage
     void SavePlayerData()
     {
-        PlayerPrefs.SetFloat("PlayerXP", currentXP);
-        PlayerPrefs.SetInt("Level", level);
-        PlayerPrefs.Save(); // Ensure data is written to persistent storage
+        PlayerManager.instance.XPInstance = currentXP;
+        PlayerManager.instance.LevelInstance = level;
+        PlayerManager.instance.SaveScore();
         Debug.Log("Saved Data - Current XP: " + currentXP + ", Level: " + level);
     }
 
-    // Method to load player data (XP and level) from persistent storage
-    void LoadPlayerData()
-    {
-        // Retrieve saved XP and level, or default to 0 XP and level 1 if not set
-        currentXP = PlayerPrefs.GetFloat("PlayerXP", 0);
-        level = PlayerPrefs.GetInt("Level", 1);
-    }
+    // Method to load player data (XP and level) from persistent storage   
 
     // Save data when the application is quitting
     void OnApplicationQuit()

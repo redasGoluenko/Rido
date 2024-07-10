@@ -14,14 +14,8 @@ public class GlowButtonHandler : MonoBehaviour
     public bool SLOT3 = false;
     public bool SLOT4 = false;
 
-    private int currentGlowNumber;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    private int currentGlowNumber;  
 
-    // Update is called once per frame
     void Update()
     {
         currentGlowNumber = PlayerManager.instance.glowNumber;

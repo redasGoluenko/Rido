@@ -34,12 +34,6 @@ public class PurpleTokenCurrent : MonoBehaviour
         purpleTokenRenderer.SetAlpha(0f);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
     public void UpdateCurrentPurpleToken(int targetCount)
     {
         if (targetCount > 0)

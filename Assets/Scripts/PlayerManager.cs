@@ -13,6 +13,9 @@ public class PlayerManager : MonoBehaviour
     public int glowNumber = 0;
     public int playerLevel = 1;
 
+    public float XPInstance = 0;
+    public int LevelInstance = 1;
+
     public bool reset = false;
 
     private void Start()
@@ -31,6 +34,9 @@ public class PlayerManager : MonoBehaviour
         currentXP = 0;   
         glowNumber = 0;
         playerLevel = 1;
+
+        XPInstance = 0;
+        LevelInstance = 1;
         PlayerPrefs.DeleteAll();  // Remove all saved data
         PlayerPrefs.Save();  // Ensure the changes are written to disk
 
@@ -99,12 +105,12 @@ public class PlayerManager : MonoBehaviour
     }
     public void SetLevel(int level)
     {
-        playerLevel = level;
+        LevelInstance = level;
         SaveScore();
     }
     public void SetXP(float xp)
     {
-        currentXP = xp;
+        XPInstance = xp;
         SaveScore();
     }
 
@@ -118,6 +124,8 @@ public class PlayerManager : MonoBehaviour
         PlayerPrefs.SetInt("glowNumber", glowNumber);
         PlayerPrefs.SetFloat("XP", currentXP); 
         PlayerPrefs.SetInt("PlayerLevel", playerLevel);
+        PlayerPrefs.SetFloat("PlayerXP",  XPInstance);
+        PlayerPrefs.SetInt("Level", LevelInstance);
         PlayerPrefs.Save();
     }
 
@@ -157,7 +165,15 @@ public class PlayerManager : MonoBehaviour
         {
             playerLevel = PlayerPrefs.GetInt("PlayerLevel");
             Debug.Log("Player Level: " + playerLevel);
-        }       
+        }  
+        if(PlayerPrefs.HasKey("PlayerXP"))
+        {
+            XPInstance = PlayerPrefs.GetFloat("PlayerXP");
+        }
+        if (PlayerPrefs.HasKey("Level"))
+        {
+            LevelInstance = PlayerPrefs.GetInt("Level");
+        }
     }
 
     private void OnApplicationQuit()

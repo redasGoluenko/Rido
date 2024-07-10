@@ -20,8 +20,7 @@ public class CycleLiningColors : MonoBehaviour
         // Try to get both components
         graphicComponent = GetComponent<Graphic>();
         spriteRendererComponent = GetComponent<SpriteRenderer>();
-
-        // Check if at least one component is found
+      
         if (graphicComponent == null && spriteRendererComponent == null)
         {
             Debug.LogError("No Graphic or SpriteRenderer component found on the GameObject.");
@@ -63,13 +62,7 @@ public class CycleLiningColors : MonoBehaviour
 
         // Start the color changing coroutine
         colorCoroutine = StartCoroutine(CycleColors());
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        // No need to update every frame if only color changing is handled in coroutine
-    }
+    }  
 
     private IEnumerator CycleColors()
     {

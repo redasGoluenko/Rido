@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class RotationCenter : MonoBehaviour
 {
@@ -13,6 +14,8 @@ public class RotationCenter : MonoBehaviour
     private bool isCooldown = false; // Flag to prevent multiple movements in quick succession
     private float moveDistance = 2.0f; // Distance to move the object
 
+    private bool isEndless = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -20,12 +23,17 @@ public class RotationCenter : MonoBehaviour
         bottomCollider.GetComponent<SpriteRenderer>().enabled = false;
         leftCollider.GetComponent<SpriteRenderer>().enabled = false;
         rightCollider.GetComponent<SpriteRenderer>().enabled = false;
+
+        if(SceneManager.GetActiveScene().name == "Endless")
+        {
+            isEndless = true;
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (!rotate.isMenu)
+        if (isEndless)
         {
             HandleHoldToken(); // Handle the hold token movement
             HandleTokens(); // Handle the standard, redirect and red token movement

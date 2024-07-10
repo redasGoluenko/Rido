@@ -23,39 +23,31 @@ public class EndlessButtonHandler : MonoBehaviour
     public Death death; // Reference to the Death script
 
     public void OnButtonClick()
-    {
-        // Change colors of all background Images
-        StartCoroutine(FadeBackgroundsTo(0.25f));
-
-        // Debug.Log("Going to Endless!");
-
-        // Start the coroutine to move exit diagonally left
+    {       
+        StartCoroutine(FadeBackgroundsTo(0.25f));       
         StartCoroutine(exit.MoveLeftDiagonallyInitiallyCoroutine());
-        StartCoroutine(WaitAndMove(0.1f, store)); // Wait 1 second, then move store diagonally left
-        StartCoroutine(WaitAndMove(0.2f, levels)); // Wait 2 seconds, then move levels diagonally left
-        StartCoroutine(WaitAndMove(0.3f, endless)); // Wait 3 seconds, then move endless diagonally left
+        StartCoroutine(WaitAndMove(0.1f, store));
+        StartCoroutine(WaitAndMove(0.2f, levels));
+        StartCoroutine(WaitAndMove(0.3f, endless));
         moveByX.MoveDown(5f);
-        death.CloseMenu(0.5f); // Close the menu       
-        StartCoroutine(LoadScene(1f)); // Wait 4 seconds, then load the scene "Endless"
+        death.CloseMenu(0.5f);      
+        StartCoroutine(LoadScene(1f));
     }
 
-    // Coroutine to wait for a specified time and then move the object diagonally left
     IEnumerator WaitAndMove(float delay, MoveDiagonally moveDiagonally)
     {
-        yield return new WaitForSeconds(delay); // Wait for the specified time
-        StartCoroutine(moveDiagonally.MoveLeftDiagonallyInitiallyCoroutine()); // Start moving the object diagonally left
+        yield return new WaitForSeconds(delay);
+        StartCoroutine(moveDiagonally.MoveLeftDiagonallyInitiallyCoroutine());
     }
 
-    // Coroutine to wait for a specified time and then load the scene "Endless"
     IEnumerator LoadScene(float delay)
     {
-        yield return new WaitForSeconds(delay); // Wait for the specified time
-        UnityEngine.SceneManagement.SceneManager.LoadScene("Endless"); // Load the scene "Endless"
+        yield return new WaitForSeconds(delay);
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Endless");
     }
 
     private IEnumerator FadeBackgroundsTo(float targetAlpha)
-    {
-        // Store original alpha values
+    {    
         float originalAlphaOne = backgroundOne.color.a;
         float originalAlphaTwo = backgroundTwo.color.a;
         float originalAlphaThree = backgroundThree.color.a;
@@ -63,11 +55,9 @@ public class EndlessButtonHandler : MonoBehaviour
         float originalAlphaFive = backgroundFive.color.a;
         float originalAlphaSix = backgroundSix.color.a;
         float originalAlphaSeven = backgroundSeven.color.a;
-
-        // Calculate the fade step based on the fadeDuration
+   
         float fadeSpeed = Mathf.Abs(targetAlpha - originalAlphaOne) / fadeDuration;
 
-        // Fade to target alpha
         while (backgroundOne.color.a > targetAlpha ||
                backgroundTwo.color.a > targetAlpha ||
                backgroundThree.color.a > targetAlpha ||
@@ -106,9 +96,8 @@ public class EndlessButtonHandler : MonoBehaviour
 
             yield return null;
         }
-
-        // After reaching the target alpha, fade back to original alpha
-        yield return new WaitForSeconds(0.125f); // Optional delay before fading back
+     
+        yield return new WaitForSeconds(0.125f);
 
         float fadeBackSpeed = Mathf.Abs(originalAlphaOne - targetAlpha) / fadeDuration;
 

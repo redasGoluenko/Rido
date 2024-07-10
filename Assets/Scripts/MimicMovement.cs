@@ -2,9 +2,9 @@ using UnityEngine;
 
 public class MimicMovement : MonoBehaviour
 {
-    public GameObject objectToFollow; // The GameObject whose movement will be mimicked
+    public GameObject objectToFollow;
 
-    private Vector3 initialOffset; // Offset between initial positions of this GameObject and objectToFollow
+    private Vector3 initialOffset;
 
     void Start()
     {
@@ -21,15 +21,8 @@ public class MimicMovement : MonoBehaviour
     void Update()
     {
         if (objectToFollow != null)
-        {
-            // Match position relative to initial offset
+        {        
             transform.position = objectToFollow.transform.position - initialOffset;
-
-            // Match rotation if needed
-            // transform.rotation = objectToFollow.transform.rotation;
-
-            // Match other transformations as necessary (e.g., scale)
-            // transform.localScale = objectToFollow.transform.localScale;
         }
     }
 }

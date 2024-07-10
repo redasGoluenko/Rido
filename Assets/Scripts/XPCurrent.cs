@@ -26,7 +26,7 @@ public class XPCurrent : MonoBehaviour
     IEnumerator WaitAndSet(float delay)
     {           
         yield return new WaitForSeconds(delay);
-        currentLevel = PlayerPrefs.GetInt("Level");       
+        currentLevel = PlayerManager.instance.LevelInstance;       
     }
 
     // Update is called once per frame
@@ -49,7 +49,7 @@ public class XPCurrent : MonoBehaviour
     // Method to calculate the total token count
     float GetTotalTokenCount()
     {
-        currentXP = PlayerPrefs.GetFloat("PlayerXP", 0);
+        currentXP = PlayerManager.instance.XPInstance;
         while (currentXP >= 100)
         {
             currentXP -= 100;

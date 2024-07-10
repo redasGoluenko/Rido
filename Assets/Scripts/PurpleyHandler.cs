@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PurpleyHandler : MonoBehaviour
 {
@@ -32,8 +33,25 @@ public class PurpleyHandler : MonoBehaviour
     public float flashDuration = 0.125f; // Duration of the flash before starting to fade
     public float fadeDuration = 0.5f; // Duration of the fade back to the original color
 
+    private bool isGlowSelection = false;
+    private bool isEndless = false;
+    private int glowNumber;
+
     void Start()
-    {              
+    {           
+
+        if (SceneManager.GetActiveScene().name == "Glows")
+        {
+            isGlowSelection = true;
+        }
+        else
+        {
+            glowNumber = PlayerManager.instance.glowNumber;
+        }
+        if(SceneManager.GetActiveScene().name == "Endless")
+        {
+            isEndless = true;
+        }
         goldColor = goldTrailRenderer.startColor;
         blueColor = blueTrailRenderer.startColor;
         purpleColor = purpleTrailRenderer.startColor;
@@ -54,7 +72,24 @@ public class PurpleyHandler : MonoBehaviour
 
     void Update()
     {
-        if(PlayerPrefs.GetInt("glowNumber") == 4)
+        if (isGlowSelection)
+        {
+            if (PlayerPrefs.GetInt("glowNumber") == 4)
+            {
+                HandleColorFlashAndEmission();
+
+                if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
+                {
+                    StartCoroutine(ToggleEmissionFor(currentTrailRenderer, 0.25f));
+                    if (flashCoroutine != null)
+                    {
+                        StopCoroutine(flashCoroutine);
+                    }
+                    flashCoroutine = StartCoroutine(FlashToColor(currentColor, flashDuration, fadeDuration));          
+                }
+            }
+        }
+        else
         {
             HandleColorFlashAndEmission();
 
@@ -66,9 +101,8 @@ public class PurpleyHandler : MonoBehaviour
                     StopCoroutine(flashCoroutine);
                 }
                 flashCoroutine = StartCoroutine(FlashToColor(currentColor, flashDuration, fadeDuration));
-
-                //if the current scene name is Endless
-                if (UnityEngine.SceneManagement.SceneManager.GetActiveScene().name == "Endless")
+                
+                if (isEndless)
                 {
                     AdjustTrailTime(purpleTrailRenderer);
                     AdjustTrailTime(goldTrailRenderer);
@@ -77,7 +111,7 @@ public class PurpleyHandler : MonoBehaviour
                     AdjustTrailTime(darkPurpleTrailRenderer);
                 }
             }
-        }                
+        }
     }
 
     void HandleColorFlashAndEmission()

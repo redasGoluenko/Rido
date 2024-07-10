@@ -61,6 +61,10 @@ public class Rotate : MonoBehaviour
 
     private void Start()
     {
+        pastThirty = false;
+        pastSixty = false;
+        pastNinety = false;
+
         if (SceneManager.GetActiveScene().name == "Glows")
         {
             inGlowSelection = true;
@@ -78,20 +82,15 @@ public class Rotate : MonoBehaviour
             trailRenderer.enabled = false;
         }
         Destroy(glowInstance);
-        ChangeTrailColorUsingGradient(Color.black, 1);      
+        ChangeTrailColorUsingGradient(Color.black, 1);  
         HandleGlow();
         currentLevel = PlayerManager.instance.playerLevel;
-        UnitXPValue = CalculateUnitXPValue(PlayerPrefs.GetInt("Level"));
+        UnitXPValue = CalculateUnitXPValue(PlayerManager.instance.LevelInstance);
         if(XPValue != null)
         {
             XPValue.SetSliderValue(UnitXPValue);
         }     
-        Debug.Log($"Unit XP Value: {UnitXPValue}");
-
-        pastThirty = false;
-        pastSixty = false;
-        pastNinety = false;
-
+        Debug.Log($"Unit XP Value: {UnitXPValue}");      
         previousTokenCount = tokenCount;
         
         if (rotationCenter == null)
@@ -147,6 +146,60 @@ public class Rotate : MonoBehaviour
         }
 
         triangleOne.clockwise = triangleTwo.clockwise = triangleThree.clockwise = triangleFour.clockwise = clockwise;
+    }
+
+    // Method to update the background color based on the token count
+    void UpdateBackgroundColor()
+    {
+        if (!isMenu)
+        {
+            pastThirty = tokenCount > 30 ? true : false;
+            pastSixty = tokenCount > 60 ? true : false;
+            pastNinety = tokenCount > 90 ? true : false;
+        }
+
+
+        Color lightBlue = new Color(0.7f, 0.85f, 1f);
+        Color lightPurple = new Color(0.85f, 0.7f, 1f);
+
+        float colorTransitionSpeed = 2f;
+
+        if (pastThirty && !pastSixty && !pastNinety)
+        {
+            if (cam != null)
+            {
+                flashColor = new Color(0.5f, 0.7f, 1f, 1f);
+                // Smoothly transition to lightBlue
+                cam.backgroundColor = Color.Lerp(cam.backgroundColor, lightBlue, Time.deltaTime * colorTransitionSpeed);
+            }
+        }
+        else if (pastSixty && !pastNinety)
+        {
+            if (cam != null)
+            {
+                flashColor = new Color(0.8f, 0.7f, 0.9f, 1f);
+                // Smoothly transition to lightPurple
+                cam.backgroundColor = Color.Lerp(cam.backgroundColor, lightPurple, Time.deltaTime * colorTransitionSpeed);
+            }
+        }
+        else if (pastNinety)
+        {
+            if (cam != null)
+            {
+                flashColor = new Color(1f, 0.75f, 0.75f, 1f);
+                // Smoothly transition to lightPurple
+                cam.backgroundColor = Color.Lerp(cam.backgroundColor, new Color(1f, 0.6f, 0.6f, 1f), Time.deltaTime * colorTransitionSpeed);
+            }
+        }
+        else
+        {
+            if (cam != null)
+            {
+                flashColor = new Color(1f, 1f, 0.8f, 1f);
+                // Smoothly transition back to yellow
+                cam.backgroundColor = Color.Lerp(cam.backgroundColor, new Color(1f, 0.96f, 0.7f), Time.deltaTime * colorTransitionSpeed);
+            }
+        }
     }
 
     // Method to change the trail color using the color gradient
@@ -309,65 +362,14 @@ public class Rotate : MonoBehaviour
         }
         else if (isCollidingWithToken && isScreenTouched)
         {
-            //Debug.Log("Colliding with token");
+
+            Debug.Log("Colliding with token");
             tokenCounter.ChangeColor(new Color(1.0f, 0.92f, 0.3f));
         }
     }
 
 
-    // Method to update the background color based on the token count
-    void UpdateBackgroundColor()
-    {
-        if (!isMenu)
-        {
-            pastThirty = tokenCount > 30 ? true : false;
-            pastSixty = tokenCount > 60 ? true : false;
-            pastNinety = tokenCount > 90 ? true : false;
-        }
-        
-
-        Color lightBlue = new Color(0.7f, 0.85f, 1f);
-        Color lightPurple = new Color(0.85f, 0.7f, 1f);
-
-        float colorTransitionSpeed = 2f;
-
-        if (pastThirty && !pastSixty && !pastNinety)
-        {
-            if (cam != null)
-            {
-                flashColor = new Color(0.5f, 0.7f, 1f, 1f);
-                // Smoothly transition to lightBlue
-                cam.backgroundColor = Color.Lerp(cam.backgroundColor, lightBlue, Time.deltaTime * colorTransitionSpeed);
-            }
-        }
-        else if (pastSixty && !pastNinety)
-        {
-            if (cam != null)
-            {
-                flashColor = new Color(0.8f, 0.7f, 0.9f, 1f);
-                // Smoothly transition to lightPurple
-                cam.backgroundColor = Color.Lerp(cam.backgroundColor, lightPurple, Time.deltaTime * colorTransitionSpeed);
-            }
-        }
-        else if(pastNinety)
-        {
-            if(cam != null)
-            {           
-                flashColor = new Color(1f, 0.75f, 0.75f, 1f);
-                // Smoothly transition to lightPurple
-                cam.backgroundColor = Color.Lerp(cam.backgroundColor, new Color(1f, 0.6f, 0.6f, 1f), Time.deltaTime * colorTransitionSpeed);
-            }
-        }
-        else
-        {
-            if (cam != null)
-            {
-                flashColor = new Color(1f, 1f, 0.8f, 1f);
-                // Smoothly transition back to yellow
-                cam.backgroundColor = Color.Lerp(cam.backgroundColor, new Color(1f, 0.96f, 0.7f), Time.deltaTime * colorTransitionSpeed);
-            }
-        }
-    }
+    
 
     // Method to manage the zooming coroutine
     void ManageZoomCoroutine()

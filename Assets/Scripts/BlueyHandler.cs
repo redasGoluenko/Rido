@@ -10,18 +10,19 @@ public class BlueyHandler : MonoBehaviour
     private Coroutine fadeCoroutine;
 
     public GameObject leftPupil;
-    public GameObject rightPupil;
+    public GameObject rightPupil;   
 
     public GameObject triangleOne;
     public GameObject triangleTwo;
     public GameObject triangleThree;
     public GameObject triangleFour;
+    public Collider2D collider2D;
 
     private int glowNumber;
     private bool inGlowSelection = false;
 
     private void Start()
-    {
+    {                   
         // Used to avoid unnecessary calculations when not in the Glows scene
         if(SceneManager.GetActiveScene().name == "Glows")
         {
@@ -34,7 +35,7 @@ public class BlueyHandler : MonoBehaviour
         }
     }
     void Update()
-    {
+    {      
         // If in the Glows scene, update the glow number from the PlayerManager
         if (inGlowSelection)
         {
@@ -75,7 +76,7 @@ public class BlueyHandler : MonoBehaviour
             rightPupil.GetComponent<SpriteRenderer>().color = new Color(0f / 255f, 162f / 255f, 255f / 255f);
         }
         else if (collision.gameObject.CompareTag("HoldToken"))
-        {    
+        {             
             leftPupil.GetComponent<SpriteRenderer>().color = new Color(255f / 255f, 0f / 255f, 255f / 255f);
             rightPupil.GetComponent<SpriteRenderer>().color = new Color(255f / 255f, 0f / 255f, 255f / 255f);
         }
@@ -108,7 +109,7 @@ public class BlueyHandler : MonoBehaviour
             {
                 SetAlpha(0f);
             }
-            SetScale(Vector3.one);
+            SetScale(Vector3.one);          
         }
         else if (collision.gameObject.CompareTag("RedToken"))
         {           

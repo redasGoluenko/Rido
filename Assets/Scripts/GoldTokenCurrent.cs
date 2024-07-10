@@ -11,7 +11,7 @@ public class GoldTokenCurrent : MonoBehaviour
     public BlueTokenCurrent blueTokenCurrent;
     public GameObject goldToken;
 
-    public float animationDuration = 1.0f; // Duration of the animation in seconds
+    public float animationDuration = 1.0f;
     private Coroutine animateCoroutine;
     public bool isDone = false;
 

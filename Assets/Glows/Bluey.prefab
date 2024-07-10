@@ -679,10 +679,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   leftPupil: {fileID: 412086876440567963}
   rightPupil: {fileID: 8641317019206100065}
+  rotate: {fileID: 0}
   triangleOne: {fileID: 6046982019866096512}
   triangleTwo: {fileID: 324201627409106564}
   triangleThree: {fileID: 4397194817345660282}
   triangleFour: {fileID: 4384949627952288445}
+  collider2D: {fileID: 3858366306388672821}
 --- !u!50 &1679961196374008458
 Rigidbody2D:
   serializedVersion: 4
@@ -744,8 +746,8 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
-  m_Radius: 0.5
+  m_Offset: {x: 0.003325277, y: 0}
+  m_Radius: 0.7959459
 --- !u!1 &2083862367311331938
 GameObject:
   m_ObjectHideFlags: 0

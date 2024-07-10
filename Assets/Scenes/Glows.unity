@@ -3864,6 +3864,10 @@ MonoBehaviour:
   currentPurpleTokens: 0
   currentRedTokens: 0
   currentXP: 0
+  glowNumber: 0
+  playerLevel: 1
+  XPInstance: 0
+  LevelInstance: 1
   reset: 0
 --- !u!4 &274167994
 Transform:
@@ -5999,7 +6003,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3a8278c001c173548b35e9dba9efdc94, type: 3}
   m_Name: 

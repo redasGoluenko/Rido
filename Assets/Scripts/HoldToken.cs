@@ -31,10 +31,8 @@ public class FollowOnTouch : MonoBehaviour
 
     private void Update()
     {
-       HandleTouchInputAndInteraction(); // Handle touch input and interaction logic
-    }
-
-    // Handle touch input and interaction logic
+       HandleTouchInputAndInteraction();
+    }   
     void HandleTouchInputAndInteraction()
     {
         // Check if there is at least one touch on the screen
