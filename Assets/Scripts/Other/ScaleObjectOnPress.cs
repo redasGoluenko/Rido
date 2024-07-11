@@ -1,22 +1,50 @@
+using System.Collections;
 using UnityEngine;
 
 public class ScaleObjectOnTouch : MonoBehaviour
 {
-    public float scaleAmount = 1.5f; // Factor to scale up when screen is touched
+    public float scaleAmount = 1.5f; // Factor to scale up when the screen is touched
     public float transitionSpeed = 1f; // Speed at which the object scales up and down
     private Vector3 originalScale;
     private Vector3 targetScale;
     private bool isScalingUp = false;
     private bool isScalingDown = false;
+    public GameObject leftPupil;
+    public GameObject rightPupil;
+
+    private Vector3 originalLeftPupilScale;
+    private Vector3 originalRightPupilScale;
+    private Vector3 targetLeftPupilScale;
+    private Vector3 targetRightPupilScale;
+
+    public TrailRenderer trailRendererLeft;
+    public TrailRenderer trailRendererRight;
+    private Coroutine coroutine;
+    private bool collidingWithHoldToken = false;
 
     void Start()
     {
+        trailRendererLeft.emitting = false;
+        trailRendererRight.emitting = false;
+        // Store the original scales
         originalScale = transform.localScale;
         targetScale = new Vector3(originalScale.x, originalScale.y * scaleAmount, originalScale.z);
+
+        originalLeftPupilScale = leftPupil.transform.localScale;
+        originalRightPupilScale = rightPupil.transform.localScale;
+
+        // Set the target scales for the pupils (only x-axis is increased)
+        targetLeftPupilScale = new Vector3(originalLeftPupilScale.x * 2, originalLeftPupilScale.y, originalLeftPupilScale.z);
+        targetRightPupilScale = new Vector3(originalRightPupilScale.x * 2, originalRightPupilScale.y, originalRightPupilScale.z);
     }
 
     void Update()
     {
+        if(collidingWithHoldToken)
+        {
+            trailRendererLeft.emitting = true;
+            trailRendererRight.emitting = true;
+        }      
         if (Input.touchCount > 0) // Check for touch input
         {
             transform.localScale = originalScale;
@@ -26,18 +54,31 @@ public class ScaleObjectOnTouch : MonoBehaviour
             {
                 isScalingUp = true;
                 isScalingDown = false;
+                if (coroutine != null)
+                {
+                    StopCoroutine(coroutine);
+                }
+                coroutine = StartCoroutine(EmittingFor(0.5f));
             }
         }
 
         if (isScalingUp)
         {
-            // Smoothly scale to target scale
+            // Smoothly scale the main object to the target scale
             transform.localScale = Vector3.Lerp(transform.localScale, targetScale, transitionSpeed * Time.deltaTime);
 
-            // Check if the object has reached the target scale
-            if (Vector3.Distance(transform.localScale, targetScale) < 0.01f)
+            // Smoothly scale the pupils to their target scales
+            leftPupil.transform.localScale = Vector3.Lerp(leftPupil.transform.localScale, targetLeftPupilScale, transitionSpeed * Time.deltaTime);
+            rightPupil.transform.localScale = Vector3.Lerp(rightPupil.transform.localScale, targetRightPupilScale, transitionSpeed * Time.deltaTime);
+
+            // Check if the main object and pupils have reached their target scales
+            if (Vector3.Distance(transform.localScale, targetScale) < 0.01f &&
+                Vector3.Distance(leftPupil.transform.localScale, targetLeftPupilScale) < 0.01f &&
+                Vector3.Distance(rightPupil.transform.localScale, targetRightPupilScale) < 0.01f)
             {
                 transform.localScale = targetScale;
+                leftPupil.transform.localScale = targetLeftPupilScale;
+                rightPupil.transform.localScale = targetRightPupilScale;
                 isScalingUp = false;
                 isScalingDown = true;
             }
@@ -45,15 +86,49 @@ public class ScaleObjectOnTouch : MonoBehaviour
 
         if (isScalingDown)
         {
-            // Smoothly return to original scale
+            // Smoothly return the main object to its original scale
             transform.localScale = Vector3.Lerp(transform.localScale, originalScale, transitionSpeed * Time.deltaTime);
 
-            // Check if the object has reached the original scale
-            if (Vector3.Distance(transform.localScale, originalScale) < 0.01f)
+            // Smoothly return the pupils to their original scales
+            leftPupil.transform.localScale = Vector3.Lerp(leftPupil.transform.localScale, originalLeftPupilScale, transitionSpeed * Time.deltaTime);
+            rightPupil.transform.localScale = Vector3.Lerp(rightPupil.transform.localScale, originalRightPupilScale, transitionSpeed * Time.deltaTime);
+
+            // Check if the main object and pupils have returned to their original scales
+            if (Vector3.Distance(transform.localScale, originalScale) < 0.01f &&
+                Vector3.Distance(leftPupil.transform.localScale, originalLeftPupilScale) < 0.01f &&
+                Vector3.Distance(rightPupil.transform.localScale, originalRightPupilScale) < 0.01f)
             {
                 transform.localScale = originalScale;
+                leftPupil.transform.localScale = originalLeftPupilScale;
+                rightPupil.transform.localScale = originalRightPupilScale;
                 isScalingDown = false;
             }
+        }
+    }
+    IEnumerator EmittingFor(float delay)
+    {
+        trailRendererRight.emitting = true;
+        trailRendererLeft.emitting = true;
+        yield return new WaitForSeconds(delay);
+        trailRendererRight.emitting = false;
+        trailRendererLeft.emitting = false;
+    }
+
+    //on collision
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "HoldToken")
+        {  
+            collidingWithHoldToken = true;
+        }
+    }
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if(collision.gameObject.tag == "HoldToken")
+        {
+            collidingWithHoldToken = false;
+            trailRendererLeft.emitting = false;
+            trailRendererRight.emitting = false;
         }
     }
 }
