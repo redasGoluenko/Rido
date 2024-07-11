@@ -17,21 +17,12 @@ public class XPCurrent : MonoBehaviour
     private float currentXP;
     private bool flag = true;
 
-    // Start is called before the first frame update
     void Start()
-    {      
-        StartCoroutine(WaitAndSet(0.5f));       
-    }
-
-    IEnumerator WaitAndSet(float delay)
-    {           
-        yield return new WaitForSeconds(delay);
-        currentLevel = PlayerManager.instance.LevelInstance;       
-    }
-
-    // Update is called once per frame
+    {
+        currentLevel = PlayerManager.instance.LevelInstance;
+    } 
     void Update()
-    {        
+    {      
         UpdateScoreText();
 
         // Check if slider value has crossed from >50 to <=50
@@ -50,6 +41,7 @@ public class XPCurrent : MonoBehaviour
     float GetTotalTokenCount()
     {
         currentXP = PlayerManager.instance.XPInstance;
+        Debug.Log("Current XP: " + currentXP);
         while (currentXP >= 100)
         {
             currentXP -= 100;

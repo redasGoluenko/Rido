@@ -28,9 +28,4 @@ public class XPEarned : MonoBehaviour
         // Set initial alpha of purpleToken to 0 (fully transparent)
         xpRenderer.SetAlpha(0f);
     }
-
-    // Update is called once per frame
-    void Update()
-    {        
-    }
 }

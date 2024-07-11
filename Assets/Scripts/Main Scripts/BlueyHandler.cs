@@ -15,8 +15,7 @@ public class BlueyHandler : MonoBehaviour
     public GameObject triangleOne;
     public GameObject triangleTwo;
     public GameObject triangleThree;
-    public GameObject triangleFour;
-    public Collider2D collider2D;
+    public GameObject triangleFour;  
 
     private int glowNumber;
     private bool inGlowSelection = false;
