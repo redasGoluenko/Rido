@@ -15,14 +15,19 @@ public class XPCurrent : MonoBehaviour
     public Slider slider;   
     private int currentLevel;
     private float currentXP;
-    private bool flag = true;
+    private bool flag = true;   
+    public bool retried = false;
 
     void Start()
     {
         currentLevel = PlayerManager.instance.LevelInstance;
+        if(slider.value <= 50)
+        {
+            flag = false;
+        }
     } 
     void Update()
-    {      
+    {     
         UpdateScoreText();
 
         // Check if slider value has crossed from >50 to <=50
@@ -69,6 +74,7 @@ public class XPCurrent : MonoBehaviour
         {
             total += (redTokenCurrent.currentCount * rotate.UnitXPValue) * 25;
         }
+
         return total;
     }
 
@@ -78,11 +84,17 @@ public class XPCurrent : MonoBehaviour
         if (scoreText != null)
         {
             float totalTokenCount = GetTotalTokenCount();
+            if(retried)
+            {
+                retried = false;
+                PlayerManager.instance.SetXP(totalTokenCount);
+                PlayerManager.instance.SetLevel(currentLevel);
+            }
             while(totalTokenCount >= 100)
             {                                
                 totalTokenCount -= 100;                
             }
-            slider.value = totalTokenCount;    
+            slider.value = totalTokenCount;
             // Update the score text to reflect the new total XP
             scoreText.text = $"Level: {currentLevel}";
         }

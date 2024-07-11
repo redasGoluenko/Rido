@@ -8277,6 +8277,7 @@ MonoBehaviour:
   rotate: {fileID: 1792451200}
   buttonRectTransform: {fileID: 0}
   buttonText: {fileID: 749199710}
+  xPCurrent: {fileID: 1471205926}
 --- !u!1 &248937599
 GameObject:
   m_ObjectHideFlags: 0
@@ -49422,6 +49423,7 @@ MonoBehaviour:
   redTokenCurrent: {fileID: 839819132}
   scoreText: {fileID: 1471205927}
   slider: {fileID: 481115917}
+  retried: 0
 --- !u!114 &1471205927
 MonoBehaviour:
   m_ObjectHideFlags: 0

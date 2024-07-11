@@ -34,8 +34,7 @@ public class XPSlider : MonoBehaviour
     }
 
     void Update()
-    {      
-        // Continuously update the player's XP from PlayerManager
+    {            
         if (PlayerManager.instance.currentXP != currentXP)
         {
             UpdateXP(PlayerManager.instance.currentXP);

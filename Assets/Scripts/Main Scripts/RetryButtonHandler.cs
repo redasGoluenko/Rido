@@ -6,7 +6,8 @@ public class RetryButtonHandler : MonoBehaviour
 {
     public Rotate rotate; // Reference to the Rotate script
     public RectTransform buttonRectTransform; // Reference to the RectTransform component of the button
-    public TextMeshProUGUI buttonText; // Reference to the TextMeshProUGUI component of the button
+    public TextMeshProUGUI buttonText; // Reference to the TextMeshProUGUI component of the button   
+    public XPCurrent xPCurrent; // Reference to the XPCurrent script
 
     private bool hasMoved = false; // Flag to track if the button has already moved
     private float moveDistance = 917f; // Distance to move the button
@@ -30,7 +31,8 @@ public class RetryButtonHandler : MonoBehaviour
 
     // This method will be called when the button is clicked
     public void OnButtonClick()
-    {
+    {          
+        xPCurrent.retried = true; // Set the retried flag to true
         Debug.Log("Button clicked");       
         UnityEngine.SceneManagement.SceneManager.LoadScene("Endless");
     }
