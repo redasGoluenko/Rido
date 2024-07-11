@@ -343,27 +343,24 @@ public class Rotate : MonoBehaviour
 
     void UpdateTokenCounterColor()
     {
-        bool isScreenTouched = Input.touchCount > 0;
-
         if (isCollidingWithHoldToken)
         {
             //Debug.Log("Colliding with hold token");
             tokenCounter.ChangeColor(new Color(0.5f, 0, 0.5f));
         }
-        else if (isCollidingWithRedirectToken && isScreenTouched)
+        else if (isCollidingWithRedirectToken)
         {
             //Debug.Log("Colliding with redirect token");
             tokenCounter.ChangeColor(Color.blue);
         }
-        else if (isCollidingWithRedToken && isScreenTouched)
+        else if (isCollidingWithRedToken)
         {
             //Debug.Log("Colliding with red token");
             tokenCounter.ChangeColor(Color.red);
         }
-        else if (isCollidingWithToken && isScreenTouched)
+        else if (isCollidingWithToken)
         {
-
-            Debug.Log("Colliding with token");
+         
             tokenCounter.ChangeColor(new Color(1.0f, 0.92f, 0.3f));
         }
     }
