@@ -28001,6 +28001,7 @@ MonoBehaviour:
   SLOT2: {fileID: 3161296548830855988, guid: efc58abae81014b40a700ed364bada9a, type: 3}
   SLOT3: {fileID: 4117624417348713582, guid: b10de3bcdf1e3a84b92e48a594e6a459, type: 3}
   SLOT4: {fileID: 2387859236793735748, guid: e9f34b5fb591d7245a22acd456bb9a10, type: 3}
+  SLOT5: {fileID: 6538333940898006004, guid: 4a1c6c2d878b68d4fb4c83b5d7d12a55, type: 3}
   rotateSpeed: 150
   UnitXPValue: 0
   currentLevel: 0

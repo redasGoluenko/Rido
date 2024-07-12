@@ -13,6 +13,7 @@ public class GlowButtonHandler : MonoBehaviour
     public bool SLOT2 = false;
     public bool SLOT3 = false;
     public bool SLOT4 = false;
+    public bool SLOT5 = false;
 
     private int currentGlowNumber;  
 
@@ -36,6 +37,10 @@ public class GlowButtonHandler : MonoBehaviour
             buttonImage.color = new Color(0f, 0f, 0f, 0.1f);
         }
         else if (SLOT4 && currentGlowNumber == 4)
+        {
+            buttonImage.color = new Color(0f, 0f, 0f, 0.1f);
+        }
+        else if (SLOT5 && currentGlowNumber == 5)
         {
             buttonImage.color = new Color(0f, 0f, 0f, 0.1f);
         }
@@ -68,6 +73,10 @@ public class GlowButtonHandler : MonoBehaviour
         else if (SLOT4)
         {
             PlayerManager.instance.SetGlowNumber(4);
+        }
+        else if (SLOT5)
+        {
+            PlayerManager.instance.SetGlowNumber(5);
         }
         PlayerManager.instance.SaveScore();
     }

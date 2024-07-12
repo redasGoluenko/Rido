@@ -1,7 +1,8 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class ScaleObjectOnTouch : MonoBehaviour
+public class RedyHandler : MonoBehaviour
 {
     public float scaleAmount = 1.5f; // Factor to scale up when the screen is touched
     public float transitionSpeed = 1f; // Speed at which the object scales up and down
@@ -16,10 +17,24 @@ public class ScaleObjectOnTouch : MonoBehaviour
     private Vector3 originalRightPupilScale;
     private Vector3 targetLeftPupilScale;
     private Vector3 targetRightPupilScale;
- 
+
+    private int glowNumber;
+    private bool inGlowSelection = false;
+
 
     void Start()
-    {     
+    {
+        // Used to avoid unnecessary calculations when not in the Glows scene
+        if (SceneManager.GetActiveScene().name == "Glows")
+        {
+            inGlowSelection = true;
+
+        }
+        else
+        {
+            glowNumber = PlayerManager.instance.glowNumber;
+        }
+
         // Store the original scales
         originalScale = transform.localScale;
         targetScale = new Vector3(originalScale.x, originalScale.y * scaleAmount, originalScale.z);
@@ -33,7 +48,21 @@ public class ScaleObjectOnTouch : MonoBehaviour
     }
 
     void Update()
-    {           
+    {
+        if (inGlowSelection)
+        {
+            glowNumber = PlayerManager.instance.glowNumber;
+        }
+
+        if (glowNumber == 5)
+        {
+            HandleRedyGlow();
+        }
+
+    }
+
+    void HandleRedyGlow()
+    {
         if (Input.touchCount > 0) // Check for touch input
         {
             transform.localScale = originalScale;
@@ -42,7 +71,7 @@ public class ScaleObjectOnTouch : MonoBehaviour
             if (touch.phase == TouchPhase.Began)
             {
                 isScalingUp = true;
-                isScalingDown = false;          
+                isScalingDown = false;
             }
         }
 
@@ -88,5 +117,5 @@ public class ScaleObjectOnTouch : MonoBehaviour
                 isScalingDown = false;
             }
         }
-    }  
+    }
 }

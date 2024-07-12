@@ -28,6 +28,7 @@ public class Rotate : MonoBehaviour
     public GameObject SLOT2;
     public GameObject SLOT3;
     public GameObject SLOT4;
+    public GameObject SLOT5;
 
     private Color flashColor; // Color for the flash effect  
     private float initialRotateSpeed = 150f; // Initial speed of rotation in degrees per second
@@ -259,7 +260,11 @@ public class Rotate : MonoBehaviour
             {
                 shouldDestroy = true;
             }
-            else if (currentGlow != 1 && currentGlow != 2 && currentGlow != 3 && currentGlow != 4)
+            else if(currentGlow == 5 && glowInstance.name != SLOT5.name + "(Clone)")
+            {
+                shouldDestroy = true;
+            }
+            else if (currentGlow != 1 && currentGlow != 2 && currentGlow != 3 && currentGlow != 4 && currentGlow != 5)
             {
                 shouldDestroy = true;
             }
@@ -324,6 +329,19 @@ public class Rotate : MonoBehaviour
             else
             {
                 Debug.LogWarning("GlowPrefab SLOT4 not assigned!");
+            }
+        }
+        else if(currentGlow == 5 && glowInstance == null)
+        {
+            if(SLOT5 != null)
+            {
+                glowInstance = Instantiate(SLOT5, transform.position, Quaternion.identity, transform);
+                // Change trail color for SLOT3 to blue
+                ChangeTrailColorUsingGradient(Color.black, 0f); // Adjust parameters as needed
+            }
+            else
+            {
+                Debug.LogWarning("GlowPrefab SLOT5 not assigned!");
             }
         }
     }
