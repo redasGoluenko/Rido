@@ -101,7 +101,7 @@ public class Rotate : MonoBehaviour
     }
 
     void Update()
-    {
+    {     
         if (inGlowSelection)
         {
             currentGlow = PlayerManager.instance.glowNumber;
@@ -391,12 +391,14 @@ public class Rotate : MonoBehaviour
     {
         if (isCollidingWithHoldToken && zoomCoroutine == null && Input.touchCount > 0)
         {
+            AudioManager.Instance.PlayTokenPickupSound();
             // Start the zooming coroutine if it's not already running
             zoomCoroutine = StartCoroutine(ContinuousZoomInAndBack());          
            ChangeTrailColorUsingGradient(trailRenderer.colorGradient.colorKeys[0].color, 0);
         }
         else if (!isCollidingWithHoldToken && zoomCoroutine != null)
         {
+            AudioManager.Instance.PlayTokenExitSound();       
             // Don't stop the coroutine immediately; it will handle zooming out by itself
             zoomCoroutine = null;
             ChangeTrailColorUsingGradient(trailRenderer.colorGradient.colorKeys[0].color, 1);
@@ -420,7 +422,8 @@ public class Rotate : MonoBehaviour
     void HandleTokenCollision()
     {
         if ((isCollidingWithToken || isCollidingWithRedirectToken || isCollidingWithRedToken) && Input.touchCount > 0 && !isMenu)
-        {
+        {          
+            AudioManager.Instance.PlayTokenPickupSound(); // Play the token pickup sound
             if (isCollidingWithToken)
             {
                 goldTokenCount++;
@@ -442,9 +445,7 @@ public class Rotate : MonoBehaviour
             Destroy(currentToken);
             StartCoroutine(FlashBackground(flashColor));
             tokenCount++;            
-            
-            
-            
+                                 
             // Record the time of token destruction
             lastTokenDestructionTime = Time.time;
             // Reset the flag and reference after destroying the token
