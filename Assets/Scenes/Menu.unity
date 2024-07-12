@@ -9590,7 +9590,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tokenPickupSound: {fileID: 8300000, guid: 46a886c66fb544e4dad5358133788b6f, type: 3}
-  tokenExitSound: {fileID: 8300000, guid: 73be836d671cfbf41b6955d673bbd537, type: 3}
+  tokenExitSound: {fileID: 8300000, guid: 0479c27595b256f4496072a0dccd5be3, type: 3}
 --- !u!4 &601755934
 Transform:
   m_ObjectHideFlags: 0
