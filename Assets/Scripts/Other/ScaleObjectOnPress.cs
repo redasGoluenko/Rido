@@ -16,16 +16,10 @@ public class ScaleObjectOnTouch : MonoBehaviour
     private Vector3 originalRightPupilScale;
     private Vector3 targetLeftPupilScale;
     private Vector3 targetRightPupilScale;
-
-    public TrailRenderer trailRendererLeft;
-    public TrailRenderer trailRendererRight;
-    private Coroutine coroutine;
-    private bool collidingWithHoldToken = false;
+ 
 
     void Start()
-    {
-        trailRendererLeft.emitting = false;
-        trailRendererRight.emitting = false;
+    {     
         // Store the original scales
         originalScale = transform.localScale;
         targetScale = new Vector3(originalScale.x, originalScale.y * scaleAmount, originalScale.z);
@@ -39,12 +33,7 @@ public class ScaleObjectOnTouch : MonoBehaviour
     }
 
     void Update()
-    {
-        if(collidingWithHoldToken)
-        {
-            trailRendererLeft.emitting = true;
-            trailRendererRight.emitting = true;
-        }      
+    {           
         if (Input.touchCount > 0) // Check for touch input
         {
             transform.localScale = originalScale;
@@ -53,12 +42,7 @@ public class ScaleObjectOnTouch : MonoBehaviour
             if (touch.phase == TouchPhase.Began)
             {
                 isScalingUp = true;
-                isScalingDown = false;
-                if (coroutine != null)
-                {
-                    StopCoroutine(coroutine);
-                }
-                coroutine = StartCoroutine(EmittingFor(0.5f));
+                isScalingDown = false;          
             }
         }
 
@@ -104,31 +88,5 @@ public class ScaleObjectOnTouch : MonoBehaviour
                 isScalingDown = false;
             }
         }
-    }
-    IEnumerator EmittingFor(float delay)
-    {
-        trailRendererRight.emitting = true;
-        trailRendererLeft.emitting = true;
-        yield return new WaitForSeconds(delay);
-        trailRendererRight.emitting = false;
-        trailRendererLeft.emitting = false;
-    }
-
-    //on collision
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.tag == "HoldToken")
-        {  
-            collidingWithHoldToken = true;
-        }
-    }
-    private void OnCollisionExit2D(Collision2D collision)
-    {
-        if(collision.gameObject.tag == "HoldToken")
-        {
-            collidingWithHoldToken = false;
-            trailRendererLeft.emitting = false;
-            trailRendererRight.emitting = false;
-        }
-    }
+    }  
 }

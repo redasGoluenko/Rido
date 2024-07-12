@@ -45,8 +45,7 @@ public class XPCurrent : MonoBehaviour
     // Method to calculate the total token count
     float GetTotalTokenCount()
     {
-        currentXP = PlayerManager.instance.XPInstance;
-        Debug.Log("Current XP: " + currentXP);
+        currentXP = PlayerManager.instance.XPInstance;      
         while (currentXP >= 100)
         {
             currentXP -= 100;
