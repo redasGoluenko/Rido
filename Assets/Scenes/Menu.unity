@@ -9621,6 +9621,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainMenu: {fileID: 8300000, guid: 8a58263b8b6dd5143a8fba0bb70413f4, type: 3}
+  buttonClick: {fileID: 8300000, guid: c82323b9c61a5c348b98cace228e455f, type: 3}
+  whoosh: {fileID: 8300000, guid: adf8bd895047ed64485178d00743415b, type: 3}
   SFX: {fileID: 681111430}
   Background: {fileID: 361544225}
 --- !u!4 &601755934
@@ -11119,7 +11121,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.25
   m_Pitch: 1
   Loop: 0
   Mute: 0

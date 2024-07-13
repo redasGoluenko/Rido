@@ -23,7 +23,8 @@ public class EndlessButtonHandler : MonoBehaviour
     public Death death; // Reference to the Death script
 
     public void OnButtonClick()
-    {       
+    {
+        AudioManager.Instance.PlaySFX(AudioManager.Instance.buttonClick);
         AudioManager.Instance.FadeOutBackgroundMusic(1f);
         StartCoroutine(FadeBackgroundsTo(0.25f));       
         StartCoroutine(exit.MoveLeftDiagonallyInitiallyCoroutine());

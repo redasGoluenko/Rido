@@ -52,7 +52,8 @@ public class GlowButtonHandler : MonoBehaviour
 
     //on button click, load the FAQ scene
     public void OnButtonClick()
-    {      
+    {
+        AudioManager.Instance.PlaySFX(AudioManager.Instance.buttonClick);
         Debug.Log("Glow Applied.");
         if(SLOT0)
         {

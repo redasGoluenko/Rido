@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class MoveDiagonally : MonoBehaviour
 {
@@ -19,8 +20,19 @@ public class MoveDiagonally : MonoBehaviour
     private Vector2 startPos;
     private Vector3 startPosition;
 
+    private bool inGlowSelection;
+
     void Start()
     {
+        if (SceneManager.GetActiveScene().name == "Glows")
+        {           
+            inGlowSelection = true;                 
+        }
+        else
+        {
+            inGlowSelection = false;
+        }
+
         StartCoroutine(StartMovementWithDelay());
     }
 
@@ -55,6 +67,10 @@ public class MoveDiagonally : MonoBehaviour
     // Coroutine for initial diagonal right movement
     IEnumerator MoveRightDiagonallyInitiallyCoroutine()
     {
+        if (!inGlowSelection)
+        {
+            AudioManager.Instance.PlaySFX(AudioManager.Instance.whoosh);
+        }      
         yield return new WaitForSeconds(0.25f);
         float initialSpeed = speed * 10000; // Speed for the initial diagonal movement
         float initialTime = initialRightDistance / initialSpeed; // Time to complete the initial movement
@@ -107,6 +123,10 @@ public class MoveDiagonally : MonoBehaviour
 
     public IEnumerator MoveLeftDiagonallyInitiallyCoroutine()
     {
+        if (!inGlowSelection)
+        {
+            AudioManager.Instance.PlaySFX(AudioManager.Instance.whoosh);
+        }
         yield return new WaitForSeconds(0.25f);
         float initialSpeed = speed * 10000; // Speed for the initial diagonal movement
         float initialTime = initialRightDistance / initialSpeed; // Time to complete the initial movement
@@ -162,6 +182,10 @@ public class MoveDiagonally : MonoBehaviour
 
     IEnumerator MoveDiagonallyCoroutine()
     {
+        if (!inGlowSelection)
+        {
+            AudioManager.Instance.PlaySFX(AudioManager.Instance.whoosh);
+        }
         while (true)
         {
             // Calculate horizontal and vertical offsets based on angle and time
@@ -185,6 +209,10 @@ public class MoveDiagonally : MonoBehaviour
 
     public IEnumerator MoveVerticallyCoroutine()
     {
+        if (!inGlowSelection)
+        {
+            AudioManager.Instance.PlaySFX(AudioManager.Instance.whoosh);
+        }
         while (slopeMovement)
         {
             // Calculate vertical offset based on time

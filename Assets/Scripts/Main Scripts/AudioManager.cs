@@ -8,6 +8,8 @@ public class AudioManager : MonoBehaviour
 
     [Header("Audio Clips")]
     public AudioClip mainMenu;
+    public AudioClip buttonClick;
+    public AudioClip whoosh;
 
     [Header("Audio Sources")]
     public AudioSource SFX;
@@ -32,7 +34,12 @@ public class AudioManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
-    }    
+    }   
+    
+    public void PlaySFX(AudioClip clip)
+    {     
+        SFX.PlayOneShot(clip);       
+    }
     public void FadeOutBackgroundMusic(float duration)
     {
         if (fadeOutCoroutine != null)

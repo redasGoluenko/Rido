@@ -25,8 +25,8 @@ public class StoreButtonHandler : MonoBehaviour
 
     public void OnButtonClick()
     {
+        AudioManager.Instance.PlaySFX(AudioManager.Instance.buttonClick);
         StartCoroutine(FadeBackgroundsTo(0.25f));             
-
         // Start the coroutine to move exit diagonally left
         StartCoroutine(exit.MoveLeftDiagonallyInitiallyCoroutine());
         StartCoroutine(WaitAndMove(0.1f, store)); // Wait 1 second, then move store diagonally left

@@ -31,7 +31,8 @@ public class RetryButtonHandler : MonoBehaviour
 
     // This method will be called when the button is clicked
     public void OnButtonClick()
-    {          
+    {
+        AudioManager.Instance.PlaySFX(AudioManager.Instance.buttonClick);
         xPCurrent.retried = true; // Set the retried flag to true
         Debug.Log("Button clicked");       
         UnityEngine.SceneManagement.SceneManager.LoadScene("Endless");

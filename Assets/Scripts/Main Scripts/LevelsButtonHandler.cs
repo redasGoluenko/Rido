@@ -16,6 +16,7 @@ public class LevelsButtonHandler : MonoBehaviour
 
     public void OnButtonClick()
     {
+        AudioManager.Instance.PlaySFX(AudioManager.Instance.buttonClick);
         StartCoroutine(FadeBackgroundsTo(0.25f));
     }
 

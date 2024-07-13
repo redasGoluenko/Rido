@@ -26,6 +26,7 @@ public class QuitButtonHandler : MonoBehaviour
 
     public void OnButtonClick()
     {
+        AudioManager.Instance.PlaySFX(AudioManager.Instance.buttonClick);
         // Change colors of all background Images
         StartCoroutine(FadeBackgroundsTo(0.25f));
 

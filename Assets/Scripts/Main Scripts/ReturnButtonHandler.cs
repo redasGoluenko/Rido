@@ -14,18 +14,13 @@ public class ReturnButtonHandler : MonoBehaviour
 
     void Start()
     {
-    }
-
-    void Update()
-    {
-        // You can put any update logic here if needed
+        AudioManager.Instance.PlaySFX(AudioManager.Instance.whoosh);
     }
 
     public void OnButtonClick()
-    {       
-        // Close the menu
-        death.CloseMenu(0);
-        // Optionally load the scene after a delay
+    {
+        AudioManager.Instance.PlaySFX(AudioManager.Instance.buttonClick);       
+        death.CloseMenu(0);       
         StartCoroutine(LoadScene(0.55f)); // Wait 1 second, then load the scene "Menu"
     }
 
