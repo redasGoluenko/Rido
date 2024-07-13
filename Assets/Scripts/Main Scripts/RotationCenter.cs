@@ -33,7 +33,7 @@ public class RotationCenter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (isEndless)
+        if (isEndless && !rotate.dead)
         {
             HandleHoldToken(); // Handle the hold token movement
             HandleTokens(); // Handle the standard, redirect and red token movement

@@ -69,27 +69,26 @@ public class Rotate : MonoBehaviour
 
         if (SceneManager.GetActiveScene().name == "Glows")
         {
-            inGlowSelection = true;
-
-            if (currentGlow == 4)
-            {
-                trailRenderer.enabled = false;
-            }
+            inGlowSelection = true;        
             HandleGlow();
         }
-
         if (SceneManager.GetActiveScene().name == "Endless")
-        {           
+        {
+            transform.localScale = new Vector3(0f, 0f, 0f);
             if(scaleCoroutine != null)
             {
                 StopCoroutine(scaleCoroutine);
             }
-            scaleCoroutine = StartCoroutine(ScaleOverTime(new Vector3(0f, 0f, 0f), 1f));
-        }
-            currentGlow = PlayerManager.instance.glowNumber;
+            scaleCoroutine = StartCoroutine(ScaleOverTime(new Vector3(0.75f, 0.75f, 0.75f), 1f));
+        }       
+        currentGlow = PlayerManager.instance.glowNumber;
         if (currentGlow == 4)
         {
-            trailRenderer.enabled = false;
+            trailRenderer.time = 0.4f;
+        }
+        else
+        {
+            trailRenderer.time = 0.3f;
         }
         Destroy(glowInstance);
         ChangeTrailColorUsingGradient(Color.black, 1);  
@@ -110,18 +109,10 @@ public class Rotate : MonoBehaviour
     }
 
     void Update()
-    {     
+    {
         if (inGlowSelection)
         {
-            currentGlow = PlayerManager.instance.glowNumber;
-            if (currentGlow == 4)
-            {
-                trailRenderer.enabled = false;
-            }
-            else
-            {
-                trailRenderer.enabled = true;
-            }
+            currentGlow = PlayerManager.instance.glowNumber;          
             HandleGlow();
         }        
         
@@ -318,8 +309,7 @@ public class Rotate : MonoBehaviour
         {
             if (SLOT3 != null)
             {
-                glowInstance = Instantiate(SLOT3, transform.position, Quaternion.identity, transform);               
-                // Change trail color for SLOT3 to blue
+                glowInstance = Instantiate(SLOT3, transform.position, Quaternion.identity, transform);                             
                 ChangeTrailColorUsingGradient(Color.blue, 0.8f); // Adjust parameters as needed
             }
             else
@@ -331,9 +321,8 @@ public class Rotate : MonoBehaviour
         {
             if(SLOT4 != null)
             {
-                glowInstance = Instantiate(SLOT4, transform.position, Quaternion.identity, transform);
-                // Change trail color for SLOT3 to blue
-                ChangeTrailColorUsingGradient(Color.blue, 0.8f); // Adjust parameters as needed
+                glowInstance = Instantiate(SLOT4, transform.position, Quaternion.identity, transform);              
+                ChangeTrailColorUsingGradient(new Color(202, 0, 255), 0.8f);
             }
             else
             {
@@ -344,9 +333,8 @@ public class Rotate : MonoBehaviour
         {
             if(SLOT5 != null)
             {
-                glowInstance = Instantiate(SLOT5, transform.position, Quaternion.identity, transform);
-                // Change trail color for SLOT3 to blue
-                ChangeTrailColorUsingGradient(Color.black, 0f); // Adjust parameters as needed
+                glowInstance = Instantiate(SLOT5, transform.position, Quaternion.identity, transform);              
+                ChangeTrailColorUsingGradient(Color.black, 0f);
             }
             else
             {
@@ -398,7 +386,7 @@ public class Rotate : MonoBehaviour
     // Method to manage the zooming coroutine
     void ManageZoomCoroutine()
     {
-        if (isCollidingWithHoldToken && zoomCoroutine == null && Input.touchCount > 0)
+        if (isCollidingWithHoldToken && zoomCoroutine == null && Input.touchCount > 0 && !dead)
         {           
             // Start the zooming coroutine if it's not already running
             zoomCoroutine = StartCoroutine(ContinuousZoomInAndBack());          
@@ -431,7 +419,7 @@ public class Rotate : MonoBehaviour
     // Method to handle token collision
     void HandleTokenCollision()
     {
-        if ((isCollidingWithToken || isCollidingWithRedirectToken || isCollidingWithRedToken) && Input.touchCount > 0 && !isMenu)
+        if ((isCollidingWithToken || isCollidingWithRedirectToken || isCollidingWithRedToken) && Input.touchCount > 0 && !isMenu && !dead)
         {                    
             if (isCollidingWithToken)
             {
@@ -545,7 +533,7 @@ public class Rotate : MonoBehaviour
         if (collision.gameObject.CompareTag("Token"))
         {           
             // Check if there was no touch input when the collision with the token ended
-            if (Input.touchCount == 0 && !isMenu)
+            if (Input.touchCount == 0 && !isMenu && !dead)
             {
                 Die();
             }
@@ -555,7 +543,7 @@ public class Rotate : MonoBehaviour
         }
         if (collision.gameObject.CompareTag("RedirectToken"))
         {           
-            if (Input.touchCount == 0)
+            if (Input.touchCount == 0 && !dead)
             {
                 Die();
             }
@@ -570,7 +558,7 @@ public class Rotate : MonoBehaviour
         }
         if (collision.gameObject.CompareTag("RedToken"))
         {          
-            if (Input.touchCount == 0)
+            if (Input.touchCount == 0 && !dead)
             {
                 Die();
             }
@@ -721,26 +709,37 @@ public class Rotate : MonoBehaviour
         cam.transform.eulerAngles = new Vector3(0, 0, targetAngle);
         slopes.transform.eulerAngles = new Vector3(0, 0, targetAngle);
     }
-    // Method to handle player death
     public void Die()
-    {             
+    {
+        DestroyAllTokens(); // Destroy all tokens in the scene
+        StartCoroutine(DieCoroutine());
+    }
+
+    private IEnumerator DieCoroutine()
+    {
+        // Call the ScaleOverTime coroutine and wait for it to complete
+        yield return StartCoroutine(ScaleOverTime(Vector3.zero, 1f)); // Adjust duration as needed
+
+        // Now execute the remaining logic
         goldTokenCurrent.UpdateCurrentGoldToken(goldTokenCount);
         blueTokenCurrent.UpdateCurrentBlueToken(blueTokenCount);
         redTokenCurrent.UpdateCurrentRedToken(redTokenCount);
         purpleTokenCurrent.UpdateCurrentPurpleToken(purpleTokenCount);
+
         // Deactivate the player and its children
-        gameObject.SetActive(false);   
+        gameObject.SetActive(false);
         dead = true; // Set the dead flag to true       
 
         // Optionally, you could trigger any other death-related logic here, like fading out
         ease.FadeIn();
-        if (!isMenu) { tokenCounter.textMeshPro.color = Color.white; }       
+        if (!isMenu) { tokenCounter.textMeshPro.color = Color.white; }
     }
 
+    // Method to handle token destruction (unchanged)
     public void DestroyCurrentToken()
     {
-       Destroy(currentToken);
-    }  
+        Destroy(currentToken);
+    }
 
     private IEnumerator ScaleOverTime(Vector3 targetScale, float duration)
     {
@@ -756,4 +755,37 @@ public class Rotate : MonoBehaviour
 
         transform.localScale = targetScale;
     }
+
+    public void DestroyAllTokens()
+    {
+        // Find all game objects with the tag "Token"
+        GameObject[] tokens = GameObject.FindGameObjectsWithTag("Token");
+        // Find all game objects with the tag "RedirectToken"
+        GameObject[] redirectTokens = GameObject.FindGameObjectsWithTag("RedirectToken");
+
+        GameObject[] holdTokens = GameObject.FindGameObjectsWithTag("HoldToken");
+
+        GameObject[] redTokens = GameObject.FindGameObjectsWithTag("RedToken");
+
+        // Iterate through the array and destroy each game object tagged "Token"
+        foreach (GameObject token in tokens)
+        {
+            Destroy(token);
+        }
+        // Iterate through the array and destroy each game object tagged "RedirectToken"
+        foreach (GameObject redirectToken in redirectTokens)
+        {
+            Destroy(redirectToken);
+        }
+        foreach (GameObject holdToken in holdTokens)
+        {
+            Destroy(holdToken);
+        }
+        foreach (GameObject redToken in redTokens)
+        {
+            Destroy(redToken);
+        }
+    }
+
+
 }
