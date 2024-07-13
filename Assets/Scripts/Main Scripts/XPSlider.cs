@@ -90,7 +90,7 @@ public class XPSlider : MonoBehaviour
             // Set a flag indicating that the level has changed
             levelChanged = true;
 
-            Debug.Log("Level Up! New Level: " + level + ", XP Reset to 0 for new level.");
+            //Debug.Log("Level Up! New Level: " + level + ", XP Reset to 0 for new level.");
         }
 
         // Update the slider's maximum value to the XP required for the new level
@@ -121,7 +121,7 @@ public class XPSlider : MonoBehaviour
         PlayerManager.instance.XPInstance = currentXP;
         PlayerManager.instance.LevelInstance = level;
         PlayerManager.instance.SaveScore();
-        Debug.Log("Saved Data - Current XP: " + currentXP + ", Level: " + level);
+        //Debug.Log("Saved Data - Current XP: " + currentXP + ", Level: " + level);
     }
 
     // Method to load player data (XP and level) from persistent storage   
@@ -136,7 +136,7 @@ public class XPSlider : MonoBehaviour
     // Save data when the application is paused (for example, when it goes to the background on mobile)
     void OnApplicationPause(bool pauseStatus)
     {
-        Debug.Log("Application Pausing, Pause Status: " + pauseStatus);
+        //Debug.Log("Application Pausing, Pause Status: " + pauseStatus);
         if (pauseStatus)
         {
             SavePlayerData();

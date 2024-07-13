@@ -32,6 +32,7 @@ public class MenuButtonHandler : MonoBehaviour
     // This method will be called when the button is clicked
     public void OnButtonClick()
     {
+        AudioManager.Instance.FadeInBackgroundMusic(1f); // Fade out the background music
         UnityEngine.SceneManagement.SceneManager.LoadScene("Menu");
     }
 

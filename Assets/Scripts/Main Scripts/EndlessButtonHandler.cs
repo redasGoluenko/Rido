@@ -24,6 +24,7 @@ public class EndlessButtonHandler : MonoBehaviour
 
     public void OnButtonClick()
     {       
+        AudioManager.Instance.FadeOutBackgroundMusic(1f);
         StartCoroutine(FadeBackgroundsTo(0.25f));       
         StartCoroutine(exit.MoveLeftDiagonallyInitiallyCoroutine());
         StartCoroutine(WaitAndMove(0.1f, store));

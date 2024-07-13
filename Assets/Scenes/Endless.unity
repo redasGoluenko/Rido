@@ -24937,7 +24937,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   constant: 0
-  spinSpeed: 100
+  spinSpeed: 200
   clockwise: 0
 --- !u!1 &749199708
 GameObject:
@@ -37660,7 +37660,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   constant: 0
-  spinSpeed: 100
+  spinSpeed: 200
   clockwise: 0
 --- !u!1 &1115424409
 GameObject:
@@ -44789,7 +44789,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   constant: 0
-  spinSpeed: 100
+  spinSpeed: 200
   clockwise: 0
 --- !u!1 &1335507411
 GameObject:
@@ -48268,7 +48268,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   constant: 0
-  spinSpeed: 100
+  spinSpeed: 200
   clockwise: 0
 --- !u!1 &1434726668
 GameObject:
