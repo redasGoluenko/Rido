@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 public class Rotate : MonoBehaviour
 {
     private Coroutine zoomCoroutine; // Reference to the zooming coroutine
+    private Coroutine scaleCoroutine; // Reference to the scaling coroutine
     private GameObject currentToken; // Reference to the currently collided token
     private GameObject glowInstance; // Reference to the current token prefab
 
@@ -76,8 +77,16 @@ public class Rotate : MonoBehaviour
             }
             HandleGlow();
         }
-        
-        currentGlow = PlayerManager.instance.glowNumber;
+
+        if (SceneManager.GetActiveScene().name == "Endless")
+        {           
+            if(scaleCoroutine != null)
+            {
+                StopCoroutine(scaleCoroutine);
+            }
+            scaleCoroutine = StartCoroutine(ScaleOverTime(new Vector3(0f, 0f, 0f), 1f));
+        }
+            currentGlow = PlayerManager.instance.glowNumber;
         if (currentGlow == 4)
         {
             trailRenderer.enabled = false;
@@ -732,4 +741,19 @@ public class Rotate : MonoBehaviour
     {
        Destroy(currentToken);
     }  
+
+    private IEnumerator ScaleOverTime(Vector3 targetScale, float duration)
+    {
+        Vector3 initialScale = transform.localScale;
+        float timeElapsed = 0f;
+
+        while (timeElapsed < duration)
+        {
+            transform.localScale = Vector3.Lerp(initialScale, targetScale, timeElapsed / duration);
+            timeElapsed += Time.deltaTime;
+            yield return null;
+        }
+
+        transform.localScale = targetScale;
+    }
 }
