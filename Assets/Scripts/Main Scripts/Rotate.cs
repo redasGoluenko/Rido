@@ -718,7 +718,7 @@ public class Rotate : MonoBehaviour
     private IEnumerator DieCoroutine()
     {
         // Call the ScaleOverTime coroutine and wait for it to complete
-        yield return StartCoroutine(ScaleOverTime(Vector3.zero, 1f)); // Adjust duration as needed
+        yield return StartCoroutine(ScaleOverTime(Vector3.zero, 0.5f)); // Adjust duration as needed
 
         // Now execute the remaining logic
         goldTokenCurrent.UpdateCurrentGoldToken(goldTokenCount);

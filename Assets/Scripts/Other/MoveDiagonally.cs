@@ -181,11 +181,7 @@ public class MoveDiagonally : MonoBehaviour
 
 
     IEnumerator MoveDiagonallyCoroutine()
-    {
-        if (!inGlowSelection)
-        {
-            AudioManager.Instance.PlaySFX(AudioManager.Instance.whoosh);
-        }
+    {       
         while (true)
         {
             // Calculate horizontal and vertical offsets based on angle and time
@@ -208,11 +204,7 @@ public class MoveDiagonally : MonoBehaviour
     }
 
     public IEnumerator MoveVerticallyCoroutine()
-    {
-        if (!inGlowSelection)
-        {
-            AudioManager.Instance.PlaySFX(AudioManager.Instance.whoosh);
-        }
+    {     
         while (slopeMovement)
         {
             // Calculate vertical offset based on time
