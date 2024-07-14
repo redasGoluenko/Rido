@@ -71,16 +71,7 @@ public class Rotate : MonoBehaviour
         {
             inGlowSelection = true;        
             HandleGlow();
-        }
-        if (SceneManager.GetActiveScene().name == "Endless")
-        {
-            transform.localScale = new Vector3(0f, 0f, 0f);
-            if(scaleCoroutine != null)
-            {
-                StopCoroutine(scaleCoroutine);
-            }
-            scaleCoroutine = StartCoroutine(ScaleOverTime(new Vector3(0.75f, 0.75f, 0.75f), 1f));
-        }       
+        }          
         currentGlow = PlayerManager.instance.glowNumber;
         if (currentGlow == 4)
         {

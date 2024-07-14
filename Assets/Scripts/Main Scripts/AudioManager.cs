@@ -4,7 +4,7 @@ using System.Runtime.CompilerServices;
 
 public class AudioManager : MonoBehaviour
 {
-    private Coroutine fadeOutCoroutine;
+    private Coroutine fadeCoroutine;
 
     [Header("Audio Clips")]
     public AudioClip mainMenu;
@@ -42,11 +42,11 @@ public class AudioManager : MonoBehaviour
     }
     public void FadeOutBackgroundMusic(float duration)
     {
-        if (fadeOutCoroutine != null)
+        if (fadeCoroutine != null)
         {
-            StopCoroutine(fadeOutCoroutine);
+            StopCoroutine(fadeCoroutine);
         }
-        fadeOutCoroutine = StartCoroutine(FadeOutCoroutine(duration));
+        fadeCoroutine = StartCoroutine(FadeOutCoroutine(duration));
     }   
     private IEnumerator FadeOutCoroutine(float duration)
     {
@@ -66,7 +66,11 @@ public class AudioManager : MonoBehaviour
     // Method to start fading in the background music
     public void FadeInBackgroundMusic(float duration)
     {
-        StartCoroutine(FadeInCoroutine(duration));
+        if (fadeCoroutine != null)
+        {
+            StopCoroutine(fadeCoroutine);
+        }
+        fadeCoroutine = StartCoroutine(FadeInCoroutine(duration));
     }
 
     // Coroutine to gradually increase the volume of the background music
