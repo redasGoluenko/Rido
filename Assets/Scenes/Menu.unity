@@ -9623,6 +9623,8 @@ MonoBehaviour:
   mainMenu: {fileID: 8300000, guid: 8a58263b8b6dd5143a8fba0bb70413f4, type: 3}
   buttonClick: {fileID: 8300000, guid: c82323b9c61a5c348b98cace228e455f, type: 3}
   whoosh: {fileID: 8300000, guid: adf8bd895047ed64485178d00743415b, type: 3}
+  standardClick: {fileID: 8300000, guid: fa29cd3c592d89e41846d50c1eaff5c1, type: 3}
+  zap: {fileID: 8300000, guid: 8cf7710db68309d488f7c7248553c19e, type: 3}
   SFX: {fileID: 681111430}
   Background: {fileID: 361544225}
 --- !u!4 &601755934

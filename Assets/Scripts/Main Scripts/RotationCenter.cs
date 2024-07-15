@@ -87,6 +87,7 @@ public class RotationCenter : MonoBehaviour
         // Check for movement in each direction based on collider availability and player collision
         if (!isCooldown && IsScreenTouched() && !rotate.isCollidingWithHoldToken)
         {
+            AudioManager.Instance.PlaySFX(AudioManager.Instance.standardClick);
             rotate.clockwise = !rotate.clockwise;
 
             if (topCollider.Available && topCollider.PlayerColliding)

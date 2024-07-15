@@ -10,6 +10,8 @@ public class AudioManager : MonoBehaviour
     public AudioClip mainMenu;
     public AudioClip buttonClick;
     public AudioClip whoosh;
+    public AudioClip standardClick;
+    public AudioClip zap;
 
     [Header("Audio Sources")]
     public AudioSource SFX;
@@ -37,30 +39,39 @@ public class AudioManager : MonoBehaviour
     }   
     
     public void PlaySFX(AudioClip clip)
-    {     
-        SFX.PlayOneShot(clip);       
-    }
+    {
+        SFX.volume = 1.0f;
+        SFX.PlayOneShot(clip);
+    } 
     public void FadeOutBackgroundMusic(float duration)
     {
         if (fadeCoroutine != null)
         {
             StopCoroutine(fadeCoroutine);
         }
-        fadeCoroutine = StartCoroutine(FadeOutCoroutine(duration));
+        fadeCoroutine = StartCoroutine(FadeOutCoroutine(duration, Background));
     }   
-    private IEnumerator FadeOutCoroutine(float duration)
+    public void FadeOutSFX(float duration)
     {
-        float startVolume = Background.volume;
-
-        while (Background.volume > 0)
+        if (fadeCoroutine != null)
         {
-            Background.volume -= startVolume * Time.deltaTime / duration;
+            StopCoroutine(fadeCoroutine);
+        }
+        fadeCoroutine = StartCoroutine(FadeOutCoroutine(duration, SFX));
+    }
+    private IEnumerator FadeOutCoroutine(float duration, AudioSource audioSource)
+    {
+        float startVolume = audioSource.volume;
+
+        while (audioSource.volume > 0)
+        {
+            audioSource.volume -= startVolume * Time.deltaTime / duration;
 
             yield return null;
         }
 
-        Background.Stop();
-        Background.volume = startVolume;
+        audioSource.Stop();
+        audioSource.volume = startVolume;
     }
 
     // Method to start fading in the background music
@@ -70,22 +81,30 @@ public class AudioManager : MonoBehaviour
         {
             StopCoroutine(fadeCoroutine);
         }
-        fadeCoroutine = StartCoroutine(FadeInCoroutine(duration));
+        fadeCoroutine = StartCoroutine(FadeInCoroutine(duration, Background));
+    }
+    public void FadeInSFX(float duration)
+    {
+        if (fadeCoroutine != null)
+        {
+            StopCoroutine(fadeCoroutine);
+        }
+        fadeCoroutine = StartCoroutine(FadeInCoroutine(duration, SFX));
     }
 
     // Coroutine to gradually increase the volume of the background music
-    private IEnumerator FadeInCoroutine(float duration)
+    private IEnumerator FadeInCoroutine(float duration, AudioSource audioSource)
     {       
-        Background.volume = 0f;
-        Background.Play();
+        audioSource.volume = 0f;
+        audioSource.Play();
 
-        while (Background.volume < 1.0f)
+        while (audioSource.volume < 1.0f)
         {
-            Background.volume += Time.deltaTime / duration;
+            audioSource.volume += Time.deltaTime / duration;
 
             yield return null;
         }
 
-        Background.volume = 1.0f; // Ensure volume is set to max after fading in
+        audioSource.volume = 1.0f;
     }
 }
