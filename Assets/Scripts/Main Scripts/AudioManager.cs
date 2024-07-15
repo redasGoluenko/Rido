@@ -10,8 +10,7 @@ public class AudioManager : MonoBehaviour
     public AudioClip mainMenu;
     public AudioClip buttonClick;
     public AudioClip whoosh;
-    public AudioClip standardClick;
-    public AudioClip zap;
+    public AudioClip standardClick;  
 
     [Header("Audio Sources")]
     public AudioSource SFX;
@@ -39,8 +38,7 @@ public class AudioManager : MonoBehaviour
     }   
     
     public void PlaySFX(AudioClip clip)
-    {
-        SFX.volume = 1.0f;
+    {      
         SFX.PlayOneShot(clip);
     } 
     public void FadeOutBackgroundMusic(float duration)
@@ -81,7 +79,7 @@ public class AudioManager : MonoBehaviour
         {
             StopCoroutine(fadeCoroutine);
         }
-        fadeCoroutine = StartCoroutine(FadeInCoroutine(duration, Background));
+        fadeCoroutine = StartCoroutine(FadeInCoroutine(duration, Background, 1f));
     }
     public void FadeInSFX(float duration)
     {
@@ -89,11 +87,11 @@ public class AudioManager : MonoBehaviour
         {
             StopCoroutine(fadeCoroutine);
         }
-        fadeCoroutine = StartCoroutine(FadeInCoroutine(duration, SFX));
+        fadeCoroutine = StartCoroutine(FadeInCoroutine(duration, SFX, 0.2f));
     }
 
     // Coroutine to gradually increase the volume of the background music
-    private IEnumerator FadeInCoroutine(float duration, AudioSource audioSource)
+    private IEnumerator FadeInCoroutine(float duration, AudioSource audioSource, float volume)
     {       
         audioSource.volume = 0f;
         audioSource.Play();
@@ -105,6 +103,6 @@ public class AudioManager : MonoBehaviour
             yield return null;
         }
 
-        audioSource.volume = 1.0f;
+        audioSource.volume = volume;
     }
 }

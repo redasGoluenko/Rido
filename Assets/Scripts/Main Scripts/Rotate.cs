@@ -63,6 +63,7 @@ public class Rotate : MonoBehaviour
 
     private void Start()
     {
+        AudioManager.Instance.SFX.volume = 0.2f;
         pastThirty = false;
         pastSixty = false;
         pastNinety = false;
@@ -378,15 +379,15 @@ public class Rotate : MonoBehaviour
     {
         if (isCollidingWithHoldToken && zoomCoroutine == null && Input.touchCount > 0 && !dead)
         {           
-            AudioManager.Instance.PlaySFX(AudioManager.Instance.zap);
-            AudioManager.Instance.FadeInSFX(0.5f);
+            AudioManager.Instance.PlaySFX(AudioManager.Instance.standardClick);
+            
             // Start the zooming coroutine if it's not already running
             zoomCoroutine = StartCoroutine(ContinuousZoomInAndBack());          
            ChangeTrailColorUsingGradient(trailRenderer.colorGradient.colorKeys[0].color, 0);
         }
         else if (!isCollidingWithHoldToken && zoomCoroutine != null)
         {
-            AudioManager.Instance.FadeOutSFX(0.5f);
+            AudioManager.Instance.PlaySFX(AudioManager.Instance.standardClick);
             // Don't stop the coroutine immediately; it will handle zooming out by itself
             zoomCoroutine = null;
             if(currentGlow != 5)
@@ -704,6 +705,7 @@ public class Rotate : MonoBehaviour
     }
     public void Die()
     {
+        AudioManager.Instance.SFX.volume = 0;
         DestroyAllTokens(); // Destroy all tokens in the scene
         StartCoroutine(DieCoroutine());
     }
