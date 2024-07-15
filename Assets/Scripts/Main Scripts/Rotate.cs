@@ -402,6 +402,7 @@ public class Rotate : MonoBehaviour
     {
         if (tokenCount != previousTokenCount && rotateSpeed < 350 && !isMenu)
         {           
+            AudioManager.Instance.PlaySFX(AudioManager.Instance.tokenPickup);
             rotateSpeed = initialRotateSpeed + tokenCount;
             //Debug.Log($"Current Speed: {rotateSpeed}");
 

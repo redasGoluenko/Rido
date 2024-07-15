@@ -17,6 +17,7 @@ public class XPCurrent : MonoBehaviour
     private float currentXP;
     private bool flag = true;   
     public bool retried = false;
+    float previousSliderValue;
 
     void Start()
     {
@@ -25,6 +26,7 @@ public class XPCurrent : MonoBehaviour
         {
             flag = false;
         }
+        previousSliderValue = slider.value;
     } 
     void Update()
     {     
@@ -39,6 +41,13 @@ public class XPCurrent : MonoBehaviour
         else if (!flag && slider.value > 50)
         {
             flag = true;    // Set flag back to true when slider value goes back >50
+        }
+
+        if (slider.value != previousSliderValue)
+        {
+            AudioManager.Instance.SFX.volume = 0.2f;
+            AudioManager.Instance.PlaySFX(AudioManager.Instance.tokenPickup);
+            previousSliderValue = slider.value; // Update previous slider value
         }
     }
 

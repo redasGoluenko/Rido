@@ -10,7 +10,8 @@ public class AudioManager : MonoBehaviour
     public AudioClip mainMenu;
     public AudioClip buttonClick;
     public AudioClip whoosh;
-    public AudioClip standardClick;  
+    public AudioClip standardClick;
+    public AudioClip tokenPickup;
 
     [Header("Audio Sources")]
     public AudioSource SFX;
