@@ -12,6 +12,7 @@ public class PlayerManager : MonoBehaviour
     public float currentXP = 0;
     public int glowNumber = 0;
     public int playerLevel = 1;
+    public int levelSelected = 1;
 
     public float XPInstance = 0;
     public int LevelInstance = 1;
@@ -34,6 +35,7 @@ public class PlayerManager : MonoBehaviour
         currentXP = 0;   
         glowNumber = 0;
         playerLevel = 1;
+        levelSelected = 1;
 
         XPInstance = 0;
         LevelInstance = 1;
@@ -113,6 +115,11 @@ public class PlayerManager : MonoBehaviour
         XPInstance = xp;
         SaveScore();
     }
+    public void SetLevelSelected(int level)
+    {
+        levelSelected = level;
+        SaveScore();
+    }
 
 
     public void SaveScore()
@@ -126,6 +133,7 @@ public class PlayerManager : MonoBehaviour
         PlayerPrefs.SetInt("PlayerLevel", playerLevel);
         PlayerPrefs.SetFloat("PlayerXP",  XPInstance);
         PlayerPrefs.SetInt("Level", LevelInstance);
+        PlayerPrefs.SetInt("LevelSelected", levelSelected);
         PlayerPrefs.Save();
     }
 
@@ -173,6 +181,10 @@ public class PlayerManager : MonoBehaviour
         if (PlayerPrefs.HasKey("Level"))
         {
             LevelInstance = PlayerPrefs.GetInt("Level");
+        }
+        if (PlayerPrefs.HasKey("LevelSelected"))
+        {
+            levelSelected = PlayerPrefs.GetInt("LevelSelected");
         }
     }
 

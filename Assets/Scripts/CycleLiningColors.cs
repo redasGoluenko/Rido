@@ -17,6 +17,7 @@ public class CycleLiningColors : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
         // Try to get both components
         graphicComponent = GetComponent<Graphic>();
         spriteRendererComponent = GetComponent<SpriteRenderer>();
