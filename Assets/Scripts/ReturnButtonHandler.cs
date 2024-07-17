@@ -6,7 +6,7 @@ using TMPro;
 
 public class ReturnButtonHandler : MonoBehaviour
 {
-
+    public bool retract = false;
     public TextMeshProUGUI buttonText; // Reference to the store text   
     public Death death; // Reference to the Death script
 
@@ -19,6 +19,7 @@ public class ReturnButtonHandler : MonoBehaviour
 
     public void OnButtonClick()
     {
+        retract = true;
         AudioManager.Instance.PlaySFX(AudioManager.Instance.buttonClick);       
         death.CloseMenu(0);       
         StartCoroutine(LoadScene(0.55f)); // Wait 1 second, then load the scene "Menu"

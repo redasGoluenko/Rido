@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class Death : MonoBehaviour
@@ -24,6 +25,7 @@ public class Death : MonoBehaviour
 
     private bool doOnce = true; // Flag to prevent multiple calls
     private bool isMoving = false; // Flag to track if the movement has started
+    private bool inLevelSelection = false; // Flag to track if the player is in the level selection menu
     public float fadeDuration = 0.5f; // Duration of fading in and out
     private float alpha = 0f; // Initial alpha value for the text
     public float topSlopeUp = 6.47f; // Top slope up position
@@ -34,6 +36,10 @@ public class Death : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {           
+        if(SceneManager.GetActiveScene().name == "LevelSelection")
+        {
+            inLevelSelection = true;
+        }
         StartCoroutine(MoveObjectInDirection(topSlope, Vector3.up, topSlopeUp, 0.25f));
         StartCoroutine(MoveObjectInDirection(bottomSlope, Vector3.down, bottomSlopeUp, 0.25f));
     }
@@ -41,8 +47,11 @@ public class Death : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!rotate.isMenu) { HandleDeath(); }
-        if (!rotate.isMenu) { HandleLiningColors(); }
+        if(!inLevelSelection)
+        {
+            if (!rotate.isMenu) { HandleDeath(); }
+            if (!rotate.isMenu) { HandleLiningColors(); }
+        }       
     }  
 
 
