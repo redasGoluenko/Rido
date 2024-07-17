@@ -72183,6 +72183,7 @@ MonoBehaviour:
   rotate: {fileID: 1792451200}
   buttonText: {fileID: 162142009}
   buttonRectTransform: {fileID: 0}
+  xPCurrent: {fileID: 1471205926}
 --- !u!114 &2112174790
 MonoBehaviour:
   m_ObjectHideFlags: 0

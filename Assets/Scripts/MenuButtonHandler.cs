@@ -7,9 +7,10 @@ public class MenuButtonHandler : MonoBehaviour
     public Rotate rotate; // Reference to the Rotate script
     public TextMeshProUGUI buttonText; // Reference to the TextMeshProUGUI component of the button
     public RectTransform buttonRectTransform; // Reference to the RectTransform component of the button
+    public XPCurrent xPCurrent; // Reference to the XPCurrent script
 
-    private bool hasMoved = false; // Flag to track if the button has already moved   
-    private float moveDistance = 906f;  // Distance to move the button
+    private bool hasMoved = false; 
+    private float moveDistance = 906f;
     void Start()
     {
         buttonText.text = ""; // Clear the text on the button
@@ -21,9 +22,7 @@ public class MenuButtonHandler : MonoBehaviour
     {
         // Check if rotate object is inactive and the button hasn't moved yet
         if (!rotate.gameObject.activeSelf && !hasMoved)
-        {
-            //Debug.Log("Rotate object is inactive");
-            // Move the button to the left by moveDistance units
+        {           
             StartCoroutine(WaitAndMoveRight(0.5f));
             hasMoved = true; // Set the flag to true to indicate movement
         }
@@ -32,8 +31,9 @@ public class MenuButtonHandler : MonoBehaviour
     // This method will be called when the button is clicked
     public void OnButtonClick()
     {
+        xPCurrent.retried = true; // Set the retried flag to true
         AudioManager.Instance.PlaySFX(AudioManager.Instance.buttonClick);
-        AudioManager.Instance.FadeInBackgroundMusic(1f); // Fade out the background music
+        AudioManager.Instance.FadeInBackgroundMusic(1f);
         UnityEngine.SceneManagement.SceneManager.LoadScene("Menu");
     }
 

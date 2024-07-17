@@ -336,7 +336,7 @@ public class Rotate : MonoBehaviour
 
 
     float CalculateUnitXPValue(int level)
-    {
+    {      
         float initialXPValue = 1f;
         float reductionFactor = 0.95f;
 
@@ -705,8 +705,7 @@ public class Rotate : MonoBehaviour
         slopes.transform.eulerAngles = new Vector3(0, 0, targetAngle);
     }
     public void Die()
-    {
-        AudioManager.Instance.SFX.volume = 0;
+    {       
         DestroyAllTokens(); // Destroy all tokens in the scene
         StartCoroutine(DieCoroutine());
     }

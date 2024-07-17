@@ -96,14 +96,13 @@ public class XPCurrent : MonoBehaviour
             {
                 retried = false;
                 PlayerManager.instance.SetXP(totalTokenCount);
-                PlayerManager.instance.SetLevel(currentLevel);
+                PlayerManager.instance.SetLevel(currentLevel);                
             }
             while(totalTokenCount >= 100)
             {                                
                 totalTokenCount -= 100;                
             }
-            slider.value = totalTokenCount;
-            // Update the score text to reflect the new total XP
+            slider.value = totalTokenCount;           
             scoreText.text = $"Level: {currentLevel}";
         }
     }
