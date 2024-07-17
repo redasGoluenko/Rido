@@ -12,12 +12,41 @@ public class LevelsButtonHandler : MonoBehaviour
     public Image backgroundSix;
     public Image backgroundSeven;
 
+    public Color newColor; // Color to change backgrounds to
     private float fadeDuration = 0.125f; // Duration of the fade in seconds
+
+    public MoveDiagonally endless; // Reference to the MoveDiagonally script
+    public MoveDiagonally levels; // Reference to the MoveDiagonally script
+    public MoveDiagonally store; // Reference to the MoveDiagonally script
+    public MoveDiagonally exit; // Reference to the MoveDiagonally script
+    public MoveByX moveByX; // Reference to the MoveByX script
+    public Death death; // Reference to the Death script
 
     public void OnButtonClick()
     {
-        AudioManager.Instance.PlaySFX(AudioManager.Instance.buttonClick);
+        AudioManager.Instance.PlaySFX(AudioManager.Instance.buttonClick);      
         StartCoroutine(FadeBackgroundsTo(0.25f));
+        StartCoroutine(exit.MoveLeftDiagonallyInitiallyCoroutine());
+        StartCoroutine(WaitAndMove(0.1f, store));
+        StartCoroutine(WaitAndMove(0.2f, levels));
+        StartCoroutine(WaitAndMove(0.3f, endless));
+        moveByX.MoveDown(5f);
+        death.CloseMenu(0.5f); // Close the menu       
+        StartCoroutine(LoadScene(1f)); // Wait 4 seconds, then load the scene "Endless"
+    }
+
+    // Coroutine to wait for a specified time and then move the object diagonally left
+    IEnumerator WaitAndMove(float delay, MoveDiagonally moveDiagonally)
+    {
+        yield return new WaitForSeconds(delay); // Wait for the specified time
+        StartCoroutine(moveDiagonally.MoveLeftDiagonallyInitiallyCoroutine()); // Start moving the object diagonally left
+    }
+
+    // Coroutine to wait for a specified time and then load the scene "Endless"
+    IEnumerator LoadScene(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        UnityEngine.SceneManagement.SceneManager.LoadScene("LevelSelection");
     }
 
     private IEnumerator FadeBackgroundsTo(float targetAlpha)

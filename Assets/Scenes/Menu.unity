@@ -5641,7 +5641,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -13812,6 +13812,13 @@ MonoBehaviour:
   backgroundFive: {fileID: 1147837975}
   backgroundSix: {fileID: 1192792418}
   backgroundSeven: {fileID: 668413918}
+  newColor: {r: 0, g: 0, b: 0, a: 0}
+  endless: {fileID: 198003478}
+  levels: {fileID: 903370792}
+  store: {fileID: 480663762}
+  exit: {fileID: 1097340577}
+  moveByX: {fileID: 579081102}
+  death: {fileID: 812144724}
 --- !u!1 &863640398
 GameObject:
   m_ObjectHideFlags: 0
