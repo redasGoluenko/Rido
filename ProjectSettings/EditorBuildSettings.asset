@@ -14,5 +14,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Glows.unity
     guid: 1e5e98f3cebddb14fa04a7c3f1e7b875
+  - enabled: 1
+    path: Assets/Scenes/LevelSelection.unity
+    guid: 9fa04d8263caf8944b7f89359d84b01c
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0
