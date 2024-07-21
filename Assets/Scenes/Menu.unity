@@ -383,6 +383,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   colorChangeInterval: 10
   pastel: 0
+  black: 0
+  pause: 0
 --- !u!1 &12512058
 GameObject:
   m_ObjectHideFlags: 0
@@ -609,6 +611,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   colorChangeInterval: 10
   pastel: 0
+  black: 0
+  pause: 0
 --- !u!1 &40505118
 GameObject:
   m_ObjectHideFlags: 0
@@ -699,6 +703,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   colorChangeInterval: 10
   pastel: 0
+  black: 0
+  pause: 0
 --- !u!1 &51321246
 GameObject:
   m_ObjectHideFlags: 0
@@ -3313,6 +3319,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   colorChangeInterval: 10
   pastel: 0
+  black: 0
+  pause: 0
 --- !u!114 &198003478
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3605,6 +3613,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   colorChangeInterval: 10
   pastel: 0
+  black: 0
+  pause: 0
 --- !u!1 &235305738
 GameObject:
   m_ObjectHideFlags: 0
@@ -4985,6 +4995,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   colorChangeInterval: 10
   pastel: 0
+  black: 0
+  pause: 0
 --- !u!1 &325450217
 GameObject:
   m_ObjectHideFlags: 0
@@ -7125,6 +7137,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   colorChangeInterval: 10
   pastel: 0
+  black: 0
+  pause: 0
 --- !u!1 &465232738
 GameObject:
   m_ObjectHideFlags: 0
@@ -7215,6 +7229,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   colorChangeInterval: 10
   pastel: 0
+  black: 0
+  pause: 0
 --- !u!1 &480542412
 GameObject:
   m_ObjectHideFlags: 0
@@ -7553,6 +7569,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   colorChangeInterval: 10
   pastel: 0
+  black: 0
+  pause: 0
 --- !u!114 &480663762
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8561,6 +8579,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   transitionDuration: 10
+  pause: 0
 --- !u!1 &521343848
 GameObject:
   m_ObjectHideFlags: 0
@@ -10288,6 +10307,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   colorChangeInterval: 10
   pastel: 0
+  black: 0
+  pause: 0
 --- !u!1 &618675340
 GameObject:
   m_ObjectHideFlags: 0
@@ -10930,6 +10951,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   colorChangeInterval: 10
   pastel: 0
+  black: 0
+  pause: 0
 --- !u!1 &668413916
 GameObject:
   m_ObjectHideFlags: 0
@@ -11095,6 +11118,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   colorChangeInterval: 10
   pastel: 0
+  black: 0
+  pause: 0
 --- !u!1 &681111429
 GameObject:
   m_ObjectHideFlags: 0
@@ -11632,7 +11657,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -11836,7 +11861,7 @@ SpriteRenderer:
   m_SortingLayer: 2
   m_SortingOrder: 21
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -11860,6 +11885,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   colorChangeInterval: 10
   pastel: 0
+  black: 0
+  pause: 0
 --- !u!1 &778163046
 GameObject:
   m_ObjectHideFlags: 0
@@ -13476,6 +13503,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   colorChangeInterval: 10
   pastel: 0
+  black: 0
+  pause: 0
 --- !u!1 &851515183
 GameObject:
   m_ObjectHideFlags: 0
@@ -14266,6 +14295,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   colorChangeInterval: 10
   pastel: 0
+  black: 0
+  pause: 0
 --- !u!1 &869071629
 GameObject:
   m_ObjectHideFlags: 0
@@ -14604,6 +14635,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   colorChangeInterval: 10
   pastel: 0
+  black: 0
+  pause: 0
 --- !u!114 &903370792
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16567,7 +16600,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -17739,6 +17772,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   colorChangeInterval: 10
   pastel: 0
+  black: 0
+  pause: 0
 --- !u!1 &1094013113
 GameObject:
   m_ObjectHideFlags: 0
@@ -18116,6 +18151,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   colorChangeInterval: 10
   pastel: 0
+  black: 0
+  pause: 0
 --- !u!114 &1097340577
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19790,7 +19827,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -22643,6 +22680,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   colorChangeInterval: 10
   pastel: 0
+  black: 0
+  pause: 0
 --- !u!1 &1414711168
 GameObject:
   m_ObjectHideFlags: 0
@@ -25127,6 +25166,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   colorChangeInterval: 10
   pastel: 0
+  black: 0
+  pause: 0
 --- !u!1 &1557025013
 GameObject:
   m_ObjectHideFlags: 0
@@ -25572,6 +25613,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   colorChangeInterval: 10
   pastel: 0
+  black: 0
+  pause: 0
 --- !u!1 &1585397765
 GameObject:
   m_ObjectHideFlags: 0
@@ -27292,6 +27335,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   colorChangeInterval: 10
   pastel: 0
+  black: 0
+  pause: 0
 --- !u!1 &1742370763
 GameObject:
   m_ObjectHideFlags: 0
@@ -30589,6 +30634,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   colorChangeInterval: 10
   pastel: 0
+  black: 0
+  pause: 0
 --- !u!1 &1908300823
 GameObject:
   m_ObjectHideFlags: 0
@@ -31630,6 +31677,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   colorChangeInterval: 10
   pastel: 0
+  black: 0
+  pause: 0
 --- !u!1 &1972020703
 GameObject:
   m_ObjectHideFlags: 0
@@ -31762,6 +31811,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   colorChangeInterval: 10
   pastel: 0
+  black: 0
+  pause: 0
 --- !u!1 &1992113855
 GameObject:
   m_ObjectHideFlags: 0

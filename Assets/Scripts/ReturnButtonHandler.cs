@@ -28,6 +28,7 @@ public class ReturnButtonHandler : MonoBehaviour
         retract = true;
         AudioManager.Instance.PlaySFX(AudioManager.Instance.buttonClick);
         AudioManager.Instance.SetBackgroundAudio(AudioManager.Instance.mainMenu);
+        PlayerManager.instance.SetLevelSelected(0);
         if (!inGlowSelection) { AudioManager.Instance.FadeInBackgroundMusic(1f, 1f); }
         death.CloseMenu(0);       
         StartCoroutine(LoadScene(0.55f));

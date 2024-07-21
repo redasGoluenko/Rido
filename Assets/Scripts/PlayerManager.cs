@@ -12,7 +12,7 @@ public class PlayerManager : MonoBehaviour
     public float currentXP = 0;
     public int glowNumber = 0;
     public int playerLevel = 1;
-    public int levelSelected = 1;
+    public int levelSelected = 0;
 
     public float XPInstance = 0;
     public int LevelInstance = 1;
@@ -35,7 +35,7 @@ public class PlayerManager : MonoBehaviour
         currentXP = 0;   
         glowNumber = 0;
         playerLevel = 1;
-        levelSelected = 1;
+        levelSelected = 0;
 
         XPInstance = 0;
         LevelInstance = 1;

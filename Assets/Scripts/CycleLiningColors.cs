@@ -13,15 +13,16 @@ public class CycleLiningColors : MonoBehaviour
     public float colorChangeInterval = 2.0f; // Time between color changes in seconds
     private float factor = 0.3f;
     public bool pastel = false;
+    public bool black = false;
+    public bool pause = false; // Boolean flag to pause the cycling
 
     // Start is called before the first frame update
     void Start()
     {
-
         // Try to get both components
         graphicComponent = GetComponent<Graphic>();
         spriteRendererComponent = GetComponent<SpriteRenderer>();
-      
+
         if (graphicComponent == null && spriteRendererComponent == null)
         {
             Debug.LogError("No Graphic or SpriteRenderer component found on the GameObject.");
@@ -32,12 +33,12 @@ public class CycleLiningColors : MonoBehaviour
         {
             // Define the list of colors
             colors = new List<Color>()
-        {
-            new Color(1.0f * factor, 0.0f * factor, 0.0f * factor),
-            new Color(0.0f * factor, 0.0f * factor, 1.0f * factor),
-            new Color(0.5f * factor, 0.0f * factor, 0.5f * factor),
-            new Color(1.0f * factor, 0.92f * factor, 0.3f * factor)
-        };
+            {
+                new Color(1.0f * factor, 0.0f * factor, 0.0f * factor),
+                new Color(0.0f * factor, 0.0f * factor, 1.0f * factor),
+                new Color(0.5f * factor, 0.0f * factor, 0.5f * factor),
+                new Color(1.0f * factor, 0.92f * factor, 0.3f * factor)
+            };
         }
         else
         {
@@ -49,7 +50,6 @@ public class CycleLiningColors : MonoBehaviour
                 new Color(1f, 0.96f, 0.7f)
             };
         }
-        
 
         // Start with the first color and maintain alpha if any component is present
         if (graphicComponent != null)
@@ -63,13 +63,20 @@ public class CycleLiningColors : MonoBehaviour
 
         // Start the color changing coroutine
         colorCoroutine = StartCoroutine(CycleColors());
-    }  
+    }
 
     private IEnumerator CycleColors()
     {
         int currentColorIndex = 0;
         while (true)
         {
+            // Check if paused
+            if (pause)
+            {
+                yield return null; // Skip this frame and continue checking
+                continue;
+            }
+
             // Get the next color in the list
             Color nextColor = colors[(currentColorIndex + 1) % colors.Count];
             float time = 0;
@@ -87,6 +94,13 @@ public class CycleLiningColors : MonoBehaviour
 
             while (time < colorChangeInterval)
             {
+                // Check if paused
+                if (pause)
+                {
+                    yield return null; // Skip this frame and continue checking
+                    continue;
+                }
+
                 time += Time.deltaTime;
                 float t = time / colorChangeInterval;
 
@@ -112,5 +126,60 @@ public class CycleLiningColors : MonoBehaviour
             // Move to the next color in the list
             currentColorIndex = (currentColorIndex + 1) % colors.Count;
         }
+    }
+
+    // Method to pause the color cycling
+    public void PauseCycling()
+    {
+        pause = true;
+    }
+
+    // Method to resume the color cycling
+    public void ResumeCycling()
+    {
+        pause = false;
+    }
+    public void ChangeColor(Color targetColor)
+    {
+        if (graphicComponent != null)
+        {
+            StartCoroutine(FadeColor(graphicComponent, targetColor));
+        }
+        else if (spriteRendererComponent != null)
+        {
+            StartCoroutine(FadeColor(spriteRendererComponent, targetColor));
+        }
+    }
+
+    // Coroutine to fade to the target color
+    private IEnumerator FadeColor(Graphic graphic, Color targetColor)
+    {
+        Color startColor = graphic.color;
+        float elapsedTime = 0f;
+
+        while (elapsedTime < 1)
+        {
+            graphic.color = Color.Lerp(startColor, targetColor, elapsedTime / 1);
+            elapsedTime += Time.deltaTime;
+            yield return null; // Wait until the next frame
+        }
+
+        graphic.color = targetColor; // Ensure the final color is set
+    }
+
+    // Overloaded coroutine to fade to the target color for SpriteRenderer
+    private IEnumerator FadeColor(SpriteRenderer spriteRenderer, Color targetColor)
+    {
+        Color startColor = spriteRenderer.color;
+        float elapsedTime = 0f;
+
+        while (elapsedTime < 1)
+        {
+            spriteRenderer.color = Color.Lerp(startColor, targetColor, elapsedTime / 1);
+            elapsedTime += Time.deltaTime;
+            yield return null; // Wait until the next frame
+        }
+
+        spriteRenderer.color = targetColor; // Ensure the final color is set
     }
 }
