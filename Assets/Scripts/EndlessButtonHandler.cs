@@ -18,9 +18,9 @@ public class EndlessButtonHandler : MonoBehaviour
     public MoveDiagonally endless; // Reference to the MoveDiagonally script
     public MoveDiagonally levels; // Reference to the MoveDiagonally script
     public MoveDiagonally store; // Reference to the MoveDiagonally script
-    public MoveDiagonally exit; // Reference to the MoveDiagonally script
-    public MoveByX moveByX; // Reference to the MoveByX script
-    public Death death; // Reference to the Death script
+    public MoveDiagonally exit;
+    public MoveByX moveByX;
+    public Death death;
 
     public void OnButtonClick()
     {

@@ -12,6 +12,7 @@ public class AudioManager : MonoBehaviour
     public AudioClip whoosh;
     public AudioClip standardClick;
     public AudioClip tokenPickup;
+    public AudioClip level1Audio;
 
     [Header("Audio Sources")]
     public AudioSource SFX;
@@ -36,8 +37,12 @@ public class AudioManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
-    }   
-    
+    }
+    public void SetBackgroundAudio(AudioClip audioClip)
+    {
+        Background.clip = audioClip;
+    }  
+
     public void PlaySFX(AudioClip clip)
     {      
         SFX.PlayOneShot(clip);
@@ -55,7 +60,7 @@ public class AudioManager : MonoBehaviour
         if (fadeCoroutine != null)
         {
             StopCoroutine(fadeCoroutine);
-        }
+        }      
         fadeCoroutine = StartCoroutine(FadeOutCoroutine(duration, SFX));
     }
     private IEnumerator FadeOutCoroutine(float duration, AudioSource audioSource)
@@ -65,7 +70,6 @@ public class AudioManager : MonoBehaviour
         while (audioSource.volume > 0)
         {
             audioSource.volume -= startVolume * Time.deltaTime / duration;
-
             yield return null;
         }
 
@@ -74,13 +78,13 @@ public class AudioManager : MonoBehaviour
     }
 
     // Method to start fading in the background music
-    public void FadeInBackgroundMusic(float duration)
+    public void FadeInBackgroundMusic(float duration, float volume)
     {
         if (fadeCoroutine != null)
         {
             StopCoroutine(fadeCoroutine);
-        }
-        fadeCoroutine = StartCoroutine(FadeInCoroutine(duration, Background, 1f));
+        }      
+        fadeCoroutine = StartCoroutine(FadeInCoroutine(duration, Background, volume));      
     }
     public void FadeInSFX(float duration)
     {
@@ -93,11 +97,11 @@ public class AudioManager : MonoBehaviour
 
     // Coroutine to gradually increase the volume of the background music
     private IEnumerator FadeInCoroutine(float duration, AudioSource audioSource, float volume)
-    {       
+    {
         audioSource.volume = 0f;
         audioSource.Play();
 
-        while (audioSource.volume < 1.0f)
+        while (audioSource.volume < volume)
         {
             audioSource.volume += Time.deltaTime / duration;
 

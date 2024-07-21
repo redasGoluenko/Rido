@@ -22,7 +22,8 @@ public class LevelSelectionHandler : MonoBehaviour
     public GameObject Square;
 
     private void Start()
-    {       
+    {
+        PlayerManager.instance.SetLevelSelected(0);
     }
 
     private void Update()
@@ -32,6 +33,7 @@ public class LevelSelectionHandler : MonoBehaviour
         {
             Hexagon.GetComponent<SpriteRenderer>().color = new Color(0f, 0f, 0f, 0f);
             Square.GetComponent<SpriteRenderer>().color = new Color(0f, 0f, 0f, 0f);
+            
         }
         else if (level2 && levelSelected == 2)
         {
@@ -66,7 +68,7 @@ public class LevelSelectionHandler : MonoBehaviour
         else
         {
             Hexagon.GetComponent<SpriteRenderer>().color = new Color(0f, 0f, 0f, 1f);
-            Square.GetComponent<SpriteRenderer>().color = new Color(0f, 0f, 0f, 1f);
+            Square.GetComponent<SpriteRenderer>().color = new Color(0f, 0f, 0f, 1f);           
         }
         
     }
@@ -76,31 +78,39 @@ public class LevelSelectionHandler : MonoBehaviour
         if (level1)
         {
             PlayerManager.instance.SetLevelSelected(1);
+            AudioManager.Instance.SetBackgroundAudio(AudioManager.Instance.level1Audio);
+            AudioManager.Instance.FadeInBackgroundMusic(5f, 0.5f);
         }
         else if (level2)
         {
             PlayerManager.instance.SetLevelSelected(2);
+            AudioManager.Instance.FadeOutBackgroundMusic(1f);
         }
         else if (level3)
         {
             PlayerManager.instance.SetLevelSelected(3);
+            AudioManager.Instance.FadeOutBackgroundMusic(1f);
         }
         else if (level4)
         {
             PlayerManager.instance.SetLevelSelected(4);
+            AudioManager.Instance.FadeOutBackgroundMusic(1f);
         }
         else if (level5)
         {
             PlayerManager.instance.SetLevelSelected(5);
+            AudioManager.Instance.FadeOutBackgroundMusic(1f);
         }
         else if (level6)
         {
             PlayerManager.instance.SetLevelSelected(6);
+            AudioManager.Instance.FadeOutBackgroundMusic(1f);
         }
         else if (level7)
         {
             PlayerManager.instance.SetLevelSelected(7);
-        }
+            AudioManager.Instance.FadeOutBackgroundMusic(1f);
+        }       
         PlayerManager.instance.SaveScore();
     }
 }

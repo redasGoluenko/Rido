@@ -33,7 +33,7 @@ public class MenuButtonHandler : MonoBehaviour
     {
         xPCurrent.retried = true; // Set the retried flag to true
         AudioManager.Instance.PlaySFX(AudioManager.Instance.buttonClick);
-        AudioManager.Instance.FadeInBackgroundMusic(1f);
+        AudioManager.Instance.FadeInBackgroundMusic(1f, 1f);
         UnityEngine.SceneManagement.SceneManager.LoadScene("Menu");
     }
 
