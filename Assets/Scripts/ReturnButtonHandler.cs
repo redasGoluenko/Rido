@@ -9,7 +9,7 @@ public class ReturnButtonHandler : MonoBehaviour
 {
     public bool retract = false;
     public TextMeshProUGUI buttonText; // Reference to the store text   
-    public Death death; // Reference to the Death script
+    public Death death; // Reference to the Death script   
 
     private Image backgroundImage; // Reference to the Image component of the background
     private bool inGlowSelection = false;
@@ -24,7 +24,7 @@ public class ReturnButtonHandler : MonoBehaviour
     }
 
     public void OnButtonClick()
-    {
+    {           
         retract = true;
         AudioManager.Instance.PlaySFX(AudioManager.Instance.buttonClick);
         AudioManager.Instance.SetBackgroundAudio(AudioManager.Instance.mainMenu);
