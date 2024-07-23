@@ -32,7 +32,10 @@ public class MatchAlphaToTarget : MonoBehaviour
             myColor.a = targetAlpha;
 
             // Apply the updated color to this object
-            mySpriteRenderer.color = myColor;
+            if(targetAlpha == 1f)
+            {
+                mySpriteRenderer.color = myColor;
+            }           
         }
     }
 }

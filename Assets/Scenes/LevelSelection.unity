@@ -6594,8 +6594,8 @@ Canvas:
   m_VertexColorAlwaysGammaSpace: 0
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: 1621832247
+  m_SortingOrder: 2
   m_TargetDisplay: 0
 --- !u!224 &1165792156
 RectTransform:
@@ -8584,7 +8584,7 @@ GameObject:
   - component: {fileID: 1455521397}
   - component: {fileID: 1455521396}
   - component: {fileID: 1455521395}
-  - component: {fileID: 1455521398}
+  - component: {fileID: 1455521399}
   m_Layer: 0
   m_Name: Waxterk
   m_TagString: Untagged
@@ -8669,7 +8669,7 @@ Transform:
   m_GameObject: {fileID: 1455521394}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.16, y: 1.872, z: 0}
+  m_LocalPosition: {x: -2.16, y: -4.33, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -8677,7 +8677,7 @@ Transform:
   - {fileID: 1568442630}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1455521398
+--- !u!114 &1455521399
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8686,13 +8686,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1455521394}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: efe729370fd74ce4caaa76d41224251d, type: 3}
+  m_Script: {fileID: 11500000, guid: 1f17c97036ea5b14d9e91473cbbd004e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefab: {fileID: 9142876456598990596, guid: 0e88f609c658d524cbff1b00e22afaa5, type: 3}
-  initialSize: {x: 1, y: 1, z: 1}
-  targetSize: {x: 5, y: 5, z: 10}
-  growthSpeed: 1
+  initialOffset: {x: 0, y: 0}
+  moveUpAmount: 6.1
+  speed: 2
 --- !u!1 &1463989438
 GameObject:
   m_ObjectHideFlags: 0
