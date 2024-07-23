@@ -8585,6 +8585,7 @@ GameObject:
   - component: {fileID: 1455521396}
   - component: {fileID: 1455521395}
   - component: {fileID: 1455521399}
+  - component: {fileID: 1455521400}
   m_Layer: 0
   m_Name: Waxterk
   m_TagString: Untagged
@@ -8692,6 +8693,21 @@ MonoBehaviour:
   initialOffset: {x: 0, y: 0}
   moveUpAmount: 6.1
   speed: 2
+--- !u!114 &1455521400
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1455521394}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c36da0bf68dfa6a408911e06e977068c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pulseSpeed: 0.75
+  maxScale: 1
+  minScale: 0.9
 --- !u!1 &1463989438
 GameObject:
   m_ObjectHideFlags: 0
