@@ -18,7 +18,7 @@ public class SpinObject2D : MonoBehaviour
     void Update()
     {
         
-        if (rotate.clockwise || constant)
+        if (constant || rotate.clockwise)
         {
             // Rotate the object around its z-axis (usually the forward axis in 2D)
             transform.Rotate(Vector3.forward, -spinSpeed * Time.deltaTime);           
