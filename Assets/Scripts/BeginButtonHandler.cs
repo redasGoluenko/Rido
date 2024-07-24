@@ -96,6 +96,6 @@ public class BeginButtonHandler : MonoBehaviour
     private IEnumerator WaitAndLoad(float delay)
     {
         yield return new WaitForSeconds(delay);
-        UnityEngine.SceneManagement.SceneManager.LoadScene("Menu");
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Level 1");
     }
 }
