@@ -10,8 +10,7 @@ public class SpinObject2D : MonoBehaviour
 
     //start
     void Start()
-    {
-        //find object with tag Player
+    {       
         rotate = GameObject.FindGameObjectWithTag("Player").GetComponent<Rotate>();   
     }
 

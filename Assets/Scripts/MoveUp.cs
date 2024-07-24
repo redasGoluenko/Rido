@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BeginButtonHandler : MonoBehaviour
+public class MoveUpp : MonoBehaviour
 {
     public Vector2 initialOffset; // The initial offset from the original position to be off-screen
     public float moveUpAmount;    // The amount to move up when the condition is met
